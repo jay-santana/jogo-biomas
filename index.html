@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura nos Biomas Brasileiros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Aventura nos Biomas Brasileiros</h1>
+            <p class="subtitle">Programe o movimento do personagem para coletar itens e chegar ao destino</p>
+        </header>
+        
+        <div class="game-area">
+            <div class="map-container">
+                <div class="grid" id="grid"></div>
+            </div>
+            
+            <div class="controls-container">
+                <div class="commands-panel">
+                    <div class="commands-title">Blocos de Comando</div>
+                    <div class="command-blocks">
+                        <div class="command-block" data-command="up">↑</div>
+                        <div class="command-block" data-command="down">↓</div>
+                        <div class="command-block" data-command="left">←</div>
+                        <div class="command-block" data-command="right">→</div>
+                    </div>
+                    
+                    <div class="commands-title">Sequência de Comandos</div>
+                    <div class="command-sequence" id="command-sequence"></div>
+                    
+                    <div class="action-buttons">
+                        <button class="run-btn" id="run-btn">Executar</button>
+                        <button class="reset-btn" id="reset-btn">Resetar</button>
+                    </div>
+                </div>
+                
+                <div class="level-info">
+                    <div class="level-title">Nível 1 - Mata Atlântica</div>
+                    <p>Objetivo: Leve o personagem até o ponto final (azul), coletando itens (amarelos) pelo caminho.</p>
+                    
+                    <div class="biome-selector">
+                        <button class="biome-btn active">Mata Atlântica</button>
+                        <button class="biome-btn">Amazônia</button>
+                        <button class="biome-btn">Cerrado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Desenvolvido para ensinar programação de forma lúdica | Biomas Brasileiros</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
