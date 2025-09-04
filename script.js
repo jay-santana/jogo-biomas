@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     function addCommand(command) {
-        if (gameState.commands.length < 12) {
+        if (gameState.commands.length < 50) {
             gameState.commands.push(command);
             updateCommandDisplay();
         }
