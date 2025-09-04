@@ -43,10 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Verificar se a célula está na lista de acessíveis
                 const isAccessible = accessibleCells.some(pos => pos.x === x && pos.y === y);
                 
-                if (x === 2 && y === 5) { //posição inicial do personagem
+                if (x === 2 && y === 5) { //posição inicial do personagem verde
                     cell.classList.add('start');
                     gameState.grid[y][x] = 'start';
-                } else if (x === 7 && y === 5) { //posição final 
+                } else if (x === 7 && y === 5) { //posição final azul
                     cell.classList.add('end');
                     gameState.grid[y][x] = 'end';
                 } else if ((x === 5 && y === 5) || (x === 5 && y === 5)) { // itens coletaveis
@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const cell = document.querySelector(`.cell[data-x="${newX}"][data-y="${newY}"]`);
                 cell.classList.add('blocked-shake');
                 setTimeout(() => cell.classList.remove('blocked-shake'), 300);
+                resetGame();
 
                 // Remover a classe após a animação terminar
                 setTimeout(() => {
