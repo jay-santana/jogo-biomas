@@ -6,72 +6,87 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let gameState = {
         grid: [],
-        characterPosition: { x: 0, y: 0 },
+        characterPosition: { x: 2, y: 2 }, //posição do personagem
         commands: [],
         itemsCollected: 0,
-        totalItems: 2,
+        totalItems: 1,
         currentBiome: 'atlantic'
     };
     
     const biomes = {
-        atlantic: { path: '#e9d985', obstacle: '#8B4513', start: '#4CAF50', end: '#2196F3', item: '#FFD700' },
-        amazon: { path: '#8DB600', obstacle: '#3D550C', start: '#4CAF50', end: '#2196F3', item: '#FFD700' },
-        cerrado: { path: '#D2B48C', obstacle: '#8B4513', start: '#4CAF50', end: '#2196F3', item: '#FFD700' }
+        atlantic: { path: '#e9d985', obstacle: '#8B4513', start: '#4CAF50', end: '#2196F3', item: '#FFD700', blocked: '#333333EE6'}, // cor dos quadradinhos
+        amazon: { path: '#8DB600', obstacle: '#3D550C', start: '#4CAF50', end: '#2196F3', item: '#FFD700', blocked: '#333333EE6'},
+        cerrado: { path: '#D2B48C', obstacle: '#8B4513', start: '#4CAF50', end: '#2196F3', item: '#FFD700', blocked: '#333333E6' }
     };
     
     function initializeGrid() {
         gridElement.innerHTML = '';
         gameState.grid = [];
+
+        // Definir quais células serão acessíveis (máximo de 5)
+        const accessibleCells = [
+            {x: 3, y: 5},  // start
+            {x: 4, y: 5},
+            {x: 5, y: 5},
+            {x: 6, y: 5},
+            // {x: 1, y: 2}
+        ];
         
-        for (let y = 0; y < 8; y++) {
+        for (let y = 0; y < 12; y++) {
             gameState.grid[y] = [];
             for (let x = 0; x < 10; x++) {
                 const cell = document.createElement('div');
                 cell.classList.add('cell');
                 cell.dataset.x = x;
                 cell.dataset.y = y;
+
+                // Verificar se a célula está na lista de acessíveis
+                const isAccessible = accessibleCells.some(pos => pos.x === x && pos.y === y);
                 
-                if (x === 0 && y === 0) {
+                if (x === 2 && y === 5) { //posição inicial do personagem
                     cell.classList.add('start');
                     gameState.grid[y][x] = 'start';
-                } else if (x === 9 && y === 7) {
+                } else if (x === 7 && y === 5) { //posição final 
                     cell.classList.add('end');
                     gameState.grid[y][x] = 'end';
-                } else if ((x === 3 && y === 2) || (x === 7 && y === 4)) {
+                } else if ((x === 5 && y === 5) || (x === 5 && y === 5)) { // itens coletaveis
                     cell.classList.add('item');
                     gameState.grid[y][x] = 'item';
-                } else if (
-                    (x === 2 && y >= 1 && y <= 3) || 
-                    (x === 5 && y >= 3 && y <= 5) ||
-                    (x === 8 && y >= 2 && y <= 6)
-                ) {
-                    cell.classList.add('obstacle');
-                    gameState.grid[y][x] = 'obstacle';
-                } else {
+                // } else if (
+                //     (x === 2 && y >= 1 && y <= 3) || //Obstáculos (paredes/bloqueios)
+                //     (x === 5 && y >= 3 && y <= 5) ||
+                //     (x === 8 && y >= 2 && y <= 6)
+                // ) {
+                //     cell.classList.add('obstacle');
+                //     gameState.grid[y][x] = 'obstacle';
+                } else if (isAccessible) {            //ve se o caminho é acessivel
                     cell.classList.add('path');
                     gameState.grid[y][x] = 'path';
+                }else {
+                    cell.classList.add('blocked'); //Caminhos bloqueados
+                    gameState.grid[y][x] = 'blocked';
                 }
                 
-                applyBiomeStyle(cell, gameState.grid[y][x]);
-                gridElement.appendChild(cell);
+                applyBiomeStyle(cell, gameState.grid[y][x]); //estilo visual baseado no tipo
+                gridElement.appendChild(cell); //Adiciona célula ao grid
             }
         }
-        placeCharacter(0, 0);
+        placeCharacter(2, 5); // ponto incial do L - PERSONAGEM - tem maneiras de automatizar para sempre iniciar no ponto do start
     }
     
     function applyBiomeStyle(cell, type) {
-        const biome = biomes[gameState.currentBiome];
-        cell.style.backgroundColor = biome[type];
+        const biome = biomes[gameState.currentBiome]; //Obtem o bioma atual do gameState
+        cell.style.backgroundColor = biome[type]; //Aplica a cor de fundo correspondente ao tipo de célula no bioma atual
     }
     
     function placeCharacter(x, y) {
-        document.querySelectorAll('.character').forEach(el => el.remove());
-        const cell = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`);
-        const character = document.createElement('div');
-        character.classList.add('character');
-        character.textContent = 'L';
-        cell.appendChild(character);
-        gameState.characterPosition = { x, y };
+        document.querySelectorAll('.character').forEach(el => el.remove()); //Remove qualquer personagem anterior do grid
+        const cell = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`); //Encontra a célula onde o personagem será colocado
+        const character = document.createElement('div'); //Cria o elemento do personagem
+        character.classList.add('character'); //Adiciona a classe CSS para estilização
+        character.textContent = 'L'; // Define o texto/ícone do personagem
+        cell.appendChild(character); //Insere o personagem na célula
+        gameState.characterPosition = { x, y }; // Atualiza a posição no estado do jogo
     }
     
     document.querySelectorAll('.command-block').forEach(block => {
@@ -133,9 +148,19 @@ document.addEventListener('DOMContentLoaded', function() {
             if (direction === 'left') newX = Math.max(0, x - 1);
             if (direction === 'right') newX = Math.min(9, x + 1);
             
-            if (gameState.grid[newY][newX] !== 'obstacle') {
+            if (gameState.grid[newY][newX] !== 'obstacle' && gameState.grid[newY][newX] !== 'blocked') { // VERIFICAR SE A CÉLULA É ACESSÍVEL (não é obstáculo E não é bloqueada)
                 placeCharacter(newX, newY);
-            }
+            } else {
+                // Feedback visual de movimento bloqueado
+                const cell = document.querySelector(`.cell[data-x="${newX}"][data-y="${newY}"]`);
+                cell.classList.add('blocked-shake');
+                setTimeout(() => cell.classList.remove('blocked-shake'), 300);
+
+                // Remover a classe após a animação terminar
+                setTimeout(() => {
+                    cell.classList.remove('blocked-shake');
+                }, 500);
+          }
             setTimeout(resolve, 300);
         });
     }
@@ -172,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
         gameState.commands = [];
         gameState.itemsCollected = 0;
         updateCommandDisplay();
-        placeCharacter(0, 0);
+        placeCharacter(2, 5);
     }
     
     document.querySelectorAll('.biome-btn').forEach((btn, index) => {
