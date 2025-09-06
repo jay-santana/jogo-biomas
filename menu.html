@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura nos Biomas Brasileiros</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- TELA DE MENU PRINCIPAL -->
+    <div class="menu-container" id="menu-screen">
+        <div class="menu-header">
+            <h1>MODES</h1>
+            <h2>Aventura nos Biomas Brasileiros</h2>
+        </div>
+
+        <div class="game-cover">
+            <div class="cover-image"></div>
+            <div class="cover-info">
+                <h3>Expedição Verde</h3>
+                <p>Explore os biomas do Brasil programando seus movimentos</p>
+            </div>
+        </div>
+
+        <div class="menu-actions">
+            <button class="menu-btn play-btn" id="play-btn">JOGAR</button>
+            <button class="menu-btn levels-btn" id="levels-btn">NÍVEIS</button>
+            <button class="menu-btn about-btn" id="about-btn">SOBRE</button>
+        </div>
+
+        <div class="menu-footer">
+            <p>Desenvolvido por [Seu Nome]</p>
+            <div class="social-links">
+                <button class="social-btn">Follow</button>
+                <button class="social-btn">Add To Collector</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA DE SELEÇÃO DE NÍVEIS (inicialmente escondida) -->
+    <div class="levels-container hidden" id="levels-screen">
+        <div class="levels-header">
+            <h2>Selecione o Bioma</h2>
+            <button class="back-btn" id="back-btn">← Voltar</button>
+        </div>
+
+        <div class="biomes-grid">
+            <div class="biome-card" data-biome="atlantic">
+                <div class="biome-icon">🌳</div>
+                <h3>Mata Atlântica</h3>
+                <p>Nível 1-5</p>
+                <button class="select-biome">Explorar</button>
+            </div>
+
+            <div class="biome-card" data-biome="amazon">
+                <div class="biome-icon">🌴</div>
+                <h3>Amazônia</h3>
+                <p>Nível 6-10</p>
+                <button class="select-biome">Explorar</button>
+            </div>
+
+            <div class="biome-card" data-biome="cerrado">
+                <div class="biome-icon">🌵</div>
+                <h3>Cerrado</h3>
+                <p>Nível 11-15</p>
+                <button class="select-biome">Explorar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA DO JOGO (inicialmente escondida) -->
+    <div class="game-container hidden" id="game-screen">
+        <!-- Seu código atual do jogo aqui -->
+    </div>
+
+    <script src="menu.js"></script>
+</body>
+</html>
