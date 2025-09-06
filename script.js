@@ -1,36 +1,112 @@
+// script.js - Controle logica do jogo
 document.addEventListener('DOMContentLoaded', function() {
     const gridElement = document.getElementById('grid');
     const commandSequence = document.getElementById('command-sequence');
     const runBtn = document.getElementById('run-btn');
     const resetBtn = document.getElementById('reset-btn');
+
+    const gameLevels = {
+        nivel1: {
+            titulo: "Mata Atlântica - Fase 1",
+            fases: {
+                fase1: {
+                    acessivel: true,
+                    concluida: false,
+                    grid: { largura: 10, altura: 12 },
+                    celulasAcessiveis: 4,
+                    inicio: { x: 2, y: 5 },
+                    fim: { x: 7, y: 5 },
+                    itens: [{x: 5, y: 5}],
+                    obstaculos: [],
+                    accessibleCells: [
+                        {x: 3, y: 5}, {x: 4, y: 5}, 
+                        {x: 5, y: 5}, {x: 6, y: 5}
+                    ]
+                },
+                fase2: {
+                    acessivel: false,
+                    concluida: false,
+                    // ... configurações
+                }
+            }
+        },
+        nivel2: {
+            titulo: "Amazônia",
+            fases: {
+                fase1: {
+                    acessivel: false,
+                    concluida: false,
+                    // ... configurações
+                }
+            }
+        }
+    };
+
+    function loadFase(levelId, faseId) {
+        const fase = gameLevels[levelId].fases[faseId];
+        
+        // Atualizar gameState
+        gameState.currentLevel = levelId;
+        gameState.currentFase = faseId;
+        gameState.totalItems = fase.itens.length;
+        
+        // Atualizar interface
+        document.querySelector('.level-title').textContent = gameLevels[levelId].titulo + " - " + faseId.toUpperCase();
+        
+        // Inicializar grid com configurações da fase
+        initializeGrid(fase);
+    }
     
     let gameState = {
         grid: [],
-        characterPosition: { x: 2, y: 2 }, //posição do personagem
+        characterPosition: { x: 0, y: 0 }, //posição do personagem
         commands: [],
         itemsCollected: 0,
-        totalItems: 1,
-        currentBiome: 'atlantic'
+        totalItems: 0,
+        currentBiome: 'atlantic',
+        currentLevel: 'nivel1',
+        currentFase: 'fase1',
     };
     
     const biomes = {
-        atlantic: { path: '#e9d985', obstacle: '#8B4513', start: '#4CAF50', end: '#2196F3', item: '#FFD700', blocked: '#333333EE6'}, // cor dos quadradinhos
-        amazon: { path: '#8DB600', obstacle: '#3D550C', start: '#4CAF50', end: '#2196F3', item: '#FFD700', blocked: '#333333EE6'},
+        atlantic: { path: '#e9d985', obstacle: '#8B4513', start: '#4CAF50', end: '#2196F3', item: '#FFD700', blocked: '#333333E6'}, // cor dos quadradinhos
+        amazon: { path: '#8DB600', obstacle: '#3D550C', start: '#4CAF50', end: '#2196F3', item: '#FFD700', blocked: '#333333E6'},
         cerrado: { path: '#D2B48C', obstacle: '#8B4513', start: '#4CAF50', end: '#2196F3', item: '#FFD700', blocked: '#333333E6' }
     };
+
+    document.querySelectorAll('.fase').forEach(faseEl => {
+        faseEl.addEventListener('click', function() {
+            if (this.classList.contains('active')) return;
+            
+            const levelId = this.closest('.level').dataset.level;
+            const faseId = this.dataset.fase;
+            
+            // Atualizar visualmente
+            document.querySelectorAll('.fase').forEach(f => f.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Carregar a fase
+            loadFase(levelId, faseId);
+        });
+    });
     
-    function initializeGrid() {
+    function initializeGrid(faseConfig = null) {
         gridElement.innerHTML = '';
         gameState.grid = [];
 
-        // Definir quais células serão acessíveis (máximo de 5)
-        const accessibleCells = [
-            {x: 3, y: 5},  // start
-            {x: 4, y: 5},
-            {x: 5, y: 5},
-            {x: 6, y: 5},
-            // {x: 1, y: 2}
-        ];
+        // 1. Primeiro processar a configuração
+        const config = faseConfig || {
+            accessibleCells: [
+                {x: 3, y: 5}, {x: 4, y: 5}, 
+                {x: 5, y: 5}, {x: 6, y: 5}
+            ],
+            inicio: { x: 2, y: 5 },
+            fim: { x: 7, y: 5 },
+            itens: [{x: 5, y: 5}]
+        };
+
+        // 2. DEPOIS salvar no gameState
+        gameState.currentConfig = config;
         
         for (let y = 0; y < 12; y++) {
             gameState.grid[y] = [];
@@ -41,24 +117,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 cell.dataset.y = y;
 
                 // Verificar se a célula está na lista de acessíveis
-                const isAccessible = accessibleCells.some(pos => pos.x === x && pos.y === y);
+                const isAccessible = config.accessibleCells.some(pos => pos.x === x && pos.y === y);
                 
-                if (x === 2 && y === 5) { //posição inicial do personagem verde
+                if (x === config.inicio.x && y === config.inicio.y) { //posição inicial do personagem verde
                     cell.classList.add('start');
                     gameState.grid[y][x] = 'start';
-                } else if (x === 7 && y === 5) { //posição final azul
+                } else if (x === config.fim.x && y === config.fim.y) { //posição final azul
                     cell.classList.add('end');
                     gameState.grid[y][x] = 'end';
-                } else if ((x === 5 && y === 5) || (x === 5 && y === 5)) { // itens coletaveis
+                } else if (x === config.itens.some(item => item.x === x && item.y === y)) {
                     cell.classList.add('item');
                     gameState.grid[y][x] = 'item';
-                // } else if (
-                //     (x === 2 && y >= 1 && y <= 3) || //Obstáculos (paredes/bloqueios)
-                //     (x === 5 && y >= 3 && y <= 5) ||
-                //     (x === 8 && y >= 2 && y <= 6)
-                // ) {
-                //     cell.classList.add('obstacle');
-                //     gameState.grid[y][x] = 'obstacle';
                 } else if (isAccessible) {            //ve se o caminho é acessivel
                     cell.classList.add('path');
                     gameState.grid[y][x] = 'path';
@@ -71,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 gridElement.appendChild(cell); //Adiciona célula ao grid
             }
         }
-        placeCharacter(2, 5); // ponto incial do L - PERSONAGEM - tem maneiras de automatizar para sempre iniciar no ponto do start
+        placeCharacter(config.inicio.x, config.inicio.y); // ponto incial do L - PERSONAGEM - tem maneiras de automatizar para sempre iniciar no ponto do start
     }
     
     function applyBiomeStyle(cell, type) {
@@ -144,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let newX = x, newY = y;
             
             if (direction === 'up') newY = Math.max(0, y - 1);
-            if (direction === 'down') newY = Math.min(7, y + 1);
+            if (direction === 'down') newY = Math.min(11, y + 1);
             if (direction === 'left') newX = Math.max(0, x - 1);
             if (direction === 'right') newX = Math.min(9, x + 1);
             
@@ -198,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
         gameState.commands = [];
         gameState.itemsCollected = 0;
         updateCommandDisplay();
-        placeCharacter(2, 5);
+        placeCharacter(gameState.currentConfig.inicio.x, gameState.currentConfig.inicio.y);
     }
     
     document.querySelectorAll('.biome-btn').forEach((btn, index) => {
@@ -211,4 +280,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     initializeGrid();
+
 });
+
+
+
