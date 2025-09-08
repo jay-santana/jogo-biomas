@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fases - Aventura nos Biomas Brasileiros</title>
+    <link rel="stylesheet" href="styles/fases.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Escolha um Bioma</h1>
+            <button id="back-btn" class="back-btn">Voltar</button>
+        </header>
+        
+        <div class="biomes-container">
+            <div class="biome-card" data-biome="atlantic">
+                <div class="biome-image atlantic"></div>
+                <h2>Mata Atlântica</h2>
+                <p>Explore a diversidade da floresta costeira brasileira</p>
+                <button class="select-btn">Selecionar</button>
+            </div>
+            
+            <div class="biome-card" data-biome="amazon">
+                <div class="biome-image amazon"></div>
+                <h2>Amazônia</h2>
+                <p>Aventure-se na maior floresta tropical do mundo</p>
+                <button class="select-btn">Selecionar</button>
+            </div>
+            
+            <div class="biome-card" data-biome="cerrado">
+                <div class="biome-image cerrado"></div>
+                <h2>Cerrado</h2>
+                <p>Descubra as riquezas do savana brasileira</p>
+                <button class="select-btn">Selecionar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/fases.js"></script>
+</body>
+</html>
