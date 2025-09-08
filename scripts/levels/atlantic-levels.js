@@ -18,7 +18,7 @@ const atlanticLevels = {
             inicio: { x: 2, y: 5 },
             fim: { x: 7, y: 5 },
             itens: [],
-            obstaculos: [{x: 3, y: 6}],
+            obstaculos: [],
             accessibleCells: [
                 {x: 3, y: 5}, {x: 4, y: 5}, 
                 {x: 5, y: 5}, {x: 6, y: 5}
@@ -31,7 +31,7 @@ const atlanticLevels = {
             inicio: { x: 3, y: 4 },
             fim: { x: 5, y: 6 },
             itens: [],
-            obstaculos: [{x: 4, y: 5}],
+            obstaculos: [],
             accessibleCells: [
                 {x: 3, y: 4}, {x: 4, y: 4}, 
                 {x: 5, y: 4}, {x: 5, y: 5}
@@ -44,7 +44,7 @@ const atlanticLevels = {
             inicio: { x: 3, y: 6 },
             fim: { x: 6, y: 6 },
             itens: [],
-            obstaculos: [{x: 4, y: 6}, {x: 5, y: 6}],
+            obstaculos: [],
             accessibleCells: [
                 {x: 3, y: 6}, {x: 3, y: 5}, 
                 {x: 3, y: 4}, {x: 4, y: 4},
@@ -59,7 +59,7 @@ const atlanticLevels = {
             inicio: { x: 3, y: 5 },
             fim: { x: 7, y: 5 },
             itens: [],
-            obstaculos: [{x: 4, y: 5},{x: 5, y: 5}, {x: 5, y: 6}],
+            obstaculos: [],
             accessibleCells: [
                 {x: 3, y: 6}, {x: 3, y: 5}, 
                 {x: 3, y: 4}, {x: 4, y: 4},
@@ -74,9 +74,7 @@ const atlanticLevels = {
             inicio: { x: 3, y: 6 },
             fim: { x: 6, y: 4 },
             itens: [],
-            obstaculos: [{x: 3, y: 4},{x: 6, y: 6}, 
-                         {x: 4, y: 6},{x: 5, y: 4}
-            ],
+            obstaculos: [],
             accessibleCells: [
                 {x: 3, y: 5}, {x: 4, y: 5}, 
                 {x: 5, y: 5}, {x: 4, y: 4},
@@ -91,10 +89,7 @@ const atlanticLevels = {
             inicio: { x: 2, y: 4 },
             fim: { x: 6, y: 7 },
             itens: [],
-            obstaculos: [{x: 5, y: 5},{x: 6, y: 5},
-                         {x: 6, y: 6},{x: 2, y: 5},
-                         {x: 2, y: 6},{x: 3, y: 6}
-            ],
+            obstaculos: [],
             accessibleCells: [
                 {x: 2, y: 4}, {x: 3, y: 4}, 
                 {x: 3, y: 5}, {x: 4, y: 5},
