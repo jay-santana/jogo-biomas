@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 1000px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+header {
+    background: linear-gradient(90deg, #2E8B57, #3CB371);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.help-btn, .menu-btn {
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.help-btn:hover, .menu-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.game-area {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.map-container {
+    flex: 1;
+    min-width: 300px;
+    padding: 1px;
+    background-image: url('../assets/NV1/fundo.png');
+    border-radius: 8px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    /* As colunas e linhas serão definidas dinamicamente via JavaScript */
+    gap: 2px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.cell {
+    aspect-ratio: 1/1;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    transition: all 0.2s ease;
+}
+
+.blocked {
+    opacity: 0.3;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    cursor: not-allowed;
+}
+
+.blocked-shake {
+    animation: shake 0.3s;
+    background-color: #ff4444 !important;
+}
+
+@keyframes shake {
+    0%, 100% 
+        { transform: translateX(0); 
+          background-color: inherit;}
+    25% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+    
+}
+
+.path {
+    background-color: #e9d985;
+}
+
+.obstacle {
+    background-color: #8B4513;
+}
+
+.start {
+    background-color: #4CAF50;
+}
+
+.end {
+    background-color: #2196F3;
+}
+
+.item {
+    background-color: #FFD700;
+}
+
+.character {
+    background-color: #FF5722;
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.controls-container {
+    flex: 1;
+    min-width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.level-info {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.level-info h2 {
+    color: #2E8B57;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.level-info p {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.commands-panel {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.commands-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #2E8B57;
+    font-weight: bold;
+}
+
+.command-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.command-block {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    cursor: grab;
+    user-select: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.command-block:hover {
+    transform: scale(1.05);
+}
+
+.command-sequence {
+    background-color: #e0e0e0;
+    min-height: 100px;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-content: flex-start;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.run-btn, .reset-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+}
+
+.run-btn {
+    background: linear-gradient(135deg, #4CAF50, #2E8B57);
+    color: white;
+}
+
+.run-btn:hover {
+    background: linear-gradient(135deg, #2E8B57, #4CAF50);
+    transform: translateY(-2px);
+}
+
+.reset-btn {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+    color: white;
+}
+
+.reset-btn:hover {
+    background: linear-gradient(135deg, #d32f2f, #f44336);
+    transform: translateY(-2px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+    color: #2E8B57;
+    margin-bottom: 15px;
+}
+
+.modal p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#continue-btn {
+    background: linear-gradient(135deg, #4CAF50, #2E8B57);
+    color: white;
+}
+
+#replay-btn {
+    background: linear-gradient(135deg, #2196F3, #0D47A1);
+    color: white;
+}
+
+#menu-modal-btn, #close-help-btn {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+    color: white;
+}
+
+.modal-buttons button:hover {
+    transform: translateY(-2px);
+}
+
+/* Adicione esta media query para telas menores */
+@media (max-width: 768px) {
+    .game-area {
+        flex-direction: column;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .header-buttons {
+        justify-content: center;
+    }
+    
+    /* Garantir que o grid seja visível em dispositivos móveis */
+    .map-container {
+        min-height: 400px;
+    }
+    
+    .cell {
+        font-size: 16px;
+    }
+}
