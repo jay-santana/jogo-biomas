@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo - Aventura nos Biomas Brasileiros</title>
+    <link rel="stylesheet" href="styles/jogo.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Aventura nos Biomas Brasileiros</h1>
+            <div class="header-buttons">
+                <button id="help-btn" class="help-btn">Ajuda</button>
+                <button id="menu-btn" class="menu-btn">Menu</button>
+            </div>
+        </header>
+        
+        <div class="game-area">
+            <div class="map-container">
+                <div class="grid" id="grid"></div>
+            </div>
+            
+            <div class="controls-container">
+                <div class="level-info">
+                    <h2 id="level-title">Mata Atlântica - Nível 1</h2>
+                    <p id="steps-counter">Passos: 0</p>
+                    <p id="items-counter">Itens: 0/0</p>
+                </div>
+                
+                <div class="commands-panel">
+                    <div class="commands-title">Blocos de Comando</div>
+                    <div class="command-blocks">
+                        <div class="command-block" data-command="up">↑</div>
+                        <div class="command-block" data-command="down">↓</div>
+                        <div class="command-block" data-command="left">←</div>
+                        <div class="command-block" data-command="right">→</div>
+                    </div>
+                    
+                    <div class="commands-title">Sequência de Comandos</div>
+                    <div class="command-sequence" id="command-sequence"></div>
+                    
+                    <div class="action-buttons">
+                        <button class="run-btn" id="run-btn">Executar</button>
+                        <button class="reset-btn" id="reset-btn">Resetar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="victory-modal" class="modal">
+            <div class="modal-content">
+                <h2>Parabéns!</h2>
+                <p>Você venceu e avançou de nível</p>
+                <p id="steps-result">Você completou o nível em X passos</p>
+                <div class="modal-buttons">
+                    <button id="continue-btn">Continuar</button>
+                    <button id="replay-btn">Jogar Novamente</button>
+                    <button id="menu-modal-btn">Menu</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="help-modal" class="modal">
+            <div class="modal-content">
+                <h2>Como Jogar</h2>
+                <p>1. Use os blocos de comando para criar uma sequência de movimentos</p>
+                <p>2. Clique em "Executar" para ver o personagem seguir seus comandos</p>
+                <p>3. Colete todos os itens antes de chegar ao destino</p>
+                <p>4. Use o menor número de passos possível para ganhar mais estrelas</p>
+                <button id="close-help-btn">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/levels/amazon-levels.js"></script>
+    <script src="scripts/levels/atlantic-levels.js"></script>
+    <script src="scripts/levels/cerrado-levels.js"></script>
+    <script src="scripts/jogo.js"></script>
+</body>
+</html>
