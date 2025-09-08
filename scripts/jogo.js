@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     continueBtn.addEventListener('click', function() {
         // Avançar para o próximo nível
         const nextLevel = parseInt(level) + 1;
-        if (nextLevel <= 5) {
+        if (nextLevel <= 6) {
             window.location.href = `jogo.html?biome=${biome}&level=${nextLevel}`;
         } else {
             window.location.href = 'fases.html';

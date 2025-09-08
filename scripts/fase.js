@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkProgress() {
         // Simulação - na implementação real, isso viria de localStorage ou servidor
         const progress = JSON.parse(localStorage.getItem('gameProgress')) || {
-            'atlantic': [true, false, false, false, false] // Apenas o nível 1 desbloqueado
+            'atlantic': [true, false, false, false, false, false] // Apenas o nível 1 desbloqueado
         };
         
         // Obter o bioma atual
