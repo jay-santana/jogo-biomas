@@ -284,12 +284,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function saveProgress(biome, level, steps) {
-        // Simulação - na implementação real, salvar no localStorage
-        console.log(`Progresso salvo: ${biome}, nível ${level}, ${steps} passos`);
+        // Carregar progresso existente ou criar novo
+        const progress = JSON.parse(localStorage.getItem('gameProgress')) || {
+            'atlantic': [false, false, false, false, false],
+            'amazon': [false, false, false, false, false],
+            'cerrado': [false, false, false, false, false]
+        };
         
-        // Aqui você implementaria a lógica para desbloquear o próximo nível
-        // e salvar o progresso no localStorage
+        // Marcar nível atual como concluído
+        const levelIndex = parseInt(level) - 1;
+        progress[biome][levelIndex] = true;
+        
+        // Se não for o último nível, desbloquear o próximo
+        if (levelIndex < 4) {
+            progress[biome][levelIndex + 1] = true;
+        }
+        
+        // Salvar estatísticas adicionais (opcional)
+        const stats = JSON.parse(localStorage.getItem('gameStats')) || {};
+        const levelKey = `${biome}_level_${level}`;
+        stats[levelKey] = {
+            completed: true,
+            steps: steps,
+            bestSteps: Math.min(steps, stats[levelKey]?.bestSteps || Infinity),
+            completedAt: new Date().toISOString()
+        };
+        
+        // Salvar no localStorage
+        localStorage.setItem('gameProgress', JSON.stringify(progress));
+        localStorage.setItem('gameStats', JSON.stringify(stats));
+        
+        console.log(`Progresso salvo: ${biome}, nível ${level}, ${steps} passos`);
     }
+
     
     // Resetar jogo
     resetBtn.addEventListener('click', resetGame);

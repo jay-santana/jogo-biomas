@@ -35,9 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
     checkProgress();
     
     function checkProgress() {
-        // Simulação - na implementação real, isso viria de localStorage ou servidor
+        // Obter progresso do localStorage
         const progress = JSON.parse(localStorage.getItem('gameProgress')) || {
-            'atlantic': [true, false, false, false, false, false] // Apenas o nível 1 desbloqueado
+            'atlantic': [true, false, false, false, false], // Padrão: apenas nível 1 desbloqueado
+            'amazon': [true, false, false, false, false],
+            'cerrado': [true, false, false, false, false]
         };
         
         // Obter o bioma atual
@@ -66,6 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 status.querySelector('span').textContent = 'Desbloqueado';
                 btn.disabled = false;
             }
-        });
-    }
+        });
+    }
 });
