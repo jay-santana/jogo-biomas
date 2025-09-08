@@ -1,0 +1,132 @@
+/* styles/fase.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2E8B57;
+    font-size: 2.2rem;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #d32f2f, #f44336);
+    transform: translateY(-2px);
+}
+
+.levels-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.level-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+}
+
+.level-card h3 {
+    color: #2E8B57;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.level-status {
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.level-status.unlocked {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.level-status.locked {
+    background-color: #cccccc;
+    color: #666;
+}
+
+.start-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #4CAF50, #2E8B57);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.start-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #2E8B57, #4CAF50);
+    transform: translateY(-2px);
+}
+
+.start-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .levels-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .levels-container {
+        grid-template-columns: 1fr;
+    }
+}
