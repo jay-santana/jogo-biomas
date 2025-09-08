@@ -17,11 +17,11 @@ const amazonLevels = {
             grid: { width: 10, height: 12 },
             inicio: { x: 2, y: 5 },
             fim: { x: 7, y: 5 },
-            itens: [{x: 5, y: 5}],
-            obstaculos: [],
+            itens: [],
+            obstaculos: [{x: 5, y: 5}],
             accessibleCells: [
                 {x: 3, y: 5}, {x: 4, y: 5}, 
-                {x: 5, y: 5}, {x: 6, y: 5}
+                {x: 5, y: 5}, {x: 6, y: 5},
             ]
         },
         2: {
