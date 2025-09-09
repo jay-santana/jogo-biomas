@@ -87,6 +87,14 @@ h1 {
     background-color: #D2B48C;
 }
 
+.biome-image.caatinga {
+    background-color: #8cd2bd;
+}
+
+.biome-image.pantanal {
+    background-color: #d28e8c;
+}
+
 .biome-card h2 {
     padding: 15px;
     color: #2E8B57;
