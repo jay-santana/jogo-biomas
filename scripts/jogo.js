@@ -38,7 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const biomes = {
         atlantic: atlanticLevels.colorPalette,
         amazon: amazonLevels.colorPalette,
-        cerrado: cerradoLevels.colorPalette
+        cerrado: cerradoLevels.colorPalette,
+        pantanal: pantanalLevels.colorPalette,
+        caatinga: caatingaLevels.colorPalette
     };
     
     // Configurações dos níveis
@@ -54,6 +56,14 @@ document.addEventListener('DOMContentLoaded', function() {
         cerrado: {
             titulo: cerradoLevels.name,
             fases: cerradoLevels.levels
+        },
+        pantanal: {
+            titulo: pantanalLevels.name,
+            fases: pantanalLevels.levels
+        },
+        caatinga: {
+            titulo: caatingaLevels.name,
+            fases: caatingaLevels.levels
         }
     };
     
@@ -288,7 +298,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const progress = JSON.parse(localStorage.getItem('gameProgress')) || {
             'atlantic': [false, false, false, false, false],
             'amazon': [false, false, false, false, false],
-            'cerrado': [false, false, false, false, false]
+            'cerrado': [false, false, false, false, false],
+            'pantanal': [false, false, false, false, false],
+            'caatinga': [false, false, false, false, false],
+
         };
         
         // Marcar nível atual como concluído
@@ -340,7 +353,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const names = {
             'atlantic': 'Mata Atlântica',
             'amazon': 'Amazônia',
-            'cerrado': 'Cerrado'
+            'cerrado': 'Cerrado',
+            'pantanal': 'Pantanal',
+            'caatinga': 'Caatinga'
         };
         return names[biome] || 'Bioma Desconhecido';
     }

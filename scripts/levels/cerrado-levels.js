@@ -1,23 +1,22 @@
-// scripts/levels/cerrado-levels.js
 const cerradoLevels = {
     biome: "cerrado",
     name: "Cerrado",
     colorPalette: {
-        path: '#D2B48C',
+        path: '#CD853F',
         obstacle: '#8B4513', 
         start: '#4CAF50',
         end: '#2196F3', 
         item: '#FFD700', 
-        blocked: '#654321'
+        blocked: '#3a5a3a'
     },
     levels: {
         1: {
-            title: "Planície do Cerrado",
-            description: "Primeira exploração da savana brasileira",
+            title: "Chapada dos Veadeiros",
+            description: "Início na terra das cachoeiras",
             grid: { width: 10, height: 12 },
             inicio: { x: 2, y: 5 },
             fim: { x: 7, y: 5 },
-            itens: [{x: 5, y: 5}],
+            itens: [{x: 4, y: 5}, {x: 5, y: 5}],
             obstaculos: [],
             accessibleCells: [
                 {x: 3, y: 5}, {x: 4, y: 5}, 
@@ -25,64 +24,122 @@ const cerradoLevels = {
             ]
         },
         2: {
-            title: "Caminho das Queimadas",
-            description: "Evite as áreas afetadas pelo fogo",
+            title: "Caminho do Lobo-guará",
+            description: "Siga a trilha do animal símbolo",
             grid: { width: 10, height: 12 },
-            inicio: { x: 2, y: 5 },
-            fim: { x: 7, y: 5 },
-            itens: [{x: 4, y: 5}, {x: 5, y: 5}],
-            obstaculos: [{x: 3, y: 5}],
+            inicio: { x: 3, y: 4 },
+            fim: { x: 5, y: 6 },
+            itens: [{x: 4, y: 5}],
+            obstaculos: [{x: 4, y: 4}, {x: 4, y: 6}],
             accessibleCells: [
-                {x: 3, y: 4}, {x: 4, y: 4}, {x: 5, y: 4},
-                {x: 3, y: 6}, {x: 4, y: 6}, {x: 5, y: 6}
+                {x: 3, y: 4}, {x: 3, y: 5}, 
+                {x: 3, y: 6}, {x: 4, y: 5},
+                {x: 5, y: 4}, {x: 5, y: 5},
+                {x: 5, y: 6}
             ]
         },
-        // níveis 3, 4 e 5 seguindo o mesmo padrão
         3: {
-            title: "Chapada dos Veadeiros",
-            description: "Explore o planalto central",
+            title: "Trilha das Flores do Cerrado",
+            description: "Colete as espécies únicas",
             grid: { width: 10, height: 12 },
-            inicio: { x: 1, y: 5 },
-            fim: { x: 8, y: 5 },
-            itens: [{x: 3, y: 5}, {x: 5, y: 5}, {x: 7, y: 5}],
-            obstaculos: [{x: 2, y: 5}, {x: 4, y: 5}, {x: 6, y: 5}],
+            inicio: { x: 3, y: 6 },
+            fim: { x: 6, y: 6 },
+            itens: [{x: 4, y: 4}, {x: 5, y: 4}, {x: 4, y: 5}],
+            obstaculos: [
+                {x: 4, y: 6}, {x: 5, y: 6},
+                {x: 3, y: 4}, {x: 6, y: 4}
+            ],
             accessibleCells: [
-                {x: 1, y: 4}, {x: 2, y: 4}, {x: 3, y: 4}, {x: 4, y: 4}, {x: 5, y: 4}, {x: 6, y: 4}, {x: 7, y: 4}, {x: 8, y: 4},
-                {x: 1, y: 5}, {x: 3, y: 5}, {x: 5, y: 5}, {x: 7, y: 5}, {x: 8, y: 5},
-                {x: 1, y: 6}, {x: 2, y: 6}, {x: 3, y: 6}, {x: 4, y: 6}, {x: 5, y: 6}, {x: 6, y: 6}, {x: 7, y: 6}, {x: 8, y: 6}
+                {x: 3, y: 6}, {x: 3, y: 5}, 
+                {x: 4, y: 4}, {x: 4, y: 5},
+                {x: 5, y: 4}, {x: 5, y: 5},
+                {x: 6, y: 5}, {x: 6, y: 6},
+                {x: 2, y: 5}, {x: 7, y: 5}
             ]
         },
         4: {
-            title: "Nascentes do Cerrado",
-            description: "Proteja as fontes de água",
+            title: "Vereda dos Buritis",
+            description: "Navegue entre as palmeiras típicas",
             grid: { width: 10, height: 12 },
-            inicio: { x: 0, y: 0 },
-            fim: { x: 9, y: 11 },
-            itens: [{x: 3, y: 3}, {x: 6, y: 6}, {x: 2, y: 9}],
+            inicio: { x: 3, y: 5 },
+            fim: { x: 7, y: 5 },
+            itens: [
+                {x: 4, y: 4}, {x: 6, y: 4}, 
+                {x: 5, y: 6}, {x: 4, y: 7}
+            ],
             obstaculos: [
-                {x: 4, y: 2}, {x: 5, y: 2}, {x: 4, y: 3}, {x: 5, y: 3},
-                {x: 1, y: 5}, {x: 2, y: 5}, {x: 7, y: 5}, {x: 8, y: 5},
-                {x: 3, y: 8}, {x: 4, y: 8}, {x: 5, y: 8}, {x: 6, y: 8}
+                {x: 5, y: 5}, {x: 3, y: 6},
+                {x: 3, y: 4}, {x: 7, y: 4}, 
+                {x: 7, y: 6}
             ],
             accessibleCells: [
-                // Lista de células acessíveis
+                {x: 3, y: 5}, {x: 2, y: 5}, {x: 1, y: 5},
+                {x: 4, y: 4}, {x: 5, y: 4}, {x: 6, y: 4},
+                {x: 4, y: 6}, {x: 5, y: 6}, {x: 6, y: 6},
+                {x: 4, y: 7}, {x: 5, y: 7}, {x: 6, y: 7},
+                {x: 7, y: 5}, {x: 8, y: 5}, {x: 9, y: 5},
+                {x: 4, y: 5}, {x: 6, y: 5}
             ]
         },
         5: {
-            title: "Santuario da Biodiversidade",
-            description: "Desafio final no berço das águas",
+            title: "Canyon do Espelho d'Água",
+            description: "Desça os cânions em busca de água",
             grid: { width: 10, height: 12 },
-            inicio: { x: 0, y: 6 },
-            fim: { x: 9, y: 6 },
-            itens: [{x: 2, y: 2}, {x: 5, y: 5}, {x: 7, y: 9}, {x: 3, y: 10}],
+            inicio: { x: 6, y: 7 },
+            fim: { x: 3, y: 4 },
+            itens: [
+                {x: 4, y: 5}, {x: 5, y: 5}, 
+                {x: 4, y: 7}, {x: 5, y: 3}
+            ],
             obstaculos: [
-                {x: 4, y: 1}, {x: 5, y: 1}, {x: 4, y: 2}, {x: 5, y: 2},
-                {x: 1, y: 4}, {x: 2, y: 4}, {x: 7, y: 4}, {x: 8, y: 4},
-                {x: 3, y: 7}, {x: 4, y: 7}, {x: 5, y: 7}, {x: 6, y: 7},
-                {x: 2, y: 9}, {x: 3, y: 9}, {x: 6, y: 9}, {x: 7, y: 9}
+                {x: 3, y: 3}, {x: 6, y: 4},
+                {x: 3, y: 5}, {x: 3, y: 6}, 
+                {x: 5, y: 6}, {x: 6, y: 6}, {x: 7, y: 5},
+                {x: 7, y: 6}, {x: 7, y: 7}
             ],
             accessibleCells: [
-                // Lista de células acessíveis
+                {x: 6, y: 7}, {x: 5, y: 7}, {x: 4, y: 7},
+                {x: 3, y: 7}, {x: 2, y: 7}, {x: 2, y: 6},
+                {x: 2, y: 5}, {x: 2, y: 4}, {x: 3, y: 4},
+                {x: 4, y: 5}, {x: 5, y: 5}, {x: 6, y: 5},
+                {x: 5, y: 3}, {x: 4, y: 3}, {x: 3, y: 3},
+                {x: 2, y: 3}, {x: 1, y: 3}, {x: 1, y: 4},
+                {x: 4, y: 6}, {x: 5, y: 4}, {x: 4, y: 4}
+            ]
+        },
+        6: {
+            title: "Desafio do Planalto",
+            description: "Prova final no coração do Brasil",
+            grid: { width: 10, height: 12 },
+            inicio: { x: 4, y: 8 },
+            fim: { x: 2, y: 5 },
+            itens: [
+                {x: 3, y: 7}, {x: 5, y: 7}, 
+                {x: 6, y: 6}, {x: 7, y: 5},
+                {x: 2, y: 6}, {x: 1, y: 5}
+            ],
+            obstaculos: [
+                {x: 4, y: 4}, {x: 5, y: 4}, {x: 6, y: 4}, 
+                {x: 3, y: 5}, {x: 7, y: 5}, {x: 8, y: 5},
+                {x: 3, y: 6}, {x: 8, y: 6}, {x: 9, y: 6},
+                {x: 3, y: 7}, {x: 5, y: 7}, {x: 9, y: 7},
+                {x: 5, y: 8}, {x: 6, y: 8}, {x: 7, y: 8}, 
+                {x: 1, y: 4}, {x: 0, y: 5}, {x: 7, y: 4},
+                {x: 8, y: 8}, {x: 9, y: 8}
+            ],
+            accessibleCells: [
+                {x: 4, y: 8}, {x: 3, y: 8}, {x: 2, y: 8}, 
+                {x: 1, y: 7}, {x: 1, y: 6}, {x: 1, y: 5}, 
+                {x: 2, y: 5}, {x: 1, y: 8}, {x: 6, y: 5},
+                {x: 2, y: 6}, {x: 3, y: 7}, {x: 4, y: 7}, 
+                {x: 2, y: 7}, {x: 5, y: 7}, {x: 8, y: 4},
+                {x: 6, y: 7}, {x: 7, y: 7}, {x: 8, y: 7},
+                {x: 8, y: 6}, {x: 7, y: 6}, {x: 6, y: 6}, 
+                {x: 5, y: 6}, {x: 4, y: 6}, {x: 3, y: 6},
+                {x: 3, y: 5}, {x: 4, y: 5}, {x: 5, y: 5},
+                {x: 8, y: 5}, {x: 9, y: 5}, {x: 7, y: 5},
+                {x: 0, y: 6}, {x: 0, y: 7}, {x: 0, y: 8},
+                {x: 9, y: 4}
             ]
         }
     }

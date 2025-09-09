@@ -8,7 +8,7 @@ const amazonLevels = {
         start: '#4CAF50',
         end: '#2196F3', 
         item: '#FFD700', 
-        blocked: '#1e3f1e'
+        blocked: '#3a5a3a'
         
     },
     levels: {
