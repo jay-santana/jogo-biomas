@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (pageTitle.includes('mata atlântica')) biome = 'atlantic';
                     else if (pageTitle.includes('amazônia') || pageTitle.includes('amazonia')) biome = 'amazon';
                     else if (pageTitle.includes('cerrado')) biome = 'cerrado';
-                    else if (pageTitle.includes('pantanal')) biome = 'pantanal';
                     else if (pageTitle.includes('caatinga')) biome = 'caatinga';
+                    else if (pageTitle.includes('pantanal')) biome = 'pantanal';
                     else biome = 'atlantic'; // Padrão
                 }
                 
@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Obter progresso do localStorage
         const progress = JSON.parse(localStorage.getItem('gameProgress')) || {
             'atlantic': [true, false, false, false, false, false], // Padrão: apenas nível 1 desbloqueado
-            'amazon': [false, false, false, false, false, false],
-            'cerrado': [false, false, false, false, false, false],
-            'pantanal': [false, false, false, false, false, false],
-            'caatinga': [false, false, false, false, false, false],
+            'amazon': [true, false, false, false, false, false],
+            'cerrado': [true, false, false, false, false, false],
+            'caatinga': [true, false, false, false, false, false],
+            'pantanal': [true, false, false, false, false, false]
         };
         
         // Obter o bioma atual
@@ -56,13 +56,15 @@ document.addEventListener('DOMContentLoaded', function() {
             if (pageTitle.includes('mata atlântica')) biome = 'atlantic';
             else if (pageTitle.includes('amazônia') || pageTitle.includes('amazonia')) biome = 'amazon';
             else if (pageTitle.includes('cerrado')) biome = 'cerrado';
-            else if (pageTitle.includes('pantanal')) biome = 'pantanal';
             else if (pageTitle.includes('caatinga')) biome = 'caatinga';
+            else if (pageTitle.includes('pantanal')) biome = 'pantanal';
             else biome = 'atlantic'; // Padrão
         }
         
-        const biomeProgress = progress[biome] || [true, false, false, false, false, false];
-        
+        let biomeProgress = progress[biome] || [true, false, false, false, false, false];
+        if (biomeProgress.length < 6) {
+            biomeProgress = [...biomeProgress, ...Array(6 - biomeProgress.length).fill(false)];
+        }
         const levelCards = document.querySelectorAll('.level-card');
         levelCards.forEach((card, index) => {
             if (biomeProgress[index]) {
