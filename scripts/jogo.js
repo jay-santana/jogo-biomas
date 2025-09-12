@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
         atlantic: atlanticLevels.colorPalette,
         amazon: amazonLevels.colorPalette,
         cerrado: cerradoLevels.colorPalette,
-        pantanal: pantanalLevels.colorPalette,
-        caatinga: caatingaLevels.colorPalette
+        caatinga: caatingaLevels.colorPalette,
+        pantanal: pantanalLevels.colorPalette
     };
     
     // Configurações dos níveis
@@ -57,14 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
             titulo: cerradoLevels.name,
             fases: cerradoLevels.levels
         },
-        pantanal: {
-            titulo: pantanalLevels.name,
-            fases: pantanalLevels.levels
-        },
         caatinga: {
             titulo: caatingaLevels.name,
             fases: caatingaLevels.levels
-        }
+        },
+        pantanal: {
+            titulo: pantanalLevels.name,
+            fases: pantanalLevels.levels
+        }  
     };
     
     // Atualizar título do nível
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gameState.steps++;
             updateCounters();
             checkForItem();
-            if (checkWinCondition()) break;
+            if (checkWinCondition()) break; //linha erro 231
             await new Promise(resolve => setTimeout(resolve, 500));
         }
         
@@ -296,12 +296,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function saveProgress(biome, level, steps) {
         // Carregar progresso existente ou criar novo
         const progress = JSON.parse(localStorage.getItem('gameProgress')) || {
-            'atlantic': [false, false, false, false, false],
-            'amazon': [false, false, false, false, false],
-            'cerrado': [false, false, false, false, false],
-            'pantanal': [false, false, false, false, false],
-            'caatinga': [false, false, false, false, false],
-
+            'atlantic': [false, false, false, false, false, false],
+            'amazon': [false, false, false, false, false, false],
+            'cerrado': [false, false, false, false, false, false],
+            'caatinga': [false, false, false, false, false, false],
+            'pantanal': [false, false, false, false, false, false],
         };
         
         // Marcar nível atual como concluído
@@ -309,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
         progress[biome][levelIndex] = true;
         
         // Se não for o último nível, desbloquear o próximo
-        if (levelIndex < 4) {
+        if (levelIndex < 5) {
             progress[biome][levelIndex + 1] = true;
         }
         
@@ -329,7 +328,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         console.log(`Progresso salvo: ${biome}, nível ${level}, ${steps} passos`);
     }
-
     
     // Resetar jogo
     resetBtn.addEventListener('click', resetGame);
@@ -354,8 +352,8 @@ document.addEventListener('DOMContentLoaded', function() {
             'atlantic': 'Mata Atlântica',
             'amazon': 'Amazônia',
             'cerrado': 'Cerrado',
-            'pantanal': 'Pantanal',
-            'caatinga': 'Caatinga'
+            'caatinga': 'Caatinga',
+            'pantanal': 'Pantanal'
         };
         return names[biome] || 'Bioma Desconhecido';
     }
