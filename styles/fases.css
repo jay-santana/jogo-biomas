@@ -7,7 +7,13 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    /* background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); */
+    background-image: url('../assets/background-fases.png');
+    background-color: #28515f;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
     min-height: 100vh;
     padding: 20px;
 }
@@ -53,14 +59,14 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .biome-card {
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
-    width: 300px;
+    width: 220px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 }
@@ -70,7 +76,7 @@ h1 {
 }
 
 .biome-image {
-    height: 180px;
+    height: 80px;
     background-size: cover;
     background-position: center;
 }
