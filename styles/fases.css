@@ -8,8 +8,8 @@
 
 body {
     /* background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); */
-    background-image: url('../assets/background-fases.png');
-    background-color: #28515f;
+    background-image: url('../assets/background-fases-2.png');
+    background-color: #476963; /*28515f*/
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
