@@ -177,9 +177,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const cell = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`);
         const character = document.createElement('div');
         character.classList.add('character');
-        character.textContent = 'L';
+        // frame inicial olhando para baixo
+        character.style.backgroundPosition = "0px 0px";
         cell.appendChild(character);
         gameState.characterPosition = { x, y };
+    }
+
+    function updateCharacterSprite(direction, frame = 0) {
+        const character = document.querySelector('.character');
+        if (!character) return;
+
+        const frameWidth = 64;
+        const frameHeight = 88;
+
+        // cada linha do spritesheet corresponde a uma direção
+        const directions = { down: 3, left: 2, right: 1, up: 0 };
+
+        const posX = -frame * frameWidth;
+        const posY = -directions[direction] * frameHeight;
+
+        character.style.backgroundPosition = `${posX}px ${posY}px`;
     }
     
     // Configurar blocos de comando
@@ -228,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gameState.steps++;
             updateCounters();
             checkForItem();
-            if (checkWinCondition()) break; //linha erro 231
+            if (checkWinCondition()) break;
             await new Promise(resolve => setTimeout(resolve, 500));
         }
         
@@ -248,6 +265,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (gameState.grid[newY][newX] !== 'obstacle' && gameState.grid[newY][newX] !== 'blocked') {
                 placeCharacter(newX, newY);
+                // animação simples: alterna entre 0 e 1
+                const animFrame = gameState.steps % 2; 
+                updateCharacterSprite(direction, animFrame);
             } else {
                 // Feedback visual de movimento bloqueado
                 const cell = document.querySelector(`.cell[data-x="${newX}"][data-y="${newY}"]`);

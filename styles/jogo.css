@@ -67,7 +67,7 @@ h1 {
     flex: 1;
     min-width: 300px;
     padding: 1px;
-    background-image: url('../assets/NV1/fundo.png');
+    /* background-image: url('../assets/NV1/fundo.png'); */
     border-radius: 8px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -135,10 +135,11 @@ h1 {
 }
 
 .character {
-    background-color: #FF5722;
-    border-radius: 50%;
-    width: 80%;
-    height: 80%;
+    background: url("../assets/personagem/spritesheet-pers-3.png") no-repeat;
+    background-position: 0 0; /* posição inicial */
+    image-rendering: pixelated; /* mantém estilo retrô se for pixel art */
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
