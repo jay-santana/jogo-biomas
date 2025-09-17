@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cell.style.backgroundColor = biomeColors[type];
     }
     
-    function placeCharacter(x, y) {
+    function placeCharacter(x, y, initialDirection = 'down') {
         document.querySelectorAll('.character').forEach(el => el.remove());
         const cell = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`);
         const character = document.createElement('div');
@@ -181,6 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
         character.style.backgroundPosition = "0px 0px";
         cell.appendChild(character);
         gameState.characterPosition = { x, y };
+        updateCharacterSprite(initialDirection, 0);
     }
 
     function updateCharacterSprite(direction, frame = 0) {
@@ -240,8 +241,19 @@ document.addEventListener('DOMContentLoaded', function() {
         resetBtn.disabled = true;
         gameState.steps = 0;
         
-        for (let command of gameState.commands) {
-            await moveCharacter(command);
+            for (let command of gameState.commands) {
+            const movementResult = await moveCharacter(command);
+            
+            // Se o movimento foi bloqueado, interrompe a execução
+            if (movementResult === 'blocked') {
+                // Aguarda um pouco para mostrar o feedback visual
+                await new Promise(resolve => setTimeout(resolve, 800));
+                resetGame();
+                runBtn.disabled = false;
+                resetBtn.disabled = false;
+                return;
+            }
+            
             gameState.steps++;
             updateCounters();
             checkForItem();
@@ -263,18 +275,29 @@ document.addEventListener('DOMContentLoaded', function() {
             if (direction === 'left') newX = Math.max(0, x - 1);
             if (direction === 'right') newX = Math.min(9, x + 1);
             
+            // Atualizar a direção do personagem independentemente do movimento
+            updateCharacterSprite(direction, 0);
+            
             if (gameState.grid[newY][newX] !== 'obstacle' && gameState.grid[newY][newX] !== 'blocked') {
+                // Movimento permitido - atualizar posição
                 placeCharacter(newX, newY);
-                // animação simples: alterna entre 0 e 1
+                // Animação de movimento
                 const animFrame = gameState.steps % 2; 
                 updateCharacterSprite(direction, animFrame);
+                setTimeout(() => resolve('success'), 300);
             } else {
+                // Movimento bloqueado - manter posição mas mostrar tentativa
+                const animFrame = gameState.steps % 2;
+                updateCharacterSprite(direction, animFrame);
+                
                 // Feedback visual de movimento bloqueado
                 const cell = document.querySelector(`.cell[data-x="${newX}"][data-y="${newY}"]`);
                 cell.classList.add('blocked-shake');
-                setTimeout(() => cell.classList.remove('blocked-shake'), 300);
+                setTimeout(() => {
+                    cell.classList.remove('blocked-shake');
+                    resolve('blocked');
+                }, 300);
             }
-            setTimeout(resolve, 300);
         });
     }
     
