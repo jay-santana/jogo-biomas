@@ -119,8 +119,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // função responsável por configurar o grid do jogo com base no bioma e nível selecionados
     function initializeGame(biome, level) {
         const faseConfig = gameLevels[biome]?.fases[level] || gameLevels.atlantic.fases[1];
+        setGridBackground(biome); // Definir o fundo do grid
         initializeGrid(faseConfig);
         updateCounters();
+    }
+
+    function setGridBackground(biome) {
+        // Remove classes de bioma existentes
+        const grid = document.getElementById('grid');
+        grid.classList.remove('atlantic', 'amazon', 'cerrado', 'caatinga', 'pantanal');
+        
+        // Adiciona a classe correspondente ao bioma atual
+        grid.classList.add(biome);
+        
+        // Define um fallback caso a imagem não carregue
+        setTimeout(() => {
+            const computedStyle = window.getComputedStyle(grid);
+            if (computedStyle.backgroundImage === 'none' || 
+                computedStyle.backgroundImage.includes('undefined')) {
+                console.warn(`Imagem de fundo para ${biome} não encontrada, usando cor de fallback`);
+                grid.style.backgroundColor = getBiomeFallbackColor(biome);
+            }
+        }, 100);
+    }
+
+    // Função para obter cor de fallback para cada bioma
+    function getBiomeFallbackColor(biome) {
+        const fallbackColors = {
+            'atlantic': '#2E8B57', // Verde Mata Atlântica
+            'amazon': '#228B22',   // Verde Floresta Amazônica
+            'cerrado': '#DAA520',  // Dourado do Cerrado
+            'caatinga': '#CD853F', // Marrom Caatinga
+            'pantanal': '#20B2AA'  // Azul Pantanal
+        };
+        return fallbackColors[biome] || '#6B8E23'; // Cor padrão se não encontrado
     }
     
     function initializeGrid(faseConfig) {
@@ -169,7 +201,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function applyBiomeStyle(cell, type) {
         const biomeColors = biomes[gameState.currentBiome];
-        cell.style.backgroundColor = biomeColors[type];
+        
+        // Se for uma célula de caminho, usar transparente para mostrar o fundo
+        if (type === 'path') {
+            cell.style.backgroundColor = 'rgba(233, 217, 133, 0.7)'; // Semi-transparente
+        } else {
+            cell.style.backgroundColor = biomeColors[type];
+        }
+        
+        // Adicionar ícones ou bordas especiais para tipos específicos
+        if (type === 'start') {
+            cell.style.display = 'flex';
+            cell.style.justifyContent = 'center';
+            cell.style.alignItems = 'center';
+            cell.style.fontSize = '30px';
+        } else if (type === 'end') {
+            cell.style.display = 'flex';
+            cell.style.justifyContent = 'center';
+            cell.style.alignItems = 'center';
+            cell.style.fontSize = '30px';
+        } else if (type === 'item') {
+            cell.innerHTML = '⭐'; // Ícone de item
+            cell.style.display = 'flex';
+            cell.style.justifyContent = 'center';
+            cell.style.alignItems = 'center';
+            cell.style.fontSize = '20px';
+        }
     }
     
     function placeCharacter(x, y, initialDirection = 'down') {
