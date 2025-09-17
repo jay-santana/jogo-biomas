@@ -9,7 +9,7 @@
 <body>
     <div class="game-container">
         <header>
-            <h1>Aventura nos Biomas Brasileiros</h1>
+            <h2 id="level-title">Aventura nos Biomas Brasileiros</h2>
             <div class="header-buttons">
                 <button id="help-btn" class="help-btn">Ajuda</button>
                 <button id="menu-btn" class="menu-btn">Menu</button>
@@ -21,29 +21,28 @@
                 <div class="grid" id="grid"></div>
             </div>
             
-            <div class="controls-container">
-                <div class="level-info">
-                    <h2 id="level-title">Mata Atlântica - Nível 1</h2>
-                    <p id="steps-counter">Passos: 0</p>
-                    <p id="items-counter">Itens: 0/0</p>
+            <div class="commands-panel">
+                <div class="controls-container">
+                    <div class="level-info">
+                        <p id="steps-counter">Passos: 0</p>
+                        <p id="items-counter">Itens: 0/0</p>
+                    </div>
+                    
+                </div>
+                <div class="commands-title">Blocos de Comando</div>
+                <div class="command-blocks">
+                    <div class="command-block" data-command="up">↑</div>
+                    <div class="command-block" data-command="down">↓</div>
+                    <div class="command-block" data-command="left">←</div>
+                    <div class="command-block" data-command="right">→</div>
                 </div>
                 
-                <div class="commands-panel">
-                    <div class="commands-title">Blocos de Comando</div>
-                    <div class="command-blocks">
-                        <div class="command-block" data-command="up">↑</div>
-                        <div class="command-block" data-command="down">↓</div>
-                        <div class="command-block" data-command="left">←</div>
-                        <div class="command-block" data-command="right">→</div>
-                    </div>
-                    
-                    <div class="commands-title">Sequência de Comandos</div>
-                    <div class="command-sequence" id="command-sequence"></div>
-                    
-                    <div class="action-buttons">
-                        <button class="run-btn" id="run-btn">Executar</button>
-                        <button class="reset-btn" id="reset-btn">Resetar</button>
-                    </div>
+                <div class="commands-title">Sequência de Comandos</div>
+                <div class="command-sequence" id="command-sequence"></div>
+                
+                <div class="action-buttons">
+                    <button class="run-btn" id="run-btn">Executar</button>
+                    <button class="reset-btn" id="reset-btn">Resetar</button>
                 </div>
             </div>
         </div>

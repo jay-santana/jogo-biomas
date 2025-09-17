@@ -39,11 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkProgress() {
         // Obter progresso do localStorage
         const progress = JSON.parse(localStorage.getItem('gameProgress')) || {
-            'atlantic': [true, false, false, false, false, false], // Padrão: apenas nível 1 desbloqueado
-            'amazon': [true, false, false, false, false, false],
-            'cerrado': [true, false, false, false, false, false],
-            'caatinga': [true, false, false, false, false, false],
-            'pantanal': [true, false, false, false, false, false]
+            'atlantic': [true, false, false, false, false, false]
         };
         
         // Obter o bioma atual

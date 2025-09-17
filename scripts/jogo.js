@@ -119,8 +119,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // função responsável por configurar o grid do jogo com base no bioma e nível selecionados
     function initializeGame(biome, level) {
         const faseConfig = gameLevels[biome]?.fases[level] || gameLevels.atlantic.fases[1];
+        setGridBackground(biome); // Definir o fundo do grid
         initializeGrid(faseConfig);
         updateCounters();
+    }
+
+    function setGridBackground(biome) {
+        // Remove classes de bioma existentes
+        const grid = document.getElementById('grid');
+        grid.classList.remove('atlantic', 'amazon', 'cerrado', 'caatinga', 'pantanal');
+        
+        // Adiciona a classe correspondente ao bioma atual
+        grid.classList.add(biome);
+        
+        // Define um fallback caso a imagem não carregue
+        setTimeout(() => {
+            const computedStyle = window.getComputedStyle(grid);
+            if (computedStyle.backgroundImage === 'none' || 
+                computedStyle.backgroundImage.includes('undefined')) {
+                console.warn(`Imagem de fundo para ${biome} não encontrada, usando cor de fallback`);
+                grid.style.backgroundColor = getBiomeFallbackColor(biome);
+            }
+        }, 100);
+    }
+
+    // Função para obter cor de fallback para cada bioma
+    function getBiomeFallbackColor(biome) {
+        const fallbackColors = {
+            'atlantic': '#2E8B57', // Verde Mata Atlântica
+            'amazon': '#228B22',   // Verde Floresta Amazônica
+            'cerrado': '#DAA520',  // Dourado do Cerrado
+            'caatinga': '#CD853F', // Marrom Caatinga
+            'pantanal': '#20B2AA'  // Azul Pantanal
+        };
+        return fallbackColors[biome] || '#6B8E23'; // Cor padrão se não encontrado
     }
     
     function initializeGrid(faseConfig) {
@@ -169,17 +201,60 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function applyBiomeStyle(cell, type) {
         const biomeColors = biomes[gameState.currentBiome];
-        cell.style.backgroundColor = biomeColors[type];
+        
+        // Se for uma célula de caminho, usar transparente para mostrar o fundo
+        if (type === 'path') {
+            cell.style.backgroundColor = 'rgba(233, 217, 133, 0.7)'; // Semi-transparente
+        } else {
+            cell.style.backgroundColor = biomeColors[type];
+        }
+        
+        // Adicionar ícones ou bordas especiais para tipos específicos
+        if (type === 'start') {
+            cell.style.display = 'flex';
+            cell.style.justifyContent = 'center';
+            cell.style.alignItems = 'center';
+            cell.style.fontSize = '30px';
+        } else if (type === 'end') {
+            cell.style.display = 'flex';
+            cell.style.justifyContent = 'center';
+            cell.style.alignItems = 'center';
+            cell.style.fontSize = '30px';
+        } else if (type === 'item') {
+            cell.innerHTML = '⭐'; // Ícone de item
+            cell.style.display = 'flex';
+            cell.style.justifyContent = 'center';
+            cell.style.alignItems = 'center';
+            cell.style.fontSize = '20px';
+        }
     }
     
-    function placeCharacter(x, y) {
+    function placeCharacter(x, y, initialDirection = 'down') {
         document.querySelectorAll('.character').forEach(el => el.remove());
         const cell = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`);
         const character = document.createElement('div');
         character.classList.add('character');
-        character.textContent = 'L';
+        // frame inicial olhando para baixo
+        character.style.backgroundPosition = "0px 0px";
         cell.appendChild(character);
         gameState.characterPosition = { x, y };
+        updateCharacterSprite(initialDirection, 0);
+    }
+
+    function updateCharacterSprite(direction, frame = 0) {
+        const character = document.querySelector('.character');
+        if (!character) return;
+
+        const frameWidth = 64;
+        const frameHeight = 88;
+
+        // cada linha do spritesheet corresponde a uma direção
+        const directions = { down: 3, left: 2, right: 1, up: 0 };
+
+        const posX = -frame * frameWidth;
+        const posY = -directions[direction] * frameHeight;
+
+        character.style.backgroundPosition = `${posX}px ${posY}px`;
     }
     
     // Configurar blocos de comando
@@ -223,12 +298,23 @@ document.addEventListener('DOMContentLoaded', function() {
         resetBtn.disabled = true;
         gameState.steps = 0;
         
-        for (let command of gameState.commands) {
-            await moveCharacter(command);
+            for (let command of gameState.commands) {
+            const movementResult = await moveCharacter(command);
+            
+            // Se o movimento foi bloqueado, interrompe a execução
+            if (movementResult === 'blocked') {
+                // Aguarda um pouco para mostrar o feedback visual
+                await new Promise(resolve => setTimeout(resolve, 800));
+                resetGame();
+                runBtn.disabled = false;
+                resetBtn.disabled = false;
+                return;
+            }
+            
             gameState.steps++;
             updateCounters();
             checkForItem();
-            if (checkWinCondition()) break; //linha erro 231
+            if (checkWinCondition()) break;
             await new Promise(resolve => setTimeout(resolve, 500));
         }
         
@@ -246,15 +332,29 @@ document.addEventListener('DOMContentLoaded', function() {
             if (direction === 'left') newX = Math.max(0, x - 1);
             if (direction === 'right') newX = Math.min(9, x + 1);
             
+            // Atualizar a direção do personagem independentemente do movimento
+            updateCharacterSprite(direction, 0);
+            
             if (gameState.grid[newY][newX] !== 'obstacle' && gameState.grid[newY][newX] !== 'blocked') {
+                // Movimento permitido - atualizar posição
                 placeCharacter(newX, newY);
+                // Animação de movimento
+                const animFrame = gameState.steps % 2; 
+                updateCharacterSprite(direction, animFrame);
+                setTimeout(() => resolve('success'), 300);
             } else {
+                // Movimento bloqueado - manter posição mas mostrar tentativa
+                const animFrame = gameState.steps % 2;
+                updateCharacterSprite(direction, animFrame);
+                
                 // Feedback visual de movimento bloqueado
                 const cell = document.querySelector(`.cell[data-x="${newX}"][data-y="${newY}"]`);
                 cell.classList.add('blocked-shake');
-                setTimeout(() => cell.classList.remove('blocked-shake'), 300);
+                setTimeout(() => {
+                    cell.classList.remove('blocked-shake');
+                    resolve('blocked');
+                }, 300);
             }
-            setTimeout(resolve, 300);
         });
     }
     
@@ -296,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function saveProgress(biome, level, steps) {
         // Carregar progresso existente ou criar novo
         const progress = JSON.parse(localStorage.getItem('gameProgress')) || {
-            'atlantic': [false, false, false, false, false, false],
+            'atlantic': [true, false, false, false, false, false],
             'amazon': [false, false, false, false, false, false],
             'cerrado': [false, false, false, false, false, false],
             'caatinga': [false, false, false, false, false, false],
