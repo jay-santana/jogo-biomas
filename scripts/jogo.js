@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function saveProgress(biome, level, steps) {
         // Carregar progresso existente ou criar novo
         const progress = JSON.parse(localStorage.getItem('gameProgress')) || {
-            'atlantic': [false, false, false, false, false, false],
+            'atlantic': [true, false, false, false, false, false],
             'amazon': [false, false, false, false, false, false],
             'cerrado': [false, false, false, false, false, false],
             'caatinga': [false, false, false, false, false, false],
