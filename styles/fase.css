@@ -1,19 +1,24 @@
 /* styles/fase.css */
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background:  linear-gradient(135deg, #557a69, #3c6158, #2f9789);
     min-height: 100vh;
     padding: 20px;
 }
 
 .container {
-    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -21,44 +26,80 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.title-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 h1 {
-    color: #2E8B57;
-    font-size: 2.2rem;
+  font-size: 1.5rem;
+  margin-bottom: -8px;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,-1px 1px 0 #000;
+  text-decoration: underline;
+  line-height: 1.4;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #edcd5d;
 }
 
-.back-btn {
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #f44336, #d32f2f);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s ease;
+h2 {
+  font-size: 1em;
+  margin-top: -5px;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,-1px 1px 0 #000;
+  line-height: 1.4;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 5px;
+  border-radius: 10px;
+  color: #edcd5d;
 }
 
-.back-btn:hover {
-    background: linear-gradient(135deg, #d32f2f, #f44336);
-    transform: translateY(-2px);
+#back-btn {
+  padding: 10px 20px;
+  background: #443328;
+  color: #ded597;
+  border-style: solid;
+  border-color: #c5a274;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#back-btn:hover {
+  background: #744c33;
+  transform: translateY(-2px);
+}
+
+.image-container img {
+    max-width: 200px;
+    width: 100%;
+    height: auto; 
+    display: block;
+    margin: 0 auto;
 }
 
 .levels-container {
+    width: 500px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    padding: 20px;
 }
 
-.level-card {
+ .level-card {
+    width: 80%;
     background-color: white;
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -68,22 +109,10 @@ h1 {
     transform: translateY(-5px);
 }
 
-.level-card h3 {
-    color: #2E8B57;
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-}
-
-.level-status {
-    margin-bottom: 15px;
-    padding: 5px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
 .level-status.unlocked {
     background-color: #4CAF50;
     color: white;
+    font-size: 3rem;
 }
 
 .level-status.locked {
@@ -92,7 +121,7 @@ h1 {
 }
 
 .start-btn {
-    padding: 10px 20px;
+    padding: 10px 10px;
     background: linear-gradient(135deg, #4CAF50, #2E8B57);
     color: white;
     border: none;
@@ -100,7 +129,7 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s ease;
-    width: 100%;
+    font-size: 3rem;
 }
 
 .start-btn:hover:not(:disabled) {
