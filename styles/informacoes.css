@@ -1,9 +1,10 @@
 /* styles/informacoes.css */
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
