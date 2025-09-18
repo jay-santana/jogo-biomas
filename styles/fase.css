@@ -88,7 +88,8 @@ h2 {
 }
 
 .levels-container {
-    width: 500px;
+    width: 100%;
+    max-width: 445px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -96,11 +97,11 @@ h2 {
 }
 
  .level-card {
-    width: 80%;
+    width: 72%;
+    max-width: 100px;
     background-color: white;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
+    border-radius: 5px;
+    padding: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -121,7 +122,7 @@ h2 {
 }
 
 .start-btn {
-    padding: 10px 10px;
+    padding: 12px;
     background: linear-gradient(135deg, #4CAF50, #2E8B57);
     color: white;
     border: none;
@@ -151,11 +152,7 @@ h2 {
     
     .levels-container {
         grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .levels-container {
-        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-left: 45px;
     }
 }
