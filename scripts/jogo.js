@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Atualizar título do nível
-    levelTitle.textContent = `${formatBiomeName(biome)} - Nível ${level}`;
+    levelTitle.textContent = `${formatBiomeName(biome)} - NIVEL ${level}`;
     
     // Inicializar o jogo
     initializeGame(biome, parseInt(level));
@@ -270,26 +270,43 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function updateCommandDisplay() {
-        commandSequence.innerHTML = '';
-        gameState.commands.forEach((cmd, index) => {
-            const cmdElement = document.createElement('div');
-            cmdElement.classList.add('command-block');
-            cmdElement.textContent = getCommandSymbol(cmd);
-            cmdElement.dataset.index = index;
-            
-            cmdElement.addEventListener('click', () => {
-                gameState.commands.splice(index, 1);
-                updateCommandDisplay();
-            });
-            
-            commandSequence.appendChild(cmdElement);
-        });
-    }
+      commandSequence.innerHTML = '';
+      gameState.commands.forEach((cmd, index) => {
+          const cmdElement = document.createElement('div');
+          cmdElement.classList.add('command-block');
+          
+          // Adiciona a imagem em vez do texto
+          const commandImg = getCommandSymbol(cmd);
+          cmdElement.appendChild(commandImg);
+          
+          cmdElement.dataset.index = index;
+          
+          cmdElement.addEventListener('click', () => {
+              gameState.commands.splice(index, 1);
+              updateCommandDisplay();
+          });
+          
+          commandSequence.appendChild(cmdElement);
+      });
+  }
     
     function getCommandSymbol(command) {
-        return { up: '↑', down: '↓', left: '←', right: '→' }[command] || '?';
-    }
-    
+      const imagePaths = {
+          up: '../assets/setas/arrow-up.png',
+          down: '../assets/setas/arrow-down.png',
+          left: '../assets/setas/arrow-left.png',
+          right: '../assets/setas/arrow-right.png'
+      };
+      
+      const img = document.createElement('img');
+      img.src = imagePaths[command] || '../assets/setas/unknown.png';
+      img.alt = command;
+      img.style.width = '40px'; // Ajuste o tamanho conforme necessário
+      img.style.height = '40px';
+      
+      return img;
+  }
+      
     // Executar comandos
     runBtn.addEventListener('click', executeCommands);
     
@@ -443,17 +460,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function updateCounters() {
-        stepsCounter.textContent = `Passos: ${gameState.steps}`;
-        itemsCounter.textContent = `Itens: ${gameState.itemsCollected}/${gameState.totalItems}`;
+        stepsCounter.textContent = `PASSOS: ${gameState.steps}`;
+        itemsCounter.textContent = `ITENS: ${gameState.itemsCollected}/${gameState.totalItems}`;
     }
     
     function formatBiomeName(biome) {
         const names = {
-            'atlantic': 'Mata Atlântica',
-            'amazon': 'Amazônia',
-            'cerrado': 'Cerrado',
-            'caatinga': 'Caatinga',
-            'pantanal': 'Pantanal'
+            'atlantic': 'MATA ATLANTICA',
+            'amazon': 'AMAZONIA',
+            'cerrado': 'CERRADO',
+            'caatinga': 'CAATINGA',
+            'pantanal': 'PANTANAL'
         };
         return names[biome] || 'Bioma Desconhecido';
     }
