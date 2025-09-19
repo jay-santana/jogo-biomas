@@ -17,8 +17,8 @@ body {
 }
 
 .game-container {
-  width: 90%;
-  /* height: 100vh; */
+  width: 100%;
+  min-height: calc(100vh - 40px); /* Subtrai o padding do body */
   max-width: 1200px;
   border-radius: 1px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -327,7 +327,6 @@ img {
 .reset-btn {
   padding: 12px 20px;
   border: none;
-  /* border-radius: 6px; */
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -397,22 +396,49 @@ img {
 }
 
 .modal-content {
-  background-color: white;
   padding: 30px;
-  border-radius: 15px;
-  max-width: 500px;
+  max-width: 600px;
+  height: auto;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  /* width: fit-content;
+  height: fit-content; */
+  margin-left: 15px;
+  background-color: #947356;
+  box-shadow: 
+    4px 0 0 0 #573929,
+    -4px 0 0 0 #573929,
+    0 4px 0 0 #573929,
+    0 -4px 0 0 #573929,
+    8px 0 0 0 #573929,
+    -8px 0 0 0 #573929,
+    0 8px 0 0 #573929,
+    0 -8px 0 0 #573929,
+    4px 4px 0 0 #573929,
+    -4px 4px 0 0 #573929,
+    4px -4px 0 0 #573929,
+    -4px -4px 0 0 #573929;
 }
 
 .modal h2 {
-  color: #2e8b57;
-  margin-bottom: 15px;
+  font-size: 1.5rem;
+  margin-bottom: -8px;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,-1px 1px 0 #000;
+  text-decoration: underline;
+  text-align: center;
+  padding-bottom: 20px;
+  color: #edcd5d;
 }
 
 .modal p {
-  margin-bottom: 10px;
-  color: #666;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #e2d1a0;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  padding: 10px;
 }
 
 .modal-buttons {
@@ -443,11 +469,30 @@ img {
 
 #menu-modal-btn,
 #close-help-btn {
-  background: linear-gradient(135deg, #f44336, #d32f2f);
-  color: white;
+  cursor: pointer;
+  width: 120px;
+  height: 30px;
+  background: radial-gradient(circle,rgba(249, 87, 75, 1) 0%, rgba(181, 37, 28, 1) 100%);
+  color: #f0f7d3;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
+  box-shadow: 
+    2px 0 0 0 #573929,
+    -2px 0 0 0 #573929,
+    0 2px 0 0 #573929,
+    0 -2px 0 0 #573929,
+    4px 0 0 0 #573929,
+    -4px 0 0 0 #573929,
+    0 4px 0 0 #573929,
+    0 -4px 0 0 #573929,
+    2px 2px 0 0 #573929,
+    -2px 2px 0 0 #573929,
+    2px -2px 0 0 #573929,
+    -2px -2px 0 0 #573929;
 }
 
 .modal-buttons button:hover {
+  background: linear-gradient(135deg, #d32f2f, #f44336);
   transform: translateY(-2px);
 }
 
