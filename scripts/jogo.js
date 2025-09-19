@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Configurar botões
     menuBtn.addEventListener('click', function() {
-        window.location.href = 'index.html';
+        window.location.href = 'fases.html';
     });
     
     helpBtn.addEventListener('click', function() {
