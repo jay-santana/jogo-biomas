@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function showVictory() {
-        stepsResult.textContent = `Você completou o nível em ${gameState.steps} passos`;
+        stepsResult.textContent = `VOCE COMPLETOU O NIVEL EM ${gameState.steps} PASSOS`;
         victoryModal.style.display = 'flex';
         
         // Salvar progresso

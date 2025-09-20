@@ -403,12 +403,14 @@ img {
 }
 
 .modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 30px;
-  max-width: 600px;
+  max-width: 400px;
   height: auto;
   text-align: center;
-  /* width: fit-content;
-  height: fit-content; */
   margin-left: 15px;
   background-color: #947356;
   box-shadow: 
@@ -451,34 +453,71 @@ img {
 .modal-buttons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
   margin-top: 20px;
 }
 
 .modal-buttons button {
   padding: 12px 20px;
   border: none;
-  border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 #continue-btn {
-  background: linear-gradient(135deg, #4caf50, #2e8b57);
-  color: white;
+   background: radial-gradient(circle,rgba(95, 189, 42, 1) 0%, rgba(65, 152, 30, 1) 50%, rgba(47, 118, 26, 1) 100%);
+  color: #f0f7d3;
+  width: fit-content;
+  height: fit-content;
+
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
+  box-shadow: 
+    2px 0 0 0 #573929,
+    -2px 0 0 0 #573929,
+    0 2px 0 0 #573929,
+    0 -2px 0 0 #573929,
+    4px 0 0 0 #573929,
+    -4px 0 0 0 #573929,
+    0 4px 0 0 #573929,
+    0 -4px 0 0 #573929,
+    2px 2px 0 0 #573929,
+    -2px 2px 0 0 #573929,
+    2px -2px 0 0 #573929,
+    -2px -2px 0 0 #573929;
 }
 
 #replay-btn {
   background: linear-gradient(135deg, #2196f3, #0d47a1);
-  color: white;
+  color: #f0f7d3;
+  width: fit-content;
+  height: fit-content;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
+  box-shadow: 
+    2px 0 0 0 #573929,
+    -2px 0 0 0 #573929,
+    0 2px 0 0 #573929,
+    0 -2px 0 0 #573929,
+    4px 0 0 0 #573929,
+    -4px 0 0 0 #573929,
+    0 4px 0 0 #573929,
+    0 -4px 0 0 #573929,
+    2px 2px 0 0 #573929,
+    -2px 2px 0 0 #573929,
+    2px -2px 0 0 #573929,
+    -2px -2px 0 0 #573929;
 }
 
 #menu-modal-btn,
 #close-help-btn {
   cursor: pointer;
+  border: none;
   width: 120px;
-  height: 30px;
+  height: 35px;
   background: radial-gradient(circle,rgba(249, 87, 75, 1) 0%, rgba(181, 37, 28, 1) 100%);
   color: #f0f7d3;
   text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
