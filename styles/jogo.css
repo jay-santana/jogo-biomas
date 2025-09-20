@@ -9,22 +9,25 @@
 body {
   background: linear-gradient(135deg, #557a69, #3c6158, #2f9789);
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 
 .game-container {
   width: 100%;
-  min-height: calc(100vh - 40px); /* Subtrai o padding do body */
+  min-height: 100vh;
   max-width: 1200px;
   border-radius: 1px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   position: relative;
   border-radius: 10px;
+  margin: 20px;
 }
 
 header {
@@ -39,10 +42,9 @@ h2 {
   margin-bottom: -8px;
   text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,-1px 1px 0 #000;
   text-decoration: underline;
-  line-height: 1.4;
-  text-align: center;
   letter-spacing: 1px;
   padding: 10px;
+  padding-left: 30px;
   border-radius: 10px;
   color: #edcd5d;
 }
@@ -75,15 +77,16 @@ h2 {
 .game-area {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  padding: 15px;
+  max-height: calc(100vh - 150px); /* Limita a altura máxima */
 }
 
 .map-container {
-  min-width: 400px;
-  padding: 10px;
+  min-width: 300px;
+  max-width: 520px;
   border-radius: 8px;
+  padding: 10px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -92,8 +95,8 @@ h2 {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(10, 52px);
-  grid-template-rows: repeat(12, 52px);
+  grid-template-columns: repeat(10, minmax(18px, 38px)); /* Tamanhos flexíveis */
+  grid-template-rows: repeat(12, minmax(18px, 38px));
   gap: 2px;
   padding: 5px;
   border-radius: 8px;
@@ -102,7 +105,9 @@ h2 {
   position: relative;
   background-size: cover;
   background-position: center;
-  min-height: 484px;
+  width: 100%; /* Ocupa 100% do container */
+  height: auto; /* Altura automática */
+  aspect-ratio: 10/12; /* Mantém proporção do grid */
 }
 
 .grid.atlantic {
@@ -126,8 +131,8 @@ h2 {
 }
 
 .cell {
-  width: 52px;
-  height: 52px;
+  width: 100%;
+  height: 100%;
   border-radius: 4px;
   position: relative;
   background-color: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente */
@@ -181,10 +186,10 @@ h2 {
 
 .character {
   background: url("../assets/personagem/spritesheet-pers-2.png") no-repeat;
-  top: 0;
-  left: 0;
-  width: 64px;
-  height: 88px;
+  top: -10px;
+  left: -5px;
+  width: 63px;
+  height: 84px;
   position: absolute;
   image-rendering: pixelated;
   transform: translate(-15%, -35%) scale(1);
@@ -192,19 +197,20 @@ h2 {
 
 .commands-panel {
   display: flex;
+  height: 498px;
   border-radius: 8px;
-  padding: 25px 15px 15px 15px;
   margin-bottom: 15px;
+  padding: 25px 10px 10px 10px; /* Padding reduzido */
 }
 
 .controls-container {
-  flex: 1;
-  width: 100%;
-  padding: 20px;
+  /* flex: 1; */
+  width: fit-content;
+  padding: 20px 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap: 10px;
+  gap: 15px;
   background-color: #947356;
     box-shadow: 
     6px 0 0 0 #573929,
@@ -244,31 +250,29 @@ h2 {
     -4px -4px 0 0 #573929;
 }
 
-.level-info h2 {
-  color: #2e8b57;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
 .level-info p {
   color: #573929;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin-bottom: 5px;
 }
 
-
 .commands-title {
-  text-align: center;
-  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
   color: #e2d1a0;
+  gap: 20px;
   text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
     -1px 1px 0 #000;
   font-weight: bold;
 }
 
 .command-blocks {
-  width: 350px;
+  width: 300px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -285,8 +289,8 @@ h2 {
 }
 
 img {
-  width: 80px;
-  height: 82px;
+  width: 65px;
+  height: 67px;
 }
 
 .command-block:hover {
@@ -294,9 +298,11 @@ img {
 }
 
 .command-sequence {
+
   background-color: #eaddb1;
-  min-height: 100px;
-  padding: 10px;
+  width: 300px;
+  min-height: 70px;
+  padding: 5px;
   box-shadow: 
     4px 0 0 0 #573929,
     -4px 0 0 0 #573929,
@@ -319,18 +325,19 @@ img {
 
 .action-buttons {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  gap: 15px;
   margin-top: 15px;
 }
 
 .run-btn,
 .reset-btn {
+  flex: 1;
   padding: 12px 20px;
   border: none;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
-  flex: 1;
 }
 
 .run-btn {
