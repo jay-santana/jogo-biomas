@@ -7,7 +7,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #557a69, #3c6158, #2f9789);
+  background: linear-gradient(135deg, #3a5c2d, #2e4a23, #22381a);
   width: 100%;
   height: 100%;
   display: flex;
@@ -23,21 +23,38 @@ body {
   min-height: 100vh;
   max-width: 1200px;
   border-radius: 1px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   overflow: hidden;
   position: relative;
   border-radius: 10px;
   margin: 20px;
+  background: linear-gradient(to bottom, #4E3426, #3E2921);
+  border: 6px solid #302119;
+  box-shadow: 
+    2px 0 0 0 #302119,
+    -2px 0 0 0 #302119,
+    0 2px 0 0 #302119,
+    0 -2px 0 0 #302119,
+    4px 0 0 0 #302119,
+    -4px 0 0 0 #302119,
+    0 4px 0 0 #302119,
+    0 -4px 0 0 #302119,
+    2px 2px 0 0 #302119,
+    -2px 2px 0 0 #302119,
+    2px -2px 0 0 #302119,
+    -2px -2px 0 0 #302119;
 }
 
 header {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-h2 {
+/* h2 {
   font-size: 1.5rem;
   margin-bottom: -8px;
   text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,-1px 1px 0 #000;
@@ -47,8 +64,43 @@ h2 {
   padding-left: 30px;
   border-radius: 10px;
   color: #edcd5d;
+} */
+.level-titles {
+    width: 110%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 4px;
+    padding: 10px 20px;
+    z-index: 1;
+    background: #6b4732;
+    position: relative;
+    box-shadow: 
+        4px 0 0 0 #6b4732,
+        -4px 0 0 0 #6b4732,
+        0 4px 0 0 #6b4732,
+        0 -4px 0 0 #6b4732,
+        8px 0 0 0 #6b4732,
+        -8px 0 0 0 #6b4732,
+        0 8px 0 0 #6b4732,
+        0 -8px 0 0 #6b4732,
+        4px 4px 0 0 #6b4732,
+        -4px 4px 0 0 #6b4732,
+        4px -4px 0 0 #6b4732,
+        -4px -4px 0 0 #6b4732,
+        0 0 15px rgba(0, 0, 0, 1.0);
 }
 
+h3#level-title {
+    font-size: 0.9rem;
+    margin-top: 0;
+    text-shadow: 2px 2px 0 #6b4732;
+    letter-spacing: 0.8px;
+    color: #f8d98f;
+    padding: 2px 0;
+    line-height: 1.2;
+}
 .header-buttons {
   display: flex;
   gap: 10px;
@@ -79,7 +131,7 @@ h2 {
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  max-height: calc(100vh - 150px); /* Limita a altura máxima */
+  max-height: calc(100vh - 120px);
 }
 
 .map-container {
@@ -108,26 +160,44 @@ h2 {
   width: 100%; /* Ocupa 100% do container */
   height: auto; /* Altura automática */
   aspect-ratio: 10/12; /* Mantém proporção do grid */
+  position: relative;
+}
+.grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  border-radius: 8px;
 }
 
-.grid.atlantic {
-  background-image: url("../assets/NV1/fundo.png");
-}
-
-.grid.amazon {
+.grid.amazon::before {
   background-image: url("../assets/NV2/fundo.png");
+  opacity: 0.7;
 }
 
-.grid.cerrado {
+.grid.atlantic::before {
+  background-image: url("../assets/NV1/fundo.png");
+  opacity: 1.0;
+}
+
+.grid.cerrado::before {
   background-image: url("../assets/NV3/fundo.png");
+  opacity: 0.75;
 }
 
-.grid.caatinga {
+.grid.caatinga::before {
   background-image: url("../assets/NV4/fundo.png");
+  opacity: 0.7;
 }
 
-.grid.pantanal {
+.grid.pantanal::before {
   background-image: url("../assets/NV5/fundo.png");
+  opacity: 0.65;
 }
 
 .cell {
@@ -137,6 +207,8 @@ h2 {
   position: relative;
   background-color: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente */
   border: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
 .blocked {
@@ -197,14 +269,16 @@ h2 {
 
 .commands-panel {
   display: flex;
-  height: 498px;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  min-height: 450px;
   border-radius: 8px;
   margin-bottom: 15px;
-  padding: 25px 10px 10px 10px; /* Padding reduzido */
+  padding: 15px 10px 10px 10px;
 }
 
 .controls-container {
-  /* flex: 1; */
   width: fit-content;
   padding: 20px 15px;
   display: flex;
@@ -262,7 +336,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 28px;
+  margin-top: 15px;
   font-size: 0.9rem;
   color: #e2d1a0;
   gap: 20px;

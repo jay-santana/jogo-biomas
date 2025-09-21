@@ -13,17 +13,6 @@ body {
     padding: 20px;
 }
 
-.background-image {
-    background-color: #172114;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    z-index: -1;
-}
-
 .container {
     display: flex;
     flex-direction: column;
@@ -47,29 +36,150 @@ header {
     text-align: center;
 }
 
+/* AMAZÔNIA */
+.bioma-amazonia h1,
+.bioma-amazonia h2 {
+    color: #ffdd55;
+    text-shadow: 2px 2px 0 #1e4d2b, -1px -1px 0 #1e4d2b, 1px -1px 0 #1e4d2b, -1px 1px 0 #1e4d2b;
+}
+.bioma-amazonia .background-image {
+    background-color: #2d7623;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+}
+.bioma-amazonia .start-btn {
+    color: #ffdd55;
+    text-shadow: 2px 2px 0 #1e4d2b, -2px -2px 0 #1e4d2b, 2px -2px 0 #1e4d2b, -2px 2px 0 #1e4d2b;
+}
+.bioma-amazonia .start-btn:disabled {
+    color: #a7b485;
+    text-shadow: 1px 1px 0 #2d4d2d;
+}
+
+/* MATA ATLÂNTICA */
+.bioma-atlantica h1,
+.bioma-atlantica h2 {
+    color: #c9f76f;
+    text-shadow: 2px 2px 0 #1e3b23, -1px -1px 0 #1e3b23, 1px -1px 0 #1e3b23, -1px 1px 0 #1e3b23;
+}
+.bioma-atlantica .background-image {
+    background-color: #325536;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+}
+.bioma-atlantica .start-btn {
+    color: #c9f76f;
+    text-shadow: 2px 2px 0 #1e3b23, -2px -2px 0 #1e3b23, 2px -2px 0 #1e3b23, -2px 2px 0 #1e3b23;
+}
+.bioma-atlantica .start-btn:disabled {
+    color: #93af7f;
+    text-shadow: 1px 1px 0 #2d4d2d;
+}
+
+/* CAATINGA */
+.bioma-caatinga h1,
+.bioma-caatinga h2 {
+    color: #ffda62;
+    text-shadow: 2px 2px 0 #7e552e, -1px -1px 0 #7e552e, 1px -1px 0 #7e552e, -1px 1px 0 #7e552e;
+}
+.bioma-caatinga .start-btn {
+    color: #fddf7a;
+    text-shadow: 2px 2px 0 #7e552e, -2px -2px 0 #7e552e, 2px -2px 0 #7e552e, -2px 2px 0 #7e552e;
+}
+.bioma-caatinga .background-image {
+    background-color: #956133;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+}
+.bioma-caatinga .start-btn:disabled {
+    color: #c9b496;
+    text-shadow: 1px 1px 0 #5c3e1f;
+}
+
+/* CERRADO */
+.bioma-cerrado h1,
+.bioma-cerrado h2 {
+    color: #ffc857;
+    text-shadow: 2px 2px 0 #6d3a1d, -1px -1px 0 #6d3a1d, 1px -1px 0 #6d3a1d, -1px 1px 0 #6d3a1d;
+}
+.bioma-cerrado .background-image {
+    background-color: #9c5535;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+}
+.bioma-cerrado .start-btn {
+    color: #ffc857;
+    text-shadow: 2px 2px 0 #6d3a1d, -2px -2px 0 #6d3a1d, 2px -2px 0 #6d3a1d, -2px 2px 0 #6d3a1d;
+}
+.bioma-cerrado .start-btn:disabled {
+    color: #ccad8b;
+    text-shadow: 1px 1px 0 #5c2d1b;
+}
+
+/* PANTANAL */
+.bioma-pantanal h1,
+.bioma-pantanal h2 {
+    color: #e9f679;
+    text-shadow: 2px 2px 0 #3a5c2d, -1px -1px 0 #3a5c2d, 1px -1px 0 #3a5c2d, -1px 1px 0 #3a5c2d;
+}
+.bioma-pantanal .background-image {
+    background-color: #395b2d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+}
+.bioma-pantanal .start-btn {
+    color: #e9f679;
+    text-shadow: 2px 2px 0 #3a5c2d, -2px -2px 0 #3a5c2d, 2px -2px 0 #3a5c2d, -2px 2px 0 #3a5c2d;
+}
+.bioma-pantanal .start-btn:disabled {
+    color: #b6c794;
+    text-shadow: 1px 1px 0 #2d4d2d;
+}
+
 h1 {
   font-size: 1.5rem;
   margin-bottom: -8px;
-  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,-1px 1px 0 #000;
   text-decoration: underline;
   line-height: 1.4;
   text-align: center;
   letter-spacing: 1px;
   padding: 10px;
   border-radius: 10px;
-  color: #edcd5d;
 }
 
 h2 {
   font-size: 1em;
   margin-top: -5px;
-  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,-1px 1px 0 #000;
   line-height: 1.4;
   text-align: center;
   letter-spacing: 1px;
   padding: 5px;
   border-radius: 10px;
-  color: #edcd5d;
   margin-bottom: 100px;
 }
 
@@ -148,10 +258,8 @@ h2 {
     transform: translate(-50%, -50%);
     padding: 12px;
     background-color: transparent;
-    color: #dcba6e;
     font-size: 2.5rem;
     font-weight: 900;
-    text-shadow: 2px 2px 0 #4d3319, -2px -2px 0 #4d3319, 2px -2px 0 #4d3319, -2px 2px 0 #4d3319;
     border-radius: 5px;
     border: none;
     cursor: pointer;
@@ -165,8 +273,6 @@ h2 {
 
 .start-btn:disabled {
     background-color: transparent;
-    color: #cccccc;
-    text-shadow: none;
     font-size: 2.5rem;
     cursor: not-allowed;
 }
