@@ -3,10 +3,7 @@ const cerradoLevels = {
     name: "Cerrado",
     colorPalette: {
         path: '#CD853F',
-        obstacle: '#8B4513', 
         start: '#4CAF50',
-        end: '#2196F3', 
-        item: '#FFD700', 
         blocked: '#3a5a3a'
     },
     levels: {
@@ -116,7 +113,7 @@ const cerradoLevels = {
             itens: [
                 {x: 3, y: 7}, {x: 5, y: 7}, 
                 {x: 6, y: 6}, {x: 7, y: 5},
-                {x: 2, y: 6}, {x: 1, y: 5}
+                {x: 2, y: 7}, {x: 1, y: 6}
             ],
             obstaculos: [
                 {x: 4, y: 4}, {x: 5, y: 4}, {x: 6, y: 4}, 

@@ -3,10 +3,7 @@ const caatingaLevels = {
     name: "Caatinga",
     colorPalette: {
         path: '#D2B48C',
-        obstacle: '#8B4513', 
         start: '#4CAF50',
-        end: '#2196F3', 
-        item: '#FFD700', 
         blocked: '#3a5a3a'
     },
     levels: {

@@ -3,10 +3,7 @@ const pantanalLevels = {
     name: "Pantanal",
     colorPalette: {
         path: '#20B2AA',
-        obstacle: '#2F4F4F', 
         start: '#4CAF50',
-        end: '#2196F3', 
-        item: '#FFD700', 
         blocked: '#3a5a3a'
     },
     levels: {
@@ -17,7 +14,7 @@ const pantanalLevels = {
             inicio: {x: 5, y: 4},
             fim: {x: 7, y: 10},
             itens: [{x: 3, y: 5},{x: 7, y: 5},{x: 6, y: 6},
-                    {x: 4, y: 8},{x: 7, y: 9}
+                    {x: 4, y: 8}
             ],
             obstaculos: [{x: 4, y: 5},{x: 4, y: 6}],
             accessibleCells: [
@@ -77,7 +74,7 @@ const pantanalLevels = {
             inicio: { x: 5, y: 5 },
             fim: { x: 5, y: 9 },
             itens: [{x: 4, y: 3}, {x: 8, y: 3}, {x: 2, y: 4},
-                    {x: 7, y: 5}, {x: 5, y: 8}
+                    {x: 7, y: 5}, {x: 4, y: 7}
             ],
             obstaculos: [
                 {x: 6, y: 3}, {x: 4, y: 5},
@@ -143,7 +140,7 @@ const pantanalLevels = {
             itens: [
                 {x: 8, y: 1}, {x: 8, y: 2}, 
                 {x: 2, y: 4}, {x: 3, y: 5},
-                {x: 4, y: 5}, {x: 5, y: 9}
+                {x: 4, y: 5}, {x: 8, y: 6}
             ],
             obstaculos: [
                 {x: 3, y: 2}, {x: 5, y: 2}, {x: 7, y: 2},

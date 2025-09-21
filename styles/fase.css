@@ -277,24 +277,107 @@ h2 {
     cursor: not-allowed;
 }
 
+/* styles/fase.css - Media Query Atualizado */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    
-    .levels-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-        margin-left: 45px;
-    }
-    
-    .level-card {
-        width: 100%;
-    }
-    
-    .folha {
-        width: 150%;
-    }
+  header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .levels-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-left: 0;
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .level-card {
+    width: 100%;
+    max-width: 90px;
+  }
+
+  .folha {
+    width: 140%;
+  }
+
+  .start-btn {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    margin-bottom: -5px;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+    margin-bottom: 70px;
+  }
+
+  #back-btn {
+    padding: 8px 16px;
+    font-size: 0.6rem;
+  }
+
+  .title-container {
+    padding: 0 10px;
+  }
+}
+
+/* Para tablets */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .levels-container {
+    gap: 35px;
+  }
+
+  .level-card {
+    max-width: 110px;
+  }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+  .levels-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .level-card {
+    max-width: 70px;
+  }
+
+  .folha {
+    width: 120%;
+  }
+
+  .start-btn {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 0.7rem;
+    margin-bottom: 50px;
+  }
+}
+
+/* Ajuste para orientação paisagem em mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .title-container {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 40px;
+  }
+  
+  .levels-container {
+    margin-bottom: 20px;
+  }
 }

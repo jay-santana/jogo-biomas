@@ -4,10 +4,7 @@ const amazonLevels = {
     name: "Amazônia",
     colorPalette: {
         path: '#8DB600',
-        obstacle: '#3D550C', 
         start: '#4CAF50',
-        end: '#2196F3', 
-        item: '#FFD700', 
         blocked: '#3a5a3a'
         
     },

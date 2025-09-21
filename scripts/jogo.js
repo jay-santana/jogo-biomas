@@ -155,13 +155,60 @@ document.addEventListener('DOMContentLoaded', function() {
         return fallbackColors[biome] || '#6B8E23'; // Cor padrão se não encontrado
     }
     
-    function initializeGrid(faseConfig) {
+      function initializeGrid(faseConfig) {
         gridElement.innerHTML = '';
         gameState.grid = [];
         gameState.currentConfig = faseConfig;
         gameState.totalItems = faseConfig.itens.length;
         gameState.itemsCollected = 0;
         gameState.steps = 0;
+        
+        // Identificar a área do labirinto (células acessíveis)
+        const mazeArea = [];
+        for (let y = 0; y < faseConfig.grid.height; y++) {
+            for (let x = 0; x < faseConfig.grid.width; x++) {
+                if (faseConfig.accessibleCells.some(pos => pos.x === x && pos.y === y)) {
+                    mazeArea.push({x, y});
+                }
+            }
+        }
+        
+        // Encontrar células bloqueadas próximas ao labirinto (evitando bordas)
+        const blockedCellsNearMaze = [];
+        for (let y = 1; y < faseConfig.grid.height - 1; y++) { // Evitar bordas superior e inferior
+            for (let x = 1; x < faseConfig.grid.width - 1; x++) { // Evitar bordas laterais
+                
+                // Verificar se a célula é bloqueada e não é um obstáculo original
+                const isOriginallyBlocked = !faseConfig.accessibleCells.some(pos => pos.x === x && pos.y === y) &&
+                                          !faseConfig.obstaculos.some(obs => obs.x === x && obs.y === y) &&
+                                          !(x === faseConfig.inicio.x && y === faseConfig.inicio.y) &&
+                                          !(x === faseConfig.fim.x && y === faseConfig.fim.y) &&
+                                          !faseConfig.itens.some(item => item.x === x && item.y === y);
+                
+                // Verificar se está próxima do labirinto (máximo 1 célula de distância)
+                if (isOriginallyBlocked) {
+                    const isNearMaze = mazeArea.some(mazeCell => {
+                        const distanceX = Math.abs(mazeCell.x - x);
+                        const distanceY = Math.abs(mazeCell.y - y);
+                        return distanceX <= 1 && distanceY <= 1;
+                    });
+                    
+                    if (isNearMaze) {
+                        blockedCellsNearMaze.push({x, y});
+                    }
+                }
+            }
+        }
+        
+        // Selecionar 2-3 células bloqueadas aleatoriamente próximas ao labirinto
+        const randomObstacleCount = Math.floor(Math.random() * 2) + 2; // 2 ou 3 obstáculos
+        const randomObstacles = [];
+        
+        for (let i = 0; i < randomObstacleCount && blockedCellsNearMaze.length > 0; i++) {
+            const randomIndex = Math.floor(Math.random() * blockedCellsNearMaze.length);
+            randomObstacles.push(blockedCellsNearMaze[randomIndex]);
+            blockedCellsNearMaze.splice(randomIndex, 1);
+        }
         
         // Crie o grid com base nas dimensões configuradas
         for (let y = 0; y < faseConfig.grid.height; y++) {
@@ -174,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Verificar o tipo de célula
                 let cellType = 'blocked'; // Padrão é bloqueado
+                let isRandomObstacle = false;
                 
                 if (x === faseConfig.inicio.x && y === faseConfig.inicio.y) {
                     cellType = 'start';
@@ -185,9 +233,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     cellType = 'obstacle';
                 } else if (faseConfig.accessibleCells.some(pos => pos.x === x && pos.y === y)) {
                     cellType = 'path';
+                } else if (randomObstacles.some(obs => obs.x === x && obs.y === y)) {
+                    cellType = 'obstacle';
+                    isRandomObstacle = true;
                 }
                 
                 cell.classList.add(cellType);
+                if (isRandomObstacle) {
+                    cell.classList.add('obstacle-random');
+                }
                 gameState.grid[y][x] = cellType;
                 
                 applyBiomeStyle(cell, cellType);
@@ -204,28 +258,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Se for uma célula de caminho, usar transparente para mostrar o fundo
         if (type === 'path') {
-            cell.style.backgroundColor = 'rgba(233, 217, 133, 0.7)'; // Semi-transparente
         } else {
             cell.style.backgroundColor = biomeColors[type];
         }
-        
-        // Adicionar ícones ou bordas especiais para tipos específicos
-        if (type === 'start') {
-            cell.style.display = 'flex';
-            cell.style.justifyContent = 'center';
-            cell.style.alignItems = 'center';
-            cell.style.fontSize = '30px';
-        } else if (type === 'end') {
-            cell.style.display = 'flex';
-            cell.style.justifyContent = 'center';
-            cell.style.alignItems = 'center';
-            cell.style.fontSize = '30px';
-        } else if (type === 'item') {
-            cell.innerHTML = '⭐'; // Ícone de item
-            cell.style.display = 'flex';
-            cell.style.justifyContent = 'center';
-            cell.style.alignItems = 'center';
-            cell.style.fontSize = '20px';
+        // Se for um obstáculo aleatório, não aplicar estilo de bioma
+        if (cell.classList.contains('obstacle-random')) {
+            cell.style.backgroundColor = 'transparent';
         }
     }
     
@@ -268,27 +306,50 @@ document.addEventListener('DOMContentLoaded', function() {
             updateCommandDisplay();
         }
     }
+
+    function scrollToBottom() {
+        const commandSequence = document.getElementById('command-sequence');
+        if (commandSequence) {
+            commandSequence.scrollTop = commandSequence.scrollHeight;
+        }
+    }
+
+    function updateScrollIndicator() {
+        const commandSequence = document.getElementById('command-sequence');
+        const scrollIndicator = document.getElementById('scrollIndicator');
+        
+        if (commandSequence && scrollIndicator) {
+            const isAtBottom = commandSequence.scrollHeight - commandSequence.scrollTop <= commandSequence.clientHeight + 5;
+            scrollIndicator.style.display = isAtBottom ? 'none' : 'flex';
+        }
+    }
     
     function updateCommandDisplay() {
-      commandSequence.innerHTML = '';
-      gameState.commands.forEach((cmd, index) => {
-          const cmdElement = document.createElement('div');
-          cmdElement.classList.add('command-block');
-          
-          // Adiciona a imagem em vez do texto
-          const commandImg = getCommandSymbol(cmd);
-          cmdElement.appendChild(commandImg);
-          
-          cmdElement.dataset.index = index;
-          
-          cmdElement.addEventListener('click', () => {
-              gameState.commands.splice(index, 1);
-              updateCommandDisplay();
-          });
-          
-          commandSequence.appendChild(cmdElement);
-      });
-  }
+        commandSequence.innerHTML = '';
+        gameState.commands.forEach((cmd, index) => {
+            const cmdElement = document.createElement('div');
+            cmdElement.classList.add('command-block');
+            
+            // Adiciona a imagem em vez do texto
+            const commandImg = getCommandSymbol(cmd);
+            cmdElement.appendChild(commandImg);
+            
+            cmdElement.dataset.index = index;
+            
+            cmdElement.addEventListener('click', () => {
+                gameState.commands.splice(index, 1);
+                updateCommandDisplay();
+            });
+            
+            commandSequence.appendChild(cmdElement);
+        });
+        
+        // Scroll automático para o último comando
+        setTimeout(scrollToBottom, 10);
+        
+        // Atualizar indicador de scroll
+        setTimeout(updateScrollIndicator, 20);
+    }
     
     function getCommandSymbol(command) {
       const imagePaths = {
@@ -352,7 +413,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Atualizar a direção do personagem independentemente do movimento
             updateCharacterSprite(direction, 0);
             
-            if (gameState.grid[newY][newX] !== 'obstacle' && gameState.grid[newY][newX] !== 'blocked') {
+            // Verificar se a célula é um obstáculo (original ou aleatório) ou bloqueada
+            const isObstacle = gameState.grid[newY][newX] === 'obstacle';
+            const isBlocked = gameState.grid[newY][newX] === 'blocked';
+            
+            if (!isObstacle && !isBlocked) {
                 // Movimento permitido - atualizar posição
                 placeCharacter(newX, newY);
                 // Animação de movimento

@@ -4,10 +4,7 @@ const atlanticLevels = {
     name: "Mata Atlântica",
     colorPalette: {
         path: '#e9d985',
-        obstacle: '#8B4513', 
         start: '#4CAF50',
-        end: '#2196F3', 
-        item: '#FFD700', 
         blocked: '#3a5a3a'
     },
     levels: {
@@ -18,7 +15,7 @@ const atlanticLevels = {
             inicio: { x: 2, y: 5 },
             fim: { x: 7, y: 5 },
             itens: [],
-            obstaculos: [],
+            obstaculos: [{x: 4, y: 6}, {x: 5, y: 4}],
             accessibleCells: [
                 {x: 3, y: 5}, {x: 4, y: 5}, 
                 {x: 5, y: 5}, {x: 6, y: 5}
@@ -31,7 +28,7 @@ const atlanticLevels = {
             inicio: { x: 3, y: 4 },
             fim: { x: 5, y: 6 },
             itens: [],
-            obstaculos: [],
+            obstaculos: [{x: 4, y: 5}],
             accessibleCells: [
                 {x: 3, y: 4}, {x: 4, y: 4}, 
                 {x: 5, y: 4}, {x: 5, y: 5}
@@ -44,7 +41,9 @@ const atlanticLevels = {
             inicio: { x: 3, y: 6 },
             fim: { x: 6, y: 6 },
             itens: [],
-            obstaculos: [],
+            obstaculos: [{x: 4, y: 5}, {x: 5, y: 5},
+                         {x: 4, y: 6}, {x: 5, y: 6}
+            ],
             accessibleCells: [
                 {x: 3, y: 6}, {x: 3, y: 5}, 
                 {x: 3, y: 4}, {x: 4, y: 4},
@@ -59,7 +58,7 @@ const atlanticLevels = {
             inicio: { x: 3, y: 5 },
             fim: { x: 7, y: 5 },
             itens: [],
-            obstaculos: [],
+            obstaculos: [{x: 4, y: 5}, {x: 5, y: 5}],
             accessibleCells: [
                 {x: 3, y: 6}, {x: 3, y: 5}, 
                 {x: 3, y: 4}, {x: 4, y: 4},
@@ -74,7 +73,7 @@ const atlanticLevels = {
             inicio: { x: 3, y: 6 },
             fim: { x: 6, y: 4 },
             itens: [],
-            obstaculos: [],
+            obstaculos: [{ x: 5, y: 4 }],
             accessibleCells: [
                 {x: 3, y: 5}, {x: 4, y: 5}, 
                 {x: 5, y: 5}, {x: 4, y: 4},
@@ -89,7 +88,7 @@ const atlanticLevels = {
             inicio: { x: 2, y: 4 },
             fim: { x: 6, y: 7 },
             itens: [],
-            obstaculos: [],
+            obstaculos: [{ x: 4, y: 7 }, { x: 3, y: 6 }],
             accessibleCells: [
                 {x: 2, y: 4}, {x: 3, y: 4}, 
                 {x: 3, y: 5}, {x: 4, y: 5},
