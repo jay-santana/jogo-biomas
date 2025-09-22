@@ -717,36 +717,144 @@ img {
   background: linear-gradient(135deg, #d32f2f, #f44336);
   transform: translateY(-2px);
 }
-
-/* Adicione esta media query para telas menores */
+/* Media Queries para responsividade */
 @media (max-width: 768px) {
-  .game-container {
-    width: 100%;
-    height: 100%;
-    box-shadow: none;
-    border-radius: 0;
-  }
-
   .game-area {
     flex-direction: column;
   }
+  
+  .map-container, .commands-panel {
+    max-width: 100%;
+  }
+  
+  .grid {
+    max-width: 350px;
+  }
+  
+  .controls-container {
+    padding: 15px 10px;
+  }
+  
+  .command-block img {
+    width: 45px;
+    height: 47px;
+  }
+  
+  .command-sequence {
+    max-height: 100px;
+  }
+  
+  .run-btn, .reset-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .modal-content {
+    padding: 15px;
+  }
+  
+  .modal h2 {
+    font-size: 1.2rem;
+  }
+  
+  .modal p {
+    font-size: 0.9rem;
+  }
+}
 
+@media (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
+  
+  .game-container {
+    border-width: 4px;
+  }
+  
   header {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
+    padding: 10px;
   }
-
-  .header-buttons {
-    justify-content: center;
+  
+  .help-btn, .menu-btn {
+    padding: 8px 12px;
+    font-size: 0.6rem;
   }
+  
+  .grid {
+    max-width: 300px;
+  }
+  
+  .level-titles {
+    padding: 8px 10px;
+  }
+  
+  h3#level-title {
+    font-size: 0.8rem;
+  }
+  
+  .level-info p {
+    font-size: 0.7rem;
+  }
+  
+  .commands-title {
+    font-size: 0.8rem;
+  }
+  
+  .command-block img {
+    width: 40px;
+    height: 42px;
+  }
+  
+  .command-sequence {
+    max-height: 80px;
+    gap: 5px;
+  }
+  
+  .run-btn, .reset-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    max-width: 130px;
+  }
+  
+  .modal-content {
+    padding: 10px;
+  }
+  
+  .modal h2 {
+    font-size: 1rem;
+  }
+  
+  .modal p {
+    font-size: 0.8rem;
+  }
+  
+  .modal-buttons button {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+  
+  .character {
+    transform: translate(-15%, -35%) scale(0.7);
+  }
+}
 
-  /* Garantir que o grid seja visível em dispositivos móveis */
+/* Para orientação paisagem em mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .game-area {
+    flex-direction: row;
+    gap: 10px;
+  }
+  
   .map-container {
-    min-height: 400px;
+    max-width: 45%;
   }
-
-  .cell {
-    font-size: 16px;
+  
+  .commands-panel {
+    max-width: 45%;
+  }
+  
+  .controls-container {
+    max-height: 300px;
+    overflow-y: auto;
   }
 }
