@@ -132,123 +132,261 @@ header {
     left: 60%;
 }
 
-/* Media Queries para responsividade - (antiga)*/
-/* @media (max-width: 1024px) {
-    .map-image {
-      width: 100%;
-      height: 90%;
-    }
-    .select-btn {
-      font-size: 0.7rem;
-      padding: 6px 12px;
-    }
-} */
-
-/* @media (max-width: 768px) {
-    .map-image {
-        width: 100%;
-        height: 90%;
-    }
-    
-    .biomes-overlay {
-        width: 100%;
-        height: 100%;
-    }
-    
-    .select-btn {
-        font-size: 0.6rem;
-        padding: 5px 10px;
-    }
-} */
-
-/* @media (max-width: 480px) {
-    .map-image {
-      width: 150%;
-      height: 90%;
-    }
-    
-    .biomes-overlay {
-        width: 100%;
-        height: 100%;
-    }
-    .select-btn {
-        font-size: 0.5rem;
-        padding: 4px 8px;
-    }
-    
-    .biome-card[data-biome="amazon"] {
-        top: 28%;
-        left: 39%;
-    }
-
-    .biome-card[data-biome="cerrado"] {
-        top: 47%;
-        left: 49%;
-    }
-
-    .biome-card[data-biome="caatinga"] {
-        top: 32%;
-        left: 61%;
-    }
-
-    .biome-card[data-biome="pantanal"] {
-        top: 57%;
-        left: 38%;
-    }
-
-    .biome-card[data-biome="atlantic"] {
-        top: 62%;
-        left: 59%;
-    }
-} */
-
-/* @media (max-height: 600px) {
-
-    .map-image {
-      width: 150%;
-      height: 90%;
-    }
-    
-    .biomes-overlay {
-        width: 100%;
-        height: 100%;
-    }
-    .select-btn {
-        font-size: 0.5rem;
-        padding: 4px 8px;
-    }
-} */
-
-/* === LANDSCAPE ORIENTATION - ADAPTAÇÃO GERAL === (nova) */
-
-/* Tablets em paisagem (768px - 1024px) */
+/* Tablets em paisagem*/
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  .container{
+    height:100%;
+    width: 100%;
+  }
+
+  .map-container{
+    width: 100%;
+    height: 100%;
+  }
+
+    .map-image {
+      width: 130%;
+      height: 88%;
+      margin-top: 10%;
+    }
+
+    header{
+      padding: 2%;
+    }
+
+    .biomes-overlay {
+      width: 130%;
+      top: 7%;
+    }
 }
 
 /* Mobile em paisagem (480px - 767px) */
 @media (max-width: 767px) and (orientation: landscape) {
+  .container{
+    height:100%;
+    width: 100%;
+  }
+
+  .map-container{
+    width: 100%;
+    height: 100%;
+  }
+
+  .map-image {
+    width: 120%;
+    height: 85%;
+    margin-top: 10%;
+  }
+
+  header{
+    padding: 2%;
+  }
+
+  .biomes-overlay {
+    width: 110%;
+    top: 9%;
+    left: -6%;
+  }
+
+  .select-btn {
+    font-size: 50%;
+    font-weight: normal;
+  }
+
+  .back-btn {
+    font-size: 60%;
+    padding: 1% 5%;
+  }
 }
 
 /* Telas muito pequenas em paisagem (até 479px) */
 @media (max-width: 479px) and (orientation: landscape) {
+  .container{
+    height:100%;
+    width: 100%;
+  }
+
+  .map-container{
+    width: 100%;
+    height: 100%;
+  }
+
+  .map-image {
+    width: 120%;
+    height: 85%;
+    margin-top: 10%;
+  }
+
+  header{
+    padding: 2%;
+  }
+
+  .biomes-overlay {
+    width: 105%;
+  }
+
+  .select-btn {
+    font-size: 50%;
+    font-weight: normal;
+  }
+
+  .biome-card[data-biome="amazon"] {
+      top: 30%;
+      left: 45%;
+  }
+
+  .biome-card[data-biome="cerrado"] {
+      top: 52%;
+      left: 65%;
+  }
+
+  .biome-card[data-biome="caatinga"] {
+      top: 33%;
+      left: 75%;
+  }
+
+  .biome-card[data-biome="pantanal"] {
+      top: 59%;
+      left: 38%;
+  }
+
+  .biome-card[data-biome="atlantic"] {
+      top: 70%;
+      left: 70%;
+  }
+
+  .back-btn {
+    font-size: 50%;
+    padding: 1% 5%;
+  }
 }
 
 /* Telas grandes (TVs e monitores wide) - acima de 1200px */
 @media (min-width: 1200px) and (orientation: landscape) {
+  .map-image {
+    width: 150%;
+    height: 90%;
+  }
+    
+  .biomes-overlay {
+      width: 100%;
+      height: 100%;
+  }
+
+  .select-btn {
+    font-size: 70%;
+  }
+
 }
 
 /* Telas muito grandes (TVs acima de 1600px) */
 @media (min-width: 1600px) and (orientation: landscape) {
+  .map-image {
+    width: 150%;
+    height: 90%;
+  }
+    
+  .biomes-overlay {
+      width: 130%;
+      height: 100%;
+  }
+
+  .select-btn {
+    font-size: 110%;
+  }
+
+  .container{
+    max-height: 1000px;
+  }
+
+  .back-btn {
+    font-size: 90%;
+  }
 }
 
 /* Ajuste especial para altura muito reduzida em paisagem */
 @media (max-height: 500px) and (orientation: landscape) {
+
+  .map-container{
+    width: 100%;
+    height: 98%;
+  }
+
+  .map-image {
+    width: 130%;
+    height: 88%;
+    margin-top: 10%;
+  }
+
+  .biomes-overlay {
+    width: 90%;
+    top: 10%;
+  }
+
+  .select-btn {
+    font-size: 60%;
+  }
 }
 
 /* Tablets em portrait (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .map-container{
+    width: 100%;
+    height: 100%;
+  }
+
+  .map-image {
+    width: 150%;
+    height: 80%;
+    margin-top: 20%;
+  }
+
+  .biomes-overlay {
+    width: 180%;
+    top: 10%;
+  }
 }
 
 /* Mobile em portrait (até 767px) */
 @media (max-width: 767px) and (orientation: portrait) {
+  .map-container{
+    width: 100%;
+    height: 122%;
+  }
+
+  .map-image {
+    width: 160%;
+    margin-top: 20%;
+  }
+
+ .select-btn {
+    font-size: 60%;
+  }
+
+  .biome-card[data-biome="amazon"] {
+      top: 44%;
+      left: 40%;
+  }
+
+  .biome-card[data-biome="cerrado"] {
+      top: 58%;
+      left: 60%;
+  }
+
+  .biome-card[data-biome="caatinga"] {
+      top: 46%;
+      left: 85%;
+  }
+
+  .biome-card[data-biome="pantanal"] {
+      top: 62%;
+      left: 37%;
+  }
+
+  .biome-card[data-biome="atlantic"] {
+      top: 71%;
+      left: 70%;
+  }  
+  
 }
