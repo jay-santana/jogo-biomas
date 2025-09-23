@@ -132,8 +132,8 @@ header {
     left: 60%;
 }
 
-/* Media Queries para responsividade */
-@media (max-width: 1024px) {
+/* Media Queries para responsividade - (antiga)*/
+/* @media (max-width: 1024px) {
     .map-image {
       width: 100%;
       height: 90%;
@@ -142,9 +142,9 @@ header {
       font-size: 0.7rem;
       padding: 6px 12px;
     }
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .map-image {
         width: 100%;
         height: 90%;
@@ -159,9 +159,9 @@ header {
         font-size: 0.6rem;
         padding: 5px 10px;
     }
-}
+} */
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .map-image {
       width: 150%;
       height: 90%;
@@ -200,9 +200,9 @@ header {
         top: 62%;
         left: 59%;
     }
-}
+} */
 
-@media (max-height: 600px) {
+/* @media (max-height: 600px) {
 
     .map-image {
       width: 150%;
@@ -217,4 +217,38 @@ header {
         font-size: 0.5rem;
         padding: 4px 8px;
     }
+} */
+
+/* === LANDSCAPE ORIENTATION - ADAPTAÇÃO GERAL === (nova) */
+
+/* Tablets em paisagem (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+/* Mobile em paisagem (480px - 767px) */
+@media (max-width: 767px) and (orientation: landscape) {
+}
+
+/* Telas muito pequenas em paisagem (até 479px) */
+@media (max-width: 479px) and (orientation: landscape) {
+}
+
+/* Telas grandes (TVs e monitores wide) - acima de 1200px */
+@media (min-width: 1200px) and (orientation: landscape) {
+}
+
+/* Telas muito grandes (TVs acima de 1600px) */
+@media (min-width: 1600px) and (orientation: landscape) {
+}
+
+/* Ajuste especial para altura muito reduzida em paisagem */
+@media (max-height: 500px) and (orientation: landscape) {
+}
+
+/* Tablets em portrait (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+}
+
+/* Mobile em portrait (até 767px) */
+@media (max-width: 767px) and (orientation: portrait) {
 }

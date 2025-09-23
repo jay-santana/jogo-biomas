@@ -717,8 +717,8 @@ img {
   background: linear-gradient(135deg, #d32f2f, #f44336);
   transform: translateY(-2px);
 }
-/* Media Queries para responsividade */
-@media (max-width: 768px) {
+/* Media Queries para responsividade - (antiga) */ 
+/* @media (max-width: 768px) {
   .game-area {
     flex-direction: column;
   }
@@ -760,9 +760,9 @@ img {
   .modal p {
     font-size: 0.9rem;
   }
-}
+} */
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   body {
     padding: 5px;
   }
@@ -836,10 +836,10 @@ img {
   .character {
     transform: translate(-15%, -35%) scale(0.7);
   }
-}
+} */
 
 /* Para orientação paisagem em mobile */
-@media (max-height: 500px) and (orientation: landscape) {
+/* @media (max-height: 500px) and (orientation: landscape) {
   .game-area {
     flex-direction: row;
     gap: 10px;
@@ -857,4 +857,38 @@ img {
     max-height: 300px;
     overflow-y: auto;
   }
+} */
+
+/* === LANDSCAPE ORIENTATION - ADAPTAÇÃO GERAL === (nova) */
+
+/* Tablets em paisagem (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+/* Mobile em paisagem (480px - 767px) */
+@media (max-width: 767px) and (orientation: landscape) {
+}
+
+/* Telas muito pequenas em paisagem (até 479px) */
+@media (max-width: 479px) and (orientation: landscape) {
+}
+
+/* Telas grandes (TVs e monitores wide) - acima de 1200px */
+@media (min-width: 1200px) and (orientation: landscape) {
+}
+
+/* Telas muito grandes (TVs acima de 1600px) */
+@media (min-width: 1600px) and (orientation: landscape) {
+}
+
+/* Ajuste especial para altura muito reduzida em paisagem */
+@media (max-height: 500px) and (orientation: landscape) {
+}
+
+/* Tablets em portrait (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+}
+
+/* Mobile em portrait (até 767px) */
+@media (max-width: 767px) and (orientation: portrait) {
 }
