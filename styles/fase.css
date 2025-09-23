@@ -215,6 +215,7 @@ h2 {
     max-width: 420px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    place-items: center;
     gap: 40px;
     padding: 20px;
 }
@@ -423,28 +424,28 @@ h2 {
 
 /* Telas grandes (TVs e monitores wide) - acima de 1200px */
 @media (min-width: 1200px) and (orientation: landscape) {
-    body {
-        padding: 2%;
-    }
-    
     h1 {
-        font-size: 1.8rem;
-        margin-bottom: -1.2%;
+        font-size: 1.5rem;
+        margin-bottom: -10px;
     }
     
     h2 {
         font-size: 1.3rem;
-        margin-bottom: 8%;
+        margin-bottom: 2px;
     }
-    
+
+    .container {
+      width: 60%;
+    }
+
     .levels-container {
-        max-width: 40%;
-        gap: 16%;
-        padding: 2%;
+        width: 400px;
+        max-width: none;
+        gap: 0px;
     }
     
     .level-card {
-        width: 90%;
+        width: 60%;
         max-width: 130px;
     }
     
@@ -467,37 +468,41 @@ h2 {
 /* Telas muito grandes (TVs acima de 1600px) */
 @media (min-width: 1600px) and (orientation: landscape) {
     h1 {
-        font-size: 2.0rem;
+        font-size: 3.0rem;
         margin-bottom: -15px;
     }
     
     h2 {
-        font-size: 1.5rem;
-        margin-bottom: 4%;
+        font-size: 2.5rem;
+        margin-bottom: 12px;
     }
     
+    .container {
+      width: 60%;
+    }
+
     .levels-container {
-        max-width: 38%;
-        gap: 16%;
-        padding: 3%;
+        width: 700px;
+        max-width: none;
+        gap: 0px;
+        margin-top: 70px;
     }
     
     .level-card {
-        width: 95%;
-        max-width: 150px;
+        width: 100%;
+        max-width: 140px;
     }
     
     .start-btn {
-        font-size: 3.8rem;
-        padding: 18px;
+        font-size: 5.0rem;
     }
     
     .start-btn:disabled {
-        font-size: 3.8rem;
+        font-size: 5.0rem;
     }
     
     #back-btn {
-        font-size: 1rem;
+        font-size: 1.5rem;
         padding: 18px 36px;
     }
     

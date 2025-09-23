@@ -217,28 +217,28 @@ h2 {
 @media (min-width: 1200px) and (orientation: landscape) {
   .container {
     background-size: cover;
-    min-width: 700px;
+    min-width: 500px;
   }
   
   h1 {
-    font-size: 1.8rem;
-    width: 600px;
-    padding: 15px;
+    font-size: 1.3rem;
+    width: 450px;
+    padding: 12px;
     margin-bottom: -10px;
   }
   
   h2 {
-    font-size: 1.3rem;
-    width: 300px;
+    font-size: 1rem;
+    width: 220px;
     padding: 12px;
     margin-bottom: 20px;
   }
   
   .btn-primary,
   .btn-secondary {
-    padding: 20px 25px;
-    font-size: 1.4rem;
-    width: 290px;
+    padding: 15px 15px;
+    font-size: 0.9rem;
+    width: 190px;
   }
 }
 
