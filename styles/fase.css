@@ -283,24 +283,24 @@ h2 {
 /* Tablets em paisagem (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     body {
-        padding: 1.5%;
+        padding: 15px;
     }
     
     h1 {
-        font-size: 130%;
-        margin-bottom: -0.9%;
+        font-size: 1.6rem;
+        margin-bottom: -8px;
     }
     
     h2 {
         font-size: 1.1rem;
-        margin-bottom: 5%;
+        margin-bottom: 30px;
     }
     
     .levels-container {
         max-width: 45%;
-        gap: 12%;
-        padding: 3%;
-        margin-left: 2%;
+        gap: 40px;
+        padding: 20px;
+        margin-left: 20px;
     }
     
     .level-card {
@@ -309,24 +309,24 @@ h2 {
     }
     
     .start-btn {
-        font-size: 250%;
-        padding: 1%;
+        font-size: 2.5rem;
+        padding: 8px 16px;
     }
     
     .start-btn:disabled {
-        font-size: 250%;
+        font-size: 2.5rem;
     }
     
     #back-btn {
-        font-size: 80%;
-        padding: 1.2% 2.4%;
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
 }
 
 /* Mobile em paisagem (480px - 767px) */
 @media (max-width: 767px) and (orientation: landscape) {
     body {
-        padding: 2%;
+        padding: 10px;
     }
     
     h1 {
@@ -337,15 +337,15 @@ h2 {
     
     h2 {
         font-size: 0.8rem;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
         padding: 4px;
     }
     
     .levels-container {
         max-width: 50%;
-        gap: 4%;
-        padding: 1%;
-        margin-left: 4%;
+        gap: 15px;
+        padding: 8px;
+        margin-left: 20px;
     }
     
     .level-card {
@@ -375,7 +375,7 @@ h2 {
 /* Telas muito pequenas em paisagem (até 479px) */
 @media (max-width: 479px) and (orientation: landscape) {
     body {
-        padding: 2%;
+        padding: 8px;
     }
     
     h1 {
@@ -387,7 +387,7 @@ h2 {
     
     h2 {
         font-size: 0.7rem;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         padding: 3px;
         line-height: 1.2;
     }
@@ -431,17 +431,17 @@ h2 {
     
     h2 {
         font-size: 1.3rem;
-        margin-bottom: 2px;
+        margin-bottom: 10px;
     }
 
     .container {
-      width: 60%;
+        width: 60%;
     }
 
     .levels-container {
-        width: 400px;
+        width: 500px;
         max-width: none;
-        gap: 0px;
+        gap: 20px;
     }
     
     .level-card {
@@ -462,30 +462,30 @@ h2 {
         font-size: 0.9rem;
         padding: 15px 30px;
     }
-
 }
 
 /* Telas muito grandes (TVs acima de 1600px) */
 @media (min-width: 1600px) and (orientation: landscape) {
     h1 {
-        font-size: 3.0rem;
+        font-size: 2.0rem;
         margin-bottom: -15px;
     }
     
     h2 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         margin-bottom: 12px;
     }
     
     .container {
-      width: 60%;
+        width: 60%;
     }
 
     .levels-container {
-        width: 700px;
+        width: 400px;
         max-width: none;
-        gap: 0px;
+        gap: 70px;
         margin-top: 70px;
+        padding: 0;
     }
     
     .level-card {
@@ -494,7 +494,8 @@ h2 {
     }
     
     .start-btn {
-        font-size: 5.0rem;
+        font-size: 3.0rem;
+        padding: 20px;
     }
     
     .start-btn:disabled {
@@ -505,36 +506,36 @@ h2 {
         font-size: 1.5rem;
         padding: 18px 36px;
     }
-    
 }
 
 /* Ajuste especial para altura muito reduzida em paisagem */
 @media (max-height: 500px) and (orientation: landscape) {
     body {
-        padding: 2%;
+        padding: 10px;
     }
     
     h1 {
-        font-size: 100%;
-        margin-bottom: -0.2%;
-        padding: 0.5%;
+        font-size: 1rem;
+        margin-bottom: -4px;
+        padding: 5px;
     }
     
     h2 {
-        font-size: 80%;
-        margin-bottom: 7%;
-        padding: 0.5%;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+        padding: 5px;
     }
     
     .levels-container {
-        gap: 5%;
-        padding: 2%;
-        margin-left: 6%;
+        width:400px ;
+        gap: 1px;
+        padding: 40px;
+        margin-left: 10px;
     }
     
     .level-card {
-        width: 55%;
-        max-width: 100%;
+        width: 50%;
+        max-width: 90%;
     }
     
     .start-btn {
@@ -548,98 +549,98 @@ h2 {
     
     #back-btn {
         font-size: 0.7rem;
-        padding: 1% 2%;
+        padding: 6px 12px;
     }
-
 }
 
 /* Tablets em portrait (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     body {
-        padding: 3%;
+        padding: 20px;
     }
 
-    header{
-      margin-bottom: 25%;
+    header {
+        margin-bottom: 80px;
     }
     
     h1 {
-        font-size: 2.5rem;
-        margin-bottom: -2%;
+        font-size: 1.9rem;
+        margin-bottom: -15px;
     }
     
     h2 {
-        font-size: 1.8rem;
-        margin-bottom: 25%;
+        font-size: 1.6rem;
+        margin-bottom: 70px;
     }
     
     .levels-container {
-      max-width: 100%;
-      gap: 2%;
-      margin-left: 11%;
+        margin-top: 100px;
+        max-width: 100%;
+        gap: 50px;
     }
     
     .level-card {
-        width: 60%;
-        max-width: 100%;
+        width: 100px;
+        max-width: 100px;
     }
     
     .start-btn {
-        font-size: 400%;
+        font-size: 3rem;
+        padding: 15px 30px;
     }
     
     .start-btn:disabled {
-        font-size: 400%;
+        font-size: 3rem;
     }
     
     #back-btn {
-        font-size: 120%;
-        padding: 2% 4%;
+        font-size: 1.2rem;
+        padding: 10px 20px;
     }
-    
 }
 
 /* Mobile em portrait (até 767px) */
 @media (max-width: 767px) and (orientation: portrait) {
     body {
-        padding: 3%;
+        padding: 15px;
     }
 
-    header{
-      margin-bottom: 30%;
+    header {
+        margin-bottom: 200px;
     }
     
     h1 {
-        font-size: 2rem;
-        margin-bottom: -2%;
+        font-size: 1.7rem;
+        margin-bottom: -12px;
     }
     
     h2 {
-        font-size: 1.8rem;
-        margin-bottom: 25%;
+        font-size: 1.2rem;
+        margin-bottom: 80px;
     }
     
     .levels-container {
-      max-width: 100%;
-      gap: 2%;
-      margin-left: 11%;
+        max-width: 1000px;
+        gap: 15px;
+        margin-left: 30px;
     }
     
     .level-card {
-        width: 60%;
-        max-width: 100%;
+        width: 100px;;
+        max-width: 100px;
     }
     
     .start-btn {
-        font-size: 400%;
+        font-size: 3rem;
+        padding: 12px 24px;
     }
     
     .start-btn:disabled {
-        font-size: 400%;
+        font-size: 3rem;
     }
     
     #back-btn {
-        font-size: 120%;
-        padding: 2% 4%;
+        font-size: 1rem;
+        padding: 8px 16px;
     }
 }

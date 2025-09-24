@@ -125,124 +125,409 @@ h1{
     line-height: 1.6;
 }
 
-/* styles/informacoes.css - Media Query Atualizado - (antigo) */
-/* @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .content {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 1.2rem;
-  }
-
-  .info-section h2 {
-    font-size: 1.1rem;
-  }
-
-  .info-section p {
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    line-height: 1.4;
-  }
-
-  .skill-card {
-    padding: 15px;
-    margin-bottom: 15px;
-  }
-
-  .skill-card h3 {
-    font-size: 0.9rem;
-  }
-
-  .back-btn {
-    padding: 8px 16px;
-    font-size: 0.6rem;
-  }
-} */
-
-/* Para tablets */
-/* @media (max-width: 1024px) and (min-width: 769px) {
-  .container {
-    max-width: 90%;
-  }
-} */
-
-/* Para telas muito pequenas */
-/* @media (max-width: 480px) {
-  header {
-    padding: 15px;
-  }
-
-  .content {
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 1rem;
-  }
-
-  .info-section h2 {
-    font-size: 0.9rem;
-  }
-  
-
-  .info-section p {
-    font-size: 0.8rem;
-    letter-spacing: 0.5px;
-    padding: 8px;
-  }
-
-  h3{
-    text-align: center;
-  }
-
-  .skill-card {
-    padding: 12px;
-  }
-
-  .skill-card h3 {
-    font-size: 0.8rem;
-    padding: 8px;
-  }
-} */
-
-/* === LANDSCAPE ORIENTATION - ADAPTAÇÃO GERAL === (nova) */
-
 /* Tablets em paisagem (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    body {
+        padding: 15px;
+    }
+    
+    .container {
+        max-width: 95vw;
+    }
+    
+    header {
+        font-size: 0.8rem;
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 1.1rem;
+    }
+    
+    .back-btn {
+        padding: 8px 16px;
+        font-size: 0.6rem;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .info-section {
+        margin-bottom: 30px;
+    }
+    
+    .info-section h2 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+    }
+    
+    .info-section p {
+        font-size: 0.9rem;
+        padding: 8px;
+        letter-spacing: 2px;
+    }
+    
+    .skill-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .skill-card h3 {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    
+    .skill-card p {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
 }
 
 /* Mobile em paisagem (480px - 767px) */
 @media (max-width: 767px) and (orientation: landscape) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        max-width: 98vw;
+    }
+    
+    header {
+        font-size: 0.7rem;
+        padding: 15px;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 0.9rem;
+    }
+    
+    .back-btn {
+        padding: 6px 12px;
+        font-size: 0.5rem;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+    
+    .info-section {
+        margin-bottom: 25px;
+    }
+    
+    .info-section h2 {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+        padding-bottom: 6px;
+    }
+    
+    .info-section p {
+        font-size: 0.7rem;
+        padding: 6px;
+        letter-spacing: 1px;
+        line-height: 1.3;
+    }
+    
+    .skill-card {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .skill-card h3 {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+    
+    .skill-card p {
+        font-size: 0.7rem;
+        line-height: 1.4;
+    }
 }
 
 /* Telas muito pequenas em paisagem (até 479px) */
 @media (max-width: 479px) and (orientation: landscape) {
+    body {
+        padding: 8px;
+    }
+    
+    header {
+        font-size: 0.6rem;
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    h1 {
+        font-size: 0.8rem;
+    }
+    
+    .back-btn {
+        padding: 5px 10px;
+        font-size: 0.4rem;
+    }
+    
+    .content {
+        padding: 12px;
+    }
+    
+    .info-section h2 {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .info-section p {
+        font-size: 0.6rem;
+        padding: 5px;
+        letter-spacing: 0.5px;
+    }
+    
+    .skill-card {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .skill-card h3 {
+        font-size: 0.7rem;
+    }
+    
+    .skill-card p {
+        font-size: 0.6rem;
+    }
 }
 
 /* Telas grandes (TVs e monitores wide) - acima de 1200px */
 @media (min-width: 1200px) and (orientation: landscape) {
+    .container {
+        max-width: 1100px;
+    }
+    
+    header {
+        font-size: 1rem;
+        padding: 35px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .back-btn {
+        padding: 12px 24px;
+        font-size: 0.8rem;
+    }
+    
+    .content {
+        padding: 35px;
+    }
+    
+    .info-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .info-section p {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+    
+    .skill-card {
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .skill-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .skill-card p {
+        font-size: 1.1rem;
+    }
 }
 
 /* Telas muito grandes (TVs acima de 1600px) */
 @media (min-width: 1600px) and (orientation: landscape) {
-}
-
-/* Ajuste especial para altura muito reduzida em paisagem */
-@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    header {
+        font-size: 1.2rem;
+        padding: 40px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .back-btn {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+    
+    .content {
+        padding: 40px;
+    }
+    
+    .info-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .info-section p {
+        font-size: 1.4rem;
+        letter-spacing: 4px;
+    }
+    
+    .skill-card {
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .skill-card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .skill-card p {
+        font-size: 1.3rem;
+    }
 }
 
 /* Tablets em portrait (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    body {
+        padding: 15px;
+    }
+    
+    header {
+        font-size: 0.9rem;
+        padding: 25px;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    .back-btn {
+        padding: 10px 20px;
+        font-size: 0.7rem;
+    }
+    
+    .content {
+        padding: 25px;
+    }
+    
+    .info-section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .info-section p {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+    
+    .skill-card {
+        padding: 18px;
+        margin-bottom: 18px;
+    }
+    
+    .skill-card h3 {
+        font-size: 1rem;
+    }
+    
+    .skill-card p {
+        font-size: 0.9rem;
+    }
 }
 
 /* Mobile em portrait (até 767px) */
 @media (max-width: 767px) and (orientation: portrait) {
+    body {
+        padding: 10px;
+    }
+    
+    header {
+        font-size: 0.7rem;
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 0.9rem;
+    }
+    
+    .back-btn {
+        padding: 8px 16px;
+        font-size: 0.6rem;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .info-section {
+        margin-bottom: 20px;
+    }
+    
+    .info-section h2 {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .info-section p {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        line-height: 1.3;
+    }
+    
+    .skill-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .skill-card h3 {
+        font-size: 0.8rem;
+    }
+    
+    .skill-card p {
+        font-size: 0.7rem;
+        line-height: 1.4;
+    }
+}
+
+/* Ajuste especial para altura muito reduzida */
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding: 5px;
+    }
+    
+    header {
+        padding: 10px;
+        font-size: 0.6rem;
+    }
+    
+    .content {
+        padding: 10px;
+    }
+    
+    .info-section {
+        margin-bottom: 15px;
+    }
+    
+    .info-section p {
+        font-size: 0.6rem;
+        padding: 5px;
+    }
+    
+    .skill-card {
+        padding: 8px;
+        margin-bottom: 8px;
+    }
 }
