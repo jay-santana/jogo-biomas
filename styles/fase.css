@@ -425,7 +425,7 @@ h2 {
 /* Telas grandes (TVs e monitores wide) - acima de 1200px */
 @media (min-width: 1200px) and (orientation: landscape) {
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         margin-bottom: -10px;
     }
     
@@ -435,18 +435,19 @@ h2 {
     }
 
     .container {
-        width: 60%;
+        margin-top: 90px;
+        max-width: 40%;
     }
 
     .levels-container {
         width: 500px;
         max-width: none;
-        gap: 20px;
+        gap: 50px;
     }
     
     .level-card {
-        width: 60%;
-        max-width: 130px;
+        width: 80%;
+        max-width: 200px;
     }
     
     .start-btn {

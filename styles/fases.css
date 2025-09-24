@@ -37,7 +37,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 50px;
     z-index: 20;
 }
 
@@ -135,7 +135,7 @@ header {
 /* Tablets em paisagem*/
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .container{
-    height: 100vh;
+    height: 105vh;
     width: 100vw;
   }
 
@@ -145,8 +145,8 @@ header {
   }
 
   .map-image {
-    width: 130%;
-    height: 90%;
+    width: 100%;
+    height: 93%;
     margin-top: 60px;
   }
 
@@ -163,7 +163,7 @@ header {
 /* Mobile em paisagem (480px - 767px) */
 @media (max-width: 767px) and (orientation: landscape) {
   .container{
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
   }
 
@@ -174,7 +174,7 @@ header {
 
   .map-image {
     width: 120%;
-    height: 90%;
+    height: 93%;
     margin-top: 50px;
   }
 
@@ -201,9 +201,18 @@ header {
 
 /* Telas grandes (TVs e monitores wide) - acima de 1200px */
 @media (min-width: 1200px) and (orientation: landscape) {
+  .container{
+    height: 110vh;
+    width: 100vw;
+  }
+
+  .map-container{
+    width: 100%;
+    height: 100%;
+  }
   .map-image {
     width: 150%;
-    height: 90%;
+    height: 93%;
   }
     
   .biomes-overlay {
@@ -223,9 +232,18 @@ header {
 
 /* Telas muito grandes (TVs acima de 1600px) */
 @media (min-width: 1600px) and (orientation: landscape) {
+  .container{
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .map-container{
+    width: 100%;
+    height: 100%;
+  }
   .map-image {
     width: 150%;
-    height: 90%;
+    height: 100%;
   }
     
   .biomes-overlay {
@@ -250,12 +268,12 @@ header {
 @media (max-height: 500px) and (orientation: landscape) {
   .map-container{
     width: 100%;
-    height: 98%;
+    height: 100%;
   }
 
   .map-image {
     width: 130%;
-    height: 88%;
+    height: 93%;
     margin-top: 30px;
   }
 
@@ -271,6 +289,15 @@ header {
 
 /* Tablets em portrait (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* .container{
+    max-height: 100vh;
+    width: 100vw;
+  } */
+
+  .map-container{
+    width: 100%;
+    height: 100%;
+  }
   .map-container{
     width: 100%;
     height: 100%;
@@ -291,7 +318,6 @@ header {
 /* Mobile em portrait (até 767px) */
 @media (max-width: 767px) and (orientation: portrait) {
   .map-container{
-    width: 500px;
     height: 1090px;
   }
 
