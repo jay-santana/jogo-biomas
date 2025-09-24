@@ -422,49 +422,6 @@ h2 {
     }
 }
 
-/* Telas grandes (TVs e monitores wide) - acima de 1200px */
-@media (min-width: 1200px) and (orientation: landscape) {
-    h1 {
-        font-size: 1.7rem;
-        margin-bottom: -10px;
-    }
-    
-    h2 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-    }
-
-    .container {
-        margin-top: 90px;
-        max-width: 40%;
-    }
-
-    .levels-container {
-        width: 500px;
-        max-width: none;
-        gap: 50px;
-    }
-    
-    .level-card {
-        width: 80%;
-        max-width: 200px;
-    }
-    
-    .start-btn {
-        font-size: 3.2rem;
-        padding: 15px;
-    }
-    
-    .start-btn:disabled {
-        font-size: 3.2rem;
-    }
-    
-    #back-btn {
-        font-size: 0.9rem;
-        padding: 15px 30px;
-    }
-}
-
 /* Telas muito grandes (TVs acima de 1600px) */
 @media (min-width: 1600px) and (orientation: landscape) {
     h1 {
