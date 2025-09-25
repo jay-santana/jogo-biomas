@@ -8,7 +8,7 @@
 }
 
 body {
-    background:  linear-gradient(135deg, #557a69, #3c6158, #2f9789);
+    /* background:  linear-gradient(135deg, #557a69, #3c6158, #2f9789); */
     min-height: 100vh;
     padding: 2%;
 }
@@ -44,7 +44,7 @@ header {
     text-shadow: 2px 2px 0 #1e4d2b, -1px -1px 0 #1e4d2b, 1px -1px 0 #1e4d2b, -1px 1px 0 #1e4d2b;
 }
 .bioma-amazonia .background-image {
-    background-color: #2d7623;
+    /* background-color: #2d7623; */
     position: fixed;
     top: 0;
     left: 0;
@@ -69,7 +69,7 @@ header {
     text-shadow: 2px 2px 0 #1e3b23, -1px -1px 0 #1e3b23, 1px -1px 0 #1e3b23, -1px 1px 0 #1e3b23;
 }
 .bioma-atlantica .background-image {
-    background-color: #325536;
+    /* background-color: #325536; */
     position: fixed;
     top: 0;
     left: 0;
@@ -98,7 +98,7 @@ header {
     text-shadow: 2px 2px 0 #7e552e, -2px -2px 0 #7e552e, 2px -2px 0 #7e552e, -2px 2px 0 #7e552e;
 }
 .bioma-caatinga .background-image {
-    background-color: #956133;
+    /* background-color: #956133; */
     position: fixed;
     top: 0;
     left: 0;
@@ -119,7 +119,7 @@ header {
     text-shadow: 2px 2px 0 #6d3a1d, -1px -1px 0 #6d3a1d, 1px -1px 0 #6d3a1d, -1px 1px 0 #6d3a1d;
 }
 .bioma-cerrado .background-image {
-    background-color: #9c5535;
+    /* background-color: #9c5535; */
     position: fixed;
     top: 0;
     left: 0;
@@ -144,7 +144,7 @@ header {
     text-shadow: 2px 2px 0 #3a5c2d, -1px -1px 0 #3a5c2d, 1px -1px 0 #3a5c2d, -1px 1px 0 #3a5c2d;
 }
 .bioma-pantanal .background-image {
-    background-color: #395b2d;
+    /* background-color: #395b2d; */
     position: fixed;
     top: 0;
     left: 0;
