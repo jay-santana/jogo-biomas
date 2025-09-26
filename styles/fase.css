@@ -38,6 +38,12 @@ header {
 }
 
 /* AMAZÔNIA */
+.bioma-amazonia {
+    background-image: url("../assets/NV2/background-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .bioma-amazonia h1,
 .bioma-amazonia h2 {
     color: #ffdd55;
@@ -63,6 +69,12 @@ header {
 }
 
 /* MATA ATLÂNTICA */
+.bioma-atlantica {
+    background-image: url("../assets/NV1/background-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .bioma-atlantica h1,
 .bioma-atlantica h2 {
     color: #c9f76f;
@@ -88,6 +100,12 @@ header {
 }
 
 /* CAATINGA */
+.bioma-caatinga {
+    background-image: url("../assets/NV4/background-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .bioma-caatinga h1,
 .bioma-caatinga h2 {
     color: #ffda62;
@@ -113,6 +131,12 @@ header {
 }
 
 /* CERRADO */
+.bioma-cerrado {
+    background-image: url("../assets/NV3/background-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .bioma-cerrado h1,
 .bioma-cerrado h2 {
     color: #ffc857;
@@ -138,6 +162,13 @@ header {
 }
 
 /* PANTANAL */
+.bioma-pantanal {
+    background-image: url("../assets/NV5/background-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .bioma-pantanal h1,
 .bioma-pantanal h2 {
     color: #e9f679;
@@ -278,7 +309,6 @@ h2 {
     font-size: 2.5rem;
     cursor: not-allowed;
 }
-
 
 /* Tablets em paisagem (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
