@@ -11,8 +11,7 @@
 body {
   margin: 0;
   padding: 0;
-  /* background-image: url("../assets/background-fundo.png"); */
-  background-image: url("../assets/img1.png");
+  background-image: url("../assets/background-tela-inicial.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,8 +31,6 @@ body {
   max-height: 900px; /* Limite máximo de altura */
   text-align: center;
   padding: 4px;
-  /* background: url("../assets/background-frente.png") center/contain no-repeat; */
-  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); */
   display: flex;
   flex-direction: column;
   justify-content: center;
