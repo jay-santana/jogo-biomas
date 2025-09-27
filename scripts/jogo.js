@@ -504,6 +504,83 @@ document.addEventListener('DOMContentLoaded', function() {
         // Salvar progresso
         saveProgress(gameState.currentBiome, level, gameState.steps);
     }
+
+        function showBiomeCompletionModal(biome) {
+        victoryModal.style.display = 'none';
+        
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.style.display = 'flex';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <h2>PARABÉNS!</h2>
+                <p>VOCÊ COMPLETOU TODO O BIOMA ${formatBiomeName(biome).toUpperCase()}</p>
+                <div class="modal-buttons">
+                    <button id="next-biome-btn">IR PARA O PRÓXIMO BIOMA</button>
+                    <button id="same-biome-btn">VOLTAR PARA NIVEIS</button>
+                    <button id="back-to-map-btn">VOLTAR AO MAPA</button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
+        
+        document.getElementById('next-biome-btn').addEventListener('click', function() {
+            const biomesOrder = ['atlantic', 'amazon', 'cerrado', 'caatinga', 'pantanal'];
+            const currentIndex = biomesOrder.indexOf(biome);
+            
+            if (currentIndex < biomesOrder.length - 1) {
+                const nextBiome = biomesOrder[currentIndex + 1];
+                window.location.href = `fase-${nextBiome}.html?biome=${nextBiome}`;
+            } else {
+                window.location.href = 'fases.html';
+            }
+        });
+
+        document.getElementById('same-biome-btn').addEventListener('click', function() {
+            window.location.href = `fase-${biome}.html?biome=${biome}`;
+        });
+        
+        document.getElementById('back-to-map-btn').addEventListener('click', function() {
+            window.location.href = 'fases.html';
+        });
+        
+    }
+
+    function isFinalVictory() {
+        return gameState.currentBiome === 'pantanal' && level === '6';
+    }
+
+    // Função especial para vitória final
+    function showFinalVictoryModal() {
+        // Criar modal simples para vitória final
+        const finalModal = document.createElement('div');
+        finalModal.className = 'modal';
+        finalModal.style.display = 'flex';
+        finalModal.innerHTML = `
+            <div class="modal-content">
+                <h2>PARABÉNS!</h2>
+                <p></p>
+                <p></p>
+                <p>VOCÊ SALVOU TODOS OS BIOMAS DO BRASIL! O JOGO ESTÁ COMPLETO!</p>
+                <p></p>
+                <p></p>
+                <div class="modal-buttons">
+                    <button id = "victory-btn-menu" onclick="window.location.href='fases.html'">VOLTAR AO MAPA</button>
+                    <button id = "victory-btn-biome" onclick="window.location.href='fase-pantanal.html?biome=pantanal'">VER NÍVEIS PANTANAL</button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(finalModal);
+        
+        // Fechar modal ao clicar fora
+        finalModal.addEventListener('click', function(e) {
+            if (e.target === finalModal) {
+                document.body.removeChild(finalModal);
+            }
+        });
+    }
     
     function saveProgress(biome, level, steps) {
         // Carregar progresso existente ou criar novo CORRETO
@@ -549,52 +626,17 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(`Progresso salvo: ${biome}, nível ${level}, ${steps} passos`);
         
         if (completedAllLevels) {
-            showBiomeCompletionModal(biome);
-        }
-    }
 
-    function showBiomeCompletionModal(biome) {
-        victoryModal.style.display = 'none';
-        
-        const modal = document.createElement('div');
-        modal.className = 'modal';
-        modal.style.display = 'flex';
-        modal.innerHTML = `
-            <div class="modal-content">
-                <h2>PARABÉNS!</h2>
-                <p>VOCÊ COMPLETOU TODO O BIOMA ${formatBiomeName(biome).toUpperCase()}</p>
-                <div class="modal-buttons">
-                    <button id="next-biome-btn">IR PARA O PRÓXIMO BIOMA</button>
-                    <button id="same-biome-btn">VOLTAR PARA NIVEIS</button>
-                    <button id="back-to-map-btn">VOLTAR AO MAPA</button>
-                </div>
-            </div>
-        `;
-        
-        document.body.appendChild(modal);
-        
-        document.getElementById('next-biome-btn').addEventListener('click', function() {
-            const biomesOrder = ['atlantic', 'amazon', 'cerrado', 'caatinga', 'pantanal'];
-            const currentIndex = biomesOrder.indexOf(biome);
-            
-            if (currentIndex < biomesOrder.length - 1) {
-                const nextBiome = biomesOrder[currentIndex + 1];
-                window.location.href = `fase-${nextBiome}.html?biome=${nextBiome}`;
+            if (isFinalVictory()) {
+                showFinalVictoryModal();
             } else {
-                window.location.href = 'fases.html';
-            }
-        });
 
-        document.getElementById('same-biome-btn').addEventListener('click', function() {
-            window.location.href = `fase-${biome}.html?biome=${biome}`;
-        });
-        
-        document.getElementById('back-to-map-btn').addEventListener('click', function() {
-            window.location.href = 'fases.html';
-        });
-        
+                showBiomeCompletionModal(biome);
+            }
+        }
+
     }
-    
+
     resetBtn.addEventListener('click', resetGame);
     
     function resetGame() {

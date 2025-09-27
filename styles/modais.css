@@ -133,6 +133,7 @@
 
 #continue-btn,
 #same-biome-btn,
+#victory-btn-menu,
 .custom-modal-btn.confirm {
   background: radial-gradient(circle,rgba(95, 189, 42, 1) 0%, rgba(65, 152, 30, 1) 50%, rgba(47, 118, 26, 1) 100%);
   color: #f0f7d3;
@@ -157,7 +158,8 @@
 }
 
 #replay-btn,
-#next-biome-btn {
+#next-biome-btn,
+#victory-btn-biome {
   background: linear-gradient(135deg, #2196f3, #0d47a1);
   color: #f0f7d3;
   width: fit-content;
