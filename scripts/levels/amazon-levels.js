@@ -12,7 +12,7 @@ const amazonLevels = {
         1: {
             title: "Rio Amazonas",
             description: "Navegue pelas águas do grande rio",
-            grid: { width: 10, height: 12 },
+            grid: { width: 10, height: 10 },
             inicio: { x: 2, y: 5 },
             fim: { x: 7, y: 5 },
             itens: [],
@@ -26,7 +26,7 @@ const amazonLevels = {
         2: {
             title: "Floresta Densa",
             description: "Encontre o caminho na vegetação fechada",
-            grid: { width: 10, height: 12 },
+            grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 4 },
             fim: { x: 5, y: 6 },
             itens: [],
@@ -41,7 +41,7 @@ const amazonLevels = {
         3: {
             title: "Território Indígena",
             description: "Respeite as terras dos povos originários",
-            grid: { width: 10, height: 12 },
+            grid: { width: 10, height: 10 },
             inicio: { x: 7, y: 4 },
             fim: { x: 2, y: 5 },
             itens: [],
@@ -58,13 +58,11 @@ const amazonLevels = {
         4: {
             title: "Várzea",
             description: "Atravesse a planície alagada",
-            grid: { width: 10, height: 12 },
+            grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 6 },
             fim: { x: 6, y: 6 },
             itens: [],
-            obstaculos: [{x: 4, y: 5},{x: 5, y: 5},
-                         {x: 4, y: 6},{x: 5, y: 6}
-            ],
+            obstaculos: [{x: 5, y: 5},{x: 4, y: 6}],
             accessibleCells: [
                 {x: 3, y: 6}, {x: 3, y: 5}, 
                 {x: 3, y: 4}, {x: 4, y: 4},
@@ -75,13 +73,11 @@ const amazonLevels = {
         5: {
             title: "Coração da Amazônia",
             description: "Desvie de Obstaculos",
-            grid: { width: 10, height: 12 },
+            grid: { width: 10, height: 10 },
             inicio: { x: 6, y: 7 },
             fim: { x: 3, y: 4 },
             itens: [],
-            obstaculos: [{x: 4, y: 5},{x: 5, y: 5},
-                         {x: 4, y: 6},{x: 5, y: 6}, {x: 3, y: 7}
-            ],
+            obstaculos: [{x: 5, y: 5},{x: 4, y: 6}, {x: 3, y: 7}],
             accessibleCells: [
                 {x: 6, y: 7}, {x: 3, y: 7},
                 {x: 3, y: 6}, {x: 3, y: 5}, 
@@ -94,12 +90,12 @@ const amazonLevels = {
         6: {
             title: "Desafio",
             description: "Desafio final na maior floresta tropical",
-            grid: { width: 10, height: 12 },
+            grid: { width: 10, height: 10 },
             inicio: { x: 4, y: 8 },
             fim: { x: 2, y: 5 },
             itens: [],
             obstaculos: [{x: 4, y: 5},{x: 6, y: 4},
-                         {x: 4, y: 6},, {x: 3, y: 7}, {x: 3, y: 8}, {x: 6, y: 7}, {x: 6, y: 6}
+                         {x: 4, y: 6}, {x: 3, y: 7}, {x: 3, y: 8}, {x: 6, y: 7}, {x: 6, y: 6}
             ],
             accessibleCells: [
                 {x: 6, y: 7}, {x: 3, y: 7},

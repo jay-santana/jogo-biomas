@@ -136,8 +136,8 @@ h3#level-title {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(10, minmax(18px, 38px)); /* Tamanhos flexíveis */
-  grid-template-rows: repeat(12, minmax(18px, 38px));
+  grid-template-columns: repeat(10, minmax(18px, 50px)); /* Tamanhos flexíveis */
+  grid-template-rows: repeat(10, minmax(18px, 50px));
   gap: 2px;
   padding: 5px;
   border-radius: 8px;
@@ -148,7 +148,7 @@ h3#level-title {
   background-position: center;
   width: 100%; /* Ocupa 100% do container */
   height: auto; /* Altura automática */
-  aspect-ratio: 10/12; /* Mantém proporção do grid */
+  aspect-ratio: 10/10; /* Mantém proporção do grid */
   position: relative;
 }
 .grid::before {
@@ -200,7 +200,6 @@ h3#level-title {
   border-radius: 2px;
   position: relative;
   position: relative;
-  z-index: 0;
   background-size: cover;
   background-position: center;
 }
@@ -241,6 +240,8 @@ h3#level-title {
   background-position: center !important;
   background-color: #eebb99;
   border: 1px solid #f89a89;
+  width: 100%;
+  height: 100%;
 }
 
 .start {
@@ -271,8 +272,6 @@ h3#level-title {
 
 .amazon .obstacle {
   background-image: url('../assets/obstacles/amazon/obstacle-1.png');
-  width: 40px;
-  height: auto;
 }
 
 .cerrado .obstacle {
@@ -281,11 +280,6 @@ h3#level-title {
 
 .caatinga .obstacle {
   background-image: url('../assets/obstacles/caatinga/obstacle-1.png');
-  width: 50px;
-  height: 50px;
-  top: -5px;
-  left:-6px;
-  transform: scale(0.8);
 }
 
 .pantanal .obstacle {
@@ -303,13 +297,10 @@ h3#level-title {
 
 .character {
   background: url("../assets/personagem/spritesheet-pers-2.png") no-repeat;
-  top: -4px;
-  left: -6px;
   width: 63px;
   height: 84px;
   position: absolute;
-  image-rendering: pixelated;
-  transform: translate(-15%, -35%) scale(0.83);
+  transform: translate(-15%, -35%) scale(1);
   z-index: 10;
 }
 
@@ -613,8 +604,6 @@ img {
   .caatinga .obstacle {
     width: 45px;
     height: 45px;
-    transform: none;
-    top: 0.8px;
   }
 
   .character {
@@ -765,8 +754,6 @@ img {
   .caatinga .obstacle {
     width: 28px;
     height: 28px;
-    transform: none;
-    top: 0.8px;
   }
 
   
@@ -801,12 +788,6 @@ img {
     min-height: 100px;
   }
 
-  .caatinga .obstacle {
-    width: 45px;
-    height: 45px;
-    transform: none;
-    top: 0.8px;
-  }
 }
 
 /* Ajuste especial para altura muito reduzida em paisagem */
@@ -930,9 +911,6 @@ img {
   .caatinga .obstacle {
     width: 29px;
     height: 29px;
-    transform: none;
-    top: 0;
-    left: -0.8px;
   }
 
   
@@ -1007,8 +985,6 @@ img {
   .caatinga .obstacle {
     width: 50px;
     height: 50px;
-    transform: none;
-    top: 0;
   }
 
   .character {
@@ -1085,8 +1061,6 @@ img {
   .caatinga .obstacle {
     width: 50px;
     height: 50px;
-    transform: none;
-    top: 0;
   }
 
   .character {

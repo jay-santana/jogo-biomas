@@ -11,7 +11,7 @@ const atlanticLevels = {
         1: {
             title: "Floresta Tropical",
             description: "Primeiros passos na Mata Atlântica",
-            grid: { width: 10, height: 12 },
+            grid: { width: 10, height: 10 },
             inicio: { x: 2, y: 5 },
             fim: { x: 7, y: 5 },
             itens: [],
@@ -24,7 +24,7 @@ const atlanticLevels = {
         2: {
             title: "Caminho da Onça-pintada",
             description: "Desvie dos obstáculos da floresta",
-            grid: { width: 10, height: 12 },
+            grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 4 },
             fim: { x: 5, y: 6 },
             itens: [],
@@ -37,7 +37,7 @@ const atlanticLevels = {
         3: {
             title: "Trilha do Mico-leão",
             description: "Encontre o caminho entre as árvores",
-            grid: { width: 10, height: 12 },
+            grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 6 },
             fim: { x: 6, y: 6 },
             itens: [],
@@ -54,7 +54,7 @@ const atlanticLevels = {
         4: {
             title: "Cachoeiras da Serra",
             description: "Navegue pelas corredeiras",
-            grid: { width: 10, height: 12 },
+            grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 5 },
             fim: { x: 7, y: 5 },
             itens: [],
@@ -69,7 +69,7 @@ const atlanticLevels = {
         5: {
             title: "Cume da Biodiversidade",
             description: "Desvie de Obstaculos",
-            grid: { width: 10, height: 12 },
+            grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 6 },
             fim: { x: 6, y: 4 },
             itens: [],
@@ -84,16 +84,16 @@ const atlanticLevels = {
         6: {
             title: "Desafio",
             description: "Desafio final da Mata Atlântica",
-            grid: { width: 10, height: 12 },
-            inicio: { x: 2, y: 4 },
-            fim: { x: 6, y: 7 },
+            grid: { width: 10, height: 10 },
+            inicio: { x: 2, y: 3 },
+            fim: { x: 6, y: 6 },
             itens: [],
-            obstaculos: [{ x: 4, y: 7 }, { x: 3, y: 6 }],
+            obstaculos: [{ x: 4, y: 6 }, { x: 3, y: 5 }],
             accessibleCells: [
-                {x: 2, y: 4}, {x: 3, y: 4}, 
-                {x: 3, y: 5}, {x: 4, y: 5},
-                {x: 4, y: 6}, {x: 5, y: 6},
-                {x: 5, y: 7}, {x: 6, y: 7}
+                {x: 2, y: 3}, {x: 3, y: 3}, 
+                {x: 3, y: 4}, {x: 4, y: 4},
+                {x: 4, y: 5}, {x: 5, y: 5},
+                {x: 5, y: 6}, {x: 6, y: 6}
             ]
         }
     }
