@@ -324,3 +324,50 @@ header {
     left: 72%;
   }  
 }
+
+/* ===== NOVA ESTRUTURA DE BREAKPOINTS ===== */
+
+/* Mobile paisagem e tablets pequenos (480px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+/* Ajuste específico para mobile paisagem (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+
+}
+
+/* Tablets médios (768px - 1023px) - iPad, Tab S7, etc. */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+/* Tablets médios em paisagem (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+
+}
+
+/* Tablets grandes e laptops pequenos (1024px - 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+
+}
+
+/* Laptops e desktops (1200px - 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+
+}
+
+/* Telas muito grandes (1600px+) */
+@media (min-width: 1600px) {
+
+}
+
+/* Ajuste especial para altura muito reduzida em paisagem */
+@media (max-height: 500px) and (orientation: landscape) {
+
+}
+
+/* Ajuste para telas muito largas (proporção anômala) */
+@media (min-aspect-ratio: 21/9) {
+
+}
