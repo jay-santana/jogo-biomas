@@ -43,9 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
   checkProgress();
 
   function checkProgress() {
-    // Obter progresso do localStorage
+    // Obter progresso do localStorage ou criar padrão CORRETO
     const progress = JSON.parse(localStorage.getItem("gameProgress")) || {
-      atlantic: [true, false, false, false, false, false],
+      atlantic: [true, false, false, false, false, false],  // Apenas nível 1 desbloqueado
+      amazon: [false, false, false, false, false, false],   // Totalmente bloqueado
+      cerrado: [false, false, false, false, false, false],  // Totalmente bloqueado
+      caatinga: [false, false, false, false, false, false], // Totalmente bloqueado
+      pantanal: [false, false, false, false, false, false]  // Totalmente bloqueado
     };
 
     // Obter o bioma atual
@@ -64,14 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
       else biome = "atlantic"; // Padrão
     }
 
-    let biomeProgress = progress[biome] || [
-      true,
-      false,
-      false,
-      false,
-      false,
-      false,
-    ];
+    let biomeProgress = progress[biome] || [false, false, false, false, false, false];
     if (biomeProgress.length < 6) {
       biomeProgress = [
         ...biomeProgress,
@@ -86,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         status.classList.remove("locked");
         status.classList.add("unlocked");
-        // status.querySelector("span").textContent = "DESBLOQUEADO";
         btn.disabled = false;
       }
     });

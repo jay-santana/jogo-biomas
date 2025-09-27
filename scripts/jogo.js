@@ -92,7 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (nextLevel <= 6) {
             window.location.href = `jogo.html?biome=${biome}&level=${nextLevel}`;
         } else {
-            window.location.href = 'fases.html';
+            // Se não há próximo nível, voltar para seleção de fases do mesmo bioma
+            window.location.href = `fase-${biome}.html?biome=${biome}`;
         }
     });
     
@@ -490,7 +491,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function saveProgress(biome, level, steps) {
-        // Carregar progresso existente ou criar novo
+        // Carregar progresso existente ou criar novo CORRETO
         const progress = JSON.parse(localStorage.getItem('gameProgress')) || {
             'atlantic': [true, false, false, false, false, false],
             'amazon': [false, false, false, false, false, false],
@@ -500,12 +501,27 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         // Marcar nível atual como concluído
-        const levelIndex = parseInt(level) - 1;
+        const levelIndex = parseInt(level) - 2;
         progress[biome][levelIndex] = true;
         
         // Se não for o último nível, desbloquear o próximo nível do MESMO bioma
-        if (levelIndex < 5) {
+        if (levelIndex < 6) {
             progress[biome][levelIndex + 1] = true;
+        }
+        
+        // Verificar se completou TODOS os 6 níveis do bioma atual
+        const completedAllLevels = progress[biome].every(levelCompleted => levelCompleted === true);
+        
+        // Se completou todos os níveis, desbloquear PRIMEIRO nível do próximo bioma
+        if (completedAllLevels) {
+            const biomesOrder = ['atlantic', 'amazon', 'cerrado', 'caatinga', 'pantanal'];
+            const currentIndex = biomesOrder.indexOf(biome);
+            
+            // Verificar se existe próximo bioma
+            if (currentIndex < biomesOrder.length - 1) {
+                const nextBiome = biomesOrder[currentIndex + 1];
+                progress[nextBiome][0] = true; // Desbloquear apenas o nível 1 do próximo bioma
+            }
         }
         
         // Salvar estatísticas adicionais (opcional)
@@ -523,6 +539,57 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('gameStats', JSON.stringify(stats));
         
         console.log(`Progresso salvo: ${biome}, nível ${level}, ${steps} passos`);
+        
+        // Se completou o bioma, mostrar modal especial
+        if (completedAllLevels) {
+            showBiomeCompletionModal(biome);
+        }
+    }
+
+    function showBiomeCompletionModal(biome) {
+        // Esconder modal de vitória normal
+        victoryModal.style.display = 'none';
+        
+        // Criar modal personalizado para conclusão do bioma
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.style.display = 'flex';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <h2>PARABÉNS!</h2>
+                <p>VOCÊ COMPLETOU TODO O BIOMA ${formatBiomeName(biome).toUpperCase()}</p>
+                <div class="modal-buttons">
+                    <button id="next-biome-btn">IR PARA O PRÓXIMO BIOMA</button>
+                    <button id="back-to-map-btn">VOLTAR AO MAPA</button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
+        
+        document.getElementById('next-biome-btn').addEventListener('click', function() {
+            const biomesOrder = ['atlantic', 'amazon', 'cerrado', 'caatinga', 'pantanal'];
+            const currentIndex = biomesOrder.indexOf(biome);
+            
+            if (currentIndex < biomesOrder.length - 1) {
+                const nextBiome = biomesOrder[currentIndex + 1];
+                window.location.href = `fase-${nextBiome}.html?biome=${nextBiome}`;
+            } else {
+                // Último bioma concluído - voltar ao mapa
+                window.location.href = 'fases.html';
+            }
+        });
+        
+        document.getElementById('back-to-map-btn').addEventListener('click', function() {
+            window.location.href = 'fases.html';
+        });
+        
+        // Fechar modal ao clicar fora
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                document.body.removeChild(modal);
+            }
+        });
     }
     
     // Resetar jogo
