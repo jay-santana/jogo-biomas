@@ -406,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (winStatus === 'incomplete') {
                 // Chegou no final mas faltam itens
-                alert('Você chegou ao final, mas não coletou todos os itens!');
+                alert('VOCE CHEGOU AO FINAL MAS NÃO COLETOU TODOS OS ITENS - REINICIANDO');
                 resetGame();
                 runBtn.disabled = false;
                 resetBtn.disabled = false;

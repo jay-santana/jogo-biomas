@@ -11,7 +11,7 @@ class ModalManager {
         document.body.appendChild(this.modalContainer);
     }
 
-    showAlert(message, title = "Alerta", confirmText = "OK", onConfirm = null) {
+    showAlert(message, title = "ALERTA", confirmText = "OK", onConfirm = null) {
         return new Promise((resolve) => {
             const modalId = 'modal-' + Date.now();
             const modalHTML = `
