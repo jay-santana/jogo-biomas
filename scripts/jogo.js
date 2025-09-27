@@ -372,33 +372,47 @@ document.addEventListener('DOMContentLoaded', function() {
     runBtn.addEventListener('click', executeCommands);
     
     async function executeCommands() {
-        runBtn.disabled = true;
-        resetBtn.disabled = true;
-        gameState.steps = 0;
-        
-            for (let command of gameState.commands) {
-            const movementResult = await moveCharacter(command);
-            
-            // Se o movimento foi bloqueado, interrompe a execução
-            if (movementResult === 'blocked') {
-                // Aguarda um pouco para mostrar o feedback visual
-                await new Promise(resolve => setTimeout(resolve, 800));
-                resetGame();
-                runBtn.disabled = false;
-                resetBtn.disabled = false;
-                return;
-            }
-            
-            gameState.steps++;
-            updateCounters();
-            checkForItem();
-            if (checkWinCondition()) break;
-            await new Promise(resolve => setTimeout(resolve, 500));
-        }
-        
-        runBtn.disabled = false;
-        resetBtn.disabled = false;
-    }
+      runBtn.disabled = true;
+      resetBtn.disabled = true;
+      gameState.steps = 0;
+      
+      for (let command of gameState.commands) {
+          const movementResult = await moveCharacter(command);
+          
+          // Verificar se bateu em obstáculo
+          if (movementResult === 'blocked') {
+              await new Promise(resolve => setTimeout(resolve, 800));
+              alert("VOCÊ ESBARROU EM UM OBSTACULO - REINICIANDO");
+              resetGame();
+              runBtn.disabled = false;
+              resetBtn.disabled = false;
+              return;
+          }
+          
+          gameState.steps++;
+          updateCounters();
+          checkForItem();
+          
+          // Verificar se venceu a cada movimento
+          if (checkWinCondition()) {
+              runBtn.disabled = false;
+              resetBtn.disabled = false;
+              return;
+          }
+          
+          await new Promise(resolve => setTimeout(resolve, 500));
+      }
+      
+      // Se terminou todos os comandos sem vencer
+      if (!checkWinCondition()) {
+          await new Promise(resolve => setTimeout(resolve, 500));
+          alert("VOCÊ NÃO COMPLETOU O JOGO - REINICIANDO");
+          resetGame();
+      }
+      
+      runBtn.disabled = false;
+      resetBtn.disabled = false;
+  }
     
     function moveCharacter(direction) {
         return new Promise(resolve => {
@@ -489,7 +503,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const levelIndex = parseInt(level) - 1;
         progress[biome][levelIndex] = true;
         
-        // Se não for o último nível, desbloquear o próximo
+        // Se não for o último nível, desbloquear o próximo nível do MESMO bioma
         if (levelIndex < 5) {
             progress[biome][levelIndex + 1] = true;
         }
@@ -525,7 +539,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function updateCounters() {
-        stepsCounter.textContent = `PASSOS: ${gameState.steps}`;
+        // stepsCounter.textContent = `PASSOS: ${gameState.steps}`;
         itemsCounter.textContent = `ITENS: ${gameState.itemsCollected}/${gameState.totalItems}`;
     }
     
