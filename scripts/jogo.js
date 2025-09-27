@@ -373,47 +373,59 @@ document.addEventListener('DOMContentLoaded', function() {
     runBtn.addEventListener('click', executeCommands);
     
     async function executeCommands() {
-      runBtn.disabled = true;
-      resetBtn.disabled = true;
-      gameState.steps = 0;
-      
-      for (let command of gameState.commands) {
-          const movementResult = await moveCharacter(command);
-          
-          // Verificar se bateu em obstáculo
-          if (movementResult === 'blocked') {
-              await new Promise(resolve => setTimeout(resolve, 800));
-              alert("VOCÊ ESBARROU EM UM OBSTACULO - REINICIANDO");
-              resetGame();
-              runBtn.disabled = false;
-              resetBtn.disabled = false;
-              return;
-          }
-          
-          gameState.steps++;
-          updateCounters();
-          checkForItem();
-          
-          // Verificar se venceu a cada movimento
-          if (checkWinCondition()) {
-              runBtn.disabled = false;
-              resetBtn.disabled = false;
-              return;
-          }
-          
-          await new Promise(resolve => setTimeout(resolve, 500));
-      }
-      
-      // Se terminou todos os comandos sem vencer
-      if (!checkWinCondition()) {
-          await new Promise(resolve => setTimeout(resolve, 500));
-          alert("VOCÊ NÃO COMPLETOU O JOGO - REINICIANDO");
-          resetGame();
-      }
-      
-      runBtn.disabled = false;
-      resetBtn.disabled = false;
-  }
+        runBtn.disabled = true;
+        resetBtn.disabled = true;
+        gameState.steps = 0;
+        
+        for (let command of gameState.commands) {
+            const movementResult = await moveCharacter(command);
+            
+            // Verificar se bateu em obstáculo
+            if (movementResult === 'blocked') {
+                await new Promise(resolve => setTimeout(resolve, 800));
+                alert("VOCÊ ESBARROU EM UM OBSTACULO - REINICIANDO");
+                resetGame();
+                runBtn.disabled = false;
+                resetBtn.disabled = false;
+                return;
+            }
+            
+            gameState.steps++;
+            updateCounters();
+            checkForItem();
+            
+            // Verificar se venceu a cada movimento
+            const winStatus = checkWinCondition();
+            
+            if (winStatus === true) {
+                // Vitória completa - já mostra modal na showVictory()
+                runBtn.disabled = false;
+                resetBtn.disabled = false;
+                return;
+            }
+            
+            if (winStatus === 'incomplete') {
+                // Chegou no final mas faltam itens
+                alert('Você chegou ao final, mas não coletou todos os itens!');
+                resetGame();
+                runBtn.disabled = false;
+                resetBtn.disabled = false;
+                return; // IMPORTANTE: sair da função
+            }
+            
+            await new Promise(resolve => setTimeout(resolve, 500));
+        }
+        
+        // Se terminou todos os comandos sem vencer
+        if (!checkWinCondition()) {
+            await new Promise(resolve => setTimeout(resolve, 500));
+            alert("VOCÊ NÃO COMPLETOU O JOGO - REINICIANDO");
+            resetGame();
+        }
+        
+        runBtn.disabled = false;
+        resetBtn.disabled = false;
+    }
     
     function moveCharacter(direction) {
         return new Promise(resolve => {
@@ -470,18 +482,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function checkWinCondition() {
         const { x, y } = gameState.characterPosition;
-        if (gameState.grid[y][x] === 'end') {
-            if (gameState.itemsCollected === gameState.totalItems) {
-                showVictory();
-                return true;
-            } else {
-                alert('Você chegou ao final, mas não coletou todos os itens!');
-                resetGame();
-            }
+        
+        // Só retorna true se for vitória COMPLETA (com todos os itens)
+        if (gameState.grid[y][x] === 'end' && gameState.itemsCollected === gameState.totalItems) {
+            showVictory();
+            return true;
         }
+        
+        // Se chegou no final mas faltam itens, retorna um status especial
+        if (gameState.grid[y][x] === 'end' && gameState.itemsCollected < gameState.totalItems) {
+            return 'incomplete'; // Status especial para itens incompletos
+        }
+        
         return false;
     }
-    
+
     function showVictory() {
         stepsResult.textContent = `VOCE COMPLETOU O NIVEL EM ${gameState.steps} PASSOS`;
         victoryModal.style.display = 'flex';
@@ -500,31 +515,25 @@ document.addEventListener('DOMContentLoaded', function() {
             'pantanal': [false, false, false, false, false, false],
         };
         
-        // Marcar nível atual como concluído
         const levelIndex = parseInt(level) - 2;
         progress[biome][levelIndex] = true;
         
-        // Se não for o último nível, desbloquear o próximo nível do MESMO bioma
         if (levelIndex < 6) {
             progress[biome][levelIndex + 1] = true;
         }
         
-        // Verificar se completou TODOS os 6 níveis do bioma atual
         const completedAllLevels = progress[biome].every(levelCompleted => levelCompleted === true);
         
-        // Se completou todos os níveis, desbloquear PRIMEIRO nível do próximo bioma
         if (completedAllLevels) {
             const biomesOrder = ['atlantic', 'amazon', 'cerrado', 'caatinga', 'pantanal'];
             const currentIndex = biomesOrder.indexOf(biome);
             
-            // Verificar se existe próximo bioma
             if (currentIndex < biomesOrder.length - 1) {
                 const nextBiome = biomesOrder[currentIndex + 1];
-                progress[nextBiome][0] = true; // Desbloquear apenas o nível 1 do próximo bioma
+                progress[nextBiome][0] = true;
             }
         }
         
-        // Salvar estatísticas adicionais (opcional)
         const stats = JSON.parse(localStorage.getItem('gameStats')) || {};
         const levelKey = `${biome}_level_${level}`;
         stats[levelKey] = {
@@ -533,24 +542,20 @@ document.addEventListener('DOMContentLoaded', function() {
             bestSteps: Math.min(steps, stats[levelKey]?.bestSteps || Infinity),
             completedAt: new Date().toISOString()
         };
-        
-        // Salvar no localStorage
+
         localStorage.setItem('gameProgress', JSON.stringify(progress));
         localStorage.setItem('gameStats', JSON.stringify(stats));
         
         console.log(`Progresso salvo: ${biome}, nível ${level}, ${steps} passos`);
         
-        // Se completou o bioma, mostrar modal especial
         if (completedAllLevels) {
             showBiomeCompletionModal(biome);
         }
     }
 
     function showBiomeCompletionModal(biome) {
-        // Esconder modal de vitória normal
         victoryModal.style.display = 'none';
         
-        // Criar modal personalizado para conclusão do bioma
         const modal = document.createElement('div');
         modal.className = 'modal';
         modal.style.display = 'flex';
@@ -560,6 +565,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>VOCÊ COMPLETOU TODO O BIOMA ${formatBiomeName(biome).toUpperCase()}</p>
                 <div class="modal-buttons">
                     <button id="next-biome-btn">IR PARA O PRÓXIMO BIOMA</button>
+                    <button id="same-biome-btn">VOLTAR PARA NIVEIS</button>
                     <button id="back-to-map-btn">VOLTAR AO MAPA</button>
                 </div>
             </div>
@@ -575,30 +581,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 const nextBiome = biomesOrder[currentIndex + 1];
                 window.location.href = `fase-${nextBiome}.html?biome=${nextBiome}`;
             } else {
-                // Último bioma concluído - voltar ao mapa
                 window.location.href = 'fases.html';
             }
+        });
+
+        document.getElementById('same-biome-btn').addEventListener('click', function() {
+            window.location.href = `fase-${biome}.html?biome=${biome}`;
         });
         
         document.getElementById('back-to-map-btn').addEventListener('click', function() {
             window.location.href = 'fases.html';
         });
         
-        // Fechar modal ao clicar fora
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                document.body.removeChild(modal);
-            }
-        });
     }
     
-    // Resetar jogo
     resetBtn.addEventListener('click', resetGame);
     
     function resetGame() {
-        resetCommands();
-        initializeGrid(gameState.currentConfig);
+        gameState.itemsCollected = 0;
+        gameState.steps = 0;
+        
+        gameState.commands = [];
+        updateCommandDisplay();
+
+        updateCounters();
+
+        if (gameState.currentConfig) {
+            gridElement.innerHTML = '';
+            gameState.grid = [];
+
+            initializeGrid(gameState.currentConfig);
+        }
     }
+
     
     function resetCommands() {
         gameState.commands = [];

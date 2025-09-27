@@ -132,6 +132,35 @@ header {
     left: 60%;
 }
 
+/* Estilos para botões de biomas bloqueados */
+.select-btn.locked {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid #666;
+    color: #999;
+    text-shadow: 1px 1px 0 #333;
+}
+
+.select-btn.locked:hover {
+    transform: none;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Indicador de bloqueado */
+.locked-indicator {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    z-index: 3;
+}
+
 /* Tablets em paisagem*/
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .container{
