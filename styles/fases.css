@@ -1,402 +1,677 @@
 @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
 body {
-    background: linear-gradient(135deg, #557a69, #3c6158, #2f9789);
-    min-width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: linear-gradient(135deg, #557a69, #3c6158, #2f9789);
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 1200px;
-    max-height: 800px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 800px;
 }
 
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-    z-index: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 20;
 }
 
 .back-btn {
-    padding: 10px 20px;
-    background: #443328;
-    color: #ded597;
-    border: 2px solid #c5a274;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 0.7rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    z-index: 21;
+  padding: 8px 16px;
+  background: #443328;
+  color: #ded597;
+  border: 2px solid #c5a274;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 21;
 }
 
 .back-btn:hover {
-    background: #744c33;
-    transform: translateY(-2px);
+  background: #744c33;
+  transform: translateY(-2px);
 }
 
 .map-container {
-    position: relative;
-    width: 100%;
-    height: 106%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .map-image {
-    width: 100%;
-    height: 90%;
-    object-fit: contain;
-    position: absolute;
-    z-index: 1;
+  width: 170%;
+  height: 85%;
+  object-fit: contain;
+  position: absolute;
+  z-index: 1;
+  margin-top: 80px;
 }
 
 .biomes-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
+  position: absolute;
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  z-index: 2;
+  top: 40px;
 }
 
 .biome-card {
-    position: absolute;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
 
 .select-btn {
-    padding: 8px 16px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fffacd;
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-    border: 2px solid #fffacd;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fffacd;
+  font-size: 0.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
+  border: 2px solid #fffacd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .select-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
 }
 
+/* Posições dos biomas para mobile first */
 .biome-card[data-biome="amazon"] {
-    top: 30%;
-    left: 43%;
-}
-
-.biome-card[data-biome="cerrado"] {
-    top: 52%;
-    left: 57%;
+  top: 40%;
+  left: 40%;
 }
 
 .biome-card[data-biome="caatinga"] {
-    top: 33%;
-    left: 69%;
+  top: 42%;
+  left: 85%;
+}
+
+.biome-card[data-biome="cerrado"] {
+  top: 52%;
+  left: 60%;
 }
 
 .biome-card[data-biome="pantanal"] {
-    top: 59%;
-    left: 43%;
+  top: 55%;
+  left: 32%;
 }
 
 .biome-card[data-biome="atlantic"] {
-    top: 70%;
-    left: 60%;
+  top: 62%;
+  left: 75%;
 }
 
 /* Estilos para botões de biomas bloqueados */
 .select-btn.locked {
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.3);
-    border: 2px solid #666;
-    color: #999;
-    text-shadow: 1px 1px 0 #333;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid #666;
+  color: #999;
+  text-shadow: 1px 1px 0 #333;
 }
 
 .select-btn.locked:hover {
-    transform: none;
-    background: rgba(0, 0, 0, 0.3);
+  transform: none;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* Indicador de bloqueado */
 .locked-indicator {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    border-radius: 50%;
-    width: 23px;
-    height: 23px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    z-index: 3;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  z-index: 3;
 }
 
-/* Tablets em paisagem*/
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .container{
-    height: 105vh;
-    width: 100vw;
-  }
+/* ===== NOVA ESTRUTURA DE BREAKPOINTS ===== */
 
-  .map-container{
-    width: 100%;
-    height: 100%;
-  }
-
+/* Mobile paisagem e tablets pequenos (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
   .map-image {
-    width: 100%;
-    height: 93%;
-    margin-top: 60px;
-  }
-
-  header{
-    padding: 15px;
+    width: 170%;
+    height: 90%;
+    margin-top: 0px;
+    margin-right: 10px;
   }
 
   .biomes-overlay {
-    width: 130%;
-    top: 40px;
+    width: 100%;
+    max-width: 800px;
+    top: 0px;
+  }
+
+  /* Posições dos biomas para mobile first */
+  .biome-card[data-biome="amazon"] {
+    top: 38%;
+    left: 40%;
+  }
+
+  .biome-card[data-biome="caatinga"] {
+    top: 40%;
+    left: 86%;
+  }
+
+  .biome-card[data-biome="cerrado"] {
+    top: 52%;
+    left: 60%;
+  }
+
+  .biome-card[data-biome="pantanal"] {
+    top: 58%;
+    left: 33%;
+  }
+
+  .biome-card[data-biome="atlantic"] {
+    top: 66%;
+    left: 77%;
+  }
+
+  .select-btn {
+    font-size: 0.7rem;
+    padding: 7px 14px;
+  }
+
+  .back-btn {
+    font-size: 0.7rem;
+    padding: 10px 20px;
+    margin-top: -200px;
+  }
+
+  header {
+    padding: 25px;
   }
 }
 
-/* Mobile em paisagem (480px - 767px) */
-@media (max-width: 767px) and (orientation: landscape) {
-  .container{
+/* Ajuste específico para mobile paisagem (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+  .container {
     height: 110vh;
-    width: 100vw;
-  }
-
-  .map-container{
-    width: 100%;
-    height: 100%;
   }
 
   .map-image {
     width: 120%;
     height: 93%;
-    margin-top: 50px;
-  }
-
-  header{
-    padding: 10px;
+    margin-top: 40px;
   }
 
   .biomes-overlay {
-    width: 110%;
-    top: 30px;
-    left: -30px;
-  }
-
-  .select-btn {
-    font-size: 0.7rem;
-    font-weight: normal;
-  }
-
-  .back-btn {
-    font-size: 0.8rem;
-    padding: 5px 15px;
-  }
-}
-
-/* Telas muito grandes (TVs acima de 1600px) */
-@media (min-width: 1600px) and (orientation: landscape) {
-  .container{
-    height: 100vh;
-    width: 100vw;
-  }
-
-  .map-container{
     width: 100%;
-    height: 100%;
-  }
-  .map-image {
-    width: 150%;
-    height: 100%;
-  }
-    
-  .biomes-overlay {
-    width: 130%;
-    height: 100%;
+    max-width: 600px;
+    top: 20px;
   }
 
-  .select-btn {
-    font-size: 1.1rem;
-  }
-
-  .container{
-    max-height: 1000px;
-  }
-
-  .back-btn {
-    font-size: 1rem;
-  }
-}
-
-/* Ajuste especial para altura muito reduzida em paisagem */
-@media (max-height: 500px) and (orientation: landscape) {
-  .map-container{
-    width: 100%;
-    height: 100%;
-  }
-
-  .map-image {
-    width: 130%;
-    height: 93%;
-    margin-top: 30px;
-  }
-
-  .biomes-overlay {
-    width: 89%;
-    top: 25px;
-  }
-
-  .select-btn {
-    font-size: 0.7rem;
-  }
-}
-
-/* Tablets em portrait (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  /* .container{
-    max-height: 100vh;
-    width: 100vw;
-  } */
-
-  .map-container{
-    width: 100%;
-    height: 100%;
-  }
-  .map-container{
-    width: 100%;
-    height: 100%;
-  }
-
-  .map-image {
-    width: 160%;
-    height: 100%;
-    margin-top: 270px;
-  }
-
-  .biomes-overlay {
-    width: 180%;
-    top: 140px;
-  }
-}
-
-/* Mobile em portrait (até 767px) */
-@media (max-width: 767px) and (orientation: portrait) {
-  .map-container{
-    height: 1090px;
-  }
-
-  .map-image {
-    width: 890px;
-    margin-top: 80px;
-  }
-
-  .select-btn {
-    font-size: 0.7rem;
-  }
-
+  /* Posições dos biomas para mobile first */
   .biome-card[data-biome="amazon"] {
-    top: 43%;
-    left: 40%;
-  }
-
-  .biome-card[data-biome="cerrado"] {
-    top: 55%;
-    left: 60%;
+    top: 37%;
+    left: 44%;
   }
 
   .biome-card[data-biome="caatinga"] {
-    top: 46%;
-    left: 85%;
+    top: 40%;
+    left: 80%;
+  }
+
+  .biome-card[data-biome="cerrado"] {
+    top: 52%;
+    left: 56%;
   }
 
   .biome-card[data-biome="pantanal"] {
-    top: 58%;
-    left: 35%;
+    top: 56%;
+    left: 37%;
   }
 
   .biome-card[data-biome="atlantic"] {
-    top: 65%;
-    left: 72%;
-  }  
-}
+    top: 66%;
+    left: 66%;
+  }
 
-/* ===== NOVA ESTRUTURA DE BREAKPOINTS ===== */
+  .select-btn {
+    font-size: 0.6rem;
+    padding: 6px 12px;
+  }
 
-/* Mobile paisagem e tablets pequenos (480px - 767px) */
-@media (min-width: 481px) and (max-width: 767px) {
+  .back-btn {
+    font-size: 0.6rem;
+    padding: 6px 12px;
+    margin-top: 100px;
+  }
 
-}
-
-/* Ajuste específico para mobile paisagem (480px - 767px) */
-@media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
-
+  header {
+    padding: 15px;
+  }
 }
 
 /* Tablets médios (768px - 1023px) - iPad, Tab S7, etc. */
 @media (min-width: 768px) and (max-width: 1023px) {
+  .map-image {
+    width: 170%;
+    height: 92%;
+    margin-top: 50px;
+  }
 
+  .biomes-overlay {
+    width: 150%;
+    max-width: 1200px;
+    top: 25px;
+  }
+
+  .select-btn {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+
+  .back-btn {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    margin-top: -50px;
+  }
+
+  header {
+    padding: 30px;
+  }
+
+  /* Ajuste das posições para tablets */
+  .biome-card[data-biome="amazon"] {
+    top: 30%;
+    left: 42%;
+  }
+
+  .biome-card[data-biome="caatinga"] {
+    top: 35%;
+    left: 75%;
+  }
+
+  .biome-card[data-biome="cerrado"] {
+    top: 53%;
+    left: 58%;
+  }
+
+  .biome-card[data-biome="pantanal"] {
+    top: 58%;
+    left: 41%;
+  }
+
+  .biome-card[data-biome="atlantic"] {
+    top: 75%;
+    left: 62%;
+  }
 }
 
 /* Tablets médios em paisagem (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  .container {
+    height: 105vh;
+  }
 
+  .map-image {
+    width: 100%;
+    height: 95%;
+    margin-top: 30px;
+  }
+
+  .biomes-overlay {
+    width: 100%;
+    max-width: 1200px;
+    top: 15px;
+  }
+
+  /* Ajuste das posições para tablets */
+  .biome-card[data-biome="amazon"] {
+    top: 35%;
+    left: 45%;
+  }
+
+  .biome-card[data-biome="caatinga"] {
+    top: 38%;
+    left: 75%;
+  }
+
+  .biome-card[data-biome="cerrado"] {
+    top: 52%;
+    left: 58%;
+  }
+
+  .biome-card[data-biome="pantanal"] {
+    top: 56%;
+    left: 41%;
+  }
+
+  .biome-card[data-biome="atlantic"] {
+    top: 70%;
+    left: 63%;
+  }
+
+  .select-btn {
+    font-size: 0.8rem;
+    padding: 10px 16px;
+  }
+
+  .back-btn {
+    font-size: 0.8rem;
+  }
+
+  header {
+    padding: 20px;
+  }
 }
 
 /* Tablets grandes e laptops pequenos (1024px - 1199px) */
 @media (min-width: 1024px) and (max-width: 1199px) {
+  .container {
+    max-height: 900px;
+  }
 
+  .map-image {
+    width: 110%;
+    height: 95%;
+    margin-top: 20px;
+  }
+
+  .biomes-overlay {
+    width: 100%;
+    max-width: 1200px;
+    top: 10px;
+  }
+
+    /* Posições para desktop pequeno */
+  .biome-card[data-biome="amazon"] {
+    top: 30%;
+    left: 43%;
+  }
+
+  .biome-card[data-biome="caatinga"] {
+    top: 35%;
+    left: 72%;
+  }
+
+  .biome-card[data-biome="cerrado"] {
+    top: 52%;
+    left: 55%;
+  }
+
+  .biome-card[data-biome="pantanal"] {
+    top: 58%;
+    left: 42%;
+  }
+
+  .biome-card[data-biome="atlantic"] {
+    top: 74%;
+    left: 61%;
+  }
+
+  .select-btn {
+    font-size: 0.7rem;
+    padding: 9px 18px;
+  }
+
+  .back-btn {
+    font-size: 0.7rem;
+    padding: 10px 20px;
+  }
+
+  header {
+    padding: 40px;
+  }
 }
 
 /* Laptops e desktops (1200px - 1599px) */
 @media (min-width: 1200px) and (max-width: 1599px) {
+  .container {
+    max-height: 950px;
+    max-width: 1400px;
+  }
 
+  .map-image {
+    width: 100%;
+    height: 98%;
+    margin-top: 0;
+  }
+
+  .biomes-overlay {
+    width: 100%;
+    max-width: 1200px;
+    top: 0;
+  }
+  
+  /* Posições para desktop pequeno */
+  .biome-card[data-biome="amazon"] {
+    top: 30%;
+    left: 43%;
+  }
+
+  .biome-card[data-biome="caatinga"] {
+    top: 36%;
+    left: 74%;
+  }
+
+  .biome-card[data-biome="cerrado"] {
+    top: 54%;
+    left: 55%;
+  }
+
+  .biome-card[data-biome="pantanal"] {
+    top: 58%;
+    left: 42%;
+  }
+
+  .biome-card[data-biome="atlantic"] {
+    top: 76%;
+    left: 61%;
+  }
+
+  .select-btn {
+    font-size: 0.7rem;
+    padding: 10px 20px;
+  }
+
+  .back-btn {
+    font-size: 0.7rem;
+    padding: 10px 20px;
+  }
+
+  header {
+    padding: 50px;
+  }
 }
 
 /* Telas muito grandes (1600px+) */
 @media (min-width: 1600px) {
+  .container {
+    max-height: 1000px;
+    max-width: 1600px;
+  }
 
+  .map-image {
+    width: 90%;
+    height: 100%;
+  }
+
+  .biomes-overlay {
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  /* Posições dos biomas para mobile first */
+  .biome-card[data-biome="amazon"] {
+    top: 32%;
+    left: 45%;
+  }
+
+  .biome-card[data-biome="caatinga"] {
+    top: 38%;
+    left: 78%;
+  }
+
+  .biome-card[data-biome="cerrado"] {
+    top: 52%;
+    left: 57%;
+  }
+
+  .biome-card[data-biome="pantanal"] {
+    top: 58%;
+    left: 40%;
+  }
+
+  .biome-card[data-biome="atlantic"] {
+    top: 73%;
+    left: 64%;
+  }
+
+  .select-btn {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+
+  .back-btn {
+    font-size: 1rem;
+    padding: 15px 30px;
+  }
+
+  header {
+    padding: 60px;
+  }
+
+  .locked-indicator {
+    width: 25px;
+    height: 25px;
+    font-size: 22px;
+  }
 }
 
 /* Ajuste especial para altura muito reduzida em paisagem */
 @media (max-height: 500px) and (orientation: landscape) {
+  .map-image {
+    width: 110%;
+    height: 90%;
+    margin-top: 20px;
+  }
 
+  .biomes-overlay {
+    width: 70%;
+    top: 10px;
+  }
+  /* Posições dos biomas para mobile first */
+  .biome-card[data-biome="amazon"] {
+    top: 32%;
+    left: 45%;
+  }
+
+  .biome-card[data-biome="caatinga"] {
+    top: 35%;
+    left: 74%;
+  }
+
+  .biome-card[data-biome="cerrado"] {
+    top: 52%;
+    left: 57%;
+  }
+
+  .biome-card[data-biome="pantanal"] {
+    top: 58%;
+    left: 41%;
+  }
+
+  .biome-card[data-biome="atlantic"] {
+    top: 73%;
+    left: 64%;
+  }
+
+  .select-btn {
+    font-size: 0.5rem;
+    padding: 4px 8px;
+    border-radius: 5px;
+  }
+
+  .back-btn {
+    font-size: 0.5rem;
+    padding: 10px 15px;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  .locked-indicator {
+    width: 18px;
+    height: 18px;
+    font-size: 16px;
+  }
 }
 
 /* Ajuste para telas muito largas (proporção anômala) */
 @media (min-aspect-ratio: 21/9) {
+  .container {
+    max-width: 2000px;
+    max-height: 1200px;
+  }
 
+  .map-image {
+    width: 80%;
+    height: 95%;
+  }
+
+  .biomes-overlay {
+    width: 80%;
+  }
+
+  .select-btn {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+  }
+
+  .back-btn {
+    font-size: 1.1rem;
+    padding: 18px 36px;
+  }
+
+  header {
+    padding: 80px;
+  }
 }
