@@ -1,5 +1,5 @@
 /* styles/fase.css */
-@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +8,6 @@
 }
 
 body {
-    /* background:  linear-gradient(135deg, #557a69, #3c6158, #2f9789); */
     min-height: 100vh;
     padding: 2%;
 }
@@ -35,10 +34,10 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
+} */
 
 /* AMAZÔNIA */
-.bioma-amazonia {
+/* .bioma-amazonia {
     background-image: url("../assets/NV2/amazonia-desktop.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -50,7 +49,6 @@ header {
     text-shadow: 2px 2px 0 #1e4d2b, -1px -1px 0 #1e4d2b, 1px -1px 0 #1e4d2b, -1px 1px 0 #1e4d2b;
 }
 .bioma-amazonia .background-image {
-    /* background-color: #2d7623; */
     position: fixed;
     top: 0;
     left: 0;
@@ -66,10 +64,10 @@ header {
 .bioma-amazonia .start-btn:disabled {
     color: #a7b485;
     text-shadow: 1px 1px 0 #2d4d2d;
-}
+} */
 
 /* MATA ATLÂNTICA */
-.bioma-atlantica {
+/* .bioma-atlantica {
     background-image: url("../assets/NV1/atlantica-desktop.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -81,7 +79,6 @@ header {
     text-shadow: 2px 2px 0 #1e3b23, -1px -1px 0 #1e3b23, 1px -1px 0 #1e3b23, -1px 1px 0 #1e3b23;
 }
 .bioma-atlantica .background-image {
-    /* background-color: #325536; */
     position: fixed;
     top: 0;
     left: 0;
@@ -97,10 +94,10 @@ header {
 .bioma-atlantica .start-btn:disabled {
     color: #93af7f;
     text-shadow: 1px 1px 0 #2d4d2d;
-}
+} */
 
 /* CAATINGA */
-.bioma-caatinga {
+/* .bioma-caatinga {
     background-image: url("../assets/NV4/caatinga-desktop.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -116,7 +113,6 @@ header {
     text-shadow: 2px 2px 0 #7e552e, -2px -2px 0 #7e552e, 2px -2px 0 #7e552e, -2px 2px 0 #7e552e;
 }
 .bioma-caatinga .background-image {
-    /* background-color: #956133; */
     position: fixed;
     top: 0;
     left: 0;
@@ -128,10 +124,10 @@ header {
 .bioma-caatinga .start-btn:disabled {
     color: #c9b496;
     text-shadow: 1px 1px 0 #5c3e1f;
-}
+} */
 
 /* CERRADO */
-.bioma-cerrado {
+/* .bioma-cerrado {
     background-image: url("../assets/NV3/cerrado-desktop.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -143,7 +139,6 @@ header {
     text-shadow: 2px 2px 0 #6d3a1d, -1px -1px 0 #6d3a1d, 1px -1px 0 #6d3a1d, -1px 1px 0 #6d3a1d;
 }
 .bioma-cerrado .background-image {
-    /* background-color: #9c5535; */
     position: fixed;
     top: 0;
     left: 0;
@@ -159,10 +154,10 @@ header {
 .bioma-cerrado .start-btn:disabled {
     color: #ccad8b;
     text-shadow: 1px 1px 0 #5c2d1b;
-}
+} */
 
 /* PANTANAL */
-.bioma-pantanal {
+/* .bioma-pantanal {
     background-image: url("../assets/NV5/pantanal-desktop.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -175,7 +170,6 @@ header {
     text-shadow: 2px 2px 0 #3a5c2d, -1px -1px 0 #3a5c2d, 1px -1px 0 #3a5c2d, -1px 1px 0 #3a5c2d;
 }
 .bioma-pantanal .background-image {
-    /* background-color: #395b2d; */
     position: fixed;
     top: 0;
     left: 0;
@@ -308,10 +302,10 @@ h2 {
     background-color: transparent;
     font-size: 2.5rem;
     cursor: not-allowed;
-}
+} */
 
 /* Tablets em paisagem (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+/* @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     body {
         padding: 15px;
     }
@@ -351,10 +345,10 @@ h2 {
         font-size: 0.9rem;
         padding: 8px 16px;
     }
-}
+} */
 
 /* Mobile em paisagem (480px - 767px) */
-@media (max-width: 767px) and (orientation: landscape) {
+/* @media (max-width: 767px) and (orientation: landscape) {
     body {
         padding: 10px;
     }
@@ -400,10 +394,10 @@ h2 {
     .image-container img {
         max-width: 150px;
     }
-}
+} */
 
 /* Telas muito pequenas em paisagem (até 479px) */
-@media (max-width: 479px) and (orientation: landscape) {
+/* @media (max-width: 479px) and (orientation: landscape) {
     body {
         padding: 8px;
     }
@@ -450,10 +444,10 @@ h2 {
     .image-container img {
         max-width: 120px;
     }
-}
+} */
 
 /* Telas muito grandes (TVs acima de 1600px) */
-@media (min-width: 1600px) and (orientation: landscape) {
+/* @media (min-width: 1600px) and (orientation: landscape) {
     h1 {
         font-size: 2.0rem;
         margin-bottom: -15px;
@@ -494,10 +488,10 @@ h2 {
         font-size: 1.5rem;
         padding: 18px 36px;
     }
-}
+} */
 
 /* Ajuste especial para altura muito reduzida em paisagem */
-@media (max-height: 500px) and (orientation: landscape) {
+/* @media (max-height: 500px) and (orientation: landscape) {
     body {
         padding: 10px;
     }
@@ -539,10 +533,10 @@ h2 {
         font-size: 0.7rem;
         padding: 6px 12px;
     }
-}
+} */
 
 /* Tablets em portrait (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+/* @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     body {
         padding: 20px;
     }
@@ -585,10 +579,10 @@ h2 {
         font-size: 1.2rem;
         padding: 10px 20px;
     }
-}
+} */
 
 /* Mobile em portrait (até 767px) */
-@media (max-width: 767px) and (orientation: portrait) {
+/* @media (max-width: 767px) and (orientation: portrait) {
     body {
         padding: 15px;
     }
@@ -631,51 +625,743 @@ h2 {
         font-size: 1rem;
         padding: 8px 16px;
     }
+} */
+
+/* styles/fase.css */
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  padding: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.title-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* AMAZÔNIA */
+.bioma-amazonia {
+  background-image: url("../assets/NV2/amazonia-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bioma-amazonia h1,
+.bioma-amazonia h2 {
+  color: #ffdd55;
+  text-shadow: 2px 2px 0 #1e4d2b, -1px -1px 0 #1e4d2b, 1px -1px 0 #1e4d2b,
+    -1px 1px 0 #1e4d2b;
+}
+.bioma-amazonia .background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: -1;
+}
+.bioma-amazonia .start-btn {
+  color: #ffdd55;
+  text-shadow: 2px 2px 0 #1e4d2b, -2px -2px 0 #1e4d2b, 2px -2px 0 #1e4d2b,
+    -2px 2px 0 #1e4d2b;
+}
+.bioma-amazonia .start-btn:disabled {
+  color: #a7b485;
+  text-shadow: 1px 1px 0 #2d4d2d;
+}
+
+/* MATA ATLÂNTICA */
+.bioma-atlantica {
+  background-image: url("../assets/NV1/atlantica-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bioma-atlantica h1,
+.bioma-atlantica h2 {
+  color: #c9f76f;
+  text-shadow: 2px 2px 0 #1e3b23, -1px -1px 0 #1e3b23, 1px -1px 0 #1e3b23,
+    -1px 1px 0 #1e3b23;
+}
+.bioma-atlantica .background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: -1;
+}
+.bioma-atlantica .start-btn {
+  color: #c9f76f;
+  text-shadow: 2px 2px 0 #1e3b23, -2px -2px 0 #1e3b23, 2px -2px 0 #1e3b23,
+    -2px 2px 0 #1e3b23;
+}
+.bioma-atlantica .start-btn:disabled {
+  color: #93af7f;
+  text-shadow: 1px 1px 0 #2d4d2d;
+}
+
+/* CAATINGA */
+.bioma-caatinga {
+  background-image: url("../assets/NV4/caatinga-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bioma-caatinga h1,
+.bioma-caatinga h2 {
+  color: #ffda62;
+  text-shadow: 2px 2px 0 #7e552e, -1px -1px 0 #7e552e, 1px -1px 0 #7e552e,
+    -1px 1px 0 #7e552e;
+}
+.bioma-caatinga .start-btn {
+  color: #fddf7a;
+  text-shadow: 2px 2px 0 #7e552e, -2px -2px 0 #7e552e, 2px -2px 0 #7e552e,
+    -2px 2px 0 #7e552e;
+}
+.bioma-caatinga .background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: -1;
+}
+.bioma-caatinga .start-btn:disabled {
+  color: #c9b496;
+  text-shadow: 1px 1px 0 #5c3e1f;
+}
+
+/* CERRADO */
+.bioma-cerrado {
+  background-image: url("../assets/NV3/cerrado-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bioma-cerrado h1,
+.bioma-cerrado h2 {
+  color: #ffc857;
+  text-shadow: 2px 2px 0 #6d3a1d, -1px -1px 0 #6d3a1d, 1px -1px 0 #6d3a1d,
+    -1px 1px 0 #6d3a1d;
+}
+.bioma-cerrado .background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: -1;
+}
+.bioma-cerrado .start-btn {
+  color: #ffc857;
+  text-shadow: 2px 2px 0 #6d3a1d, -2px -2px 0 #6d3a1d, 2px -2px 0 #6d3a1d,
+    -2px 2px 0 #6d3a1d;
+}
+.bioma-cerrado .start-btn:disabled {
+  color: #ccad8b;
+  text-shadow: 1px 1px 0 #5c2d1b;
+}
+
+/* PANTANAL */
+.bioma-pantanal {
+  background-image: url("../assets/NV5/pantanal-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bioma-pantanal h1,
+.bioma-pantanal h2 {
+  color: #e9f679;
+  text-shadow: 2px 2px 0 #3a5c2d, -1px -1px 0 #3a5c2d, 1px -1px 0 #3a5c2d,
+    -1px 1px 0 #3a5c2d;
+}
+.bioma-pantanal .background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: -1;
+}
+.bioma-pantanal .start-btn {
+  color: #e9f679;
+  text-shadow: 2px 2px 0 #3a5c2d, -2px -2px 0 #3a5c2d, 2px -2px 0 #3a5c2d,
+    -2px 2px 0 #3a5c2d;
+}
+.bioma-pantanal .start-btn:disabled {
+  color: #b6c794;
+  text-shadow: 1px 1px 0 #2d4d2d;
+}
+
+/* ESTILOS BASE (MOBILE FIRST) */
+h1 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  text-decoration: underline;
+  line-height: 1.4;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 0.8rem;
+  margin-top: 0;
+  line-height: 1.4;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 80px;
+}
+
+#back-btn {
+  padding: 8px 16px;
+  background: #443328;
+  color: #ded597;
+  border-style: solid;
+  border-color: #c5a274;
+  border-radius: 5px;
+  font-size: 0.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#back-btn:hover {
+  background: #744c33;
+  transform: translateY(-2px);
+}
+
+.image-container img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.levels-container {
+  width: 100%;
+  max-width: 320px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 5px;
+  padding: 5px;
+}
+
+.level-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+
+.folha {
+  width: 170%;
+  height: auto;
+  display: block;
+  position: relative;
+}
+
+.level-card:hover {
+  transform: translateY(-0.5px);
+}
+
+.level-status.unlocked {
+  background-color: #4caf50;
+  color: white;
+  font-size: 3rem;
+}
+
+.level-status.locked {
+  background-color: #cccccc;
+  color: #666;
+}
+
+.start-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px;
+  background-color: transparent;
+  font-size: 2rem;
+  font-weight: 900;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.start-btn:hover:not(:disabled) {
+  transform: translate(-50%, -50%) translateY(-2px);
+}
+
+.start-btn:disabled {
+  background-color: transparent;
+  font-size: 2rem;
+  cursor: not-allowed;
 }
 
 /* ===== NOVA ESTRUTURA DE BREAKPOINTS ===== */
 
 /* Mobile paisagem e tablets pequenos (480px - 767px) */
 @media (min-width: 481px) and (max-width: 767px) {
+  body {
+    padding: 20px;
+  }
 
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+  }
+
+  .levels-container {
+    max-width: 400px;
+    gap: 25px;
+  }
+
+  .level-card {
+    width: 95px;
+  }
+
+  .start-btn {
+    font-size: 2.8rem;
+    padding: 10px;
+  }
+
+  .start-btn:disabled {
+    font-size: 2.8rem;
+  }
+
+  #back-btn {
+    font-size: 0.8rem;
+    padding: 10px 18px;
+  }
+
+  .image-container img {
+    max-width: 180px;
+  }
 }
 
 /* Ajuste específico para mobile paisagem (480px - 767px) */
 @media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+  body {
+    padding: 15px;
+  }
 
+  header {
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+
+  .levels-container {
+    max-width: 400px;
+    gap: 5px;
+    padding: 10px;
+  }
+
+  .level-card {
+    width: 80px;
+  }
+
+  .start-btn {
+    font-size: 2.2rem;
+    padding: 6px;
+  }
+
+  .start-btn:disabled {
+    font-size: 2.2rem;
+  }
+
+  #back-btn {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+  }
+
+  .image-container img {
+    max-width: 120px;
+  }
 }
 
 /* Tablets médios (768px - 1023px) - iPad, Tab S7, etc. */
 @media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    padding: 25px;
+  }
 
+  header {
+    margin-bottom: 80px;
+  }
+
+  h1 {
+    font-size: 2.0rem;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 60px;
+  }
+
+  .levels-container {
+    max-width: 450px;
+    gap: 35px;
+    padding: 20px;
+  }
+
+  .level-card {
+    width: 100px;
+  }
+
+  .start-btn {
+    font-size: 2.8rem;
+    padding: 12px;
+  }
+
+  .start-btn:disabled {
+    font-size: 2.8rem;
+  }
+
+  #back-btn {
+    font-size: 0.95rem;
+    padding: 12px 22px;
+  }
+
+  .image-container img {
+    max-width: 200px;
+  }
 }
 
 /* Tablets médios em paisagem (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  body {
+    padding: 20px;
+  }
 
+  header {
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+
+  .levels-container {
+    max-width: 400px;
+    gap: 5px;
+    padding: 15px;
+  }
+
+  .level-card {
+    width: 85px;
+  }
+
+  .start-btn {
+    font-size: 2.2rem;
+    padding: 10px;
+  }
+
+  .start-btn:disabled {
+    font-size: 2.2rem;
+  }
+
+  #back-btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+
+  .image-container img {
+    max-width: 160px;
+  }
 }
 
 /* Tablets grandes e laptops pequenos (1024px - 1199px) */
 @media (min-width: 1024px) and (max-width: 1199px) {
+  body {
+    padding: 30px;
+  }
 
+  header {
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .levels-container {
+    max-width: 500px;
+    gap: 40px;
+    padding: 25px;
+  }
+
+  .level-card {
+    width: 110px;
+  }
+
+  .start-btn {
+    font-size: 2.8rem;
+    padding: 15px;
+  }
+
+  .start-btn:disabled {
+    font-size: 2.8rem;
+  }
+
+  #back-btn {
+    font-size: 0.9rem;
+    padding: 14px 26px;
+  }
+
+  .image-container img {
+    max-width: 220px;
+  }
 }
 
 /* Laptops e desktops (1200px - 1599px) */
 @media (min-width: 1200px) and (max-width: 1599px) {
+  body {
+    padding: 0px;
+  }
 
+  header {
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 18px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .levels-container {
+    max-width: 500px;
+    gap: 5px;
+    padding: 30px;
+  }
+
+  .level-card {
+    width: 95px;
+  }
+
+  .start-btn {
+    font-size: 2.5rem;
+    padding: 18px;
+  }
+
+  .start-btn:disabled {
+    font-size: 2.5rem;
+  }
+
+  #back-btn {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    margin: 30px;
+  }
+
+  .image-container img {
+    max-width: 250px;
+  }
 }
 
 /* Telas muito grandes (1600px+) */
 @media (min-width: 1600px) {
+  body {
+    padding: 50px;
+  }
 
+  header {
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 120px;
+  }
+
+  .container {
+    max-width: 1400px;
+  }
+
+  .levels-container {
+    max-width: 700px;
+    gap: 5px;
+    padding: 35px;
+  }
+
+  .level-card {
+    width: 130px;
+  }
+
+  .start-btn {
+    font-size: 3.5rem;
+    padding: 20px;
+  }
+
+  .start-btn:disabled {
+    font-size: 3.5rem;
+  }
+
+  #back-btn {
+    font-size: 1.2rem;
+    padding: 18px 36px;
+  }
+
+  .image-container img {
+    max-width: 300px;
+  }
 }
 
 /* Ajuste especial para altura muito reduzida em paisagem */
 @media (max-height: 500px) and (orientation: landscape) {
+  body {
+    padding: 10px;
+  }
 
+  header {
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    padding: 6px;
+  }
+
+  h2 {
+    font-size: 1.0rem;
+    margin-bottom: 10px;
+    padding: 4px;
+  }
+
+  .levels-container {
+    max-width: 280px;
+    gap: 5px;
+    padding: 8px;
+  }
+
+  .level-card {
+    width: 65px;
+  }
+
+  .start-btn {
+    font-size: 1.6rem;
+    padding: 4px;
+  }
+
+  .start-btn:disabled {
+    font-size: 1.6rem;
+  }
+
+  #back-btn {
+    font-size: 0.5rem;
+    padding: 6px 12px;
+  }
+
+  .image-container img {
+    max-width: 100px;
+  }
 }
 
 /* Ajuste para telas muito largas (proporção anômala) */
 @media (min-aspect-ratio: 21/9) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
+  .levels-container {
+    max-width: 700px;
+    gap: 60px;
+  }
+
+  .level-card {
+    width: 150px;
+  }
+
+  .start-btn {
+    font-size: 3.8rem;
+  }
+
+  .image-container img {
+    max-width: 280px;
+  }
 }
