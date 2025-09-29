@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -136,7 +136,7 @@ h3#level-title {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(10, minmax(18px, 50px)); /* Tamanhos flexíveis */
+  grid-template-columns: repeat(10, minmax(18px, 50px)); 
   grid-template-rows: repeat(10, minmax(18px, 50px));
   gap: 2px;
   padding: 5px;
@@ -146,9 +146,9 @@ h3#level-title {
   position: relative;
   background-size: cover;
   background-position: center;
-  width: 100%; /* Ocupa 100% do container */
-  height: auto; /* Altura automática */
-  aspect-ratio: 10/10; /* Mantém proporção do grid */
+  width: 100%; 
+  height: auto; 
+  aspect-ratio: 10/10;
   position: relative;
 }
 .grid::before {
@@ -410,10 +410,10 @@ img {
 
 .command-block:hover {
   transform: scale(1.05);
-}
+} */
 
 /* ===== NOVAS REGRAS PARA SCROLL AUTOMÁTICO ===== */
-.command-sequence-container {
+/* .command-sequence-container {
   position: relative;
   margin-bottom: 10px;
 }
@@ -422,7 +422,7 @@ img {
   background-color: #eaddb1;
   width: 323px;
   min-height: 50px;
-  max-height: 120px; /* Altura máxima */
+  max-height: 120px;
   padding: 5px;
   box-shadow: 
     4px 0 0 0 #573929,
@@ -441,12 +441,12 @@ img {
   grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
   gap: 8px;
   justify-content: flex-end;
-  overflow-y: auto; /* Permite scroll vertical */
-  scroll-behavior: smooth; /* Scroll suave */
-}
+  overflow-y: auto;
+  scroll-behavior: smooth;
+} */
 
 /* Estilizar a barra de scroll */
-.command-sequence::-webkit-scrollbar {
+/* .command-sequence::-webkit-scrollbar {
   width: 5px;
 }
 
@@ -487,7 +487,6 @@ img {
   justify-content: center;
   gap: 15px;
   margin-top: 15px;
-  /* Garante que os botões fiquem fixos na parte inferior */
   position: sticky;
   bottom: 0;
   background: #947356;
@@ -551,10 +550,10 @@ img {
 
 .reset-btn:hover {
   transform: translateY(-2px);
-}
+} */
 
 /* Tablets em paisagem (768px - 1024px)  -- FEITO*/
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+/* @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .game-container {
     max-width: 1000px;
     min-height: 700px;
@@ -578,7 +577,7 @@ img {
   }
   
   .grid {
-    grid-template-columns: repeat(10, minmax(18px, 50px)); /* Tamanhos flexíveis */
+    grid-template-columns: repeat(10, minmax(18px, 50px));
     grid-template-rows: repeat(12, minmax(18px, 50px));
   }
   
@@ -630,10 +629,10 @@ img {
   .modal p {
     font-size: 0.9rem;
   }
-}
+} */
 
 /* Mobile em paisagem (480px - 767px) -- FEITO*/
-@media (max-width: 767px) and (orientation: landscape) {
+/* @media (max-width: 767px) and (orientation: landscape) {
   .game-container {
     max-width: 950px;
     margin: 10px;
@@ -769,10 +768,10 @@ img {
   .modal p {
     font-size: 0.65rem;
   }
-}
+} */
 
 /* Telas muito grandes (TVs acima de 1600px) */
-@media (min-width: 1600px) and (orientation: landscape) {
+/* @media (min-width: 1600px) and (orientation: landscape) {
   body {
     justify-content: center;
     align-items: center;
@@ -788,10 +787,10 @@ img {
     min-height: 100px;
   }
 
-}
+} */
 
 /* Ajuste especial para altura muito reduzida em paisagem */
-@media (max-height: 500px) and (orientation: landscape) {
+/* @media (max-height: 500px) and (orientation: landscape) {
   .game-container {
     max-width: 700px;
     margin: 10px;
@@ -926,10 +925,10 @@ img {
   .modal p {
     font-size: 0.65rem;
   }
-}
+} */
 
 /* Tablets em portrait (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+/* @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .game-container {
     max-width: 900px;
     min-height: 1000px;
@@ -948,7 +947,7 @@ img {
   }
   
   .grid {
-    grid-template-columns: repeat(10, minmax(18px, 50px)); /* Tamanhos flexíveis */
+    grid-template-columns: repeat(10, minmax(18px, 50px));
     grid-template-rows: repeat(12, minmax(18px, 50px));
   }
   
@@ -1002,10 +1001,10 @@ img {
   .modal p {
     font-size: 0.9rem;
   }
-}
+} */
 
 /* Mobile em portrait (até 767px) */
-@media (max-width: 767px) and (orientation: portrait) {
+/* @media (max-width: 767px) and (orientation: portrait) {
   .game-container {
     max-width: 900px;
     min-height: 1000px;
@@ -1024,7 +1023,7 @@ img {
   }
   
   .grid {
-    grid-template-columns: repeat(10, minmax(18px, 50px)); /* Tamanhos flexíveis */
+    grid-template-columns: repeat(10, minmax(18px, 50px));
     grid-template-rows: repeat(12, minmax(18px, 50px));
   }
   
@@ -1080,49 +1079,1215 @@ img {
   }
 }
 
-/* ===== NOVA ESTRUTURA DE BREAKPOINTS ===== */
+/* ===== ESTILOS BASE (MOBILE FIRST) ===== */
 
-/* Mobile paisagem e tablets pequenos (480px - 767px) */
-@media (min-width: 481px) and (max-width: 767px) {
-
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Ajuste específico para mobile paisagem (480px - 767px) */
-@media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
-
+body {
+  background: linear-gradient(135deg, #3a5c2d, #2e4a23, #22381a);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  padding: 10px;
+  overflow: auto;
 }
 
-/* Tablets médios (768px - 1023px) - iPad, Tab S7, etc. */
+.game-container {
+  width: 100%;
+  min-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  position: relative;
+  margin: 10px 0;
+  background: linear-gradient(to bottom, #4E3426, #3E2921);
+  border: 4px solid #302119;
+  box-shadow: 
+    2px 0 0 0 #302119,
+    -2px 0 0 0 #302119,
+    0 2px 0 0 #302119,
+    0 -2px 0 0 #302119;
+}
+
+/* HEADER MOBILE */
+header {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.level-titles {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 4px;
+  padding: 14px 15px;
+  background: #6b4732;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+h3#level-title {
+  font-size: 0.8rem;
+  text-shadow: 1px 1px 0 #6b4732;
+  letter-spacing: 0.5px;
+  color: #f8d98f;
+  text-shadow: 2px 2px 0 #000;
+  padding: 2px 0;
+  line-height: 1.2;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: left;
+}
+
+.help-btn,
+.menu-btn {
+  padding: 8px 15px;
+  background: #443328;
+  color: #ded597;
+  border: 2px solid #c5a274;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* GAME AREA MOBILE - SEMPRE COLUNA (PORTRAIT) */
+.game-area {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+}
+
+.map-container {
+  width: 100%;
+  border-radius: 8px;
+  padding: 8px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 2px;
+  padding: 4px;
+  border-radius: 6px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+/* COMMANDS PANEL MOBILE */
+.commands-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  padding: 10px 8px;
+  position: relative;
+}
+
+.controls-container {
+  width: 95%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #947356;
+  box-shadow: 
+    0 0 0 3px #573929;
+  border-radius: 6px;
+}
+
+.level-info {
+  width: 60%;
+  background-color: #eaddb1;
+  padding: 8px;
+  box-shadow: 
+    0 0 0 3px #573929;
+  border-radius: 4px;
+}
+
+.level-info p {
+  color: #573929;
+  font-weight: 600;
+  font-size: 0.7rem;
+  margin-bottom: 4px;
+}
+
+.commands-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  color: #e2d1a0;
+  gap: 20px;
+  width: 100%;
+  height: 20px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.command-blocks {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.command-block {
+  display: flex;
+  align-items: center;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.2s;
+}
+
+.command-block img {
+  width: 50px;
+  height: 50px;
+}
+
+.command-sequence-container {
+  position: relative;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.command-sequence {
+  background-color: #eaddb1;
+  width: 100%;
+  min-height: 45px;
+  max-height: 80px;
+  padding: 5px;
+  box-shadow: 
+    0 0 0 3px #573929;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+  gap: 6px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.command-sequence::-webkit-scrollbar {
+  width: 4px;
+}
+
+.command-sequence::-webkit-scrollbar-track {
+  background: #d6c89f;
+  border-radius: 4px;
+}
+
+.command-sequence::-webkit-scrollbar-thumb {
+  background: #8b5a2b;
+  border-radius: 4px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.run-btn,
+.reset-btn {
+  flex: 1;
+  padding: 11px 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.7rem;
+  border-radius: 4px;
+}
+
+.run-btn {
+  background: radial-gradient(circle, rgba(95, 189, 42, 1) 0%, rgba(65, 152, 30, 1) 50%, rgba(47, 118, 26, 1) 100%);
+  color: #f0f7d3;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.reset-btn {
+  background: radial-gradient(circle, rgba(249, 87, 75, 1) 0%, rgba(181, 37, 28, 1) 100%);
+  color: #f0f7d3;
+  text-shadow: 1px 1px 0 #000;
+}
+
+/* CHARACTER BASE STYLES */
+.character {
+  background: url("../assets/personagem/spritesheet-pers-2.png") no-repeat;
+  width: 60px;
+  height: 80px;
+  position: absolute;
+  transform: translate(-20%, -40%) scale(0.7);
+  z-index: 10;
+}
+
+/* ===== BREAKPOINTS ===== */
+
+/* Mobile pequeno (até 360px) - PORTRAIT */
+@media (max-width: 399px) {
+  .character {
+    transform: translate(-28%, -48%) scale(0.6);
+  }
+  
+  .command-block img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .command-sequence {
+    min-height: 40px;
+    max-height: 70px;
+  }
+  
+  .controls-container {
+    gap: 10px;
+  }
+}
+
+/* Mobile padrão (361px - 480px) - PORTRAIT */
+@media (min-width: 400px) and (max-width: 480px) {
+  .character {
+    transform: translate(-20%, -44%) scale(0.7);
+  }
+  
+  .command-block img {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .command-sequence {
+    min-height: 45px;
+    max-height: 75px;
+  }
+}
+
+/* MOBILE LANDSCAPE (481px - 767px) - LADO A LADO */
+@media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
+  .game-container {
+    margin: 10px;
+    border-width: 5px;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+  
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+  }
+
+  h3#level-title {
+    font-size: 0.75rem;
+  }
+  
+  .header-buttons {
+    margin-top: 0;
+  }
+  
+  .help-btn,
+  .menu-btn {
+    font-size: 0.6rem;
+    padding: 6px 12px;
+  }
+  
+  /* LADO A LADO NO LANDSCAPE */
+  .game-area {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 8px;
+    max-height: calc(95vh - 80px);
+  }
+  
+  .map-container {
+    flex: 1;
+    min-width: 0;
+    max-height: 100%;
+  }
+  
+  .commands-panel {
+    flex: 1;
+    min-width: 0;
+    max-height: 100%;
+  }
+  
+  .grid {
+    aspect-ratio: 1/1;
+    max-height: 100%;
+  }
+  
+  .controls-container {
+    padding: 15px 10px;
+    max-height: 100%;
+    overflow-y: auto;
+    gap: 15px;
+    height: auto;
+  }
+  
+  .character {
+    transform: translate(-20%, -40%) scale(0.6);
+  }
+  
+  .command-block img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .command-sequence {
+    max-height: 60px;
+    min-height: 50px;
+  }
+  
+  .commands-title {
+    font-size: 0.75rem;
+  }
+}
+
+/* MOBILE PORTRAIT (481px - 767px) - UM ABAIXO DO OUTRO */
+@media (min-width: 481px) and (max-width: 767px) and (orientation: portrait) {
+  body {
+    height: 90%;
+  }
+  .game-container {
+    margin: 15px;
+    border-width: 5px;
+  }
+  
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h3#level-title {
+    font-size: 0.8rem;
+  }
+  
+  .header-buttons {
+    margin-top: 5px;
+  }
+  
+  .help-btn,
+  .menu-btn {
+    font-size: 0.65rem;
+    padding: 9px 16px;
+  }
+  
+  /* UM ABAIXO DO OUTRO NO PORTRAIT */
+  .game-area {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .map-container {
+    width: 100%;
+  }
+  
+  .commands-panel {
+    width: 100%;
+  }
+  
+  .character {
+    transform: translate(-20%, -40%) scale(0.75);
+  }
+  
+  .command-block img {
+    width: 52px;
+    height: 52px;
+  }
+  
+  .command-sequence {
+    min-height: 45px;
+    max-height: 85px;
+  }
+  
+  .controls-container {
+    gap: 15px;
+  }
+}
+
+/* TABLETS (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    height: 90%;
+    padding: 20px;
+  }
+  
+  .game-container {
+    max-width: 900px;
+    margin: 0 auto;
+    border-width: 6px;
+  }
+  
+  header {
+    padding: 15px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .level-titles {
+    padding: 10px 20px;
+  }
+  
+  h3#level-title {
+    font-size: 0.85rem;
+  }
+  
+  .help-btn,
+  .menu-btn {
+    font-size: 0.7rem;
+    padding: 10px 18px;
+  }
+  
+  .game-area {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    gap: 25px;
+  }
+  
+  .map-container {
+    width: 100%;
+  }
+  
+  .commands-panel {
+    width: 100%;
+  }
+  
+  .grid {
+    gap: 3px;
+    padding: 6px;
+  }
+  
+  .character {
+    width: 65px;
+    height: 90px;
+    transform: translate(-1%, -22%) scale(1.2);
+  }
+  
+  .level-titles {
+    padding: 20px 20px;
+  }
 
+  h3#level-title {
+    font-size: 1.3rem;
+  }
+
+  .level-info {
+    width: 40%;
+  }
+
+  .level-info p {
+    font-size: 0.9rem;
+  }
+
+  .controls-container {
+    padding: 25px 15px 15px 15px;
+    gap: 20px;
+    height: 50vh;
+  }
+  
+  .command-block img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .command-sequence {
+    max-height: 100px;
+    min-height: 80px;
+    grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+    place-items: center;
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .command-sequence .command-block img {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: contain;
+  }
+  
+  .commands-title {
+    font-size: 1.18rem;
+  }
+  
+  .run-btn,
+  .reset-btn {
+    font-size: 1.1rem;
+    padding: 15px 18px;
+  }
 }
 
-/* Tablets médios em paisagem (768px - 1023px) */
+/* TABLETS LANDSCAPE (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  body {
+    height: 90%;
+    padding: 20px;
+  }
 
+  .header-buttons {
+    padding: 20px;
+  }
+
+  .game-container {
+    height: 85vh;
+    max-height: 98vh;
+  }
+  
+  .game-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .map-container,
+  .commands-panel {
+    flex: 0 1 48%;
+  }
+
+  .controls-container {
+    height: 45vh;
+    gap: 5px;
+    padding: 20px;
+  }
+  
+  .character {
+    width: 60px;
+    height: 75px;
+    transform: translate(-22%, -45%) scale(0.80);
+  }
+  .level-titles {
+    padding: 14px 20px;
+  }
+
+  h3#level-title {
+    font-size: 0.85rem;
+  }
+  
+  .level-info p {
+    font-size: 0.65rem;
+  } 
+
+  .command-block img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .command-sequence {
+    max-height: 90px;
+    min-height: 60px;
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    place-items: center;
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .command-sequence .command-block img {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain;
+  }
+  
+  .commands-title {
+    font-size: 0.85rem;
+  }
+
+  .run-btn,
+  .reset-btn {
+    font-size: 0.7rem;
+    padding: 12px 18px;
+  }
 }
 
 /* Tablets grandes e laptops pequenos (1024px - 1199px) */
 @media (min-width: 1024px) and (max-width: 1199px) {
+  body {
+    height: 90%;
+  }
 
+  .header-buttons {
+    margin: 20px;
+  }
+
+  .help-btn, .menu-btn {
+    font-size: 0.8rem;
+  }
+  .game-container {
+    max-width: 1100px;
+    min-height: 90vh;
+  }
+  
+  .game-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 25px;
+  }
+  
+  .map-container,
+  .commands-panel {
+    flex: 0 1 49%;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+  
+  .character {
+    width: 58px;
+    height: 77px;
+    transform: translate(-15%, -45%) scale(1);
+  }
+  
+  .controls-container {
+    padding: 20px;
+    height: 66vh;
+    gap: 20px;
+  }
+
+  h3#level-title {
+    font-size: 0.95rem;
+  }
+  
+  .level-info p {
+    font-size: 0.8rem;
+  } 
+
+  .command-block img {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .command-sequence {
+    max-height: 90px;
+    min-height: 70px;
+  }
+  
+  .commands-title {
+    font-size: 0.95rem;
+  }
+
+  .run-btn,
+  .reset-btn {
+    font-size: 0.85rem;
+    padding: 12px 18px;
+  }
 }
 
-/* Laptops e desktops (1200px - 1599px) */
-@media (min-width: 1200px) and (max-width: 1599px) {
+/* Laptops e desktops (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .game-container {
+    max-width: 1200px;
+    min-height: 80vh;
+  }
+  
+  .game-area {
+    flex-direction: row;
+    gap: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .map-container,
+  .commands-panel {
+    flex: 0 1 46%;
+  }
 
+  .controls-container {
+    height: 70vh;
+    gap: 20px;
+    padding: 35px 25px 25px 25px;
+  }
+
+  h3#level-title {
+    font-size: 0.9rem;
+  }
+
+  .command-block img {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .commands-title {
+    font-size: 0.9rem;
+  }
+  
+  .command-sequence {
+    min-height: 60px;
+    max-height: 80px;
+  }
+
+  .action-buttons {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .run-btn,
+  .reset-btn {
+    font-size: 0.75rem;
+    padding: 14px 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+  
+  .character {
+    width: 63px;
+    height: 84px;
+    transform: translate(-15%, -35%) scale(1);
+  }
+  
+  .command-block:hover {
+    transform: scale(1.05);
+  }
+  
+  .help-btn:hover,
+  .menu-btn:hover {
+    background: #744c33;
+    transform: translateY(-2px);
+  }
+  
+  .run-btn:hover,
+  .reset-btn:hover {
+    transform: translateY(-2px);
+  }
+}
+/* Laptops e desktops (1400px - 1599px) */
+@media (min-width: 1400px) and (max-width: 1599px) {
+  .header-buttons {
+    margin: 10px;
+  }
+
+  .game-container {
+    max-width: 1450px;
+    min-height: 80vh;
+  }
+  
+  .game-area {
+    flex-direction: row;
+    gap: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .map-container,
+  .commands-panel {
+    flex: 0 1 48%;
+  }
+
+  .controls-container {
+    height: 52vh;
+    gap: 30px;
+    padding: 35px 25px 25px 25px;
+  }
+
+  .level-info p {
+    font-size: 0.9rem;
+  }
+
+  .level-titles {
+    padding: 20px 15px;
+  }
+
+  h3#level-title {
+    font-size: 1.2rem;
+  }
+
+  .command-block img {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .commands-title {
+    font-size: 1.18rem;
+  }
+  
+  .command-sequence {
+      min-height: 80px;
+      max-height: 100px;
+      grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
+      place-items: center;
+      padding: 8px;
+      gap: 4px;
+  }
+
+  .command-sequence .command-block img {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: contain;
+  }
+
+  .action-buttons {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .run-btn,
+  .reset-btn {
+    font-size: 1.1rem;
+    padding: 15px 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+  
+  .character {
+    width: 63px;
+    height: 84px;
+    transform: translate(-5%, -25%) scale(1);
+  }
+
+  .command-block:hover {
+    transform: scale(1.05);
+  }
+  .help-btn, .menu-btn {
+    font-size: 0.9rem;
+  }
+
+  .help-btn:hover,
+  .menu-btn:hover {
+    background: #744c33;
+    transform: translateY(-2px);
+  }
+  
+  .run-btn:hover,
+  .reset-btn:hover {
+    transform: translateY(-2px);
+  }
 }
 
 /* Telas muito grandes (1600px+) */
 @media (min-width: 1600px) {
+  body {
+    padding: 40px;
+  }
 
+  .header-buttons {
+    margin: 20px;
+  }
+
+  .help-btn, .menu-btn {
+    font-size: 0.95rem;
+  }
+  
+  .game-container {
+    max-width: 1600px;
+    min-height: 85vh;
+  }
+  
+  .game-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .map-container,
+  .commands-panel {
+    flex: 0 1 48%;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+  
+  .character {
+    width: 70px;
+    height: 93px;
+    transform: translate(-1%, -20%) scale(1.2);
+  }
+  
+  .controls-container {
+    padding: 40px 25px 25px 25px;
+    height: 60vh;
+    gap: 30px;
+  }
+
+  .level-info {
+    width: 50%;
+  }
+
+  .level-info p {
+    font-size: 1.0rem;
+  }
+
+  .command-sequence {
+    height: 100px;
+    max-height: 150px;
+    min-height: 60px;
+  }
+  
+  .command-block img {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .commands-title {
+    font-size: 1.19rem;
+  }
+
+  .level-titles {
+    padding: 20px;
+  }
+  
+  h3#level-title {
+    font-size: 1.3rem;
+  }
+  
+  .action-buttons {
+    gap: 15px;
+  }
+  
+  .run-btn,
+  .reset-btn {
+    font-size: 1.1rem;
+    padding: 16px 24px;
+  }
 }
 
 /* Ajuste especial para altura muito reduzida em paisagem */
 @media (max-height: 500px) and (orientation: landscape) {
-
+  body {
+    padding: 5px;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .game-container {
+    max-height: none;
+    height: auto;
+    min-height: auto;
+    margin: 5px;
+    overflow-y: auto;
+  }
+  
+  .game-area {
+    max-height: none;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .commands-panel {
+    min-height: 300px;
+    height: auto;
+  }
+  
+  .controls-container {
+    padding: 15px 10px;
+    min-height: 280px;
+    gap: 10px;
+    overflow-y: auto;
+    height: auto;
+  }
+  
+  .command-sequence {
+    max-height: 60px;
+    min-height: 50px;
+  }
+  
+  .action-buttons {
+    margin-top: 8px;
+  }
+  
+  .command-block img {
+    width: 40px;
+    height: 42px;
+  }
+  
+  .character {
+    transform: translate(-20%, -40%) scale(0.5);
+  }
+  
+  .commands-title {
+    font-size: 0.7rem;
+  }
+  
+  h3#level-title {
+    font-size: 0.75rem;
+  }
 }
 
 /* Ajuste para telas muito largas (proporção anômala) */
 @media (min-aspect-ratio: 21/9) {
+  .game-container {
+    max-width: 1800px;
+  }
+  
+  .game-area {
+    justify-content: space-around;
+  }
+  
+  .map-container,
+  .commands-panel {
+    flex: 0 1 45%;
+    max-width: 600px;
+  }
+  
+  .controls-container {
+    height: 65vh;
+    gap: 25px;
+  }
+  
+  .command-block img {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .command-sequence {
+    min-height: 60px;
+    max-height: 120px;
+  }
+}
 
+/* Estilos das células (mantidos do original) */
+.cell {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.blocked {
+  opacity: 0.3;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  cursor: not-allowed;
+}
+
+.blocked-shake {
+  animation: shake 0.3s;
+  background-color: #ff4444 !important;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+    background-color: inherit;
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+.path {
+  background-color: #eebb99;
+  border: 1px solid #f89a89;
+}
+
+.obstacle {
+  background-size: 98% 98% !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-color: #eebb99;
+  border: 1px solid #f89a89;
+  width: 100%;
+  height: 100%;
+}
+
+.start {
+  background-color: #eebb99;
+}
+
+.end {
+  background-color: #fff;
+  background-image: url('../assets/end-point.png') !important;
+  background-size: 85% 85% !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  border: none;
+}
+
+.item {
+  background-image: url('../assets/item-icon.png') !important;
+  background-size: 70% 70% !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-color: #eebb99;
+  border: 1px solid #f89a89;
+}
+
+/* Backgrounds dos biomas (mantidos) */
+.grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  border-radius: 8px;
+}
+
+.grid.amazon::before { background-image: url("../assets/NV2/fundo.png"); opacity: 0.7; }
+.grid.atlantic::before { background-image: url("../assets/NV1/fundo.png"); opacity: 1.0; }
+.grid.cerrado::before { background-image: url("../assets/NV3/fundo.png"); opacity: 0.75; }
+.grid.caatinga::before { background-image: url("../assets/NV4/fundo.png"); opacity: 0.7; }
+.grid.pantanal::before { background-image: url("../assets/NV5/fundo.png"); opacity: 0.65; }
+
+.atlantic .obstacle { background-image: url('../assets/obstacles/atlantic/obstacle-1.png'); }
+.amazon .obstacle { background-image: url('../assets/obstacles/amazon/obstacle-1.png'); }
+.cerrado .obstacle { background-image: url('../assets/obstacles/cerrado/obstacle-1.png'); }
+.caatinga .obstacle { background-image: url('../assets/obstacles/caatinga/obstacle-1.png'); }
+.pantanal .obstacle { background-image: url('../assets/obstacles/pantanal/obstacle-1.png'); }
+
+.obstacle-random {
+  background-color: transparent;
+  border: none;
+  background-size: 90% 90% !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('../assets/obstacles/random/obstacle-2.png') !important;
 }
