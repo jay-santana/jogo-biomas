@@ -13,7 +13,7 @@ body {
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -77,7 +77,8 @@ h3#level-title {
 }
 
 .help-btn,
-.menu-btn {
+.menu-btn,
+.mute-btn {
   padding: 8px 15px;
   background: #443328;
   color: #ded597;
@@ -259,6 +260,25 @@ h3#level-title {
   text-shadow: 1px 1px 0 #000;
 }
 
+.mute-btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.mute-btn .mute-icon {
+    font-size: 1.0rem !important;
+    line-height: 1;
+    transform: translateY(-3px);
+}
+
+.mute-btn .mute-text {
+    font-size: inherit;
+    line-height: 1;
+}
+
 /* CHARACTER BASE STYLES */
 .character {
   background: url("../assets/personagem/spritesheet-pers-2.png") no-repeat;
@@ -290,6 +310,11 @@ h3#level-title {
   .controls-container {
     gap: 10px;
   }
+
+  .mute-btn .mute-icon {
+    font-size: 0.9rem !important;
+    transform: translateY(-2px);
+  }
 }
 
 /* Mobile padrão (361px - 480px) - PORTRAIT */
@@ -306,6 +331,11 @@ h3#level-title {
   .command-sequence {
     min-height: 45px;
     max-height: 75px;
+  }
+  
+  .mute-btn .mute-icon {
+    font-size: 0.9rem !important;
+    transform: translateY(-2px);
   }
 }
 
@@ -334,9 +364,15 @@ h3#level-title {
   }
   
   .help-btn,
-  .menu-btn {
+  .menu-btn,
+  .mute-btn {
     font-size: 0.6rem;
     padding: 6px 12px;
+  }
+
+  .mute-btn .mute-icon {
+    font-size: 0.9rem !important;
+    transform: translateY(-3px);
   }
   
   /* LADO A LADO NO LANDSCAPE */
@@ -417,7 +453,8 @@ h3#level-title {
   }
   
   .help-btn,
-  .menu-btn {
+  .menu-btn,
+  .mute-btn {
     font-size: 0.65rem;
     padding: 9px 16px;
   }
@@ -484,9 +521,15 @@ h3#level-title {
   }
   
   .help-btn,
-  .menu-btn {
+  .menu-btn,
+  .mute-btn {
     font-size: 0.7rem;
     padding: 10px 18px;
+  }
+
+  .mute-btn .mute-icon {
+    font-size: 1.1rem !important;
+    transform: translateY(-2px);
   }
   
   .game-area {
@@ -661,9 +704,17 @@ h3#level-title {
     margin: 20px;
   }
 
-  .help-btn, .menu-btn {
+  .help-btn, 
+  .menu-btn, 
+  .mute-btn {
     font-size: 0.8rem;
   }
+
+  .mute-btn .mute-icon {
+    font-size: 1.2rem !important;
+    transform: translateY(-3px);
+  }
+
   .game-container {
     max-width: 1100px;
     min-height: 90vh;
@@ -799,7 +850,8 @@ h3#level-title {
   }
   
   .help-btn:hover,
-  .menu-btn:hover {
+  .menu-btn:hover,
+  .mute-btn:hover {
     background: #744c33;
     transform: translateY(-2px);
   }
@@ -900,14 +952,22 @@ h3#level-title {
   .command-block:hover {
     transform: scale(1.05);
   }
-  .help-btn, .menu-btn {
+  .help-btn, 
+  .menu-btn, 
+  .mute-btn {
     font-size: 0.9rem;
   }
 
   .help-btn:hover,
-  .menu-btn:hover {
+  .menu-btn:hover,
+  .mute-btn:hover {
     background: #744c33;
     transform: translateY(-2px);
+  }
+
+  .mute-btn .mute-icon {
+    font-size: 1.3rem !important;
+    transform: translateY(-3px);
   }
   
   .run-btn:hover,
@@ -926,8 +986,15 @@ h3#level-title {
     margin: 20px;
   }
 
-  .help-btn, .menu-btn {
+  .help-btn, 
+  .menu-btn, 
+  .mute-btn {
     font-size: 0.95rem;
+  }
+
+  .mute-btn .mute-icon {
+    font-size: 1.3rem !important;
+    transform: translateY(-2px);
   }
   
   .game-container {
