@@ -1,9 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     const backBtn = document.getElementById('back-btn');
     const selectBtns = document.querySelectorAll('.select-btn');
-    
+
     backBtn.addEventListener('click', function() {
-        window.location.href = 'index.html';
+        window.soundManager.play('button-click');
+        window.soundManager.stop('background-music');
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 300);
     });
     
     // Verificar progresso e atualizar aparência dos botões
@@ -11,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     selectBtns.forEach(btn => {
         btn.addEventListener('click', function() {
+            window.soundManager.play('button-click');
+            
             const biomeCard = this.closest('.biome-card');
             const biome = biomeCard.dataset.biome;
             
@@ -23,10 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 pantanal: [false, false, false, false, false, false]
             };
             
-            // Um bioma está desbloqueado se pelo menos um nível estiver desbloqueado
             const isBiomeUnlocked = progress[biome] && progress[biome].some(level => level === true);
             
             if (!isBiomeUnlocked) {
+                window.soundManager.play('obstacle-hit');
                 window.modalManager.showAlert(
                     'Este bioma ainda está bloqueado! Complete o bioma anterior primeiro.', 
                     'Bioma Bloqueado'
@@ -34,11 +40,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Redirecionar para a página da fase com o parâmetro do bioma
-            window.location.href = `fase-${biome}.html?biome=${biome}`;
+            // Redirecionar para a página da fase
+            setTimeout(() => {
+                window.location.href = `fase-${biome}.html?biome=${biome}`;
+            }, 300);
         });
     });
-
+    
     function updateBiomeButtons() {
         const progress = JSON.parse(localStorage.getItem('gameProgress')) || {
             atlantic: [true, false, false, false, false, false],

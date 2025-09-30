@@ -1,43 +1,47 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const backBtn = document.getElementById("back-btn");
-  const startBtns = document.querySelectorAll(".start-btn");
+    setTimeout(() => {
+        window.soundManager.play('page-transition');
+    }, 100);
+    
+    const backBtn = document.getElementById("back-btn");
+    const startBtns = document.querySelectorAll(".start-btn");
 
-  backBtn.addEventListener("click", function () {
-    window.location.href = "fases.html";
-  });
-
-  startBtns.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      if (!this.disabled) {
-        const levelCard = this.closest(".level-card");
-        const level = levelCard.dataset.level;
-
-        // Obter o nome do bioma da URL ou do título da página
-        const urlParams = new URLSearchParams(window.location.search);
-        let biome = urlParams.get("biome");
-
-        // Se não estiver na URL, tentar obter do título da página
-        if (!biome) {
-          const pageTitle = document
-            .querySelector("h1")
-            .textContent.toLowerCase();
-          if (pageTitle.includes("mata atlântica")) biome = "atlantic";
-          else if (
-            pageTitle.includes("amazônia") ||
-            pageTitle.includes("amazonia")
-          )
-            biome = "amazon";
-          else if (pageTitle.includes("cerrado")) biome = "cerrado";
-          else if (pageTitle.includes("caatinga")) biome = "caatinga";
-          else if (pageTitle.includes("pantanal")) biome = "pantanal";
-          else biome = "atlantic"; // Padrão
-        }
-
-        // Redirecionar para a página do jogo com os parâmetros corretos
-        window.location.href = `jogo.html?biome=${biome}&level=${level}`;
-      }
+    backBtn.addEventListener("click", function () {
+        window.soundManager.play('button-click');
+        setTimeout(() => {
+            window.location.href = "fases.html";
+        }, 300);
     });
-  });
+
+    startBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            if (!this.disabled) {
+                window.soundManager.play('button-click');
+
+                const levelCard = this.closest(".level-card");
+                const level = levelCard.dataset.level;
+
+                // Obter o nome do bioma da URL ou do título da página
+                const urlParams = new URLSearchParams(window.location.search);
+                let biome = urlParams.get("biome");
+
+                // Se não estiver na URL, tentar obter do título da página
+                if (!biome) {
+                    const pageTitle = document.querySelector("h1").textContent.toLowerCase();
+                    if (pageTitle.includes("mata atlântica")) biome = "atlantic";
+                    else if (pageTitle.includes("amazônia") || pageTitle.includes("amazonia")) biome = "amazon";
+                    else if (pageTitle.includes("cerrado")) biome = "cerrado";
+                    else if (pageTitle.includes("caatinga")) biome = "caatinga";
+                    else if (pageTitle.includes("pantanal")) biome = "pantanal";
+                    else biome = "atlantic";
+                }
+
+                setTimeout(() => {
+                    window.location.href = `jogo.html?biome=${biome}&level=${level}`;
+                }, 300);
+            }
+        });
+    });
 
   // Verificar progresso salvo para desbloquear níveis
   checkProgress();

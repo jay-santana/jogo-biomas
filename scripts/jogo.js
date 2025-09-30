@@ -73,36 +73,49 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializar o jogo
     initializeGame(biome, parseInt(level));
     
-    // Configurar botões
+    // ========== CONFIGURAR BOTÕES COM SONS ==========
+
+
+    // Botão menu
     menuBtn.addEventListener('click', function() {
-        window.location.href = 'fases.html';
+        window.soundManager.play('button-click');
+        setTimeout(() => {
+            window.location.href = 'fases.html';
+        }, 300);
     });
     
+    // Botão ajuda
     helpBtn.addEventListener('click', function() {
+        window.soundManager.play('button-click');
         helpModal.style.display = 'flex';
     });
     
+    // Fechar ajuda
     closeHelpBtn.addEventListener('click', function() {
+        window.soundManager.play('button-click');
         helpModal.style.display = 'none';
     });
     
+    // Continuar
     continueBtn.addEventListener('click', function() {
-        // Avançar para o próximo nível
+        window.soundManager.play('button-click');
         const nextLevel = parseInt(level) + 1;
         if (nextLevel <= 6) {
             window.location.href = `jogo.html?biome=${biome}&level=${nextLevel}`;
         } else {
-            // Se não há próximo nível, voltar para seleção de fases do mesmo bioma
             window.location.href = `fase-${biome}.html?biome=${biome}`;
         }
     });
     
+    // Replay
     replayBtn.addEventListener('click', function() {
-        // Recarregar o nível atual
+        window.soundManager.play('button-click');
         window.location.href = `jogo.html?biome=${biome}&level=${level}`;
     });
     
+    // Menu modal
     menuModalBtn.addEventListener('click', function() {
+        window.soundManager.play('button-click');
         window.location.href = 'fases.html';
     });
     
@@ -115,7 +128,31 @@ document.addEventListener('DOMContentLoaded', function() {
             victoryModal.style.display = 'none';
         }
     });
-    
+
+    // ========== FUNÇÃO PARA TOCAR SONS ==========
+    function playGameSound(soundName) {
+        window.soundManager.play(soundName);
+    }
+
+    // ========== CONFIGURAR BLOCOS DE COMANDO COM SOM ==========
+    document.querySelectorAll('.command-block').forEach(block => {
+        block.addEventListener('click', () => {
+            playGameSound('button-click'); // SOM AO CLICAR NAS SETAS
+            addCommand(block.dataset.command);
+        });
+    });
+
+    // ========== EXECUTAR COMANDOS COM SONS ==========
+    runBtn.addEventListener('click', function() {
+        playGameSound('button-click');
+        executeCommands();
+    });
+
+    resetBtn.addEventListener('click', function() {
+        playGameSound('button-click');
+        resetGame();
+    });
+
     // Inicializar o grid do jogo 
     // função responsável por configurar o grid do jogo com base no bioma e nível selecionados
     function initializeGame(biome, level) {
@@ -296,10 +333,6 @@ document.addEventListener('DOMContentLoaded', function() {
         character.style.backgroundPosition = `${posX}px ${posY}px`;
     }
     
-    // Configurar blocos de comando
-    document.querySelectorAll('.command-block').forEach(block => {
-        block.addEventListener('click', () => addCommand(block.dataset.command));
-    });
     
     function addCommand(command) {
         if (gameState.commands.length < 50) {
@@ -369,8 +402,6 @@ document.addEventListener('DOMContentLoaded', function() {
       return img;
   }
       
-    // Executar comandos
-    runBtn.addEventListener('click', executeCommands);
     
     async function executeCommands() {
         runBtn.disabled = true;
@@ -383,6 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Verificar se bateu em obstáculo
             if (movementResult === 'blocked') {
                 await new Promise(resolve => setTimeout(resolve, 800));
+                playGameSound('obstacle-hit'); // SOM AO BATER EM OBSTÁCULO
                 alert("VOCÊ ESBARROU EM UM OBSTACULO - REINICIANDO");
                 resetGame();
                 runBtn.disabled = false;
@@ -398,14 +430,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const winStatus = checkWinCondition();
             
             if (winStatus === true) {
-                // Vitória completa - já mostra modal na showVictory()
                 runBtn.disabled = false;
                 resetBtn.disabled = false;
                 return;
             }
             
             if (winStatus === 'incomplete') {
-                // Chegou no final mas faltam itens
+                playGameSound('obstacle-hit'); // SOM AO NÃO COLETAR TODOS ITENS
                 alert('VOCE CHEGOU AO FINAL MAS NÃO COLETOU TODOS OS ITENS - REINICIANDO');
                 resetGame();
                 runBtn.disabled = false;
@@ -419,6 +450,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Se terminou todos os comandos sem vencer
         if (!checkWinCondition()) {
             await new Promise(resolve => setTimeout(resolve, 500));
+            playGameSound('obstacle-hit'); // SOM AO NÃO COMPLETAR O JOGO
             alert("VOCÊ NÃO COMPLETOU O JOGO - REINICIANDO");
             resetGame();
         }
@@ -470,6 +502,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkForItem() {
         const { x, y } = gameState.characterPosition;
         if (gameState.grid[y][x] === 'item') {
+            playGameSound('item-collect'); // SOM AO COLETAR ITEM
             gameState.itemsCollected++;
             gameState.grid[y][x] = 'path';
             const cell = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`);
@@ -483,15 +516,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkWinCondition() {
         const { x, y } = gameState.characterPosition;
         
-        // Só retorna true se for vitória COMPLETA (com todos os itens)
         if (gameState.grid[y][x] === 'end' && gameState.itemsCollected === gameState.totalItems) {
             showVictory();
             return true;
         }
         
-        // Se chegou no final mas faltam itens, retorna um status especial
         if (gameState.grid[y][x] === 'end' && gameState.itemsCollected < gameState.totalItems) {
-            return 'incomplete'; // Status especial para itens incompletos
+            return 'incomplete'; 
         }
         
         return false;
@@ -499,10 +530,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showVictory() {
         stepsResult.textContent = `VOCE COMPLETOU O NIVEL EM ${gameState.steps} PASSOS`;
-        victoryModal.style.display = 'flex';
-        
-        // Salvar progresso
         saveProgress(gameState.currentBiome, level, gameState.steps);
+        
+        const isLastPantanalLevel = gameState.currentBiome === 'pantanal' && level === '6';
+        
+        if (isLastPantanalLevel) {
+            playGameSound('victory'); // SOM DE VITÓRIA FINAL
+            showFinalVictoryModal();
+        } else {
+            playGameSound('level-complete'); // SOM DE NÍVEL COMPLETO
+            showBiomeCompletionModal(gameState.currentBiome);
+        }
     }
 
         function showBiomeCompletionModal(biome) {
@@ -547,13 +585,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
     }
 
-    function isFinalVictory() {
-        return gameState.currentBiome === 'pantanal' && level === '6';
-    }
 
-    // Função especial para vitória final
     function showFinalVictoryModal() {
-        // Criar modal simples para vitória final
         const finalModal = document.createElement('div');
         finalModal.className = 'modal';
         finalModal.style.display = 'flex';
@@ -573,17 +606,10 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         document.body.appendChild(finalModal);
-        
-        // Fechar modal ao clicar fora
-        finalModal.addEventListener('click', function(e) {
-            if (e.target === finalModal) {
-                document.body.removeChild(finalModal);
-            }
-        });
+      
     }
     
     function saveProgress(biome, level, steps) {
-        // Carregar progresso existente ou criar novo CORRETO
         const progress = JSON.parse(localStorage.getItem('gameProgress')) || {
             'atlantic': [true, false, false, false, false, false],
             'amazon': [false, false, false, false, false, false],
@@ -624,17 +650,6 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('gameStats', JSON.stringify(stats));
         
         console.log(`Progresso salvo: ${biome}, nível ${level}, ${steps} passos`);
-        
-        if (completedAllLevels) {
-
-            if (isFinalVictory()) {
-                showFinalVictoryModal();
-            } else {
-
-                showBiomeCompletionModal(biome);
-            }
-        }
-
     }
 
     resetBtn.addEventListener('click', resetGame);
