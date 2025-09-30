@@ -1,532 +1,591 @@
-/* styles/informacoes.css */
+/* styles/informacoes.css - MOBILE FIRST */
 @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #557a69, #3c6158, #2f9789);
-    min-height: 100vh;
-    padding: 20px;
+  background: linear-gradient(135deg, #3a5c2d, #2e4a23, #22381a);
+  min-height: 100vh;
+  padding: 10px;
 }
 
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #557a69, #3c6158, #2f9789);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, #4E3426, #3E2921);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  border: 4px solid #302119;
+  overflow: hidden;
 }
 
 header {
   display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,-1px 1px 0 #000;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  font-size: 0.7rem;
   line-height: 1.4;
-  letter-spacing: 2px;
-  padding: 30px;
-  border-radius: 10px;
-  color: #edcd5d;
+  letter-spacing: 1px;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  background: #6b4732;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  color: #f8d98f;
 }
 
-h1{
+h1 {
   text-decoration: underline;
+  font-size: 0.9rem;
+  margin-top: 40px;
+  color: #fcd06a;
+  text-shadow: 1.3px 1.3px 0 #000;
 }
 
 .back-btn {
-  padding: 10px 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 16px;
   background: #443328;
   color: #ded597;
-  border-color: #c5a274;
-  border-style: solid;
+  border: 2px solid #c5a274;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  z-index: 10;
 }
 
 .back-btn:hover {
-  background: #744c33;
+  background: #5f4b40;
   transform: translateY(-2px);
 }
 
 .content {
-    padding: 30px;
+  padding: 20px;
+  background: linear-gradient(to bottom, #4E3426, #3E2921);
 }
 
 .info-section {
-    margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .info-section h2 {
-    color: #edcd5d;
-    text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,-1px 1px 0 #000;
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-    text-align: center;
-    /* border-bottom: 2px solid #2E8B57; */
-    padding-bottom: 10px;
+  color: #bb8c71;
+  text-shadow: 1.3px 1.3px 0 #000;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  text-align: center;
+  padding-bottom: 8px;
+  line-height: 1.4;
 }
 
 .info-section p {
-  font-size: 1.1rem;
-  color: #e2d1a0;
-  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-    -1px 1px 0 #000;
+  font-size: 0.7rem;
+  color: #c9b885;
+  text-shadow: 1.3px 1.3px 0 #000;
   font-weight: bold;
-  padding: 10px;
-  line-height: 1.4;
-  letter-spacing: 3px;
+  padding: 8px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
 }
 
 .skill-card {
-    background-color: #947356;
-    padding: 20px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-
-    box-shadow: 
-    2px 0 0 0 #573929,
-    -2px 0 0 0 #573929,
-    0 2px 0 0 #573929,
-    0 -2px 0 0 #573929,
-    4px 0 0 0 #573929,
-    -4px 0 0 0 #573929,
-    0 4px 0 0 #573929,
-    0 -4px 0 0 #573929,
-    2px 2px 0 0 #573929,
-    -2px 2px 0 0 #573929,
-    2px -2px 0 0 #573929,
-    -2px -2px 0 0 #573929;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+  background-color: #7a5c45;
+  box-shadow: 
+    2px 0 0 0 #4a2f1f,
+    -2px 0 0 0 #4a2f1f,
+    0 2px 0 0 #4a2f1f,
+    0 -2px 0 0 #4a2f1f,
+    4px 0 0 0 #4a2f1f,
+    -4px 0 0 0 #4a2f1f,
+    0 4px 0 0 #4a2f1f,
+    0 -4px 0 0 #4a2f1f,
+    2px 2px 0 0 #4a2f1f,
+    -2px 2px 0 0 #4a2f1f,
+    2px -2px 0 0 #4a2f1f,
+    -2px -2px 0 0 #4a2f1f;
 }
 
 .skill-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 .skill-card h3 {
-  font-size: 1.1rem;
-  color: #e2d1a0;
-  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-    -1px 1px 0 #000;
+  font-size: 0.8rem;
+  color: #fde088; 
+  text-shadow: 1.3px 1.3px 0 #000;
   font-weight: bold;
-  padding: 10px;
+  padding: 8px;
+  line-height: 1.5;
 }
 
 .skill-card p {
-    color: #edcd5d;
-    text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-    -1px 1px 0 #000;
-    line-height: 1.6;
+  color: #FFF9C4;
+  text-shadow: 1.3px 1.3px 0 #000;
+  line-height: 1.5;
+  font-size: 0.7rem;
 }
 
-/* Tablets em paisagem (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    body {
-        padding: 15px;
-    }
-    
-    .container {
-        max-width: 95vw;
-    }
-    
-    header {
-        font-size: 0.8rem;
-        padding: 20px;
-        gap: 15px;
-        text-align: center;
-    }
-    
-    h1 {
-        font-size: 1.1rem;
-    }
-    
-    .back-btn {
-        padding: 8px 16px;
-        font-size: 0.6rem;
-    }
-    
-    .content {
-        padding: 20px;
-    }
-    
-    .info-section {
-        margin-bottom: 30px;
-    }
-    
-    .info-section h2 {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
-        padding-bottom: 8px;
-    }
-    
-    .info-section p {
-        font-size: 0.9rem;
-        padding: 8px;
-        letter-spacing: 2px;
-    }
-    
-    .skill-card {
-        padding: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .skill-card h3 {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-    
-    .skill-card p {
-        font-size: 0.8rem;
-        line-height: 1.5;
-    }
-}
+/* ===== MOBILE FIRST MEDIA QUERIES ===== */
 
-/* Mobile em paisagem (480px - 767px) */
-@media (max-width: 767px) and (orientation: landscape) {
-    body {
-        padding: 10px;
-    }
-    
-    .container {
-        max-width: 98vw;
-    }
-    
-    header {
-        font-size: 0.7rem;
-        padding: 15px;
-        gap: 12px;
-        text-align: center;
-    }
-    
-    h1 {
-        font-size: 0.9rem;
-    }
-    
-    .back-btn {
-        padding: 6px 12px;
-        font-size: 0.5rem;
-    }
-    
-    .content {
-        padding: 15px;
-    }
-    
-    .info-section {
-        margin-bottom: 25px;
-    }
-    
-    .info-section h2 {
-        font-size: 0.9rem;
-        margin-bottom: 12px;
-        padding-bottom: 6px;
-    }
-    
-    .info-section p {
-        font-size: 0.7rem;
-        padding: 6px;
-        letter-spacing: 1px;
-        line-height: 1.3;
-    }
-    
-    .skill-card {
-        padding: 12px;
-        margin-bottom: 12px;
-    }
-    
-    .skill-card h3 {
-        font-size: 0.8rem;
-        padding: 6px;
-    }
-    
-    .skill-card p {
-        font-size: 0.7rem;
-        line-height: 1.4;
-    }
-}
-
-/* Telas muito pequenas em paisagem (até 479px) */
-@media (max-width: 479px) and (orientation: landscape) {
-    body {
-        padding: 8px;
-    }
-    
-    header {
-        font-size: 0.6rem;
-        padding: 12px;
-        gap: 10px;
-    }
-    
-    h1 {
-        font-size: 0.8rem;
-    }
-    
-    .back-btn {
-        padding: 5px 10px;
-        font-size: 0.4rem;
-    }
-    
-    .content {
-        padding: 12px;
-    }
-    
-    .info-section h2 {
-        font-size: 0.8rem;
-        margin-bottom: 10px;
-    }
-    
-    .info-section p {
-        font-size: 0.6rem;
-        padding: 5px;
-        letter-spacing: 0.5px;
-    }
-    
-    .skill-card {
-        padding: 10px;
-        margin-bottom: 10px;
-    }
-    
-    .skill-card h3 {
-        font-size: 0.7rem;
-    }
-    
-    .skill-card p {
-        font-size: 0.6rem;
-    }
-}
-
-/* Telas muito grandes (TVs acima de 1600px) */
-@media (min-width: 1600px) and (orientation: landscape) {
-    .container {
-        max-width: 1400px;
-    }
-    
-    header {
-        font-size: 1.2rem;
-        padding: 40px;
-    }
-    
-    h1 {
-        font-size: 1.8rem;
-    }
-    
-    .back-btn {
-        padding: 15px 30px;
-        font-size: 1rem;
-    }
-    
-    .content {
-        padding: 40px;
-    }
-    
-    .info-section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 30px;
-    }
-    
-    .info-section p {
-        font-size: 1.4rem;
-        letter-spacing: 4px;
-    }
-    
-    .skill-card {
-        padding: 30px;
-        margin-bottom: 30px;
-    }
-    
-    .skill-card h3 {
-        font-size: 1.4rem;
-    }
-    
-    .skill-card p {
-        font-size: 1.3rem;
-    }
-}
-
-/* Tablets em portrait (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    body {
-        padding: 15px;
-    }
-    
-    header {
-        font-size: 0.9rem;
-        padding: 25px;
-        gap: 20px;
-        text-align: center;
-    }
-    
-    h1 {
-        font-size: 1.2rem;
-    }
-    
-    .back-btn {
-        padding: 10px 20px;
-        font-size: 0.7rem;
-    }
-    
-    .content {
-        padding: 25px;
-    }
-    
-    .info-section h2 {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-    }
-    
-    .info-section p {
-        font-size: 1rem;
-        letter-spacing: 2px;
-    }
-    
-    .skill-card {
-        padding: 18px;
-        margin-bottom: 18px;
-    }
-    
-    .skill-card h3 {
-        font-size: 1rem;
-    }
-    
-    .skill-card p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Mobile em portrait (até 767px) */
-@media (max-width: 767px) and (orientation: portrait) {
-    body {
-        padding: 10px;
-    }
-    
-    header {
-        font-size: 0.7rem;
-        padding: 20px;
-        gap: 15px;
-        text-align: center;
-    }
-    
-    h1 {
-        font-size: 0.9rem;
-    }
-    
-    .back-btn {
-        padding: 8px 16px;
-        font-size: 0.6rem;
-    }
-    
-    .content {
-        padding: 20px;
-    }
-    
-    .info-section {
-        margin-bottom: 20px;
-    }
-    
-    .info-section h2 {
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-    }
-    
-    .info-section p {
-        font-size: 0.8rem;
-        letter-spacing: 1px;
-        line-height: 1.3;
-    }
-    
-    .skill-card {
-        padding: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .skill-card h3 {
-        font-size: 0.8rem;
-    }
-    
-    .skill-card p {
-        font-size: 0.7rem;
-        line-height: 1.4;
-    }
-}
-
-/* Ajuste especial para altura muito reduzida */
+/* Ajuste especial para altura muito reduzida em paisagem - MOBILE FIRST */
 @media (max-height: 500px) and (orientation: landscape) {
-    body {
-        padding: 5px;
-    }
-    
-    header {
-        padding: 10px;
-        font-size: 0.6rem;
-    }
-    
-    .content {
-        padding: 10px;
-    }
-    
-    .info-section {
-        margin-bottom: 15px;
-    }
-    
-    .info-section p {
-        font-size: 0.6rem;
-        padding: 5px;
-    }
-    
-    .skill-card {
-        padding: 8px;
-        margin-bottom: 8px;
-    }
+  body {
+    padding: 5px;
+  }
+
+  header {
+    padding: 10px;
+    font-size: 0.6rem;
+  }
+
+  h1 {
+    margin-top: 35px;
+    text-shadow: 1.3px 1.3px 0 #000;
+  }
+
+  .back-btn {
+    top: 10px;
+    left: 10px;
+    padding: 6px 12px;
+    font-size: 0.5rem;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .info-section {
+    margin-bottom: 12px;
+    text-shadow: 1.3px 1.3px 0 #000;
+  }
+
+  .info-section p {
+    font-size: 0.6rem;
+    padding: 5px;
+    line-height: 1.2;
+    text-shadow: 1.3px 1.3px 0 #000;
+  }
+
+  .skill-card {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .skill-card h3 {
+    font-size: 0.7rem;
+    padding: 5px;
+    text-shadow: 1.3px 1.3px 0 #000;
+  }
+
+  .skill-card p {
+    font-size: 0.6rem;
+    text-shadow: 1.3px 1.3px 0 #000;
+  }
 }
 
-/* ===== NOVA ESTRUTURA DE BREAKPOINTS ===== */
+/* AJUSTES ESPECÍFICOS PARA MOBILE PEQUENO */
+@media (max-width: 360px) {
+  .info-section p {
+    line-height: 1.9;
+    font-size: 0.65rem;
+    padding: 8px 6px;
+  }
+  
+  .skill-card p {
+    line-height: 1.9;
+    font-size: 0.65rem;
+  }
+  
+  .skill-card {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+}
 
-/* Mobile paisagem e tablets pequenos (480px - 767px) */
-@media (min-width: 481px) and (max-width: 767px) {
+/* Mobile paisagem e tablets pequenos (481px - 767px) */
+@media (min-width: 481px) {
+  body {
+    padding: 12px;
+  }
 
+  .container {
+    max-width: 95%;
+  }
+
+  header {
+    font-size: 0.75rem;
+    padding: 22px;
+    gap: 18px;
+  }
+
+  h1 {
+    font-size: 1rem;
+    margin-top: 45px;
+  }
+
+  .back-btn {
+    top: 22px;
+    left: 22px;
+    padding: 9px 18px;
+    font-size: 0.65rem;
+  }
+
+  .content {
+    padding: 22px;
+  }
+
+  .info-section h2 {
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+
+  .info-section p {
+    line-height: 1.7;
+    letter-spacing: 0.4px;
+  }
+
+  .skill-card {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .skill-card h3 {
+    font-size: 0.85rem;
+  }
+
+  .skill-card p {
+    font-size: 0.75rem;
+    line-height: 1.7;
+  }
 }
 
 /* Ajuste específico para mobile paisagem (480px - 767px) */
-@media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+@media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    padding: 18px;
+  }
 
+  h1 {
+    margin-top: 40px;
+  }
+
+  .back-btn {
+    top: 18px;
+    left: 18px;
+  }
+
+  .content {
+    padding: 18px;
+  }
+
+  .info-section p {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
 }
 
-/* Tablets médios (768px - 1023px) - iPad, Tab S7, etc. */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Tablets médios (768px - 1023px) */
+@media (min-width: 768px) {
+  body {
+    padding: 15px;
+  }
 
+  .container {
+    max-width: 90%;
+  }
+
+  header {
+    font-size: 0.9rem;
+    padding: 25px;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    margin-top: 50px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .back-btn {
+    top: 25px;
+    left: 25px;
+    padding: 10px 20px;
+    font-size: 0.7rem;
+  }
+
+  .content {
+    padding: 25px;
+  }
+
+  .info-section {
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .info-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .info-section p {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    line-height: 1.7;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .skill-card {
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+
+  .skill-card h3 {
+    font-size: 1rem;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .skill-card p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    text-shadow: 2px 2px 0 #000;
+  }
 }
 
 /* Tablets médios em paisagem (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.85rem;
+  }
 
+  h1 {
+    margin-top: 45px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .back-btn {
+    top: 25px;
+    left: 25px;
+  }
+
+  .info-section p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-shadow: 2px 2px 0 #000;
+  }
 }
 
 /* Tablets grandes e laptops pequenos (1024px - 1199px) */
-@media (min-width: 1024px) and (max-width: 1199px) {
+@media (min-width: 1024px) {
+  body {
+    padding: 18px;
+  }
 
+  .container {
+    max-width: 900px;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    padding: 28px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-top: 55px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .back-btn {
+    top: 28px;
+    left: 28px;
+    padding: 11px 22px;
+    font-size: 0.75rem;
+  }
+
+  .content {
+    padding: 28px;
+  }
+
+  .info-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 22px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .info-section p {
+    font-size: 0.95rem;
+    letter-spacing: 2.5px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .skill-card {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .skill-card h3 {
+    font-size: 1.05rem;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .skill-card p {
+    font-size: 0.9rem;
+    text-shadow: 2px 2px 0 #000;
+  }
 }
 
 /* Laptops e desktops (1200px - 1599px) */
-@media (min-width: 1200px) and (max-width: 1599px) {
+@media (min-width: 1200px) {
+  body {
+    padding: 20px;
+  }
 
+  .container {
+    max-width: 1000px;
+  }
+
+  header {
+    font-size: 1rem;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    margin-top: 60px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .back-btn {
+    top: 30px;
+    left: 30px;
+    padding: 12px 24px;
+    font-size: 0.8rem;
+  }
+
+  .content {
+    padding: 30px;
+  }
+
+  .info-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .info-section p {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .skill-card {
+    padding: 22px;
+    margin-bottom: 22px;
+  }
+
+  .skill-card h3 {
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .skill-card p {
+    font-size: 0.9rem;
+    text-shadow: 2px 2px 0 #000;
+  }
 }
 
 /* Telas muito grandes (1600px+) */
 @media (min-width: 1600px) {
+  body {
+    padding: 25px;
+  }
 
-}
+  .container {
+    max-width: 1400px;
+  }
 
-/* Ajuste especial para altura muito reduzida em paisagem */
-@media (max-height: 500px) and (orientation: landscape) {
+  header {
+    font-size: 1.2rem;
+    padding: 40px;
+  }
 
+  h1 {
+    font-size: 1.8rem;
+    margin-top: 70px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .back-btn {
+    top: 40px;
+    left: 40px;
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+
+  .content {
+    padding: 40px;
+  }
+
+  .info-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .info-section p {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .skill-card {
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+
+  .skill-card h3 {
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 0 #000;
+  }
+
+  .skill-card p {
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 0 #000;
+  }
 }
 
 /* Ajuste para telas muito largas (proporção anômala) */
 @media (min-aspect-ratio: 21/9) {
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
 
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 }
