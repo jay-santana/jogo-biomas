@@ -954,9 +954,9 @@ h3#level-title {
   }
   
   .character {
-    width: 70px;
-    height: 93px;
-    transform: translate(-1%, -20%) scale(1.2);
+    width: 69px;
+    height: 88px;
+    transform: translate(2%, -18%) scale(1.2);
   }
   
   .controls-container {
