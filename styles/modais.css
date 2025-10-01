@@ -235,7 +235,7 @@
   }
   
   .modal p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     padding: 6px;
   }
 
@@ -268,6 +268,8 @@
   .modal-content,
   .custom-modal-content {
     width: 340px;
+    height: 400px;
+    min-height: 450px;
     padding: 14px;
   }
   
@@ -291,11 +293,12 @@
   
   .custom-modal p {
     font-size: 0.8rem;
-    line-height: 1.5;
+    line-height: 1.8;
+    margin-top: 30px;
   }
   
   .custom-modal-btn {
-    margin-top: 10px;
+    margin-top: 50px;
   }
 
   .custom-modal-btn.confirm {
@@ -309,6 +312,7 @@
   .modal-content,
   .custom-modal-content {
     width: 380px;
+    max-height: 500px;
     padding: 16px;
     max-width: 85%;
   }
@@ -318,7 +322,7 @@
   }
   
   .modal p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.5;
   }
   
@@ -379,6 +383,7 @@
   .custom-modal p {
     font-size: 0.8rem;
     line-height: 1.5;
+    margin-top: 10px;
   }
   
   .custom-modal-btn {
@@ -399,7 +404,7 @@
     width: 450px;
     max-width: 80%;
     padding: 20px;
-    max-height: 380px;
+    max-height: 500px;
   }
   
   .modal h2 {
@@ -446,7 +451,7 @@
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
   .modal-content,
   .custom-modal-content {
-    max-height: 320px;
+    max-height: 380px;
     width: 500px;
   }
   
@@ -484,6 +489,7 @@
   .custom-modal-content {
     width: 550px;
     max-width: 75%;
+    max-height: 500px;
     padding: 22px;
   }
   
@@ -523,7 +529,7 @@
     max-width: 700px;
     padding: 25px;
     height: 300px;
-    max-height: 300px;
+    max-height: 350px;
   }
   
   .modal h2 {
@@ -533,13 +539,13 @@
   
   .modal p {
     font-size: 1.0rem;
-    line-height: 1.5;
+    line-height: 1.3;
     letter-spacing: 1px;
     padding: 10px;
   }
   
   .modal-buttons {
-    gap: 18px;
+    gap: 12px;
     margin-top: 20px;
   }
   
@@ -553,11 +559,12 @@
   
   .custom-modal p {
     font-size: 1.0rem;
-    line-height: 1.5;
+    line-height: 1.6;
+    margin-top: 30px;
   }
 
   .custom-modal-btn {
-    margin-top: 10px;
+    margin-top: 30px;
   }
 
   .custom-modal-btn.confirm {
@@ -596,10 +603,11 @@
   .custom-modal p {
     font-size: 1.1rem;
     line-height: 1.6;
+    margin-top: 30px;
   }
 
   .custom-modal-btn {
-    margin-top: 10px;
+    margin-top: 30px;
   }
 
   .custom-modal-btn.confirm {
@@ -612,8 +620,8 @@
 @media (max-height: 500px) and (orientation: landscape) {
   .modal-content,
   .custom-modal-content {
-    height: 180px;
-    max-height: 280px;
+    height: 280px;
+    max-height: 300px;
     width: 550px;
     padding: 10px;
   }
@@ -632,7 +640,7 @@
   }
   
   .modal-buttons {
-    gap: 12px;
+    gap: 5px;
     margin-top: 8px;
   }
   
@@ -645,12 +653,13 @@
   }
   
   .custom-modal p {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     line-height: 1.5;
+    margin-top: 20px;
   }
 
   .custom-modal-btn {
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   .custom-modal-btn.confirm {

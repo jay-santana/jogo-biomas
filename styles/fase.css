@@ -639,6 +639,7 @@ h2 {
 body {
   min-height: 100vh;
   padding: 15px;
+  overflow: auto;
 }
 
 .container {
