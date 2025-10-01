@@ -11,12 +11,11 @@ class SoundManager {
     // Sons principais que vamos usar
     this.sounds = {
       "background-music": new Audio("../assets/sounds/background-music.mp3"),
-      "button-click": new Audio("../assets/sounds/button-click.mp3"),
       "item-collect": new Audio("../assets/sounds/item-collect.mp3"),
       "obstacle-hit": new Audio("../assets/sounds/obstacle-hit.mp3"),
       "level-complete": new Audio("../assets/sounds/level-complete.mp3"),
       victory: new Audio("../assets/sounds/victory.mp3"),
-      "page-transition": new Audio("../assets/sounds/button-click.mp3"), // Reutilizando o som
+      
     };
 
     // Configurar música de fundo
@@ -24,12 +23,10 @@ class SoundManager {
     this.sounds["background-music"].volume = 0.3; // Volume mais baixo para música de fundo
 
     // Configurar volume dos outros sons
-    this.sounds["button-click"].volume = 0.7;
     this.sounds["item-collect"].volume = 0.7;
     this.sounds["obstacle-hit"].volume = 0.7;
     this.sounds["level-complete"].volume = 0.8;
     this.sounds["victory"].volume = 0.8;
-    this.sounds["page-transition"].volume = 0.5;
   }
 
   play(soundName) {

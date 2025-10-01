@@ -73,32 +73,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializar o jogo
     initializeGame(biome, parseInt(level));
     
-    // ========== CONFIGURAR BOTÕES COM SONS ==========
-
 
     // Botão menu
     menuBtn.addEventListener('click', function() {
-        window.soundManager.play('button-click');
-        setTimeout(() => {
-            window.location.href = 'fases.html';
-        }, 300);
+        window.location.href = 'fases.html';
     });
     
     // Botão ajuda
     helpBtn.addEventListener('click', function() {
-        window.soundManager.play('button-click');
         helpModal.style.display = 'flex';
     });
     
     // Fechar ajuda
     closeHelpBtn.addEventListener('click', function() {
-        window.soundManager.play('button-click');
         helpModal.style.display = 'none';
     });
     
     // Continuar
     continueBtn.addEventListener('click', function() {
-        window.soundManager.play('button-click');
         const nextLevel = parseInt(level) + 1;
         if (nextLevel <= 6) {
             window.location.href = `jogo.html?biome=${biome}&level=${nextLevel}`;
@@ -109,13 +101,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Replay
     replayBtn.addEventListener('click', function() {
-        window.soundManager.play('button-click');
         window.location.href = `jogo.html?biome=${biome}&level=${level}`;
     });
     
     // Menu modal
     menuModalBtn.addEventListener('click', function() {
-        window.soundManager.play('button-click');
         window.location.href = 'fases.html';
     });
     
@@ -134,22 +124,19 @@ document.addEventListener('DOMContentLoaded', function() {
         window.soundManager.play(soundName);
     }
 
-    // ========== CONFIGURAR BLOCOS DE COMANDO COM SOM ==========
+    
     document.querySelectorAll('.command-block').forEach(block => {
         block.addEventListener('click', () => {
-            playGameSound('button-click'); // SOM AO CLICAR NAS SETAS
             addCommand(block.dataset.command);
         });
     });
 
-    // ========== EXECUTAR COMANDOS COM SONS ==========
+
     runBtn.addEventListener('click', function() {
-        playGameSound('button-click');
         executeCommands();
     });
 
     resetBtn.addEventListener('click', function() {
-        playGameSound('button-click');
         resetGame();
     });
 
@@ -554,8 +541,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h2>PARABÉNS!</h2>
                 <p>VOCÊ COMPLETOU TODO O BIOMA ${formatBiomeName(biome).toUpperCase()}</p>
                 <div class="modal-buttons">
+                    <button id="same-biome-btn">CONTINUAR</button>
                     <button id="next-biome-btn">IR PARA O PRÓXIMO BIOMA</button>
-                    <button id="same-biome-btn">VOLTAR PARA NIVEIS</button>
                     <button id="back-to-map-btn">VOLTAR AO MAPA</button>
                 </div>
             </div>
@@ -576,7 +563,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         document.getElementById('same-biome-btn').addEventListener('click', function() {
-            window.location.href = `fase-${biome}.html?biome=${biome}`;
+            continueBtn.click();
         });
         
         document.getElementById('back-to-map-btn').addEventListener('click', function() {
