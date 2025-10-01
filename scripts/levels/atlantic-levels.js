@@ -41,14 +41,14 @@ const atlanticLevels = {
             inicio: { x: 3, y: 6 },
             fim: { x: 6, y: 6 },
             itens: [],
-            obstaculos: [{x: 4, y: 5}, {x: 5, y: 5},
-                         {x: 4, y: 6}, {x: 5, y: 6}
+            obstaculos: [{x: 4, y: 5}, {x: 5, y: 6}
             ],
             accessibleCells: [
                 {x: 3, y: 6}, {x: 3, y: 5}, 
                 {x: 3, y: 4}, {x: 4, y: 4},
                 {x: 5, y: 4}, {x: 6, y: 4},
-                {x: 6, y: 5}, {x: 6, y: 6}
+                {x: 6, y: 5}, {x: 6, y: 6},
+                {x: 4, y: 6}, {x: 5, y: 5}
             ]
         },
         4: {

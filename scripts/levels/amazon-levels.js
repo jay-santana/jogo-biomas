@@ -95,7 +95,7 @@ const amazonLevels = {
             fim: { x: 2, y: 5 },
             itens: [],
             obstaculos: [{x: 4, y: 5},{x: 6, y: 4},
-                         {x: 4, y: 6}, {x: 3, y: 7}, {x: 3, y: 8}, {x: 6, y: 7}, {x: 6, y: 6}
+                         {x: 4, y: 6}, {x: 3, y: 7}
             ],
             accessibleCells: [
                 {x: 6, y: 7}, {x: 3, y: 7},
@@ -107,6 +107,8 @@ const amazonLevels = {
                 {x: 5, y: 6}, {x: 5, y: 5},
                 {x: 7, y: 5}, {x: 7, y: 4},
                 {x: 7, y: 3}, {x: 6, y: 3},
+                {x: 3, y: 8}, {x: 6, y: 7}, 
+                {x: 6, y: 6}
             ]
         }
     }
