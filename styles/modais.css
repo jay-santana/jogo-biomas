@@ -17,12 +17,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  max-width: 700px;
+  padding: 15px;
+  max-width: 90%;
+  width: 320px;
   height: auto;
-  max-height: 400px;
+  max-height: 350px;
   text-align: center;
-  margin-left: 15px;
+  margin: 0 auto;
   background-color: #947356;
   box-shadow: 
     4px 0 0 0 #573929,
@@ -40,25 +41,25 @@
 }
 
 .modal h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: -8px;
   text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,-1px 1px 0 #000;
   text-decoration: underline;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   color: #edcd5d;
 }
 
 .modal p {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #e2d1a0;
   text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
     -1px 1px 0 #000;
   font-weight: bold;
-  line-height: 1.4;
-  letter-spacing: 1px;
-  padding: 10px;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  padding: 8px;
 }
 
 .modal-buttons {
@@ -66,69 +67,71 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 12px;
+  margin-top: 15px;
 }
 
 .modal-buttons button {
-  padding: 12px 20px;
+  padding: 10px 16px;
   border: none;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-size: 0.9rem;
 }
 
 .custom-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
 }
 
 .custom-modal h2 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 0 #000;
-    text-decoration: underline;
-    color: #edcd5d;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 0 #000;
+  text-decoration: underline;
+  color: #edcd5d;
 }
 
 .custom-modal p {
-    font-size: 0.9rem;
-    color: #e2d1a0;
-    text-shadow: 2px 2px 0 #000;
-    margin-bottom: 20px;
-    line-height: 1.4;
+  font-size: 0.85rem;
+  color: #e2d1a0;
+  text-shadow: 2px 2px 0 #000;
+  margin-bottom: 20px;
+  line-height: 1.3;
 }
 
 .custom-modal-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 }
 
 .custom-modal-btn {
-    padding: 10px 20px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s ease;
+  padding: 8px 16px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
 }
 
 .custom-modal-btn.cancel {
-    background: radial-gradient(circle, rgba(249, 87, 75, 1) 0%, rgba(181, 37, 28, 1) 100%);
-    color: #f0f7d3;
-    text-shadow: 2px 2px 0 #000;
+  background: radial-gradient(circle, rgba(249, 87, 75, 1) 0%, rgba(181, 37, 28, 1) 100%);
+  color: #f0f7d3;
+  text-shadow: 2px 2px 0 #000;
 }
 
 .custom-modal-btn:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 #continue-btn,
@@ -139,7 +142,6 @@
   color: #f0f7d3;
   width: fit-content;
   height: fit-content;
-
   text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
     -1px 1px 0 #000;
   box-shadow: 
@@ -188,7 +190,6 @@
   border: none;
   width: fit-content;
   height: fit-content;
-  padding: 10px 20px;
   background: radial-gradient(circle,rgba(249, 87, 75, 1) 0%, rgba(181, 37, 28, 1) 100%);
   color: #f0f7d3;
   text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
@@ -208,11 +209,61 @@
     -2px -2px 0 0 #573929;
 }
 
-/* Tablets em paisagem (768px - 1024px)  -- FEITO*/
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+/* ===== NOVA ESTRUTURA DE BREAKPOINTS ===== */
 
-  .modal-content {
-    padding: 15px;
+/* Mobile paisagem e tablets pequenos (360px - 400px) */
+@media (min-width: 360px) and (max-width: 400px) {
+  .modal-content,
+  .custom-modal-content {
+    width: 300px;
+    padding: 12px;
+  }
+  
+  .modal h2 {
+    font-size: 1.0rem;
+    padding-bottom: 12px;
+  }
+  
+  .modal p {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .modal-buttons button {
+    padding: 10px 24px;
+    font-size: 0.6rem;
+  }
+}
+
+/* Mobile paisagem e tablets pequenos (400px - 480px) */
+@media (min-width: 401px) and (max-width: 480px) {
+  .modal-content,
+  .custom-modal-content {
+    width: 340px;
+    padding: 14px;
+  }
+  
+  .modal h2 {
+    font-size: 1.15rem;
+  }
+  
+  .modal p {
+    font-size: 0.8rem;
+  }
+
+  .modal-buttons button {
+    padding: 12px 34px;
+    font-size: 0.65rem;
+  }
+}
+
+/* Mobile paisagem e tablets pequenos (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .modal-content,
+  .custom-modal-content {
+    width: 380px;
+    padding: 16px;
+    max-width: 85%;
   }
   
   .modal h2 {
@@ -220,69 +271,218 @@
   }
   
   .modal p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .modal-buttons button {
+    padding: 11px 18px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Ajuste específico para mobile paisagem (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+  .modal-content,
+  .custom-modal-content {
+    max-height: 300px;
+    width: 350px;
+    padding: 12px;
+  }
+  
+  .modal h2 {
+    font-size: 1.1rem;
+    margin-bottom: -5px;
+    padding-bottom: 10px;
+  }
+  
+  .modal p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    padding: 5px;
+  }
+  
+  .modal-buttons {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+}
+
+/* Tablets médios (768px - 1023px) - iPad, Tab S7, etc. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal-content,
+  .custom-modal-content {
+    width: 450px;
+    max-width: 80%;
+    padding: 20px;
+    max-height: 380px;
+  }
+  
+  .modal h2 {
+    font-size: 1.4rem;
+    padding-bottom: 18px;
+  }
+  
+  .modal p {
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: 0.8px;
+  }
+  
+  .modal-buttons {
+    gap: 15px;
+    margin-top: 18px;
+  }
+  
+  .modal-buttons button {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .custom-modal h2 {
+    font-size: 1.3rem;
+  }
+  
+  .custom-modal p {
+    font-size: 0.95rem;
+  }
+  
+  .custom-modal-btn {
+    padding: 10px 18px;
+  }
+}
+
+/* Tablets médios em paisagem (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  .modal-content,
+  .custom-modal-content {
+    max-height: 320px;
+    width: 500px;
+  }
+  
+  .modal h2 {
+    font-size: 1.3rem;
+  }
+  
+  .modal p {
     font-size: 0.9rem;
   }
 }
 
-/* Mobile em paisagem (480px - 767px) -- FEITO*/
-@media (max-width: 767px) and (orientation: landscape) {
-  .modal-content {
-    width: 350px;
-    padding: 10px;
+/* Tablets grandes e laptops pequenos (1024px - 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .modal-content,
+  .custom-modal-content {
+    width: 550px;
+    max-width: 75%;
+    padding: 22px;
   }
   
   .modal h2 {
-    font-size: 1.0rem;
+    font-size: 1.5rem;
   }
   
   .modal p {
-    font-size: 0.65rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
   }
 }
 
+/* Laptops e desktops (1200px - 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .modal-content,
+  .custom-modal-content {
+    width: 600px;
+    max-width: 700px;
+    padding: 25px;
+    max-height: 400px;
+  }
+  
+  .modal h2 {
+    font-size: 1.6rem;
+    padding-bottom: 20px;
+  }
+  
+  .modal p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    padding: 10px;
+  }
+  
+  .modal-buttons {
+    gap: 18px;
+    margin-top: 20px;
+  }
+  
+  .modal-buttons button {
+    padding: 12px 22px;
+  }
+}
+
+/* Telas muito grandes (1600px+) */
+@media (min-width: 1600px) {
+  .modal-content,
+  .custom-modal-content {
+    width: 700px;
+    padding: 30px;
+    max-height: 450px;
+  }
+  
+  .modal h2 {
+    font-size: 1.8rem;
+  }
+  
+  .modal p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .modal-buttons button {
+    padding: 14px 24px;
+    font-size: 1.1rem;
+  }
+}
 
 /* Ajuste especial para altura muito reduzida em paisagem */
 @media (max-height: 500px) and (orientation: landscape) {
-  .modal-content {
+  .modal-content,
+  .custom-modal-content {
+    max-height: 280px;
     width: 350px;
     padding: 10px;
   }
   
   .modal h2 {
-    font-size: 1.0rem;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    padding-bottom: 8px;
   }
   
   .modal p {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    padding: 4px;
+    margin-bottom: 5px;
+  }
+  
+  .modal-buttons {
+    gap: 12px;
+    margin-top: 8px;
+  }
+  
+  .modal-buttons button {
+    padding: 8px 14px;
+    font-size: 0.6rem;
   }
 }
 
-/* Tablets em portrait (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .modal-content {
-    padding: 15px;
-  }
-  
-  .modal h2 {
-    font-size: 1.2rem;
-  }
-  
-  .modal p {
-    font-size: 0.9rem;
-  }
-}
-
-/* Mobile em portrait (até 767px) */
-@media (max-width: 767px) and (orientation: portrait) { 
-  .modal-content {
-    padding: 15px;
-  }
-  
-  .modal h2 {
-    font-size: 1.2rem;
-  }
-  
-  .modal p {
-    font-size: 0.9rem;
+/* Ajuste para telas muito largas (proporção anômala) */
+@media (min-aspect-ratio: 21/9) {
+  .modal-content,
+  .custom-modal-content {
+    width: 500px;
+    max-height: 380px;
   }
 }
