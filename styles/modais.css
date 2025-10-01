@@ -209,6 +209,16 @@
     -2px -2px 0 0 #573929;
 }
 
+#close-help-btn {
+  padding: 8px 16px;
+  margin-top: 15px;
+}
+
+.custom-modal-btn.confirm {
+  padding: 8px 30px;
+  font-size: 0.9rem;
+}
+
 /* ===== NOVA ESTRUTURA DE BREAKPOINTS ===== */
 
 /* Mobile paisagem e tablets pequenos (360px - 400px) */
@@ -220,7 +230,7 @@
   }
   
   .modal h2 {
-    font-size: 1.0rem;
+    font-size: 0.9rem;
     padding-bottom: 12px;
   }
   
@@ -233,6 +243,24 @@
     padding: 10px 24px;
     font-size: 0.6rem;
   }
+
+  .custom-modal h2 {
+    font-size: 0.9rem;
+  }
+  
+  .custom-modal p {
+    font-size: 0.6rem;
+    line-height: 1.5;
+  }
+  
+  .custom-modal-btn {
+    margin-top: 10px;
+  }
+
+  .custom-modal-btn.confirm {
+    padding: 8px 30px;
+    font-size: 0.9rem;
+  }
 }
 
 /* Mobile paisagem e tablets pequenos (400px - 480px) */
@@ -244,16 +272,35 @@
   }
   
   .modal h2 {
-    font-size: 1.15rem;
+    font-size: 1.0rem;
   }
   
   .modal p {
     font-size: 0.8rem;
+    line-height: 1.5;
   }
 
   .modal-buttons button {
     padding: 12px 34px;
     font-size: 0.65rem;
+  }
+
+  .custom-modal h2 {
+    font-size: 1.0rem;
+  }
+  
+  .custom-modal p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  
+  .custom-modal-btn {
+    margin-top: 10px;
+  }
+
+  .custom-modal-btn.confirm {
+    padding: 8px 30px;
+    font-size: 0.9rem;
   }
 }
 
@@ -267,17 +314,35 @@
   }
   
   .modal h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   
   .modal p {
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.5;
   }
   
   .modal-buttons button {
     padding: 11px 18px;
     font-size: 0.75rem;
+  }
+
+  .custom-modal h2 {
+    font-size: 1.1rem;
+  }
+  
+  .custom-modal p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .custom-modal-btn {
+    margin-top: 10px;
+  }
+
+  .custom-modal-btn.confirm {
+    padding: 8px 30px;
+    font-size: 0.9rem;
   }
 }
 
@@ -298,13 +363,31 @@
   
   .modal p {
     font-size: 0.8rem;
-    line-height: 1.2;
+    line-height: 1.5;
     padding: 5px;
   }
   
   .modal-buttons {
     gap: 10px;
     margin-top: 10px;
+  }
+
+  .custom-modal h2 {
+    font-size: 1.1rem;
+  }
+  
+  .custom-modal p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  
+  .custom-modal-btn {
+    margin-top: 10px;
+  }
+
+  .custom-modal-btn.confirm {
+    padding: 8px 30px;
+    font-size: 0.9rem;
   }
 
 }
@@ -326,7 +409,7 @@
   
   .modal p {
     font-size: 1rem;
-    line-height: 1.4;
+    line-height: 1.5;
     letter-spacing: 0.8px;
   }
   
@@ -341,15 +424,21 @@
   }
   
   .custom-modal h2 {
-    font-size: 1.3rem;
+    font-size: 1.0rem;
   }
   
   .custom-modal p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
   
   .custom-modal-btn {
     padding: 10px 18px;
+  }
+
+  .custom-modal-btn.confirm {
+    padding: 8px 30px;
+    font-size: 0.9rem;
   }
 }
 
@@ -362,10 +451,29 @@
   }
   
   .modal h2 {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
   }
   
   .modal p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .custom-modal h2 {
+    font-size: 1.15rem;
+  }
+  
+  .custom-modal p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .custom-modal-btn {
+    margin: 10px;
+  }
+
+  .custom-modal-btn.confirm {
+    padding: 8px 30px;
     font-size: 0.9rem;
   }
 }
@@ -380,12 +488,30 @@
   }
   
   .modal h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   
   .modal p {
     font-size: 1.05rem;
     line-height: 1.5;
+  }
+
+  .custom-modal h2 {
+    font-size: 1.3rem;
+  }
+  
+  .custom-modal p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+  
+  .custom-modal-btn {
+    margin-top: 10px;
+  }
+
+  .custom-modal-btn.confirm {
+    padding: 8px 30px;
+    font-size: 1rem;
   }
 }
 
@@ -393,19 +519,20 @@
 @media (min-width: 1200px) and (max-width: 1599px) {
   .modal-content,
   .custom-modal-content {
-    width: 600px;
+    width: 700px;
     max-width: 700px;
     padding: 25px;
-    max-height: 400px;
+    height: 200px;
+    max-height: 300px;
   }
   
   .modal h2 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     padding-bottom: 20px;
   }
   
   .modal p {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     line-height: 1.5;
     letter-spacing: 1px;
     padding: 10px;
@@ -419,23 +546,42 @@
   .modal-buttons button {
     padding: 12px 22px;
   }
+
+  .custom-modal h2 {
+    font-size: 1.3rem;
+  }
+  
+  .custom-modal p {
+    font-size: 1.0rem;
+    line-height: 1.5;
+  }
+
+  .custom-modal-btn {
+    margin-top: 10px;
+  }
+
+  .custom-modal-btn.confirm {
+    padding: 8px 30px;
+    font-size: 1.1rem;
+  }
 }
 
 /* Telas muito grandes (1600px+) */
 @media (min-width: 1600px) {
   .modal-content,
   .custom-modal-content {
-    width: 700px;
+    width: 800px;
     padding: 30px;
+    height: 220px;
     max-height: 450px;
   }
   
   .modal h2 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   
   .modal p {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     line-height: 1.6;
   }
   
@@ -443,19 +589,38 @@
     padding: 14px 24px;
     font-size: 1.1rem;
   }
+
+  .custom-modal h2 {
+    font-size: 1.4rem;
+  }
+  
+  .custom-modal p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .custom-modal-btn {
+    margin-top: 10px;
+  }
+
+  .custom-modal-btn.confirm {
+    padding: 8px 30px;
+    font-size: 1.2rem;
+  }
 }
 
 /* Ajuste especial para altura muito reduzida em paisagem */
 @media (max-height: 500px) and (orientation: landscape) {
   .modal-content,
   .custom-modal-content {
+    height: 180px;
     max-height: 280px;
-    width: 350px;
+    width: 550px;
     padding: 10px;
   }
   
   .modal h2 {
-    font-size: 1rem;
+    font-size: 1.15rem;
     margin-bottom: 5px;
     padding-bottom: 8px;
   }
@@ -476,6 +641,24 @@
     padding: 8px 14px;
     font-size: 0.6rem;
   }
+  .custom-modal h2 {
+    font-size: 1.15rem;
+  }
+  
+  .custom-modal p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .custom-modal-btn {
+    margin-top: 10px;
+  }
+
+  .custom-modal-btn.confirm {
+    padding: 8px 30px;
+    font-size: 0.95rem;
+  }
+  
 }
 
 /* Ajuste para telas muito largas (proporção anômala) */
