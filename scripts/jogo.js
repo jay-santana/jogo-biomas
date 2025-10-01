@@ -520,13 +520,17 @@ document.addEventListener('DOMContentLoaded', function() {
         saveProgress(gameState.currentBiome, level, gameState.steps);
         
         const isLastPantanalLevel = gameState.currentBiome === 'pantanal' && level === '6';
+        const isLastLevelOfBiome = level === '6';
         
         if (isLastPantanalLevel) {
             playGameSound('victory'); // SOM DE VITÓRIA FINAL
             showFinalVictoryModal();
-        } else {
+        } else if (isLastLevelOfBiome) {
             playGameSound('level-complete'); // SOM DE NÍVEL COMPLETO
             showBiomeCompletionModal(gameState.currentBiome);
+        } else {
+            playGameSound('level-complete'); // SOM DE NÍVEL COMPLETO
+            victoryModal.style.display = 'flex'; // Modal normal para nível comum
         }
     }
 
