@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const itemsCounter = document.getElementById('items-counter');
     const stepsResult = document.getElementById('steps-result');
     const levelTitle = document.getElementById('level-title');
+    const biomeInfoBtn = document.getElementById('biome-info-btn');
+    const biomeInfoModal = document.getElementById('biome-info-modal');
+    const closeBiomeInfoBtn = document.getElementById('close-biome-info-btn');
+    const biomeModalTitle = document.getElementById('biome-modal-title');
+    const biomeInfoContent = document.getElementById('biome-info-content');
     
     // Estado do jogo
     let gameState = {
@@ -72,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar o jogo
     initializeGame(biome, parseInt(level));
-    
 
     // Botão menu
     menuBtn.addEventListener('click', function() {
@@ -82,6 +86,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Botão ajuda
     helpBtn.addEventListener('click', function() {
         helpModal.style.display = 'flex';
+    });
+
+    // Botão informações do bioma
+    biomeInfoBtn.addEventListener('click', function() {
+        showBiomeInfo();
+    });
+
+    // Fechar informações do bioma
+    closeBiomeInfoBtn.addEventListener('click', function() {
+        biomeInfoModal.style.display = 'none';
     });
     
     // Fechar ajuda
@@ -108,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     menuModalBtn.addEventListener('click', function() {
         window.location.href = 'fases.html';
     });
-    
+
     // Fechar modais ao clicar fora deles
     window.addEventListener('click', function(event) {
         if (event.target === helpModal) {
@@ -116,6 +130,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (event.target === victoryModal) {
             victoryModal.style.display = 'none';
+        }
+        if (event.target === biomeInfoModal) {
+        biomeInfoModal.style.display = 'none';
         }
     });
 
@@ -139,6 +156,92 @@ document.addEventListener('DOMContentLoaded', function() {
     resetBtn.addEventListener('click', function() {
         resetGame();
     });
+
+    // Função para mostrar informações do bioma
+    function showBiomeInfo() {
+        const biome = gameState.currentBiome;
+        const biomeInfo = getBiomeInformation(biome);
+        
+        biomeModalTitle.textContent = `BIOMA - ${formatBiomeName(biome).toUpperCase()}`;
+        biomeInfoContent.innerHTML = biomeInfo;
+        
+        biomeInfoModal.style.display = 'flex';
+    }
+
+    // Função para obter informações dos biomas
+    function getBiomeInformation(biome) {
+        const biomeData = {
+            'atlantic': {
+                title: 'MATA ATLÂNTICA',
+                description: 'A Mata Atlântica é um bioma rico em biodiversidade que se estende ao longo da costa brasileira.',
+                characteristics: [
+                    '🌿 Floresta tropical úmida',
+                    '🏞️ Grande diversidade de espécies',
+                    '🌧️ Clima quente e úmido',
+                    '🌊 Próximo ao litoral',
+                    '🦜 Habitat de muitas espécies endêmicas'
+                ]
+            },
+            'amazon': {
+                title: 'AMAZÔNIA',
+                description: 'A Floresta Amazônica é a maior floresta tropical do mundo, conhecida por sua imensa biodiversidade.',
+                characteristics: [
+                    '🌳 Maior floresta tropical do mundo',
+                    '💧 Região com maior biodiversidade',
+                    '🌡️ Clima equatorial úmido',
+                    '🦜 Habitat de milhões de espécies',
+                    '🌊 Rica em rios e recursos hídricos'
+                ]
+            },
+            'cerrado': {
+                title: 'CERRADO',
+                description: 'O Cerrado é conhecido como a savana brasileira, com vegetação única e adaptada ao clima seco.',
+                characteristics: [
+                    '🌵 Savana brasileira',
+                    '🔥 Vegetação adaptada ao fogo',
+                    '🌞 Clima tropical sazonal',
+                    '💧 Duas estações bem definidas',
+                    '🦎 Grande biodiversidade'
+                ]
+            },
+            'caatinga': {
+                title: 'CAATINGA',
+                description: 'A Caatinga é o único bioma exclusivamente brasileiro, adaptado ao clima semiárido.',
+                characteristics: [
+                    '🏜️ Único bioma exclusivamente brasileiro',
+                    '☀️ Clima semiárido',
+                    '🌵 Vegetação xerófila',
+                    '💧 Estação seca prolongada',
+                    '🦇 Espécies adaptadas à seca'
+                ]
+            },
+            'pantanal': {
+                title: 'PANTANAL',
+                description: 'O Pantanal é a maior planície alagável do mundo, com rica vida selvagem e ecossistemas únicos.',
+                characteristics: [
+                    '🌊 Maior planície alagável do mundo',
+                    '🐊 Rica vida aquática e terrestre',
+                    '💦 Períodos de cheia e seca',
+                    '🦜 Grande concentração de fauna',
+                    '🌿 Vegetação adaptada a alagamentos'
+                ]
+            }
+        };
+        
+        const data = biomeData[biome] || biomeData['atlantic'];
+        
+        return `
+            <div class="biome-info">
+                <p><strong>${data.description}</strong></p>
+                <div class="biome-characteristics">
+                    <h3>CARACTERÍSTICAS PRINCIPAIS:</h3>
+                    <ul>
+                        ${data.characteristics.map(char => `<li>${char}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
 
     // Inicializar o grid do jogo 
     // função responsável por configurar o grid do jogo com base no bioma e nível selecionados
