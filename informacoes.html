@@ -1,61 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informações - Aventura nos Biomas Brasileiros</title>
-    <link rel="stylesheet" href="styles/informacoes.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/informacoes.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>INFORMAÇÕES EDUCACIONAIS</h1>
-            <button id="back-btn" class="back-btn">VOLTAR</button>
-        </header>
-        
-        <div class="content">
-            <div class="info-section">
-                <h2>HABILIDADES DA BNCC TRABALHADAS</h2>
-                
-                <div class="skill-card">
-                    <h3>PENSAMENTO COMPUTACIONAL</h3>
-                    <p>DESENVOLVIMENTO DE HABILIDADES DE DECOMPOSIÇÃO DE PROBLEMAS, RECONHECIMENTO DE PADRÕES, ABSTRAÇÃO E DESIGN DE ALGORITMOS.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <h3>MATEMÁTICA</h3>
-                    <p>LOCALIZAÇÃO E MOVIMENTAÇÃO EM SISTEMAS DE COORDENADAS, ESTIMATIVAS, CONTAGEM E OPERAÇÕES BÁSICAS.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <h3>GEOGRAFIA</h3>
-                    <p>CONHECIMENTO SOBRE OS BIOMAS BRASILEIROS, SUAS CARACTERÍSTICAS, LOCALIZAÇÃO E IMPORTÂNCIA ECOLÓGICA.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <h3>LÍNGUA PORTUGUESA</h3>
-                    <p>INTERPRETAÇÃO DE INSTRUÇÕES, DESENVOLVIMENTO DE VOCABULÁRIO ESPECÍFICO E COMUNICAÇÃO DE IDEIAS.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <h3>CIÊNCIAS</h3>
-                    <p>COMPREENSÃO DE ECOSSISTEMAS, BIODIVERSIDADE, CONSERVAÇÃO AMBIENTAL E SUSTENTABILIDADE.</p>
-                </div>
-            </div>
-            
-            <div class="info-section">
-                <h2>SOBRE O JOGO</h2>
-                <p>"AVENTURA NOS BIOMAS BRASILEIROS" É UM JOGO EDUCATIVO DESENVOLVIDO PARA ENSINAR PROGRAMAÇÃO DE FORMA LÚDICA, INTEGRANDO CONCEITOS DE PENSAMENTO COMPUTACIONAL COM CONHECIMENTOS SOBRE A RICA BIODIVERSIDADE DO BRASIL.</p>
-                <p>ATRAVÉS DA RESOLUÇÃO DE PROBLEMAS EM DIFERENTES BIOMAS, OS JOGADORES DESENVOLVEM HABILIDADES ESSENCIAIS PARA O SÉCULO XXI ENQUANTO APRENDEM SOBRE A IMPORTÂNCIA DA PRESERVAÇÃO AMBIENTAL.</p>
-            </div>
+      <header>
+        <h1>INFORMAÇÕES EDUCACIONAIS</h1>
+        <button id="back-btn" class="back-btn">VOLTAR</button>
+      </header>
+
+      <div class="content">
+        <div class="info-section">
+          <h2>HABILIDADES DA BNCC TRABALHADAS</h2>
+
+          <div class="skill-card">
+            <h3>PENSAMENTO COMPUTACIONAL</h3>
+            <p>
+              DESENVOLVIMENTO DE HABILIDADES DE DECOMPOSIÇÃO DE PROBLEMAS,
+              RECONHECIMENTO DE PADRÕES, ABSTRAÇÃO E DESIGN DE ALGORITMOS.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <h3>MATEMÁTICA</h3>
+            <p>
+              LOCALIZAÇÃO E MOVIMENTAÇÃO EM SISTEMAS DE COORDENADAS,
+              ESTIMATIVAS, CONTAGEM E OPERAÇÕES BÁSICAS.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <h3>GEOGRAFIA</h3>
+            <p>
+              CONHECIMENTO SOBRE OS BIOMAS BRASILEIROS, SUAS CARACTERÍSTICAS,
+              LOCALIZAÇÃO E IMPORTÂNCIA ECOLÓGICA.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <h3>LÍNGUA PORTUGUESA</h3>
+            <p>
+              INTERPRETAÇÃO DE INSTRUÇÕES, DESENVOLVIMENTO DE VOCABULÁRIO
+              ESPECÍFICO E COMUNICAÇÃO DE IDEIAS.
+            </p>
+          </div>
+
+          <div class="skill-card">
+            <h3>CIÊNCIAS</h3>
+            <p>
+              COMPREENSÃO DE ECOSSISTEMAS, BIODIVERSIDADE, CONSERVAÇÃO AMBIENTAL
+              E SUSTENTABILIDADE.
+            </p>
+          </div>
         </div>
+
+        <div class="info-section">
+          <h2>SOBRE O JOGO</h2>
+          <p>
+            "AVENTURA NOS BIOMAS BRASILEIROS" É UM JOGO EDUCATIVO DESENVOLVIDO
+            PARA ENSINAR PROGRAMAÇÃO DE FORMA LÚDICA, INTEGRANDO CONCEITOS DE
+            PENSAMENTO COMPUTACIONAL COM CONHECIMENTOS SOBRE A RICA
+            BIODIVERSIDADE DO BRASIL.
+          </p>
+          <p>
+            ATRAVÉS DA RESOLUÇÃO DE PROBLEMAS EM DIFERENTES BIOMAS, OS JOGADORES
+            DESENVOLVEM HABILIDADES ESSENCIAIS PARA O SÉCULO XXI ENQUANTO
+            APRENDEM SOBRE A IMPORTÂNCIA DA PRESERVAÇÃO AMBIENTAL.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Modal para informações detalhadas das habilidades -->
+    <div id="skillModal" class="modal">
+    <div class="modal-content">
+        <h2 id="modalTitle">TÍTULO DA HABILIDADE</h2>
+        <h3 id="modalSubtitle" class="modal-subtitle">DETALHES PARA O PROFESSOR</h3>
+        <div id="modalContent">
+        <p>Conteúdo detalhado sobre a habilidade...</p>
+        </div>
+        <button id="closeModal" class="modal-close-btn">FECHAR</button>
+    </div>
     </div>
     <footer class="fixarRodape">
-        <hr />
-        <p>By:<a href="https://github.com/biancaBezerra" target="_blank">Bianca Bezerra</a> e <a href="https://github.com/jay-santana" target="_blank">Jay Santana</a></p>
-        <p>Clickideia LTDA</p>
-        <p>&copy; Copyright 2025</p>
+      <hr />
+      <p>
+        By:<a href="https://github.com/biancaBezerra" target="_blank"
+          >Bianca Bezerra</a
+        >
+        e
+        <a href="https://github.com/jay-santana" target="_blank">Jay Santana</a>
+      </p>
+      <p>Clickideia LTDA</p>
+      <p>&copy; Copyright 2025</p>
     </footer>
     <script src="scripts/informacoes.js"></script>
-</body>
+  </body>
 </html>
