@@ -289,6 +289,24 @@ h3#level-title {
   z-index: 10;
 }
 
+/* Estilo do botão BIOMA (mesma estilização dos outros) */
+.biome-info-btn {
+  padding: 8px 15px;
+  background: #443328;
+  color: #ded597;
+  border: 2px solid #c5a274;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.biome-info-btn:hover {
+  background: #744c33;
+  transform: translateY(-2px);
+}
+
 /* ===== BREAKPOINTS ===== */
 
 /* Mobile pequeno (até 360px) - PORTRAIT */
@@ -317,9 +335,14 @@ h3#level-title {
     font-size: 0.9rem !important;
     transform: translateY(-2px);
   }
+
+  .biome-info-btn {
+    font-size: 0.6rem;
+    padding: 8px 12px;
+  }
 }
 
-/* Mobile padrão (361px - 480px) - PORTRAIT */
+/* Mobile padrão (400px - 480px) - PORTRAIT */
 @media (min-width: 400px) and (max-width: 480px) {
   .character {
     width: 63px;
@@ -340,6 +363,11 @@ h3#level-title {
   .mute-btn .mute-icon {
     font-size: 0.9rem !important;
     transform: translateY(-2px);
+  }
+
+  .biome-info-btn {
+    font-size: 0.6rem;
+    padding: 8px 12px;
   }
 }
 
@@ -430,6 +458,11 @@ h3#level-title {
   .commands-title {
     font-size: 0.75rem;
   }
+
+  .biome-info-btn {
+    font-size: 0.6rem;
+    padding: 6px 12px;
+  }
 }
 
 /* MOBILE PORTRAIT (481px - 767px) - UM ABAIXO DO OUTRO */
@@ -493,6 +526,11 @@ h3#level-title {
   
   .controls-container {
     gap: 15px;
+  }
+
+  .biome-info-btn {
+    font-size: 0.65rem;
+    padding: 9px 16px;
   }
 }
 
@@ -612,6 +650,11 @@ h3#level-title {
   .reset-btn {
     font-size: 1.1rem;
     padding: 15px 18px;
+  }
+
+  .biome-info-btn {
+    font-size: 0.7rem;
+    padding: 10px 18px;
   }
 }
 
@@ -781,6 +824,10 @@ h3#level-title {
     font-size: 0.85rem;
     padding: 12px 18px;
   }
+
+  .biome-info-btn {
+    font-size: 0.8rem;
+  }
 }
 
 /* Laptops e desktops (1200px - 1399px) */
@@ -862,6 +909,11 @@ h3#level-title {
   
   .run-btn:hover,
   .reset-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .biome-info-btn:hover {
+    background: #744c33;
     transform: translateY(-2px);
   }
 }
@@ -978,6 +1030,15 @@ h3#level-title {
   .reset-btn:hover {
     transform: translateY(-2px);
   }
+
+  .biome-info-btn {
+    font-size: 0.9rem;
+  }
+    
+  .biome-info-btn:hover {
+    background: #744c33;
+    transform: translateY(-2px);
+  }
 }
 
 /* Telas muito grandes (1601px+) */
@@ -1085,115 +1146,11 @@ h3#level-title {
     font-size: 1.1rem;
     padding: 16px 24px;
   }
-}
 
-/* Telas muito grandes (1600px+) */
-/* @media (min-width: 1600px) {
-  body {
-    padding: 40px;
-  }
-
-  .header-buttons {
-    margin: 20px;
-  }
-
-  .help-btn, 
-  .menu-btn, 
-  .mute-btn {
+  .biome-info-btn {
     font-size: 0.95rem;
   }
-
-  .mute-btn .mute-icon {
-    font-size: 1.3rem !important;
-    transform: translateY(-2px);
-  }
-  
-  .game-container {
-    max-width: 1700px;
-    min-height: 90vh;
-  }
-  
-  .game-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 10px;
-  }
-  
-  .map-container,
-  .commands-panel {
-    flex: 0 1 48%;
-  }
-  
-  .grid {
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-  }
-  
-  .character {
-    width: 69px;
-    height: 88px;
-    transform: translate(2%, -18%) scale(1.2);
-  }
-  
-  .controls-container {
-    padding: 40px 25px 25px 25px;
-    height: 60vh;
-    gap: 30px;
-  }
-
-  .level-info {
-    width: 50%;
-  }
-
-  .level-info p {
-    font-size: 1.0rem;
-  }
-
-  .command-sequence {
-    height: 100px;
-    max-height: 150px;
-    min-height: 60px;
-    grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
-    place-items: center;
-    padding: 8px 10px 8px 10px;
-    gap: 2px;
-  }
-  
-  .command-block img {
-    width: 75px !important;
-    height: 75px !important;
-  }
-
-  .command-sequence img {
-    width: 55px !important;
-    height: 55px !important;
-  }
-  
-  .commands-title {
-    font-size: 1.19rem;
-  }
-
-  .level-titles {
-    padding: 20px;
-  }
-  
-  h3#level-title {
-    font-size: 1.3rem;
-  }
-  
-  .action-buttons {
-    gap: 15px;
-  }
-  
-  .run-btn,
-  .reset-btn {
-    font-size: 1.1rem;
-    padding: 16px 24px;
-  }
-} */
-
+}
 
 /* Ajuste especial para altura muito reduzida em paisagem */
 @media (max-height: 500px) and (orientation: landscape) {

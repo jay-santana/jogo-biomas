@@ -219,6 +219,54 @@
   font-size: 0.9rem;
 }
 
+/* Estilo para o conteúdo do modal de informações do bioma */
+.biome-info {
+  text-align: left;
+  margin: 15px 0;
+}
+
+.biome-characteristics {
+  margin-top: 15px;
+}
+
+.biome-characteristics h3 {
+  color: #c48e74;
+  text-shadow: 1.5px 1.5px 0 #000;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.biome-characteristics ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.biome-characteristics li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #e2d1a0;
+  text-shadow: 1.5px 1.5px 0 #000;
+}
+
+/* .biome-characteristics li:before {
+    content: "•";
+    color: #6b4732;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+} */
+
+#close-biome-info-btn {
+  background: radial-gradient(circle, rgba(249, 87, 75, 1) 0%, rgba(181, 37, 28, 1) 100%);
+  color: #f0f7d3;
+  text-shadow: 2px 2px 0 #000;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
 /* ===== NOVA ESTRUTURA DE BREAKPOINTS ===== */
 
 /* Mobile paisagem e tablets pequenos (360px - 400px) */
@@ -226,6 +274,8 @@
   .modal-content,
   .custom-modal-content {
     width: 300px;
+    height: 380px;
+    min-height: 450px;
     padding: 12px;
   }
   
@@ -261,6 +311,36 @@
     padding: 8px 30px;
     font-size: 0.9rem;
   }
+
+  .biome-info {
+    text-align: left;
+    margin: 15px 0;
+  }
+
+  .biome-characteristics h3 {
+      color: #c48e74;
+      text-shadow: 1.5px 1.5px 0 #000;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+  }
+
+  .biome-characteristics ul {
+      list-style-type: none;
+      padding-left: 0;
+  }
+
+  .biome-characteristics li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      text-shadow: 1.5px 1.5px 0 #000;
+  }
+
+  #close-biome-info-btn {
+    text-shadow: 2px 2px 0 #000;
+    padding: 8px 16px;
+  }
 }
 
 /* Mobile paisagem e tablets pequenos (400px - 480px) */
@@ -269,7 +349,7 @@
   .custom-modal-content {
     width: 340px;
     height: 400px;
-    min-height: 450px;
+    min-height: 500px;
     padding: 14px;
   }
   
@@ -305,13 +385,23 @@
     padding: 8px 30px;
     font-size: 0.9rem;
   }
+
+  .biome-characteristics h3 {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .biome-characteristics li {
+    font-size: 0.7rem;
+    line-height: 1.4;
+  }  
 }
 
 /* Mobile paisagem e tablets pequenos (481px - 767px) */
 @media (min-width: 481px) and (max-width: 767px) {
   .modal-content,
   .custom-modal-content {
-    width: 380px;
+    width: 450px;
     max-height: 500px;
     padding: 16px;
     max-width: 85%;
@@ -401,10 +491,10 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .modal-content,
   .custom-modal-content {
-    width: 450px;
+    width: 650px;
     max-width: 80%;
     padding: 20px;
-    max-height: 500px;
+    max-height: 550px;
   }
   
   .modal h2 {
@@ -528,8 +618,8 @@
     width: 700px;
     max-width: 700px;
     padding: 25px;
-    height: 300px;
-    max-height: 350px;
+    height: 370px;
+    max-height: 380px;
   }
   
   .modal h2 {
@@ -614,15 +704,19 @@
     padding: 8px 30px;
     font-size: 1.2rem;
   }
+
+  .biome-characteristics h3 {
+    text-shadow: 2px 2px 0 #000;
+  }
 }
 
 /* Ajuste especial para altura muito reduzida em paisagem */
 @media (max-height: 500px) and (orientation: landscape) {
   .modal-content,
   .custom-modal-content {
-    height: 280px;
-    max-height: 300px;
-    width: 550px;
+    height: 340px;
+    max-height: 380px;
+    width: 650px;
     padding: 10px;
   }
   
@@ -666,6 +760,16 @@
     padding: 8px 30px;
     font-size: 0.95rem;
   }
+
+  .biome-characteristics h3 {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .biome-characteristics li {
+    font-size: 0.7rem;
+    line-height: 1.4;
+  }  
   
 }
 
