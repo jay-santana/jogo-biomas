@@ -373,6 +373,10 @@ h2 {
     padding: 16px 18px;
     font-size: 1.0rem;
   }
+
+  .mute-btn {
+    font-size: 1.7rem !important;
+  }
 }
 
 /* Telas muito grandes (1600px+) */
@@ -383,17 +387,17 @@ h2 {
   }
   
   h1 {
-    font-size: 2.0rem;
+    font-size: 2.2rem;
     width: 80%;
-    max-width: 700px;
+    max-width: 800px;
     padding: 20px;
     margin-bottom: 20px;
   }
   
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     width: 40%;
-    max-width: 380px;
+    max-width: 400px;
     padding: 18px;
     margin-top: -30px;
     margin-bottom: 30px;
@@ -404,7 +408,7 @@ h2 {
   }
   
   .buttons {
-    max-width: 280px;
+    max-width: 350px;
     gap: 20px;
     margin-top: 30px;
   }
@@ -412,7 +416,11 @@ h2 {
   .btn-primary,
   .btn-secondary {
     padding: 28px 30px;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+  }
+
+  .mute-btn {
+    font-size: 2.5rem !important;
   }
 }
 
