@@ -294,7 +294,9 @@ h3#level-title {
 /* Mobile pequeno (até 360px) - PORTRAIT */
 @media (max-width: 399px) {
   .character {
-    transform: translate(-28%, -48%) scale(0.6);
+    width: 63px;
+    height: 80px;
+    transform: translate(-28%, -45%) scale(0.6);
   }
   
   .command-block img {
@@ -320,7 +322,9 @@ h3#level-title {
 /* Mobile padrão (361px - 480px) - PORTRAIT */
 @media (min-width: 400px) and (max-width: 480px) {
   .character {
-    transform: translate(-20%, -44%) scale(0.7);
+    width: 63px;
+    height: 80px;
+    transform: translate(-26%, -44%) scale(0.7);
   }
   
   .command-block img {
@@ -647,7 +651,7 @@ h3#level-title {
   }
   
   .character {
-    width: 60px;
+    width: 63px;
     height: 75px;
     transform: translate(-22%, -45%) scale(0.80);
   }
@@ -1028,7 +1032,7 @@ h3#level-title {
   
   .controls-container {
     padding: 40px 25px 25px 25px;
-    height: 60vh;
+    height: 65vh;
     gap: 30px;
   }
 
@@ -1083,6 +1087,7 @@ h3#level-title {
   }
 }
 
+
 /* Ajuste especial para altura muito reduzida em paisagem */
 @media (max-height: 500px) and (orientation: landscape) {
   body {
@@ -1136,7 +1141,9 @@ h3#level-title {
   }
   
   .character {
-    transform: translate(-20%, -40%) scale(0.5);
+    width: 63px;
+    height: 80px;
+    transform: translate(-27%, -43%) scale(0.7);
   }
   
   .commands-title {
