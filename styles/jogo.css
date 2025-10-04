@@ -351,8 +351,8 @@ h3#level-title {
   }
   
   .command-block img {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
   }
   
   .command-sequence {
@@ -373,10 +373,14 @@ h3#level-title {
 
 /* MOBILE LANDSCAPE (481px - 767px) - LADO A LADO */
 @media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
+  body {
+    padding: 10px;
+  }
   .game-container {
     margin: 10px;
     border-width: 5px;
-    max-height: 95vh;
+    height: 85vh;
+    max-height: 90vh;
     overflow-y: auto;
   }
   
@@ -388,7 +392,15 @@ h3#level-title {
   }
 
   h3#level-title {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+  }
+
+  .level-info {
+    width: 60%;
+  }
+
+  .level-info p {
+    font-size: 0.55rem;
   }
   
   .header-buttons {
@@ -407,7 +419,6 @@ h3#level-title {
     transform: translateY(-3px);
   }
   
-  /* LADO A LADO NO LANDSCAPE */
   .game-area {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -435,10 +446,10 @@ h3#level-title {
   
   .controls-container {
     padding: 15px 10px;
-    max-height: 100%;
+    height: 50vh;
+    max-height: 55vh;
     overflow-y: auto;
     gap: 15px;
-    height: auto;
   }
   
   .character {
@@ -446,8 +457,8 @@ h3#level-title {
   }
   
   .command-block img {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
   }
   
   .command-sequence {
@@ -456,12 +467,17 @@ h3#level-title {
   }
   
   .commands-title {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
   }
 
   .biome-info-btn {
     font-size: 0.6rem;
     padding: 6px 12px;
+  }
+
+  .run-btn, .reset-btn {
+    font-size: 0.6rem;
+    padding: 10px 12px;
   }
 }
 
@@ -496,7 +512,6 @@ h3#level-title {
     padding: 9px 16px;
   }
   
-  /* UM ABAIXO DO OUTRO NO PORTRAIT */
   .game-area {
     flex-direction: column;
     gap: 15px;
@@ -509,18 +524,22 @@ h3#level-title {
   .commands-panel {
     width: 100%;
   }
+
+  .commands-title {
+    font-size: 0.8rem;
+  }
   
   .character {
     transform: translate(-20%, -40%) scale(0.75);
   }
   
   .command-block img {
-    width: 48px;
-    height: 48px;
+    width: 55px;
+    height: 55px;
   }
   
   .command-sequence {
-    min-height: 45px;
+    min-height: 70px;
     max-height: 85px;
   }
   
@@ -529,7 +548,7 @@ h3#level-title {
   }
 
   .biome-info-btn {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     padding: 9px 16px;
   }
 }
@@ -542,6 +561,9 @@ h3#level-title {
   }
   
   .game-container {
+    height: 92vh;
+    max-height: 95vh;
+    width: 90%;
     max-width: 900px;
     margin: 0 auto;
     border-width: 6px;
@@ -619,7 +641,7 @@ h3#level-title {
   .controls-container {
     padding: 25px 15px 15px 15px;
     gap: 20px;
-    height: 50vh;
+    height: 40vh;
   }
   
   .command-block img {
@@ -629,16 +651,16 @@ h3#level-title {
   
   .command-sequence {
     max-height: 100px;
-    min-height: 80px;
+    min-height: 100px;
     grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
     place-items: center;
     padding: 8px;
     gap: 4px;
   }
 
-  .command-sequence .command-block img {
-    width: 60px !important;
-    height: 60px !important;
+  .command-sequence img {
+    width: 50px !important;
+    height: 50px !important;
     object-fit: contain;
   }
   
@@ -670,8 +692,11 @@ h3#level-title {
   }
 
   .game-container {
-    height: 85vh;
-    max-height: 98vh;
+    height: 92vh;
+    max-height: 95vh;
+    width: 95%;
+    max-width: 1100px;
+    margin: 0;
   }
   
   .game-area {
@@ -688,8 +713,8 @@ h3#level-title {
   }
 
   .controls-container {
-    height: 45vh;
-    gap: 5px;
+    height: 50vh;
+    gap: 10px;
     padding: 20px;
   }
   
@@ -703,16 +728,20 @@ h3#level-title {
   }
 
   h3#level-title {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .level-info {
+    width: 50%;
   }
   
   .level-info p {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
   } 
 
   .command-block img {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
   }
   
   .command-sequence {
@@ -724,19 +753,19 @@ h3#level-title {
     gap: 4px;
   }
 
-  .command-sequence .command-block img {
+  .command-sequence img {
     width: 40px !important;
     height: 40px !important;
     object-fit: contain;
   }
   
   .commands-title {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
   }
 
   .run-btn,
   .reset-btn {
-    font-size: 0.7rem;
+    font-size: 0.55rem;
     padding: 12px 18px;
   }
 }
@@ -745,6 +774,7 @@ h3#level-title {
 @media (min-width: 1024px) and (max-width: 1199px) {
   body {
     height: 90%;
+    padding: 30px;
   }
 
   .header-buttons {
@@ -763,8 +793,11 @@ h3#level-title {
   }
 
   .game-container {
+    width: 100%;
     max-width: 1100px;
-    min-height: 90vh;
+    min-height: 80vh;
+    height: 95vh;
+    max-height: 90vh;
   }
   
   .game-area {
@@ -777,7 +810,7 @@ h3#level-title {
   
   .map-container,
   .commands-panel {
-    flex: 0 1 49%;
+    flex: 0 1 48%;
   }
   
   .grid {
@@ -793,7 +826,7 @@ h3#level-title {
   
   .controls-container {
     padding: 20px;
-    height: 66vh;
+    height: 50vh;
     gap: 20px;
   }
 
@@ -806,13 +839,22 @@ h3#level-title {
   } 
 
   .command-block img {
-    width: 65px;
-    height: 65px;
+    width: 62px;
+    height: 62px;
+  }
+
+  .command-sequence img {
+    width: 45px !important;
+    height: 45px !important;
+    object-fit: contain;
   }
   
   .command-sequence {
-    max-height: 90px;
-    min-height: 70px;
+    max-height: 70px;
+    min-height: 65px;
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    place-items: center;
+    padding: 8px;
   }
   
   .commands-title {
@@ -857,21 +899,35 @@ h3#level-title {
   }
 
   h3#level-title {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+  }
+  
+  .commands-title {
+    font-size: 0.95rem;
+  }
+
+  .level-info p {
+    font-size: 0.85rem;
+  }
+  
+  .command-sequence {
+    min-height: 60px;
+    max-height: 80px;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    place-items: center;
+    padding: 8px;
+    gap: 4px;
   }
 
   .command-block img {
     width: 65px;
     height: 65px;
   }
-  
-  .commands-title {
-    font-size: 0.9rem;
-  }
-  
-  .command-sequence {
-    min-height: 60px;
-    max-height: 80px;
+
+  .command-sequence img {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: contain;
   }
 
   .action-buttons {
@@ -881,7 +937,7 @@ h3#level-title {
 
   .run-btn,
   .reset-btn {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     padding: 14px 20px;
   }
 
@@ -977,9 +1033,9 @@ h3#level-title {
       gap: 4px;
   }
 
-  .command-sequence .command-block img {
-    width: 50px !important;
-    height: 50px !important;
+  .command-sequence img {
+    width: 65px !important;
+    height: 65px !important;
     object-fit: contain;
   }
 
@@ -1088,12 +1144,12 @@ h3#level-title {
   .character {
     width: 69px;
     height: 88px;
-    transform: translate(2%, -18%) scale(1.2);
+    transform: translate(2%, -18%) scale(1.5);
   }
   
   .controls-container {
     padding: 40px 25px 25px 25px;
-    height: 60vh;
+    height: 50vh;
     gap: 30px;
   }
 
@@ -1102,12 +1158,151 @@ h3#level-title {
   }
 
   .level-info p {
-    font-size: 1.0rem;
+    font-size: 1.2rem;
   }
 
   .command-sequence {
-    height: 100px;
-    max-height: 150px;
+    height: 120px;
+    max-height: 180px;
+    min-height: 60px;
+    grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+    place-items: center;
+    padding: 8px 10px 8px 10px;
+    gap: 2px;
+  }
+  
+  .command-block img {
+    width: 85px !important;
+    height: 85px !important;
+  }
+
+  .command-sequence img {
+    width: 75px !important;
+    height: 75px !important;
+    object-fit: contain;
+    padding: 5px;
+  }
+  
+  .commands-title {
+    font-size: 1.35rem;
+  }
+
+  .level-titles {
+    padding: 20px;
+  }
+
+  .level-info p {
+    font-size: 1.1rem;
+  }
+  
+  h3#level-title {
+    font-size: 1.5rem;
+  }
+  
+  .action-buttons {
+    gap: 15px;
+  }
+  
+  .run-btn,
+  .reset-btn {
+    font-size: 1.2rem;
+    padding: 16px 24px;
+  }
+
+  .biome-info-btn {
+    font-size: 0.95rem;
+  }
+}
+
+/* Telas grandes (1601px - 1900px) - MacBooks, telas médias-grandes */
+@media (min-width: 1601px) and (max-width: 1900px) {
+  body {
+    padding: 30px;
+  }
+ 
+  .header-buttons {
+    margin: 15px;
+  }
+ 
+  .help-btn,
+  .menu-btn,
+  .mute-btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+ 
+  .mute-btn .mute-icon {
+    font-size: 1.2rem !important;
+    transform: translateY(-2px);
+  }
+ 
+  .game-container {
+    max-width: 1700px;
+    min-height: 90vh;
+  }
+ 
+  .game-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 25px;
+  }
+ 
+  .map-container,
+  .commands-panel {
+    flex: 0 1 48%;
+  }
+ 
+  .grid {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+ 
+  .character {
+    width: 65px;
+    height: 85px;
+    transform: translate(5%, -22%) scale(1.4);
+  }
+ 
+  .controls-container {
+    padding: 30px 20px 20px 20px;
+    height: 55vh;
+    gap: 25px;
+  }
+ 
+  .level-info {
+    width: 45%;
+  }
+ 
+  .level-info p {
+    font-size: 1rem;
+  }
+ 
+  .level-titles {
+    padding: 18px 20px;
+  }
+ 
+  h3#level-title {
+    font-size: 1.1rem;
+  }
+ 
+  .commands-title {
+    font-size: 1.1rem;
+  }
+ 
+  .command-sequence {
+    min-height: 70px;
+    max-height: 100px;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    place-items: center;
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .command-sequence {
+    height: 120px;
+    max-height: 180px;
     min-height: 60px;
     grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
     place-items: center;
@@ -1121,12 +1316,12 @@ h3#level-title {
   }
 
   .command-sequence img {
-    width: 55px !important;
-    height: 55px !important;
+    width: 70px !important;
+    height: 70px !important;
   }
-  
+
   .commands-title {
-    font-size: 1.19rem;
+    font-size: 1.32rem;
   }
 
   .level-titles {
@@ -1134,21 +1329,23 @@ h3#level-title {
   }
   
   h3#level-title {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
-  
+ 
   .action-buttons {
-    gap: 15px;
+    width: 100%;
+    gap: 12px;
   }
-  
+ 
   .run-btn,
   .reset-btn {
-    font-size: 1.1rem;
-    padding: 16px 24px;
+    font-size: 1.2rem;
+    padding: 14px 20px;
   }
-
+ 
   .biome-info-btn {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    padding: 10px 18px;
   }
 }
 
@@ -1200,8 +1397,8 @@ h3#level-title {
   }
   
   .command-block img {
-    width: 40px;
-    height: 42px;
+    width: 45px;
+    height: 45px;
   }
   
   .character {
