@@ -1546,7 +1546,7 @@ h3#level-title {
 .cerrado .obstacle { background-image: url('../assets/obstacles/cerrado/obstacle-1.png'); }
 .caatinga .obstacle { background-image: url('../assets/obstacles/caatinga/obstacle-1.png'); }
 .pantanal .obstacle { background-image: url('../assets/obstacles/pantanal/obstacle-1.png'); }
-.pampa .obstacle { background-image: url('../assets/obstacles/pantanal/obstacle-1.png'); }
+.pampa .obstacle { background-image: url('../assets/obstacles/pampa/obstacle-1.png'); }
 
 .obstacle-random {
   background-color: transparent;
