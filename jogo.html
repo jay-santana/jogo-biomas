@@ -11,8 +11,9 @@
     <div class="game-container">
         <header>
             <div class="header-buttons">
-                <button id="help-btn" class="help-btn">AJUDA</button>
                 <button id="menu-btn" class="menu-btn">VOLTAR</button>
+                <button id="help-btn" class="help-btn">AJUDA</button>
+                <button id="biome-info-btn" class="biome-info-btn">BIOMA</button>
                 <button id="mute-btn" class="mute-btn">
                     <span class="mute-icon">🔊</span>
                     <span class="mute-text">SOM</span>
@@ -79,6 +80,17 @@
             </div>
         </div>
     </div>
+    <!-- Modal de informações do bioma -->
+        <div id="biome-info-modal" class="modal">
+            <div class="modal-content">
+                <h2 id="biome-modal-title">INFORMAÇÕES DO BIOMA</h2>
+                <div id="biome-info-content">
+                    <!-- O conteúdo será preenchido dinamicamente via JavaScript -->
+                </div>
+                <button id="close-biome-info-btn">FECHAR</button>
+            </div>
+        </div>
+    </div>
 
     <script src="scripts/sounds.js"></script>
     <script src="scripts/levels/amazon-levels.js"></script>
@@ -86,6 +98,7 @@
     <script src="scripts/levels/cerrado-levels.js"></script>
     <script src="scripts/levels/pantanal-levels.js"></script>
     <script src="scripts/levels/caatinga-levels.js"></script>
+    <script src="scripts/levels/pampa-levels.js"></script>
     <script src="scripts/modais.js"></script>
     <script src="scripts/jogo.js"></script>
 </body>

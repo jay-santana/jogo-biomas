@@ -10,7 +10,7 @@ html,
 body {
   height: 100%;
   margin: 0;
-  overflow: auto;
+  overflow: hidden;
 }
 
 body {
@@ -136,6 +136,11 @@ header {
 .biome-card[data-biome="atlantic"] {
   top: 62%;
   left: 75%;
+}
+
+.biome-card[data-biome="pampa"] {
+    top: 88%;
+    left: 58%;
 }
 
 /* Estilos para botões de biomas bloqueados */
@@ -510,8 +515,12 @@ header {
   }
 
   .back-btn {
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     padding: 10px 20px;
+  }
+
+  .mute-btn {
+    font-size: 1.8rem !important;
   }
 
   header {
@@ -522,29 +531,29 @@ header {
 /* Telas muito grandes (1600px+) */
 @media (min-width: 1600px) {
   .container {
-    max-height: 1000px;
-    max-width: 1600px;
+    max-height: 1300px;
+    max-width: 2200px;
   }
 
   .map-image {
-    width: 90%;
+    width: 100%;
     height: 100%;
   }
 
   .biomes-overlay {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1800px;
   }
 
   /* Posições dos biomas para mobile first */
   .biome-card[data-biome="amazon"] {
-    top: 32%;
+    top: 30%;
     left: 45%;
   }
 
   .biome-card[data-biome="caatinga"] {
-    top: 38%;
-    left: 78%;
+    top: 33%;
+    left: 72%;
   }
 
   .biome-card[data-biome="cerrado"] {
@@ -554,7 +563,7 @@ header {
 
   .biome-card[data-biome="pantanal"] {
     top: 58%;
-    left: 40%;
+    left: 42%;
   }
 
   .biome-card[data-biome="atlantic"] {
@@ -563,13 +572,17 @@ header {
   }
 
   .select-btn {
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: 12px 24px;
   }
 
   .back-btn {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 15px 30px;
+  }
+
+  .mute-btn {
+    font-size: 2.5rem !important;
   }
 
   header {

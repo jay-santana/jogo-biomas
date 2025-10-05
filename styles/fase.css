@@ -1,3 +1,4 @@
+/* styles/fase.css */
 @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
 * {
   margin: 0;
@@ -40,7 +41,7 @@ header {
 
 /* AMAZÔNIA */
 .bioma-amazonia {
-  background-image: url("https://i.im.ge/2025/09/30/n6qkdp.amazonia-desktop.png");
+  background-image: url("../assets/NV2/amazonia-desktop.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -72,7 +73,7 @@ header {
 
 /* MATA ATLÂNTICA */
 .bioma-atlantica {
-  background-image: url("https://i.im.ge/2025/09/30/n6qg9M.atlantica-desktop.png");
+  background-image: url("../assets/NV1/atlantica-desktop.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -104,7 +105,7 @@ header {
 
 /* CAATINGA */
 .bioma-caatinga {
-  background-image: url("https://i.im.ge/2025/09/30/n6qe3T.caatinga-desktop.png");
+  background-image: url("../assets/NV4/caatinga-desktop.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -136,7 +137,7 @@ header {
 
 /* CERRADO */
 .bioma-cerrado {
-  background-image: url("https://i.im.ge/2025/09/30/n6qvuf.cerrado-desktop.png");
+  background-image: url("../assets/NV3/cerrado-desktop.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -166,9 +167,42 @@ header {
   text-shadow: 1px 1px 0 #5c2d1b;
 }
 
+/* PAMPA */
+.bioma-pampa {
+  background-image: url("../assets/NV6/pampa-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bioma-pampa h1,
+.bioma-pampa h2 {
+  color: #e9f679;
+  text-shadow: 2px 2px 0 #3a5c2d, -1px -1px 0 #3a5c2d, 1px -1px 0 #3a5c2d,
+    -1px 1px 0 #3a5c2d;
+}
+.bioma-pampa .background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: -1;
+}
+.bioma-pampa .start-btn {
+  color: #e9f679;
+  text-shadow: 2px 2px 0 #3a5c2d, -2px -2px 0 #3a5c2d, 2px -2px 0 #3a5c2d,
+    -2px 2px 0 #3a5c2d;
+}
+.bioma-pampa .start-btn:disabled {
+  color: #b6c794;
+  text-shadow: 1px 1px 0 #2d4d2d;
+}
+
 /* PANTANAL */
 .bioma-pantanal {
-  background-image: url("https://i.im.ge/2025/09/30/n6soPG.pantanal-desktop.png");
+  background-image: url("../assets/NV5/pantanal-desktop.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -601,6 +635,10 @@ h2 {
     font-size: 0.8rem;
     padding: 10px 20px;
     margin: 30px;
+  }
+
+  .mute-btn {
+    font-size: 1.8rem !important;
   }
 
   .image-container img {
