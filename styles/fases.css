@@ -138,6 +138,11 @@ header {
   left: 75%;
 }
 
+.biome-card[data-biome="pampa"] {
+    top: 88%;
+    left: 58%;
+}
+
 /* Estilos para botões de biomas bloqueados */
 .select-btn.locked {
   cursor: pointer;
@@ -542,13 +547,13 @@ header {
 
   /* Posições dos biomas para mobile first */
   .biome-card[data-biome="amazon"] {
-    top: 32%;
+    top: 30%;
     left: 45%;
   }
 
   .biome-card[data-biome="caatinga"] {
-    top: 38%;
-    left: 78%;
+    top: 33%;
+    left: 72%;
   }
 
   .biome-card[data-biome="cerrado"] {
@@ -558,7 +563,7 @@ header {
 
   .biome-card[data-biome="pantanal"] {
     top: 58%;
-    left: 40%;
+    left: 42%;
   }
 
   .biome-card[data-biome="atlantic"] {

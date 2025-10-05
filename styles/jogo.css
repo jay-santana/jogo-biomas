@@ -1149,7 +1149,7 @@ h3#level-title {
   
   .controls-container {
     padding: 40px 25px 25px 25px;
-    height: 50vh;
+    height: 65vh;
     gap: 30px;
   }
 
@@ -1534,17 +1534,19 @@ h3#level-title {
   border-radius: 8px;
 }
 
-.grid.amazon::before { background-image: url("https://i.im.ge/2025/09/30/n6qzPP.fundo.png"); opacity: 0.7; }
-.grid.atlantic::before { background-image: url("https://i.im.ge/2025/09/30/n6q88Y.fundo.png"); opacity: 1.0; }
-.grid.cerrado::before { background-image: url("https://i.im.ge/2025/09/30/n6qnRr.fundo.png"); opacity: 0.75; }
-.grid.caatinga::before { background-image: url("https://i.im.ge/2025/09/30/n6sMnc.fundo.png"); opacity: 0.7; }
-.grid.pantanal::before { background-image: url("https://i.im.ge/2025/09/30/n6srFa.fundo.png"); opacity: 0.65; }
+.grid.amazon::before { background-image: url("../assets/NV2/fundo.png"); opacity: 0.7; }
+.grid.atlantic::before { background-image: url("../assets/NV1/fundo.png"); opacity: 1.0; }
+.grid.cerrado::before { background-image: url("../assets/NV3/fundo.png"); opacity: 0.75; }
+.grid.caatinga::before { background-image: url("../assets/NV4/fundo.png"); opacity: 0.7; }
+.grid.pantanal::before { background-image: url("../assets/NV5/fundo.png"); opacity: 0.65; }
+.grid.pampa::before { background-image: url("../assets/NV6/fundo.png"); opacity: 0.70; }
 
 .atlantic .obstacle { background-image: url('../assets/obstacles/atlantic/obstacle-1.png'); }
 .amazon .obstacle { background-image: url('../assets/obstacles/amazon/obstacle-1.png'); }
 .cerrado .obstacle { background-image: url('../assets/obstacles/cerrado/obstacle-1.png'); }
 .caatinga .obstacle { background-image: url('../assets/obstacles/caatinga/obstacle-1.png'); }
 .pantanal .obstacle { background-image: url('../assets/obstacles/pantanal/obstacle-1.png'); }
+.pampa .obstacle { background-image: url('../assets/obstacles/pantanal/obstacle-1.png'); }
 
 .obstacle-random {
   background-color: transparent;

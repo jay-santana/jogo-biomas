@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 amazon: [false, false, false, false, false, false],
                 cerrado: [false, false, false, false, false, false],
                 caatinga: [false, false, false, false, false, false],
+                pampa: [false, false, false, false, false, false],
                 pantanal: [false, false, false, false, false, false]
             };
             
@@ -53,10 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
             amazon: [false, false, false, false, false, false],
             cerrado: [false, false, false, false, false, false],
             caatinga: [false, false, false, false, false, false],
-            pantanal: [false, false, false, false, false, false]
+            pampa: [false, false, false, false, false, false],
+            pantanal: [false, false, false, false, false, false],
         };
 
-        const biomesOrder = ['atlantic', 'amazon', 'cerrado', 'caatinga', 'pantanal'];
+        const biomesOrder = ['atlantic', 'amazon', 'cerrado', 'caatinga', 'pantanal', 'pampa'];
         
         biomesOrder.forEach((biome, index) => {
             const biomeCard = document.querySelector(`.biome-card[data-biome="${biome}"]`);

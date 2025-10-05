@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
         amazon: amazonLevels.colorPalette,
         cerrado: cerradoLevels.colorPalette,
         caatinga: caatingaLevels.colorPalette,
-        pantanal: pantanalLevels.colorPalette
+        pantanal: pantanalLevels.colorPalette,
+        pampa: pampaLevels.colorPalette,
     };
     
     // Configurações dos níveis
@@ -69,7 +70,12 @@ document.addEventListener('DOMContentLoaded', function() {
         pantanal: {
             titulo: pantanalLevels.name,
             fases: pantanalLevels.levels
-        }  
+        },
+        pampa: {
+            titulo: pampaLevels.name,
+            fases: pampaLevels.levels
+        }
+
     };
     
     // Atualizar título do nível
@@ -225,7 +231,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     '🦜 Grande concentração de fauna',
                     '🌿 Vegetação adaptada a alagamentos'
                 ]
-            }
+            },
+            'pampa': {
+              title: 'PAMPA',
+              description: 'O Pampa é um bioma caracterizado por vastas planícies e coxilhas, presente principalmente no Rio Grande do Sul.',
+              characteristics: [
+                  '🌾 Vastas planícies e campos abertos',
+                  '🏇 Tradição gaúcha e pecuária extensiva',
+                  '🌤️ Clima subtropical temperado',
+                  '🐎 Habitat de espécies como veado-campeiro',
+                  '🛤️ Paisagem de coxilhas suaves'
+              ]
+          }
         };
         
         const data = biomeData[biome] || biomeData['atlantic'];
@@ -255,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function setGridBackground(biome) {
         // Remove classes de bioma existentes
         const grid = document.getElementById('grid');
-        grid.classList.remove('atlantic', 'amazon', 'cerrado', 'caatinga', 'pantanal');
+        grid.classList.remove('atlantic', 'amazon', 'cerrado', 'caatinga', 'pampa','pantanal');
         
         // Adiciona a classe correspondente ao bioma atual
         grid.classList.add(biome);
@@ -278,6 +295,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'amazon': '#228B22',   // Verde Floresta Amazônica
             'cerrado': '#DAA520',  // Dourado do Cerrado
             'caatinga': '#CD853F', // Marrom Caatinga
+            'pampa': '#71cef3ff', // Azul Pampa
             'pantanal': '#20B2AA'  // Azul Pantanal
         };
         return fallbackColors[biome] || '#6B8E23'; // Cor padrão se não encontrado
@@ -658,7 +676,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(modal);
         
         document.getElementById('next-biome-btn').addEventListener('click', function() {
-            const biomesOrder = ['atlantic', 'amazon', 'cerrado', 'caatinga', 'pantanal'];
+            const biomesOrder = ['atlantic', 'amazon', 'cerrado', 'caatinga','pampa', 'pantanal'];
             const currentIndex = biomesOrder.indexOf(biome);
             
             if (currentIndex < biomesOrder.length - 1) {
@@ -709,6 +727,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'amazon': [false, false, false, false, false, false],
             'cerrado': [false, false, false, false, false, false],
             'caatinga': [false, false, false, false, false, false],
+            'pampa': [false, false, false, false, false, false],
             'pantanal': [false, false, false, false, false, false],
         };
         
@@ -722,7 +741,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const completedAllLevels = progress[biome].every(levelCompleted => levelCompleted === true);
         
         if (completedAllLevels) {
-            const biomesOrder = ['atlantic', 'amazon', 'cerrado', 'caatinga', 'pantanal'];
+            const biomesOrder = ['atlantic', 'amazon', 'cerrado', 'caatinga','pampa', 'pantanal'];
             const currentIndex = biomesOrder.indexOf(biome);
             
             if (currentIndex < biomesOrder.length - 1) {
@@ -782,6 +801,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'amazon': 'AMAZONIA',
             'cerrado': 'CERRADO',
             'caatinga': 'CAATINGA',
+            'pampa': 'PAMPA',
             'pantanal': 'PANTANAL'
         };
         return names[biome] || 'Bioma Desconhecido';

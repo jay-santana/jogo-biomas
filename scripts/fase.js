@@ -32,7 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     else if (pageTitle.includes("amazônia") || pageTitle.includes("amazonia")) biome = "amazon";
                     else if (pageTitle.includes("cerrado")) biome = "cerrado";
                     else if (pageTitle.includes("caatinga")) biome = "caatinga";
+                    else if (pageTitle.includes("pampa")) biome = "pampa";
                     else if (pageTitle.includes("pantanal")) biome = "pantanal";
+
                     else biome = "atlantic";
                 }
 
@@ -53,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
       amazon: [false, false, false, false, false, false],   // Totalmente bloqueado
       cerrado: [false, false, false, false, false, false],  // Totalmente bloqueado
       caatinga: [false, false, false, false, false, false], // Totalmente bloqueado
-      pantanal: [false, false, false, false, false, false]  // Totalmente bloqueado
+      pampa: [false, false, false, false, false, false],  // Totalmente bloqueado
+      pantanal: [false, false, false, false, false, false],  // Totalmente bloqueado
     };
 
     // Obter o bioma atual
@@ -68,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         biome = "amazon";
       else if (pageTitle.includes("cerrado")) biome = "cerrado";
       else if (pageTitle.includes("caatinga")) biome = "caatinga";
+      else if (pageTitle.includes("pampa")) biome = "pampa";
       else if (pageTitle.includes("pantanal")) biome = "pantanal";
       else biome = "atlantic"; // Padrão
     }
