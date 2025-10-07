@@ -340,6 +340,14 @@ h3#level-title {
     font-size: 0.6rem;
     padding: 8px 12px;
   }
+
+  .header-buttons {
+    justify-content: space-evenly;
+  }
+
+  .mute-text{
+    display: none;
+  }
 }
 
 /* Mobile padrão (400px - 480px) - PORTRAIT */
@@ -368,6 +376,14 @@ h3#level-title {
   .biome-info-btn {
     font-size: 0.6rem;
     padding: 8px 12px;
+  }
+
+  .mute-text{
+    display: none;
+  }
+
+  .header-buttons {
+    justify-content: space-evenly;
   }
 }
 
@@ -551,6 +567,7 @@ h3#level-title {
     font-size: 0.7rem;
     padding: 9px 16px;
   }
+  
 }
 
 /* TABLETS (768px - 1023px) */

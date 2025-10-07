@@ -174,8 +174,8 @@ header {
 
 /* ===== NOVA ESTRUTURA DE BREAKPOINTS ===== */
 
-/* Mobile paisagem e tablets pequenos (481px - 767px) */
-@media (min-width: 481px) and (max-width: 767px) {
+/* Mobile paisagem e tablets pequenos (481px - 767px) - OK*/
+@media (min-width: 350px) and (max-width: 767px) and (orientation: portrait){
   .map-image {
     width: 170%;
     height: 90%;
@@ -187,6 +187,11 @@ header {
     width: 100%;
     max-width: 800px;
     top: 0px;
+  }
+
+  .biome-card[data-biome="pampa"] {
+    top: 72% ;
+    left: 55% ;
   }
 
   /* Posições dos biomas para mobile first */
@@ -216,14 +221,14 @@ header {
   }
 
   .select-btn {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
     padding: 7px 14px;
   }
 
   .back-btn {
-    font-size: 0.7rem;
-    padding: 10px 20px;
-    margin-top: -200px;
+    font-size: 0.6rem;
+    padding: 9px 19px;
+    margin: -8px;
   }
 
   header {
@@ -231,7 +236,7 @@ header {
   }
 }
 
-/* Ajuste específico para mobile paisagem (480px - 767px) */
+/* Ajuste específico para mobile paisagem (480px - 767px) - OK*/
 @media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
   .container {
     height: 110vh;
@@ -275,6 +280,11 @@ header {
     left: 66%;
   }
 
+  .biome-card[data-biome="pampa"] {
+    top: 72%;
+    left: 58%;
+  }
+
   .select-btn {
     font-size: 0.6rem;
     padding: 6px 12px;
@@ -291,7 +301,7 @@ header {
   }
 }
 
-/* Tablets médios (768px - 1023px) - iPad, Tab S7, etc. */
+/* Tablets médios (768px - 1023px) - iPad, Tab S7, etc. - OK*/
 @media (min-width: 768px) and (max-width: 1023px) {
   .map-image {
     width: 170%;
@@ -345,9 +355,14 @@ header {
     top: 75%;
     left: 62%;
   }
+
+  .biome-card[data-biome="pampa"] {
+    top: 85% !important;
+    left: 58% !important;
+  }
 }
 
-/* Tablets médios em paisagem (768px - 1023px) */
+/* Tablets médios em paisagem (768px - 1023px) - OK*/
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
   .container {
     height: 105vh;
@@ -391,6 +406,11 @@ header {
     left: 63%;
   }
 
+  .biome-card[data-biome="pampa"] {
+    top: 85% !important;
+    left: 56% !important;
+  }
+
   .select-btn {
     font-size: 0.8rem;
     padding: 10px 16px;
@@ -405,7 +425,7 @@ header {
   }
 }
 
-/* Tablets grandes e laptops pequenos (1024px - 1199px) */
+/* Tablets grandes e laptops pequenos (1024px - 1199px) - OK */
 @media (min-width: 1024px) and (max-width: 1199px) {
   .container {
     max-height: 900px;
@@ -449,6 +469,11 @@ header {
     left: 61%;
   }
 
+  .biome-card[data-biome="pampa"] {
+    top: 83% !important;
+    left: 56% !important;
+  }
+
   .select-btn {
     font-size: 0.7rem;
     padding: 9px 18px;
@@ -464,7 +489,7 @@ header {
   }
 }
 
-/* Laptops e desktops (1200px - 1599px) */
+/* Laptops e desktops (1200px - 1599px) - OK*/
 @media (min-width: 1200px) and (max-width: 1599px) {
   .container {
     max-height: 950px;
@@ -473,7 +498,7 @@ header {
 
   .map-image {
     width: 100%;
-    height: 98%;
+    height: 99%;
     margin-top: 0;
   }
 
@@ -491,7 +516,7 @@ header {
 
   .biome-card[data-biome="caatinga"] {
     top: 36%;
-    left: 74%;
+    left: 70%;
   }
 
   .biome-card[data-biome="cerrado"] {
@@ -507,6 +532,11 @@ header {
   .biome-card[data-biome="atlantic"] {
     top: 76%;
     left: 61%;
+  }
+
+  .biome-card[data-biome="pampa"] {
+    top: 88% !important;
+    left: 56% !important;
   }
 
   .select-btn {
@@ -528,7 +558,7 @@ header {
   }
 }
 
-/* Telas muito grandes (1600px+) */
+/* Telas muito grandes (1600px+) - OK */
 @media (min-width: 1600px) {
   .container {
     max-height: 1300px;
@@ -537,7 +567,7 @@ header {
 
   .map-image {
     width: 100%;
-    height: 100%;
+    height: 94%;
   }
 
   .biomes-overlay {
@@ -571,6 +601,11 @@ header {
     left: 64%;
   }
 
+  .biome-card[data-biome="pampa"] {
+    top: 85% !important;
+    left: 56% !important;
+  }
+
   .select-btn {
     font-size: 1.3rem;
     padding: 12px 24px;
@@ -596,7 +631,7 @@ header {
   }
 }
 
-/* Ajuste especial para altura muito reduzida em paisagem */
+/* Ajuste especial para altura muito reduzida em paisagem - OK */
 @media (max-height: 500px) and (orientation: landscape) {
   .map-image {
     width: 110%;
@@ -632,6 +667,11 @@ header {
   .biome-card[data-biome="atlantic"] {
     top: 73%;
     left: 64%;
+  }
+
+  .biome-card[data-biome="pampa"] {
+    top: 85% !important;
+    left: 56% !important;
   }
 
   .select-btn {
