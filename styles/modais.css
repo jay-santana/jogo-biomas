@@ -369,11 +369,17 @@ strong {
   .custom-modal-content {
     width: 340px;
     height: fit-content;
-    padding: 14px;
+    padding: 4px;
+  }
+
+  #close-help-btn,
+  #close-biome-info-btn {
+    margin-bottom: 15px;
   }
   
   .modal h2 {
     font-size: 1.1rem;
+    margin-top: 10px;
   }
   
   .modal p {
@@ -569,6 +575,7 @@ strong {
     max-width: 80%;
     padding: 20px;
     height: fit-content;
+    max-height: none;
   }
   
   .modal h2 {
@@ -643,6 +650,7 @@ strong {
   .custom-modal-content {
     height: fit-content;
     width: 500px;
+    max-height: none;
   }
   
   .modal h2 {
@@ -682,6 +690,7 @@ strong {
     max-width: 75%;
     height: fit-content;
     padding: 22px;
+    max-height: none;
   }
   
   .modal h2 {
@@ -792,6 +801,7 @@ strong {
     width: 800px;
     padding: 30px;
     height: fit-content;
+    max-height: none;
   }
   
   .modal h2 {
@@ -857,6 +867,7 @@ strong {
     height: fit-content;
     width: 650px;
     padding: 10px;
+    max-height: none;
   }
   
   .modal h2 {
@@ -926,5 +937,6 @@ strong {
   .custom-modal-content {
     width: 500px;
     height: fit-content;
+    max-height: none;
   }
 }
