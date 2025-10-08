@@ -219,8 +219,13 @@ header {
   }
 
   .biome-card[data-biome="atlantic"] {
-    top: 66%;
+    top: 63%;
     left: 77%;
+  }
+
+  .biome-card[data-biome="pampa"] {
+    top: 70%;
+    left: 58%;
   }
 
   .select-btn {
