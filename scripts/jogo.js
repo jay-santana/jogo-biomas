@@ -666,7 +666,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h2>PARABÉNS!</h2>
                 <p>VOCÊ COMPLETOU TODO O BIOMA ${formatBiomeName(biome).toUpperCase()}</p>
                 <div class="modal-buttons">
-                    <button id="same-biome-btn">CONTINUAR</button>
                     <button id="next-biome-btn">IR PARA O PRÓXIMO BIOMA</button>
                     <button id="back-to-map-btn">VOLTAR AO MAPA</button>
                 </div>
@@ -685,10 +684,6 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 window.location.href = 'fases.html';
             }
-        });
-
-        document.getElementById('same-biome-btn').addEventListener('click', function() {
-            continueBtn.click();
         });
         
         document.getElementById('back-to-map-btn').addEventListener('click', function() {
