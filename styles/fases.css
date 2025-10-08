@@ -144,7 +144,7 @@ header {
 }
 
 /* Estilos para botões de biomas bloqueados */
-.select-btn.locked {
+.select-btn.locked{
   cursor: pointer;
   background: rgba(0, 0, 0, 0.3);
   border: 2px solid #666;
@@ -157,8 +157,8 @@ header {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* Indicador de bloqueado */
-.locked-indicator {
+.locked-indicator,
+.completed-indicator {
   position: absolute;
   top: -5px;
   right: -5px;
@@ -189,9 +189,12 @@ header {
     top: 0px;
   }
 
-  .biome-card[data-biome="pampa"] {
-    top: 72% ;
-    left: 55% ;
+  .biome-completed::after {
+      width: 20px;
+      height: 20px;
+      font-size: 1rem;
+      top: -6px;
+      right: -6px;
   }
 
   /* Posições dos biomas para mobile first */
@@ -561,7 +564,7 @@ header {
 /* Telas muito grandes (1600px+) - OK */
 @media (min-width: 1600px) {
   .container {
-    max-height: 1300px;
+    max-height: 850px;
     max-width: 2200px;
   }
 
@@ -624,7 +627,8 @@ header {
     padding: 60px;
   }
 
-  .locked-indicator {
+  .locked-indicator,
+  .completed-indicator {
     width: 25px;
     height: 25px;
     font-size: 22px;
@@ -691,7 +695,8 @@ header {
     padding: 10px;
   }
 
-  .locked-indicator {
+  .locked-indicator,
+  .completed-indicator {
     width: 18px;
     height: 18px;
     font-size: 16px;
