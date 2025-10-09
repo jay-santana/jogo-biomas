@@ -409,7 +409,10 @@ h1 {
   .skill-codes {
     display: grid;
     grid-template-columns: repeat(2, minmax(50px, 1fr));
-    gap: 10px;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 20px;
   }
 
   .code-link{
@@ -420,6 +423,8 @@ h1 {
   strong{
     font-size: 1rem;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #bd7e58;
+    text-shadow: 1.3px 1.3px 0 #000;
   }
 
 
@@ -515,10 +520,13 @@ h1 {
     text-transform: uppercase;
   }
 
-    .skill-codes {
+  .skill-codes {
     display: grid;
     grid-template-columns: repeat(3, minmax(50px, 1fr));
-    gap: 10px;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 20px;
   }
 
   .fixarRodape {
@@ -1053,7 +1061,7 @@ h1 {
   }
 
   strong{
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: "Press Start 2P","Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 
