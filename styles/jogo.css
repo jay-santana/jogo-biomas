@@ -264,7 +264,7 @@ h3#level-title {
     justify-content: center;
     text-align: center;
     align-items: center;
-    padding-right: 2px;
+    padding: 0px 2px;
     background: #443328;
     color: #ded597;
     border: 2px solid #c5a274;
@@ -1170,9 +1170,9 @@ h3#level-title {
   }
   
   .character {
-    width: 69px;
+    width: 66px;
     height: 88px;
-    transform: translate(2%, -18%) scale(1.5);
+    transform: translate(2%, -18%) scale(1.6);
   }
   
   .controls-container {

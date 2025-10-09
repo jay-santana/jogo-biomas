@@ -299,6 +299,7 @@ strong {
   .modal h2 {
     font-size: 0.9rem;
     padding-bottom: 12px;
+    line-height: 1.6;
   }
   
   .modal p {
@@ -316,7 +317,7 @@ strong {
   }
   
   .custom-modal p {
-    font-size: 0.6rem;
+    font-size: 0.9rem;
     line-height: 1.5;
   }
   
