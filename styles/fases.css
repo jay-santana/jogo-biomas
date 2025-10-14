@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Play","Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html,
@@ -43,6 +44,7 @@ header {
 }
 
 .back-btn {
+  font-family: "Press Start 2P";
   padding: 8px 16px;
   background: #443328;
   color: #ded597;
@@ -93,10 +95,10 @@ header {
 }
 
 .select-btn {
-  padding: 6px 12px;
+  padding: 4px 10px;
   background: rgba(0, 0, 0, 0.6);
   color: #fffacd;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   font-weight: bold;
   text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
     -1px 1px 0 #000;
@@ -215,7 +217,7 @@ header {
 
   .biome-card[data-biome="pantanal"] {
     top: 58%;
-    left: 33%;
+    left: 38%;
   }
 
   .biome-card[data-biome="atlantic"] {
@@ -229,8 +231,8 @@ header {
   }
 
   .select-btn {
-    font-size: 0.5rem;
-    padding: 7px 14px;
+    font-size: 0.6rem;
+    padding: 5px 12px;
   }
 
   .back-btn {
@@ -294,8 +296,8 @@ header {
   }
 
   .select-btn {
-    font-size: 0.6rem;
-    padding: 6px 12px;
+    font-size: 0.7rem;
+    padding: 4px 10px;
   }
 
   .back-btn {
@@ -324,8 +326,8 @@ header {
   }
 
   .select-btn {
-    font-size: 0.85rem;
-    padding: 8px 16px;
+    font-size: 0.95rem;
+    padding: 6px 14px;
   }
 
   .back-btn {
@@ -420,8 +422,8 @@ header {
   }
 
   .select-btn {
-    font-size: 0.8rem;
-    padding: 10px 16px;
+    font-size: 0.9rem;
+    padding: 8px 14px;
   }
 
   .back-btn {
@@ -483,8 +485,8 @@ header {
   }
 
   .select-btn {
-    font-size: 0.7rem;
-    padding: 9px 18px;
+    font-size: 0.8rem;
+    padding: 7px 16px;
   }
 
   .back-btn {
@@ -524,12 +526,12 @@ header {
 
   .biome-card[data-biome="caatinga"] {
     top: 36%;
-    left: 70%;
+    left: 75%;
   }
 
   .biome-card[data-biome="cerrado"] {
     top: 54%;
-    left: 55%;
+    left: 58%;
   }
 
   .biome-card[data-biome="pantanal"] {
@@ -548,7 +550,7 @@ header {
   }
 
   .select-btn {
-    font-size: 0.7rem;
+    font-size: 1rem;
     padding: 10px 20px;
   }
 
@@ -615,8 +617,8 @@ header {
   }
 
   .select-btn {
-    font-size: 1.3rem;
-    padding: 12px 24px;
+    font-size: 1.4rem;
+    padding: 10px 22px;
   }
 
   .back-btn {
@@ -684,8 +686,8 @@ header {
   }
 
   .select-btn {
-    font-size: 0.5rem;
-    padding: 4px 8px;
+    font-size: 0.6rem;
+    padding: 2px 6px;
     border-radius: 5px;
   }
 
@@ -725,8 +727,8 @@ header {
   }
 
   .select-btn {
-    font-size: 1.1rem;
-    padding: 15px 30px;
+    font-size: 1.2rem;
+    padding: 13px 28px;
   }
 
   .back-btn {

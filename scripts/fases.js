@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isBiomeUnlocked) {
                 window.soundManager.play('obstacle-hit');
                 window.modalManager.showAlert(
-                    'Este bioma ainda está bloqueado! Complete o bioma anterior primeiro.', 
-                    'Bioma Bloqueado'
+                    'ESTE BIOMA AINDA ESTÁ BLOQUEADO! COMPLETE O BIOMA ANTERIOR PRIMEIRO.', 
+                    'BIOMA BLOQUEADO'
                 );
                 return;
             }else {
@@ -87,16 +87,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Bioma bloqueado
                 selectBtn.classList.add('locked');
                 selectBtn.innerHTML += '<div class="locked-indicator">🔒</div>';
-                selectBtn.title = 'Complete o bioma anterior para desbloquear';
+                selectBtn.title = 'COMPLETE O BIOMA ANTERIOR PARA DESBLOQUEAR.';
             } else if (isBiomeCompleted) {
                 // Bioma completamente finalizado
                 biomeCard.classList.add('biome-completed');
                 selectBtn.innerHTML += '<div class="completed-indicator">✅</div>';
-                selectBtn.title = 'Bioma completo! Clique para revisitar os níveis';
+                selectBtn.title = 'BIOMA COMPLETO! CLIQUE PARA REVISITAR O NÍVEIS';
 
             } else {
                 // Bioma desbloqueado mas não completo
-                selectBtn.title = 'Bioma em progresso - Clique para jogar';
+                selectBtn.title = 'BIOMA EM PROGRESSO - CLIQUE PARA JOGAR';
                 
                 // Mostrar progresso atual (opcional)
                 const completedLevels = progress[biome].filter(level => level === true).length;

@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Atualizar título do nível
-    levelTitle.textContent = `${formatBiomeName(biome)} - NIVEL ${level}`;
+    levelTitle.textContent = `${formatBiomeName(biome)} - NÍVEL ${level}`;
     
     // Inicializar o jogo
     initializeGame(biome, parseInt(level));
@@ -545,7 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (winStatus === 'incomplete') {
                 playGameSound('obstacle-hit'); // SOM AO NÃO COLETAR TODOS ITENS
-                alert('VOCE CHEGOU AO FINAL MAS NÃO COLETOU TODOS OS ITENS - REINICIANDO');
+                alert('VOCÊ CHEGOU AO FINAL MAS NÃO COLETOU TODOS OS ITENS - REINICIANDO');
                 resetGame();
                 runBtn.disabled = false;
                 resetBtn.disabled = false;
@@ -637,7 +637,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function showVictory() {
-        stepsResult.textContent = `VOCE COMPLETOU O NIVEL EM ${gameState.steps} PASSOS`;
+        stepsResult.textContent = `VOCÊ COMPLETOU O NÍVEL EM ${gameState.steps} PASSOS`;
         saveProgress(gameState.currentBiome, level, gameState.steps);
         
         const isLastPantanalLevel = gameState.currentBiome === 'pantanal' && level === '6';
@@ -726,10 +726,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'pantanal': [false, false, false, false, false, false],
         };
         
-        const levelIndex = parseInt(level) - 2;
+        const levelIndex = parseInt(level) - 1;
         progress[biome][levelIndex] = true;
         
-        if (levelIndex < 6) {
+        if (levelIndex < 5) {
             progress[biome][levelIndex + 1] = true;
         }
         
@@ -792,8 +792,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function formatBiomeName(biome) {
         const names = {
-            'atlantic': 'MATA ATLANTICA',
-            'amazon': 'AMAZONIA',
+            'atlantic': 'MATA ATLÂNTICA',
+            'amazon': 'AMAZÔNIA',
             'cerrado': 'CERRADO',
             'caatinga': 'CAATINGA',
             'pampa': 'PAMPA',

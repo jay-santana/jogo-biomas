@@ -1,6 +1,5 @@
-/* ===== ESTILOS BASE (MOBILE FIRST) ===== */
-
 @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -61,13 +60,14 @@ header {
 }
 
 h3#level-title {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   text-shadow: 1px 1px 0 #6b4732;
   letter-spacing: 0.5px;
   color: #f8d98f;
   text-shadow: 2px 2px 0 #000;
   padding: 2px 0;
   line-height: 1.2;
+  font-family: "Play",sans-serif;
 }
 
 .header-buttons {
@@ -927,7 +927,7 @@ h3#level-title {
   }
 
   h3#level-title {
-    font-size: 0.95rem;
+    font-size: 1.5rem;
   }
   
   .commands-title {
@@ -1224,7 +1224,7 @@ h3#level-title {
   }
   
   h3#level-title {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
   
   .action-buttons {

@@ -1,5 +1,6 @@
 /* styles/fase.css */
 @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -52,6 +53,13 @@ header {
   text-shadow: 2px 2px 0 #1e4d2b, -1px -1px 0 #1e4d2b, 1px -1px 0 #1e4d2b,
     -1px 1px 0 #1e4d2b;
 }
+
+.bioma-amazonia h2 {
+  font-size: 2.5rem;
+  font-family: "Play", sans-serif;
+  font-weight: bold;
+}
+
 .bioma-amazonia .background-image {
   position: fixed;
   top: 0;
@@ -84,6 +92,13 @@ header {
   text-shadow: 2px 2px 0 #1e3b23, -1px -1px 0 #1e3b23, 1px -1px 0 #1e3b23,
     -1px 1px 0 #1e3b23;
 }
+
+.bioma-atlantica h2 {
+  font-size: 2.5rem;
+  font-family: "Play", sans-serif;
+  font-weight: bold;
+}
+
 .bioma-atlantica .background-image {
   position: fixed;
   top: 0;
@@ -116,6 +131,13 @@ header {
   text-shadow: 2px 2px 0 #7e552e, -1px -1px 0 #7e552e, 1px -1px 0 #7e552e,
     -1px 1px 0 #7e552e;
 }
+
+.bioma-caatinga h2 {
+  font-size: 2.5rem;
+  font-family: "Play", sans-serif;
+  font-weight: bold;
+}
+
 .bioma-caatinga .start-btn {
   color: #fddf7a;
   text-shadow: 2px 2px 0 #7e552e, -2px -2px 0 #7e552e, 2px -2px 0 #7e552e,
@@ -148,6 +170,13 @@ header {
   text-shadow: 2px 2px 0 #6d3a1d, -1px -1px 0 #6d3a1d, 1px -1px 0 #6d3a1d,
     -1px 1px 0 #6d3a1d;
 }
+
+.bioma-cerrado h2 {
+  font-size: 2.5rem;
+  font-family: "Play", sans-serif;
+  font-weight: bold;
+}
+
 .bioma-cerrado .background-image {
   position: fixed;
   top: 0;
@@ -181,6 +210,13 @@ header {
   text-shadow: 2px 2px 0 #3a5c2d, -1px -1px 0 #3a5c2d, 1px -1px 0 #3a5c2d,
     -1px 1px 0 #3a5c2d;
 }
+
+.bioma-pampa h2 {
+  font-size: 2.5rem;
+  font-family: "Play", sans-serif;
+  font-weight: bold;
+}
+
 .bioma-pampa .background-image {
   position: fixed;
   top: 0;
@@ -214,6 +250,13 @@ header {
   text-shadow: 2px 2px 0 #3a5c2d, -1px -1px 0 #3a5c2d, 1px -1px 0 #3a5c2d,
     -1px 1px 0 #3a5c2d;
 }
+
+.bioma-pantanal h2 {
+  font-size: 2.5rem;
+  font-family: "Play", sans-serif;
+  font-weight: bold;
+}
+
 .bioma-pantanal .background-image {
   position: fixed;
   top: 0;
