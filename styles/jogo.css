@@ -163,7 +163,9 @@ h3#level-title {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 0.7rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Play",sans-serif;
   color: #e2d1a0;
   gap: 20px;
   width: 100%;
@@ -494,7 +496,7 @@ h3#level-title {
   }
   
   .commands-title {
-    font-size: 0.6rem;
+    font-size: 1.1rem;
   }
 
   .biome-info-btn {
@@ -553,7 +555,7 @@ h3#level-title {
   }
 
   .commands-title {
-    font-size: 0.8rem;
+    font-size: 1.3rem;
   }
   
   .character {
@@ -655,7 +657,7 @@ h3#level-title {
   }
 
   h3#level-title {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
 
   .level-info {
@@ -693,7 +695,7 @@ h3#level-title {
   }
   
   .commands-title {
-    font-size: 1.18rem;
+    font-size: 1.68rem;
   }
   
   .run-btn,
@@ -788,7 +790,7 @@ h3#level-title {
   }
   
   .commands-title {
-    font-size: 0.7rem;
+    font-size: 1.2rem;
   }
 
   .run-btn,
@@ -859,7 +861,7 @@ h3#level-title {
   }
 
   h3#level-title {
-    font-size: 0.95rem;
+    font-size: 1.3rem;
   }
   
   .level-info p {
@@ -886,7 +888,7 @@ h3#level-title {
   }
   
   .commands-title {
-    font-size: 0.95rem;
+    font-size: 1.45rem;
   }
 
   .run-btn,
@@ -931,7 +933,7 @@ h3#level-title {
   }
   
   .commands-title {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
   }
 
   .level-info p {
@@ -1040,7 +1042,7 @@ h3#level-title {
   }
 
   h3#level-title {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
   }
 
   .command-block img {
@@ -1049,7 +1051,7 @@ h3#level-title {
   }
   
   .commands-title {
-    font-size: 1.18rem;
+    font-size: 1.68rem;
   }
   
   .command-sequence {
@@ -1212,7 +1214,7 @@ h3#level-title {
   }
   
   .commands-title {
-    font-size: 1.35rem;
+    font-size: 1.95rem;
   }
 
   .level-titles {
@@ -1311,10 +1313,6 @@ h3#level-title {
     padding: 18px 20px;
   }
  
-  h3#level-title {
-    font-size: 1.1rem;
-  }
- 
   .commands-title {
     font-size: 1.1rem;
   }
@@ -1357,7 +1355,7 @@ h3#level-title {
   }
   
   h3#level-title {
-    font-size: 1.4rem;
+    font-size: 2.5rem;
   }
  
   .action-buttons {
@@ -1436,11 +1434,11 @@ h3#level-title {
   }
   
   .commands-title {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
   
   h3#level-title {
-    font-size: 0.75rem;
+    font-size: 1rem;
   }
 }
 
