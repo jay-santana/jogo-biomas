@@ -1525,7 +1525,17 @@ h3#level-title {
 }
 
 .obstacle {
-  background-size: 98% 98% !important;
+  background-size: 90% 90% !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-color: #eebb99;
+  border: 1px solid #f89a89;
+  width: 100%;
+  height: 100%;
+}
+
+.fruit {
+  background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   width: 100%;
@@ -1545,14 +1555,14 @@ h3#level-title {
   border: none;
 }
 
-.item {
+/* .item {
   background-image: url('../assets/item-icon.png') !important;
   background-size: 70% 70% !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-color: #eebb99;
   border: 1px solid #f89a89;
-}
+} */
 
 /* Backgrounds dos biomas (mantidos) */
 .grid::before {
@@ -1630,3 +1640,12 @@ h3#level-title {
   background-position: center !important;
   background-image: url('../assets/obstacles/random/obstacle-2.png') !important;
 }
+
+/* Frutas como itens colecionáveis por bioma */
+.atlantic .fruit { background-image: url('../assets/obstacles/atlantic/cambuci-atlantica.png'); }
+.amazon .fruit { background-image: url('../assets/obstacles/amazon/acai-amazonia.png'); }
+.cerrado .fruit { background-image: url('../assets/obstacles/cerrado/pequi-cerrado.png'); }
+.caatinga .fruit { background-image: url('../assets/obstacles/caatinga/caju-caatinga.png'); }
+.pantanal .fruit { background-image: url('../assets/obstacles/pantanal/acuri-pantanal.png'); }
+.pampa .fruit { background-image: url('../assets/obstacles/pampa/guabiju-pampa.png'); }
+
