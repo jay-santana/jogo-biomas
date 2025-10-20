@@ -317,6 +317,7 @@ h3#level-title {
   transform: translateY(-2px);
 }
 
+
 /* ===== BREAKPOINTS ===== */
 
 /* Mobile pequeno (até 360px) - PORTRAIT */
@@ -1612,28 +1613,66 @@ h3#level-title {
 
 .atlantic .obstacle {
   background-image: url('../assets/obstacles/atlantic/obstacle-1.png');
+  animation: glow 2s ease-in-out infinite;
 }
 
 .amazon .obstacle {
   background-image: url('../assets/obstacles/amazon/obstacle-1.png');
+  animation: glow 2s ease-in-out infinite;
 }
 
 .cerrado .obstacle {
   background-image: url('../assets/obstacles/cerrado/obstacle-1.png');
+  animation: glow 2s ease-in-out infinite;
 }
 
 .caatinga .obstacle {
   background-image: url('../assets/obstacles/caatinga/obstacle-1.png');
+  animation: glow 2s ease-in-out infinite;
 }
 
 .pantanal .obstacle {
   background-image: url('../assets/obstacles/pantanal/obstacle-1.png');
+  animation: glow 2s ease-in-out infinite;
 }
 
 .pampa .obstacle {
   background-image: url('../assets/obstacles/pampa/obstacle-1.png');
+  animation: glow 2s ease-in-out infinite;
 }
 
+/* EFEITO DE BRILHO PARA FRUTAS */
+.atlantic .fruit {
+  background-image: url('../assets/obstacles/atlantic/cambuci-atlantica.png');
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+.amazon .fruit {
+  background-image: url('../assets/obstacles/amazon/acai-amazonia.png');
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+.cerrado .fruit {
+  background-image: url('../assets/obstacles/cerrado/pequi-cerrado.png');
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+.caatinga .fruit {
+  background-image: url('../assets/obstacles/caatinga/caju-caatinga.png');
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+.pantanal .fruit {
+  background-image: url('../assets/obstacles/pantanal/acuri-pantanal.png');
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+.pampa .fruit {
+  background-image: url('../assets/obstacles/pampa/guabiju-pampa.png');
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+/* OBSTÁCULO RANDOM - SEM EFEITO */
 .obstacle-random {
   background-color: transparent;
   border: none;
@@ -1641,13 +1680,21 @@ h3#level-title {
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-image: url('../assets/obstacles/random/obstacle-2.png') !important;
+  animation: none !important;
+  /* Remove qualquer animação */
+  filter: none !important;
+  /* Remove qualquer filtro */
 }
 
-/* Frutas como itens colecionáveis por bioma */
-.atlantic .fruit { background-image: url('../assets/obstacles/atlantic/cambuci-atlantica.png'); }
-.amazon .fruit { background-image: url('../assets/obstacles/amazon/acai-amazonia.png'); }
-.cerrado .fruit { background-image: url('../assets/obstacles/cerrado/pequi-cerrado.png'); }
-.caatinga .fruit { background-image: url('../assets/obstacles/caatinga/caju-caatinga.png'); }
-.pantanal .fruit { background-image: url('../assets/obstacles/pantanal/acuri-pantanal.png'); }
-.pampa .fruit { background-image: url('../assets/obstacles/pampa/guabiju-pampa.png'); }
+/* EFEITO DE BRILHO SIMPLES */
+@keyframes glow {
 
+  0%,
+  100% {
+    filter: brightness(1) drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+  }
+
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(255, 255, 0, 0.6));
+  }
+}
