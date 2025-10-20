@@ -13,7 +13,7 @@ const cerradoLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 2, y: 5 },
             fim: { x: 7, y: 5 },
-            itens: [{x: 4, y: 5}, {x: 5, y: 5}],
+            fruits: [{x: 4, y: 5}, {x: 5, y: 5}],
             obstaculos: [],
             accessibleCells: [
                 {x: 3, y: 5}, {x: 4, y: 5}, 
@@ -26,7 +26,7 @@ const cerradoLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 4 },
             fim: { x: 5, y: 6 },
-            itens: [{x: 4, y: 5}],
+            fruits: [{x: 4, y: 5}],
             obstaculos: [{x: 4, y: 4}, {x: 4, y: 6}],
             accessibleCells: [
                 {x: 3, y: 4}, {x: 3, y: 5}, 
@@ -41,7 +41,7 @@ const cerradoLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 6 },
             fim: { x: 6, y: 6 },
-            itens: [{x: 4, y: 4}, {x: 5, y: 4}, {x: 4, y: 5}],
+            fruits: [{x: 4, y: 4}, {x: 5, y: 4}, {x: 4, y: 5}],
             obstaculos: [
                 {x: 4, y: 6},
                 {x: 3, y: 4}, {x: 6, y: 4}
@@ -61,7 +61,7 @@ const cerradoLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 4 },
             fim: { x: 7, y: 4 },
-            itens: [
+            fruits: [
                 {x: 4, y: 3}, {x: 6, y: 3}, 
                 {x: 5, y: 5}, {x: 4, y: 6}
             ],
@@ -83,7 +83,7 @@ const cerradoLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 6, y: 7 },
             fim: { x: 1, y: 3 },
-            itens: [
+            fruits: [
                 {x: 4, y: 5}, {x: 5, y: 5}, 
                 {x: 4, y: 7}, {x: 5, y: 3}
             ],
@@ -109,7 +109,7 @@ const cerradoLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 4, y: 7 },
             fim: { x: 1, y: 4 },
-            itens: [
+            fruits: [
                 {x: 3, y: 6}, {x: 5, y: 6}, 
                 {x: 6, y: 5}, {x: 7, y: 4},
                 {x: 2, y: 6}, {x: 1, y: 5}

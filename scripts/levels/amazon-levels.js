@@ -15,7 +15,7 @@ const amazonLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 2, y: 5 },
             fim: { x: 7, y: 5 },
-            itens: [],
+            fruits: [{x: 5, y: 5}],
             obstaculos: [{x: 4, y: 6},{x: 6, y: 4}],
             accessibleCells: [
                 {x: 3, y: 5}, {x: 4, y: 5}, 
@@ -29,7 +29,7 @@ const amazonLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 4 },
             fim: { x: 5, y: 6 },
-            itens: [],
+            fruits: [],
             obstaculos: [{x: 4, y: 5},{x: 6, y: 4}],
             accessibleCells: [
                 {x: 3, y: 4}, {x: 4, y: 4}, 
@@ -44,7 +44,7 @@ const amazonLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 7, y: 4 },
             fim: { x: 2, y: 5 },
-            itens: [],
+            fruits: [],
             obstaculos: [{x: 5, y: 4},{x: 3, y: 5}],
             accessibleCells: [ 
                 {x: 2, y: 4},
@@ -61,7 +61,7 @@ const amazonLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 6 },
             fim: { x: 6, y: 6 },
-            itens: [],
+            fruits: [],
             obstaculos: [{x: 5, y: 5},{x: 4, y: 6}],
             accessibleCells: [
                 {x: 3, y: 6}, {x: 3, y: 5}, 
@@ -76,7 +76,7 @@ const amazonLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 6, y: 7 },
             fim: { x: 3, y: 4 },
-            itens: [],
+            fruits: [],
             obstaculos: [{x: 5, y: 5},{x: 4, y: 6}, {x: 3, y: 7}],
             accessibleCells: [
                 {x: 6, y: 7}, {x: 3, y: 7},
@@ -93,7 +93,7 @@ const amazonLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 4, y: 8 },
             fim: { x: 2, y: 5 },
-            itens: [],
+            fruits: [],
             obstaculos: [{x: 4, y: 5},{x: 6, y: 4},
                          {x: 4, y: 6}, {x: 3, y: 7}
             ],

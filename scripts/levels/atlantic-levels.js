@@ -14,7 +14,7 @@ const atlanticLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 2, y: 5 },
             fim: { x: 7, y: 5 },
-            itens: [],
+            fruits: [{x: 6, y: 4}],
             obstaculos: [{x: 4, y: 6}, {x: 5, y: 4}],
             accessibleCells: [
                 {x: 3, y: 5}, {x: 4, y: 5}, 
@@ -27,7 +27,7 @@ const atlanticLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 4 },
             fim: { x: 5, y: 6 },
-            itens: [],
+            fruits: [],
             obstaculos: [{x: 4, y: 5}],
             accessibleCells: [
                 {x: 3, y: 4}, {x: 4, y: 4}, 
@@ -40,7 +40,7 @@ const atlanticLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 6 },
             fim: { x: 6, y: 6 },
-            itens: [],
+            fruits: [],
             obstaculos: [{x: 4, y: 5}, {x: 5, y: 6}
             ],
             accessibleCells: [
@@ -57,7 +57,7 @@ const atlanticLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 5 },
             fim: { x: 7, y: 5 },
-            itens: [],
+            fruits: [],
             obstaculos: [{x: 4, y: 5}, {x: 5, y: 5}],
             accessibleCells: [
                 {x: 3, y: 6}, {x: 3, y: 5}, 
@@ -72,7 +72,7 @@ const atlanticLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 3, y: 6 },
             fim: { x: 6, y: 4 },
-            itens: [],
+            fruits: [],
             obstaculos: [{ x: 5, y: 4 }],
             accessibleCells: [
                 {x: 3, y: 5}, {x: 4, y: 5}, 
@@ -87,7 +87,7 @@ const atlanticLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 2, y: 3 },
             fim: { x: 6, y: 6 },
-            itens: [],
+            fruits: [],
             obstaculos: [{ x: 4, y: 6 }, { x: 3, y: 5 }],
             accessibleCells: [
                 {x: 2, y: 3}, {x: 3, y: 3}, 

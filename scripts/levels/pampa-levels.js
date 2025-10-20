@@ -13,7 +13,7 @@ const pampaLevels = {
             grid: { width: 10, height: 10 },
             inicio: {x: 3, y: 2},
             fim: {x: 7, y: 7},
-            itens: [{x: 7, y: 3},{x: 6, y: 4},{x: 4, y: 6}],
+            fruits: [{x: 7, y: 3},{x: 6, y: 4},{x: 4, y: 6}],
             obstaculos: [],
             accessibleCells: [
                 {x: 7, y: 3}, {x: 3, y: 3}, {x: 3, y: 4}, {x: 4, y: 3},
@@ -28,7 +28,7 @@ const pampaLevels = {
             grid: { width: 10, height: 10 },
             inicio: {x: 2, y: 2},
             fim: {x: 6, y: 1},
-            itens: [{x: 6, y: 3},{x: 4, y: 5},
+            fruits: [{x: 6, y: 3},{x: 4, y: 5},
                     {x: 3, y: 7},{x: 5, y: 7},
             ],
             obstaculos: [{x: 4, y: 4},{x: 5, y: 4}],
@@ -47,7 +47,7 @@ const pampaLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 5, y: 4 },
             fim: { x: 2, y: 7 },
-            itens: [{x: 4, y: 2}, {x: 8, y: 2}, {x: 2, y: 4},
+            fruits: [{x: 4, y: 2}, {x: 8, y: 2}, {x: 2, y: 4},
                     {x: 7, y: 4}, {x: 4, y: 6}
             ],
             obstaculos: [{x: 6, y: 2}, {x: 4, y: 4}, {x: 6, y: 4}, {x: 5, y: 5}],
@@ -67,7 +67,7 @@ const pampaLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 2, y: 7 },
             fim: { x: 7, y: 7 },
-            itens: [{x: 2, y: 2}, {x: 2, y: 3}, {x: 6, y: 2}, {x: 6, y: 4}],
+            fruits: [{x: 2, y: 2}, {x: 2, y: 3}, {x: 6, y: 2}, {x: 6, y: 4}],
             obstaculos: [{x: 6, y: 3}, {x: 6, y: 5}, {x: 6, y: 7}],
             accessibleCells: [
                 {x: 2, y: 2}, {x: 3, y: 2}, {x: 5, y: 2}, {x: 6, y: 2}, {x: 7, y: 2},
@@ -86,7 +86,7 @@ const pampaLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 7, y: 8 },
             fim: { x: 1, y: 7 },
-            itens: [{x: 3, y: 3}, {x: 2, y: 4}, {x: 3, y: 5}, {x: 4, y: 5}, {x: 8, y: 6}],
+            fruits: [{x: 3, y: 3}, {x: 2, y: 4}, {x: 3, y: 5}, {x: 4, y: 5}, {x: 8, y: 6}],
             obstaculos: [{x: 4, y: 4}, {x: 6, y: 4}, {x: 8, y: 4}],
             accessibleCells: [
                 {x: 2, y: 3}, {x: 3, y: 3}, {x: 4, y: 3}, {x: 5, y: 3}, {x: 6, y: 3}, 
@@ -101,7 +101,7 @@ const pampaLevels = {
             grid: { width: 10, height: 10 },
             inicio: { x: 2, y: 1 },
             fim: { x: 4, y: 1 },
-            itens: [{x: 5, y: 2}, {x: 7, y: 4}, {x: 7, y: 5}, {x: 2, y: 6}, {x: 2, y: 7}],
+            fruits: [{x: 5, y: 2}, {x: 7, y: 4}, {x: 7, y: 5}, {x: 2, y: 6}, {x: 2, y: 7}],
             obstaculos: [{x: 3, y: 6}, {x: 5, y: 7}],
             accessibleCells: [
                 {x: 2, y: 1}, {x: 4, y: 1}, {x: 5, y: 1}, {x: 6, y: 1}, {x: 7, y: 1},
