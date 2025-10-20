@@ -1,20 +1,20 @@
 // Sistema de modais personalizados
 class ModalManager {
-    constructor() {
-        this.modalContainer = null;
-        this.init();
-    }
+  constructor() {
+    this.modalContainer = null;
+    this.init();
+  }
 
-    init() {
-        this.modalContainer = document.createElement('div');
-        this.modalContainer.id = 'modal-container';
-        document.body.appendChild(this.modalContainer);
-    }
+  init() {
+    this.modalContainer = document.createElement("div");
+    this.modalContainer.id = "modal-container";
+    document.body.appendChild(this.modalContainer);
+  }
 
-    showAlert(message, title = "ALERTA", confirmText = "OK", onConfirm = null) {
-        return new Promise((resolve) => {
-            const modalId = 'modal-' + Date.now();
-            const modalHTML = `
+  showAlert(message, title = "ATENÇÃO!", confirmText = "OK", onConfirm = null) {
+    return new Promise((resolve) => {
+      const modalId = "modal-" + Date.now();
+      const modalHTML = `
                 <div id="${modalId}" class="custom-modal" style="display: flex;">
                     <div class="custom-modal-content">
                         <h2>${title}</h2>
@@ -26,18 +26,23 @@ class ModalManager {
                 </div>
             `;
 
-            this.modalContainer.innerHTML += modalHTML;
+      this.modalContainer.innerHTML += modalHTML;
 
-            if (onConfirm) {
-                window.modalConfirmCallback = onConfirm;
-            }
-        });
-    }
+      if (onConfirm) {
+        window.modalConfirmCallback = onConfirm;
+      }
+    });
+  }
 
-    showConfirm(message, title = "Confirmação", confirmText = "Sim", cancelText = "Não") {
-        return new Promise((resolve) => {
-            const modalId = 'modal-' + Date.now();
-            const modalHTML = `
+  showConfirm(
+    message,
+    title = "Confirmação",
+    confirmText = "Sim",
+    cancelText = "Não"
+  ) {
+    return new Promise((resolve) => {
+      const modalId = "modal-" + Date.now();
+      const modalHTML = `
                 <div id="${modalId}" class="custom-modal" style="display: flex;">
                     <div class="custom-modal-content">
                         <h2>${title}</h2>
@@ -50,36 +55,36 @@ class ModalManager {
                 </div>
             `;
 
-            this.modalContainer.innerHTML += modalHTML;
+      this.modalContainer.innerHTML += modalHTML;
 
-            this.currentResolve = resolve;
-        });
+      this.currentResolve = resolve;
+    });
+  }
+
+  closeModal(modalId, result) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.style.display = "none";
+      setTimeout(() => {
+        modal.remove();
+      }, 300);
     }
 
-    closeModal(modalId, result) {
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            modal.style.display = 'none';
-            setTimeout(() => {
-                modal.remove();
-            }, 300);
-        }
-
-        if (this.currentResolve) {
-            this.currentResolve(result);
-            this.currentResolve = null;
-        }
+    if (this.currentResolve) {
+      this.currentResolve(result);
+      this.currentResolve = null;
     }
+  }
 }
 
 window.modalManager = new ModalManager();
 
 window.originalAlert = window.alert;
-window.alert = function(message) {
-    return window.modalManager.showAlert(message);
+window.alert = function (message) {
+  return window.modalManager.showAlert(message);
 };
 
 window.originalConfirm = window.confirm;
-window.confirm = function(message) {
-    return window.modalManager.showConfirm(message);
+window.confirm = function (message) {
+  return window.modalManager.showConfirm(message);
 };
