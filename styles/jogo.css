@@ -1538,6 +1538,8 @@ h3#level-title {
   background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
+  background-color: #eebb99;
+  border: 1px solid #f89a89;
   width: 100%;
   height: 100%;
 }
