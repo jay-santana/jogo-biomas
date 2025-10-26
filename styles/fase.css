@@ -1,6 +1,7 @@
 /* styles/fase.css */
 @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Press+Start+2P&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -47,6 +48,7 @@ header {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .bioma-amazonia h1,
 .bioma-amazonia h2 {
   color: #ffdd55;
@@ -55,7 +57,8 @@ header {
 }
 
 .bioma-amazonia h2 {
-  font-size: 2.5rem;
+  margin-top: 20px;
+  font-size: 1.5rem;
   font-family: "Play", sans-serif;
   font-weight: bold;
 }
@@ -69,11 +72,13 @@ header {
   object-fit: contain;
   z-index: -1;
 }
+
 .bioma-amazonia .start-btn {
   color: #ffdd55;
   text-shadow: 2px 2px 0 #1e4d2b, -2px -2px 0 #1e4d2b, 2px -2px 0 #1e4d2b,
     -2px 2px 0 #1e4d2b;
 }
+
 .bioma-amazonia .start-btn:disabled {
   color: #a7b485;
   text-shadow: 1px 1px 0 #2d4d2d;
@@ -86,6 +91,7 @@ header {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .bioma-atlantica h1,
 .bioma-atlantica h2 {
   color: #c9f76f;
@@ -94,7 +100,8 @@ header {
 }
 
 .bioma-atlantica h2 {
-  font-size: 2.5rem;
+  margin-top: 20px;
+  font-size: 1.5rem;
   font-family: "Play", sans-serif;
   font-weight: bold;
 }
@@ -108,11 +115,13 @@ header {
   object-fit: contain;
   z-index: -1;
 }
+
 .bioma-atlantica .start-btn {
   color: #c9f76f;
   text-shadow: 2px 2px 0 #1e3b23, -2px -2px 0 #1e3b23, 2px -2px 0 #1e3b23,
     -2px 2px 0 #1e3b23;
 }
+
 .bioma-atlantica .start-btn:disabled {
   color: #93af7f;
   text-shadow: 1px 1px 0 #2d4d2d;
@@ -125,6 +134,7 @@ header {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .bioma-caatinga h1,
 .bioma-caatinga h2 {
   color: #ffda62;
@@ -133,7 +143,8 @@ header {
 }
 
 .bioma-caatinga h2 {
-  font-size: 2.5rem;
+  margin-top: 20px;
+  font-size: 1.5rem;
   font-family: "Play", sans-serif;
   font-weight: bold;
 }
@@ -143,6 +154,7 @@ header {
   text-shadow: 2px 2px 0 #7e552e, -2px -2px 0 #7e552e, 2px -2px 0 #7e552e,
     -2px 2px 0 #7e552e;
 }
+
 .bioma-caatinga .background-image {
   position: fixed;
   top: 0;
@@ -152,6 +164,7 @@ header {
   object-fit: contain;
   z-index: -1;
 }
+
 .bioma-caatinga .start-btn:disabled {
   color: #c9b496;
   text-shadow: 1px 1px 0 #5c3e1f;
@@ -164,6 +177,7 @@ header {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .bioma-cerrado h1,
 .bioma-cerrado h2 {
   color: #ffc857;
@@ -172,7 +186,8 @@ header {
 }
 
 .bioma-cerrado h2 {
-  font-size: 2.5rem;
+  margin-top: 20px;
+  font-size: 1.5rem;
   font-family: "Play", sans-serif;
   font-weight: bold;
 }
@@ -186,11 +201,13 @@ header {
   object-fit: contain;
   z-index: -1;
 }
+
 .bioma-cerrado .start-btn {
   color: #ffc857;
   text-shadow: 2px 2px 0 #6d3a1d, -2px -2px 0 #6d3a1d, 2px -2px 0 #6d3a1d,
     -2px 2px 0 #6d3a1d;
 }
+
 .bioma-cerrado .start-btn:disabled {
   color: #ccad8b;
   text-shadow: 1px 1px 0 #5c2d1b;
@@ -212,7 +229,8 @@ header {
 }
 
 .bioma-pampa h2 {
-  font-size: 2.5rem;
+  margin-top: 20px;
+  font-size: 1.5rem;
   font-family: "Play", sans-serif;
   font-weight: bold;
 }
@@ -226,11 +244,13 @@ header {
   object-fit: contain;
   z-index: -1;
 }
+
 .bioma-pampa .start-btn {
   color: #e9f679;
   text-shadow: 2px 2px 0 #3a5c2d, -2px -2px 0 #3a5c2d, 2px -2px 0 #3a5c2d,
     -2px 2px 0 #3a5c2d;
 }
+
 .bioma-pampa .start-btn:disabled {
   color: #b6c794;
   text-shadow: 1px 1px 0 #2d4d2d;
@@ -252,7 +272,8 @@ header {
 }
 
 .bioma-pantanal h2 {
-  font-size: 2.5rem;
+  margin-top: 20px;
+  font-size: 1.5rem;
   font-family: "Play", sans-serif;
   font-weight: bold;
 }
@@ -266,11 +287,13 @@ header {
   object-fit: contain;
   z-index: -1;
 }
+
 .bioma-pantanal .start-btn {
   color: #e9f679;
   text-shadow: 2px 2px 0 #3a5c2d, -2px -2px 0 #3a5c2d, 2px -2px 0 #3a5c2d,
     -2px 2px 0 #3a5c2d;
 }
+
 .bioma-pantanal .start-btn:disabled {
   color: #b6c794;
   text-shadow: 1px 1px 0 #2d4d2d;

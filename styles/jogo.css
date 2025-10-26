@@ -133,6 +133,7 @@ h3#level-title {
 
 .controls-container {
   width: 95%;
+  max-height: 800px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -929,7 +930,7 @@ h3#level-title {
   }
 
   .controls-container {
-    height: 65vh;
+    height: fit-content;
     gap: 20px;
     padding: 35px 25px 25px 25px;
   }

@@ -374,6 +374,7 @@ strong {
   .custom-modal-content {
     width: 340px;
     height: fit-content;
+    max-height: 450px;
     padding: 4px;
   }
 
